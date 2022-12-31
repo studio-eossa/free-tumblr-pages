@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+    
+    Blütenknospe (Page #7)
+    A simple FAQ page by @silbrigthemes.
+        
+    The following rules apply:
+
+        1) Do not redistribute the code to other sites or people.
+        2) Do not reupload this code anywhere else.
+        3) Do not delete the credit.
+        4) Do not claim this code as your own.
+        5) Do not use this code as a base code.
+
+    Useful annotations to this code have been made. That should make the editing     process easier for you.
+
+    Have fun!
+    <3, Julia
+    
+    Last Update: 28th February 2022
+
+    -------------------------------------------------------------------
+
+    Note:
+
+        This work is protected by a creative commons
+        Attribution-NonCommercial-NoDerivatives 4.0 International
+        (CC BY-NC-ND 4.0)
+        license.
+    
+-->
+    
+    <head>
+    
+    <meta charset="utf-16">
+    <title>{Title} | FAQ</title>
+    {block:Description}
+    <meta name="description" content="{MetaDescription}"/>
+    {/block:Description}
+    <link rel="shortcut icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+    
+    <!-- Necessary for the theme to be responsive. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Changes the toolbar color on mobile. -->
+    <meta name="theme-color" content="#e397ac"/>
+    
+    <!-- Icon font, by Remix Icon. -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <!-- Necessary for the scripts to work. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    
+    <!-- SVG tooltip arrow. -->
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/svg-arrow.css"/>
+    
+    <!-- Google Fonts preconnections. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Inconsolata -->
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Work Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Playfair Display -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+        <style>
+        
+            :root, html {
+                --Accent: 240, 242, 244; /* hex: #f0f2f4 */
+                --Background: #fff;
+                --BoldText: #3f4d5a;
+                --ItalicText: #151a1e;
+                --Link: 227, 151, 172; /* hex: #e397ac */
+                --LinkHover: #8b3a42;
+                --Text: #2a333c;
+                
+                --Font: "Work Sans", Verdana;
+                --FontSize: 16px;
+                --TextAlign: justify;
+                --CodeFont: "Inconsolata", Courier;
+                --TitleFont: "Playfair Display", Georgia;
+            }
+            
+            /* No Tumblr Controls */
+            /* -- delete if you do want controls on the page */
+            body > iframe:first-child {
+                display: none !important;
+            }
+
+            iframe.tmblr-iframe,
+            iframe.tmblr-iframe--unified-controls,
+            iframe.tmblr-iframe--loaded,
+            iframe.iframe-controls--desktop {
+                display: none!important;
+            }
+            
+            /* technically no need to edit any CSS past this point */
+            /* jump to <body> to edit the HTML */
+        
+            body{
+                margin: 0;
+                top: 0;
+                left: 0;
+                overflow-x: hidden;
+                text-align: var(--TextAlign);
+                background-color: var(--Background);
+                font-family: var(--Font);
+                color: var(--Text);
+                font-size: var(--FontSize);
+            }
+            
+            /* Smooth Scroll */
+            html {
+                scroll-behavior: smooth;
+            }
+        
+            /* Scrollbar */
+            ::-webkit-scrollbar {
+                width: 10px;
+                border: 4px solid var(--Background);
+                background-color: rgba(var(--Accent), 1);
+            }
+            
+            ::-webkit-scrollbar-thumb {
+                width: 10px;
+                background-color: rgba(var(--Link), 1);
+                border: 4px solid var(--Background);
+            }
+            
+            /* Text Selection */
+            ::selection{
+                background-color: rgba(var(--Link), 0.2);
+                color: var(--Text);
+            }
+            
+            ::-moz-selection{
+                background-color: rgba(var(--Link), 0.2);
+                color: var(--Text);
+            }
+            
+            ::-o-selection{
+                background-color: rgba(var(--Link), 0.2);
+                color: var(--Text);
+            }
+            
+            ::-webkit-selection{
+                background-color: rgba(var(--Link), 0.2);
+                color: var(--Text);
+            }
+            
+            /* Tooltips */
+            .tippy-box[data-theme~='bluete'] {
+                background-color: rgba(var(--Accent), 1);
+                color: var(--Text);
+                text-align: center;
+                text-transform: lowercase;
+                font-size: calc(1em - 4px);
+            }
+
+            /* »» tooltip arrow */
+            .tippy-box[data-theme~='bluete'] > .tippy-svg-arrow {
+                fill: rgba(var(--Accent), 1);
+            }
+            
+            /* «––– end general styling –––» */
+            /* –––» start text styling «––– */
+            
+            /* ––– TEXT STYLES ––– */
+            /* Bold Text */
+            b, strong {
+                font-weight: bold;
+                color: var(--BoldText);
+            }
+            
+            /* Headings */
+            /* -- 1st Heading */
+            h1 {
+                font-size: 2em;
+            }
+
+            /* -- 2nd Heading */
+            h2 {
+                font-size: 1.8em;
+            }
+
+            /* -- 3rd Heading */
+            h3 {
+                font-size: 1.6em;
+            }
+
+            /* -- 4th Heading */
+            h4 {
+                font-size: 1.4em;
+            }
+
+            /* -- 5th Heading */
+            h5 {
+                font-size: 1.2em;
+            }
+
+            /* -- 6th Heading */
+            h6 {
+                font-size: 1em;
+            }
+
+            h1, h2, h3, h4, h5, h6 {
+                font-weight: 400;
+            }
+            
+            /* Italic Text */
+            i, em {
+                font-style: italic;
+                color: var(--ItalicText);
+            }
+            
+            /* Links */
+            /* -- normal state */
+            a {
+                text-decoration: none;
+                color: var(--Text);
+                border-bottom: 2px solid rgba(var(--Link), 1);
+            }
+            
+            /* -- hover state */
+            a:hover {
+                color: var(--Text);
+                border-bottom: 2px solid var(--LinkHover);
+            }
+            
+            /* -- transitions */
+            a, a:hover {
+                transition: 0.5s;
+                -moz-transition: 0.5s;
+                -o-transition: 0.5s;
+                -webkit-transition: 0.5s;
+            }
+            
+            /* Lists */
+            /* -- ordered list */
+            ol {
+                list-style-type: decimal;
+            }
+            
+            /* -- unordered list */
+            ul {
+                list-style-type: disc;
+            }
+            
+            /* Marked Text */
+            mark {
+                background: rgba(var(--Link), 0.5);
+                color: var(--ItalicText);
+                padding: 0.125em 0.25em;
+            }
+            
+            /* Preformatted Text */
+            pre {
+                background-color: rgba(var(--Accent), 1);
+                color: var(--Text);
+                font-size: calc(1em - 2px);
+                line-height: 140%;
+                word-wrap: break-all;
+                white-space: pre-wrap;
+                padding: 0.75em 1em;
+                font-family: var(--CodeFont);
+            }
+            
+            /* Small Text */
+            small {
+                font-size: calc(1em - 4px);
+            }
+            
+            /* Underlined Text */
+            /* -- normal */
+            u {
+                text-decoration: none;
+                color: var(--Text);
+                border-bottom: 2px solid var(--Text);
+            }
+            
+            /* -- bold underlined */
+            u b, u strong {
+                color: var(--BoldText);
+                border-bottom: 2px solid var(--BoldText);
+            }
+            
+            /* -- italic underlined */
+            u i, u em {
+                color: var(--ItalicText);
+                border-bottom: 2px solid var(--ItalicText);
+            }
+            
+            /* Blockquote */
+            blockquote {
+                border-left: 2px solid rgba(var(--Link), 1);
+                padding-left: 16px;
+            }
+            
+            /* Embedded Media */
+            img, iframe, figure {
+                max-width: 100%;
+            }
+            
+            /* Empty Paragraphs */
+            p:empty {
+                display: none;
+            }
+            
+            /* Text Line */
+            hr {
+                background-color: rgba(var(--Link), 1);
+                width: 80%;
+                border: none;
+                height: 2px;
+            }
+            
+            /* «––– end text styling –––» */
+            /* –––» start main styling «––– */
+            
+            /* Info Container */
+            #i-contain {
+                width: 40vw;
+                margin-left: 30vw;
+                margin-top: 15vh;
+            }
+            
+            /* Icon Container */
+            #icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            
+            /* Page Icon */
+            #icon img{
+                width: 88px;
+                height: 88px;
+                border-radius: 50%;
+            }
+            
+            /* Page Title */
+            #title {
+                font-size: 2em;
+                text-align: center;
+                padding-top: 0.5em;
+                color: rgba(var(--Link), 1);
+                font-family: var(--TitleFont);
+                font-style: italic;
+            }
+            
+            /* Navigation Container */
+            nav {
+                margin-bottom: 1em;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: flex-start;
+            }
+            
+            /* Navigation Links */
+            /* -- normal state */
+            nav a {
+                background-color: rgba(var(--Link), 0.3);
+                color: var(--Text);
+            }
+            
+            /* -- hover state */
+            nav a:hover {
+                background-color: rgba(var(--Link), 0.6);
+                color: var(--Text);
+            }
+            
+            /* -- icon */
+            nav span {
+                font-size: calc(1em - 2px);
+            }
+            
+            /* transitions */
+            nav a, nav a:hover {
+                border: none;
+                margin-right: 0.5em;
+                margin-bottom: 0.5em;
+                padding: 0.25em 0.375em;
+                transition: 0.5s;
+                -moz-transition: 0.5s;
+                -o-transition: 0.5s;
+                -webkit-transition: 0.5s;
+            }
+            
+            /* Main Container */
+            #contain {
+                width: 40vw;
+                margin-left: 30vw;
+                margin-bottom: 15vh;
+            }
+            
+            /* Question + Answer Container */
+            .faq {
+                position: relative;
+                margin-bottom: 1px;
+                width: 100%;
+                color: var(--Background);
+                overflow: hidden;
+            }
+            
+            /* Question Container */
+            input {
+                position: absolute;
+                opacity: 0;
+                z-index: -1;
+            }
+            
+            /* -- question text */
+            label {
+                position: relative;
+                display: block;
+                padding: 0 0 0 1em;
+                background: rgba(var(--Link), 1);
+                color: var(--Background);
+                font-weight: bold;
+                line-height: 3;
+                cursor: pointer;
+                font-family: var(--TitleFont);
+            }
+            
+            /* Answer Container */
+            .answer{
+                max-height: 0;
+                overflow-y: auto;
+                height: auto;
+                background: rgba(var(--Accent), 0.5);
+                color: var(--Text);
+                -webkit-transition: max-height 0.5s;
+                -o-transition: max-height 0.5s;
+                -moz-transition: max-height 0.5s;
+                transition: max-height 0.5s;
+            }
+            
+            .answer p, .answer h1, .answer h2, .answer h3, .answer h4, 
+            .answer h5, .answer h6 {
+                margin: var(--FontSize);
+            }
+    
+            /* :checked */
+            input:checked ~ .answer {
+                height: auto;
+                max-height: 15em;
+            }
+    
+            /* Input Icon */
+            label::after {
+                position: absolute;
+                right: 0;
+                top: 0;
+                display: block;
+                width: 3em;
+                height: 3em;
+                line-height: 3;
+                text-align: center;
+                -webkit-transition: all 0.5s;
+                -o-transition: all 0.5s;
+                -moz-transition: all 0.5s;
+                transition: all 0.5s;
+            }
+    
+            input[type=checkbox] + label::after {
+                content: "+";
+            }
+    
+            input[type=checkbox]:checked + label::after {
+                transform: rotate(315deg);
+            }
+            
+            /* Remove tumblr app button on mobile, by yeoli-thm. */
+            .tmblr-iframe--app-cta-button {
+                display: none!important;
+            }
+            
+            /* «––– end main styling –––» */
+            /* –––» start responsive styling «––– */
+            
+            /* RESPONSIVE LAYOUT STYLING */
+            @media only screen and (max-width: 850px) {
+                #i-contain, #contain {
+                    width: 90vw;
+                    margin-left: 5vw;
+                }
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+    
+        <!-- INFO CONTAINER -->
+        <div id="i-contain">
+            <!-- Icon -->
+            <div id="icon">
+                <!-- change the image here -->
+                <img src="https://78.media.tumblr.com/0b242c119df8238cacc9f0157769812d/tumblr_p3smscNMS61wsskx3o5_r1_1280.jpg" alt="icon">
+            </div>
+            <!-- Page Title -->
+            <div id="title">Fragestunde</div>
+            <!-- Description -->
+            <div id="desc">
+                <p>If you have any question, please check this FAQ first. Should your question not have been answered yet, please send me a message.</p>    
+            </div>
+            <!-- Navigation -->
+            <nav>
+                <!-- Home Link -->
+                <a href="/" title="return to blog">
+                    <span class="ri-home-line"></span> Home
+                </a>
+                <!-- Archive Link -->
+                <a href="/archive" title="browse archive">
+                    <span class="ri-archive-line"></span> Archive
+                </a>
+                <!-- Custom Links -->
+                <!-- copy & paste them if you need more -->
+                <a href="/" title="custom link">
+                    <span class="ri-link"></span> Link 1
+                </a>
+                <a href="/" title="custom link">
+                    <span class="ri-link"></span> Link 2
+                </a>
+                <a href="/" title="custom link">
+                    <span class="ri-link"></span> Link 3
+                </a>
+                <!-- Credit: do not move, remove or change! -->
+                <a href="https://silbrigthemes.tumblr.com/" title="page by julia">
+                    <span class="ri-home-line"></span> Credit
+                </a>
+            </nav>
+            <!-- // end navigation -->
+        </div>
+        <!-- // end info container -->
+        
+        <!-- MAIN CONTAINER -->
+        <div id="contain">
+            <!-- Section 1 -->
+            <div class="faq">
+                <!-- Question -->
+                <input id="question-one" type="checkbox" name="tabs">
+                <label for="question-one" title="click to open">What is this page?</label>
+                <!-- // end question -->
+                    
+                <!-- Answer -->
+                <div class="answer">
+                    <p>This page is a simple FAQ page, so you can link people to this if there are questions you receive frequently.</p>
+                </div>
+                <!-- // end answer -->
+            </div>
+            <!-- // end section -->
+            
+            <!-- Section 2 -->
+            <div class="faq">
+                <!-- Question -->
+                <input id="question-two" type="checkbox" name="tabs">
+                <label for="question-two" title="click to open">What about features & styling?</label>
+                <!-- // end question -->
+                
+                <!-- Answer -->
+                <div class="answer">
+                    <h5>Features:</h5>
+                    <ul>
+                        <li>Icon, title and description.</li>
+                        <li>Navigation links.</li>
+                        <li>Pure CSS accordion for the FAQ.</li>
+                        <li>Custom text selection.</li>
+                        <li>Integrated askbox.</li>
+                    </ul>    
+         
+                    <hr>
+                   
+                    <h5>Styling:</h5>
+                    <p>
+                    <b>Lorem</b> ipsum <i>dolor sit amet</i>, consetetur sadipscing elitr, sed diam <mark>nonumy</mark> eirmod tempor invidunt ut labore et dolore magna aliquyam erat, <a href="/">sed diam</a> voluptua.  
+                    </p>
+                    <blockquote>lorem ipsum dolor</blockquote>
+                    <pre>lorem ipsum dolor</pre>
+                </div>
+                <!-- // end answer -->
+            </div>
+            <!-- // end section -->
+            
+            <!-- Section 3 -->
+            <div class="faq">
+                <!-- Question -->
+                <input id="question-three" type="checkbox" name="tabs">
+                <label for="question-three" title="click to open">I have a different question …</label>
+                <!-- // end question -->
+                
+                <!-- Answer -->
+                <div class="answer">
+                    <p>
+                    <iframe frameborder="0" height="90" id="ask_form" 
+                    scrolling="no" src="http://www.tumblr.com/ask_form/{Name}.tumblr.com" 
+                    width="100%"></iframe>
+                    <!--[if IE]><script type="text/javascript">document.getElementById('ask_form').
+                    allowTransparency=true;</script>
+                    <![endif]-->
+                    </p>
+                </div>
+                <!-- // end answer -->
+            </div>
+            <!-- // end section -->
+            
+            <!--
+        
+            If you want more sections, just add:
+            
+            <div class="faq">
+                  <input id="question-[number]" type="checkbox" name="tabs">
+                  <label for="question-[number]">[Question]</label>
+                  <div class="answer">
+                    <p>[Answer]</p>
+                  </div>
+            </div>
+            
+            -->
+            
+        </div>
+        <!-- // end main container -->
+        
+        <!-- no need to edit anything past this point! -->
+        
+        <!-- SMOOTH SCROLL -->
+        <!-- by w3schools -->
+        <script>
+        $(document).ready(function(){
+            // Add smooth scrolling to all links
+            $("a").on('click', function(event) {
+
+                // Make sure this.hash has a value before overriding default behavior
+                if (this.hash !== "") {
+                    // Prevent default anchor click behavior
+                    event.preventDefault();
+
+                    // Store hash
+                    var hash = this.hash;
+
+                    // Using jQuery's animate() method to add smooth page scroll
+                    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                    $('html, body').animate({
+                        scrollTop: $(hash).offset().top
+                    }, 800, function(){
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                    });
+                } // End if
+            });
+        });
+        </script>
+        
+        <!-- TOOLTIPS -->
+        <!-- Tippy.js tooltips, by atomiks. -->
+        <!-- Development -->
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+        <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+
+        <!-- Production -->
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="https://unpkg.com/tippy.js@6"></script>
+
+        <script>
+
+            tippy('a[title], label[title]', {
+
+            theme: 'bluete',
+            zIndex: 9999999999,
+            arrow: tippy.roundArrow,
+            maxWidth: 300,
+            placement: 'auto',
+
+              content(reference) {
+                const title = reference.getAttribute('title');
+                reference.removeAttribute('title');
+                return title;
+              },
+            });
+        </script>
+        
+    </body>
+</html>
