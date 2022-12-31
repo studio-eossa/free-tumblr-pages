@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<!--
+
+GOOGLE
+Page #16 by silbrigthemes
+
+A tags page inspired by Google.
+
+––––––––––––
+
+Rules:
+
+    1) Do not steal (parts of) the code.
+    2) Do not delete or alter the credit.
+    3) Do not edit beyond recognition.
+    4) Do not claim as your own.
+    5) Do not use as a base code.
+    
+If you need help with customization or encounter a problem, please feel free to send me a message.
+
+Have fun!
+
+-->
+
+<html>
+    <head>
+    
+    <meta charset="utf-16">
+    <title>{Title} | Tags</title>
+    <link rel="shortcut icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+
+    <!-- Necessary for the theme to be responsive. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Necessary for the scripts to work. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    
+    <!-- Changes the toolbar color on mobile. -->
+    <meta name="theme-color" content="#ccc"/>
+
+    <!-- Tooltip Script -->
+    <script src="https://static.tumblr.com/rzl30kg/eAxm7a751/jquery.style-my-tooltips.js"></script>
+    <script>
+        (function($){
+            $(document).ready(function(){
+                $("[title]").style_my_tooltips({
+                    tip_follows_cursor:true,
+                    tip_delay_time:200,
+                    tip_fade_speed:300
+                }
+                    );
+            });
+        })(jQuery);
+    </script>
+    
+    <!-- Custom font "Open Sans". -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    
+        <style>
+            body{
+                margin:0;
+                top:0;
+                left:0;
+                background-color:white; /* global background */
+                font-size:1em; /* font-size = 16px */
+                font-family:"Open Sans", Verdana;
+                color:#444; /* global text color */
+            }
+            
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar{
+                width:10px;
+                border:4px solid white;
+                background-color:#ccc;
+            }
+            
+            ::-webkit-scrollbar-thumb{
+                width:10px;
+                border:2px solid white;
+                background-color:#ccc;
+                border-radius:5px;
+            }
+            
+            /* Custom Text Selection */
+            ::selection{
+                background-color:#eee; /* background */
+                color:#333; /* text color */
+                text-shadow:none;
+            }
+            
+            ::-moz-selection{
+                background-color:#eee;
+                color:#333;
+                text-shadow:none;
+            }
+            
+            ::-o-selection{
+                background-color:#eee;
+                color:#333;
+                text-shadow:none;
+            }
+            
+            ::-webkit-selection{
+                background-color:#eee;
+                color:#333;
+                text-shadow:none;
+            }
+            
+            /* Custom Tooltips */
+            #s-m-t-tooltip{
+                max-width:300px;
+                margin:15px;
+                padding:0.5em;
+                background-color: #eee; /* background */
+                color:#333; /* text color */
+                z-index:9999999999999;
+                font-size:12px;
+                text-transform:uppercase;
+            }
+            
+			/* Entire Container */
+            #container{
+                width:80vw;
+                margin-left:10vw;
+                margin-top:10vh;
+                height:auto;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                flex-direction:column;
+            }
+            
+			/* Searchbar Container */
+            #searchbar-container{
+                width:80vw;
+                height:auto;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+            
+			/* Searchbar */
+            .sfm input {
+                width:calc(60vw - 16px);
+                background-color: white; 
+                font-size: 2em; 
+                border: 1px solid #ccc; 
+                border-radius:1em;
+                color: #666; 
+                padding: 4px 8px;
+                font-family: "Open Sans", Verdana;
+                text-align:center;
+            }
+            
+			/* Tags Container */
+            #tags-container{
+                width:80vw;
+                height:auto;
+                margin-top:16px;
+                display:flex;
+                align-items:flex-start;
+                justify-content:space-between;
+                flex-wrap:wrap;
+            }
+            
+			/* Box including title and tags */
+            .tags{
+                width:calc(18vw - 2em);
+                padding:1em;
+                border-radius:1em;
+            }
+            
+			/* Tag Box Title */
+            .title{
+                color:white;
+                padding:4px 8px;
+                font-size:1.5em;
+                border-radius:1em;
+                text-align:center;
+            }
+            
+			/* Red Title */
+            .red .title{
+                background-color:#d62d20;
+            }
+            
+			/* Yellow Title */
+            .yellow .title{
+                background-color:#ffa700;
+            }
+            
+			/* Green Title */
+            .green .title{
+                background-color:#008744;
+            }
+            
+			/* Blue Title */
+            .blue .title{
+                background-color:#0057e7;
+            }
+            
+			/* Box containing only tags */
+            .box{
+                margin-top:4px;
+                display:flex;
+                align-items:center;
+                justify-content:space-evenly;
+                flex-wrap:wrap;
+            }
+            
+			/* Links */
+            a.taglink{
+                text-decoration:none;
+            }
+            
+			/* Tags mark */
+            mark{
+                background-color:white;
+                border-radius:1em;
+                padding:4px 8px;
+                line-height:2.25em;
+                margin-right:4px;
+            }
+            
+			/* Red tags mark */
+            .red mark{
+                border:2px solid #d62d20;
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            .red mark:hover{
+                background-color:#d62d20;
+                color:white;
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+			/* Yellow tags mark */
+            .yellow mark{
+                border:2px solid #ffa700;
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            .yellow mark:hover{
+                background-color:#ffa700;
+                color:white;
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+			/* Green tags mark */
+            .green mark{
+                border:2px solid #008744;
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            .green mark:hover{
+                background-color:#008744;
+                color:white;
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+			/* Blue tags mark */
+            .blue mark{
+                border:2px solid #0057e7;
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            .blue mark:hover{
+                background-color:#0057e7;
+                color:white;
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+			/** RESPONSIVE LAYOUT **/
+			/* Responsive for tablets */
+            @media only screen and (max-width:800px){
+                .tags{
+                    width:calc(38vw - 2em);
+                }
+            }
+            
+			/* Responsive for phones */
+            @media only screen and (max-width:400px){
+                .sfm input{
+                    width:calc(80vw - 32px);
+                }
+                
+                .tags{
+                    width:calc(78vw - 2em);
+                }
+            }
+            
+			/** CREDIT **/
+			/* Do not delete or alter this credit! 
+			Otherwise you will be blocked! -->
+            #credit{
+                position:fixed;
+                bottom:8px;
+                right:8px;
+                width:32px;
+                height:32px;
+                border-radius:50%;
+                background-color:white;
+                border-top:2px solid #d62d20;
+                border-left:2px solid #ffa700;
+                border-bottom:2px solid #008744;
+                border-right:2px solid #0057e7;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                color:#333;
+                font-size:1.5em;
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            #credit:hover{
+                border-bottom:2px solid #d62d20;
+                border-right:2px solid #ffa700;
+                border-top:2px solid #008744;
+                border-left:2px solid #0057e7;
+                transform:scale(1.05);
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            /* Hides the tumblr app button. By @yeoli-thm */
+            .tmblr-iframe--app-cta-button {
+                display: none!important;
+            }
+            
+            /* Hides standard tumblr controls */
+            body > iframe:first-child {
+                display: none !important;
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        
+        <div id="container">
+			<!-- Searchbar Container -->
+            <div id="searchbar-container">
+                <form action="/search" method="get" class="sfm" name="theform">
+                    <input type="text" name="q" value="Search …"/>
+                </form>
+            </div>
+            
+			<!-- Tags Container -->
+            <div id="tags-container">
+				<!-- Red Tags Section -->
+                <div class="tags red">
+                    <div class="title">Section 1</div>
+                    <div class="box">
+                        <a href="/tagged/tag" title="tagged as: tag" class="taglink"><mark>Tag</mark></a>
+                        <a href="/tagged/tag" title="tagged as: tag" class="taglink"><mark>Tag</mark></a>
+                        <a href="/tagged/tag" title="tagged as: tag" class="taglink"><mark>Tag</mark></a>
+                        <a href="/tagged/tag" title="tagged as: tag" class="taglink"><mark>Tag</mark></a>
+                        <a href="/tagged/tag" title="tagged as: tag" class="taglink"><mark>Tag</mark></a>
+                        <a href="/tagged/tag" title="tagged as: tag" class="taglink"><mark>Tag</mark></a>
+                    </div>
+                </div>
+              
+				<!-- Yellow Tags Section -->
+                <div class="tags yellow">
+                    <div class="title">Section 2</div>
+                    <div class="box">
+                        <a href="/tagged/tag" title="tagged as: tag" class="taglink"><mark>Tag</mark></a>
+                        <a href="/tagged/tag" title="tagged as: tag" class="taglink"><mark>Tag</mark></a>
+                        <a href="/tagged/tag" title="tagged as: tag" class="taglink"><mark>Tag</mark></a>
+                        <a href="/tagged/tag" title="tagged as: tag" class="taglink"><mark>Tag</mark></a>
+                        <a href="/tagged/tag" title="tagged as: tag" class="taglink"><mark>Tag</mark></a>
+                        <a href="/tagged/tag" title="tagged as: tag" class="taglink"><mark>Tag</mark></a>
+                    </div>
+                </div>
+                
+				<!-- Green Tags Section -->
+               	<div class="tags green">
+                    <div class="title">Section 3</div>
+                    <div class="box">
+                        <a href="/tagged/tag" title="tagged as: tag" class="taglink"><mark>Tag</mark></a>
+                        <a href="/tagged/tag" title="tagged as: tag" class="taglink"><mark>Tag</mark></a>
+                        <a href="/tagged/tag" title="tagged as: tag" class="taglink"><mark>Tag</mark></a>
+						<a href="/tagged/tag" title="tagged as: tag" class="taglink"><mark>Tag</mark></a>
+                        <a href="/tagged/tag" title="tagged as: tag" class="taglink"><mark>Tag</mark></a>
+                        <a href="/tagged/tag" title="tagged as: tag" class="taglink"><mark>Tag</mark></a>
+                   </div>
+                </div>
+                
+				<!-- Blue Tags Section -->
+                <div class="tags blue">
+                    <div class="title">Section 4</div>
+                    <div class="box">
+                        <a href="/tagged/tag" title="tagged as: tag" class="taglink"><mark>Tag</mark></a>
+                        <a href="/tagged/tag" title="tagged as: tag" class="taglink"><mark>Tag</mark></a>
+                        <a href="/tagged/tag" title="tagged as: tag" class="taglink"><mark>Tag</mark></a>
+                        <a href="/tagged/tag" title="tagged as: tag" class="taglink"><mark>Tag</mark></a>
+                        <a href="/tagged/tag" title="tagged as: tag" class="taglink"><mark>Tag</mark></a>
+                        <a href="/tagged/tag" title="tagged as: tag" class="taglink"><mark>Tag</mark></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+		<!-- CREDIT -->
+		<!-- Do not delete or alter this credit, otherwise you will be blocked! -->
+        <a href="https://silbrigthemes.tumblr.com/" title="page by silbrigthemes" class="taglink">
+            <div id="credit">S</div>
+        </a>
+        
+    </body>
+</html>
