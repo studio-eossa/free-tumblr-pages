@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <meta charset="utf-16">
+    <!-- Change title here: {Your Blog Title} | Page Title -->
+    <title>{Title} | Charakter</title>
+    {block:Description}
+    <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+    <link rel="shortcut icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+
+    <!-- Necessary for the theme to be responsive. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Icon font, by fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- Necessary for the scripts to work. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+    <!-- Changes the toolbar color on mobile. -->
+    <meta name="theme-color" content="#1de"/>
+
+    <!-- Title Font -->
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:400,700&display=swap" rel="stylesheet">
+    <!-- Subtitle Font -->
+    <link href="https://fonts.googleapis.com/css?family=Libre+Barcode+39&display=swap" rel="stylesheet">
+    <!-- Text Font -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap&subset=latin-ext" rel="stylesheet">
+
+    <!-- Other Fonts -->
+    <!-- Roboto Mono -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <!-- Cormorant Garamond -->
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese" rel="stylesheet">
+    <!-- Dancing Script -->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+
+        <style>
+
+            body {
+                margin:0;
+                top:0;
+                left:0;
+                color:#fff; /* text color */
+                font-size:1em; /* font size */
+                font-family:"Raleway", Verdana; /* font, fallback */
+                overflow-x:hidden;
+                text-align:justify; /* alt.: left, center, right */
+                background-color:#111; /* background color */
+            }
+
+            *,*:before,*:after {
+                box-sizing:inherit;
+            }
+
+            html {
+                box-sizing:border-box;
+            }
+
+            /* Particle Background */
+            #background {
+                position:fixed;
+                top:0;
+                z-index:-1;
+                overflow:hidden;
+                width:100%;
+                height:100%;
+                background-color:inherit;
+                background-image:url("");
+                background-repeat:no-repeat;
+                background-size:cover;
+                background-position:50% 50%;
+            }
+
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar {
+                width:10px;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                width:10px;
+                background-color:#1de; /* thumb color */
+            }
+
+            /* Custom Text Selection */
+            ::selection {
+                background-color:#1de; /* background color */
+                color:#000; /* text color */
+            }
+
+            ::-moz-selection {
+                background-color:#1de; /* background color */
+                color:#000; /* text color */
+            }
+
+            ::-o-selection {
+                background-color:#1de; /* background color */
+                color:#000; /* text color */
+            }
+
+            ::-webkit-selection {
+                background-color:#1de; /* background color */
+                color:#000; /* text color */
+            }
+
+            /* Custom Tooltips */
+            .tippy-tooltip.charakter-theme {
+                background-color:#1de; /* background color */
+                color:#000; /* text color */
+                text-align:left; /* alt.: center, right, justify */
+                text-transform:lowercase; /* alt.: uppercase, normal */
+            }
+
+            .tippy-tooltip.charakter-theme .tippy-svg-arrow {
+                fill:#1de; /* background color */
+            }
+
+    /* ––– END GENERAL | START TEXT STYLES ––– */
+
+            /* Bold Text */
+            b, strong {
+                font-weight:bold;
+                font-weight:700; /* bold text */
+            }
+
+            /* Italic Text */
+            i, em {
+                font-weight:300; /* thin text */
+                font-style:italic; /* cursive text */
+            }
+
+            /* Marked Text */
+            mark {
+                background-color:#e7f91d; /* background color */
+                color:#000; /* text color */
+                padding:0 4px;
+            }
+
+            /* Preformatted Text */
+            pre {
+                background-color:#333; /* background color */
+                color:#51f91d; /* text color */
+                padding:1em;
+                font-family:"Roboto Mono", Courier; /* font-family */
+                font-size:calc(1em - 2px);
+                word-wrap:break-all;
+                white-space:pre-wrap;
+            }
+
+            /* Small Text */
+            small {
+                font-size:calc(1em - 4px);
+            }
+
+            /* Underlined Text */
+            u {
+                text-decoration:none;
+                border-bottom:2px solid #fff; /* width style color */
+            }
+
+            /* Blockquote */
+            blockquote {
+                border-left:4px solid #fff; /* width style color */
+                padding-left:1em;
+            }
+
+            /* Empty Paragraphs */
+            p:empty {
+                display:none;
+            }
+
+            /* Text Line */
+            hr {
+                width:80%;
+                height:2px;
+                border:none;
+                background-color:#fff; /* background color */
+            }
+
+            /* LINKS */
+            /* Link */
+            a {
+                text-decoration:none;
+                color:#1de; /* text color */
+                border-bottom:2px solid #1de; /* width style color */
+            }
+
+            /* Link | Hover */
+            a:hover {
+                color:#5ea; /* text color */
+                border-bottom:2px solid #5ea; /* width style color */
+            }
+
+            /* Link | Transitions */
+            a, a:hover {
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* LISTS */
+            /* Ordered List */
+            ol {
+                list-style-type:decimal-leading-zero;
+                /* alt.: upper roman, decimal, lower alpha, etc. */
+            }
+
+            /* Unordered List */
+            ul {
+                list-style-type:square; /* alt.: disc, circle */
+            }
+
+            /* COLORED TEXT */
+            /* Red Text */
+            .npf_color_joey {
+                color:#f91d1d; /* text color */
+            }
+
+            /* Orange Text */
+            .npf_color_monica {
+                color:#f9881d; /* text color */
+            }
+
+            /* Yellow Text */
+            .npf_color_phoebe {
+                color:#f9f21d; /* text color */
+            }
+
+            /* Green Text */
+            .npf_color_ross {
+                color:#1df933; /* text color */
+            }
+
+            /* Blue Text */
+            .npf_color_rachel {
+                color:#1d4df9; /* text color */
+            }
+
+            /* Purple Text */
+            .npf_color_chandler {
+                color:#bf1df9; /* text color */
+            }
+
+            /* Pink Text */
+            .npf_color_niles {
+                color:#f91d93; /* text color */
+            }
+
+            /* SPECIAL FONTS */
+            /* Quirky Font */
+            .npf_quirky {
+                font-family: "Dancing Script", cursive; /* font-family */
+                font-size:1.5em;
+            }
+
+            /* Chat Font */
+            .npf_chat {
+                font-family:"Roboto Mono", Courier; /* font-family */
+            }
+
+            /* Quote Font */
+            .npf_quote {
+                font-family:"Cormorant Garamond", "Palatino"; /* font */
+                font-size:1.25em;
+            }
+
+            /* HEADINGS */
+            /* First Heading */
+            h1{
+                font-size:1.75em;
+                font-weight:400; /* normal, alt.: 300 (thin), 700 (bold) */
+            }
+
+            /* Second Heading */
+            h2{
+                font-size:1.5em;
+                font-weight:300; /* thin text */
+            }
+
+            /* Third Heading */
+            h3{
+                font-size:1.25em;
+            }
+
+            /* Fourth Heading */
+            h4{
+                font-size:1em;
+            }
+
+            /* Fifth Heading */
+            h5{
+                font-size:calc(1em - 2px);
+                text-transform:uppercase; /* alt.: lowercase, capitalize */
+            }
+
+            /* Sixth Heading */
+            h6{
+                font-size:calc(1em - 4px);
+                text-transform:uppercase; /* alt.: lowercase, capitalize */
+            }
+
+    /* ––– END TEXT STYLES | START LAYOUT ––– */
+
+            /* MAIN CONTAINER */
+            #container {
+                padding:2em;
+                width:calc(100vw - 12em);
+                height:auto;
+                margin:4em;
+                background-color:#111; /* background color */
+                background:rgba(17, 17, 17, 0.85); /* opaque bg */
+                display:grid;
+                grid-template-columns:96px calc(100vw - (12em + 2 * 96px + 0.5em + 4 * 1em + 40vw + 4em)) 96px 0.5em 40vw;
+                grid-column-gap:1em;
+                grid-template-rows:3.5em calc(2 * 96px + 8px) calc(2 * 96px + 8px) auto auto;
+                grid-row-gap:1em;
+            }
+
+            /* TITLES */
+            #titles {
+                grid-column-start:1;
+                grid-column-end:4;
+                grid-rows:1/2;
+            }
+
+            /* Main Title */
+            #title {
+                font-family:"Orbitron", Impact; /* font-family */
+                font-size:2em;
+            }
+
+            /* Main Subtitle */
+            #subtitle {
+                font-family:"Libre Barcode 39", "Courier New", Courier;
+                /* font-family */
+                font-size:calc(1em + 4px);
+            }
+
+            /* ABOUT */
+            #about {
+                grid-column-start:5;
+                grid-column-end:6;
+                grid-row-start:1;
+                grid-row-end:6;
+            }
+
+            /* Section Title */
+            .sect-title {
+                font-family:"Orbitron", Impact; /* font-family */
+                font-size:calc(1em + 4px);
+            }
+
+            /* Section Subtitle */
+            .sect-subtitle {
+                font-family:"Libre Barcode 39", "Courier New", Courier;
+                /* font-family */
+            }
+
+            /* QUICK INFO */
+            #quick-info{
+                grid-column-start:2;
+                grid-column-end:4;
+                grid-row-start:2;
+                grid-row-end:3;
+            }
+
+            /* STATS */
+            #stats {
+                grid-column-start:1;
+                grid-column-end:3;
+                grid-row-start:3;
+                grid-row-end:4;
+            }
+
+            /* Table */
+            table {
+                width:100%;
+            }
+
+            /* 1st Table Cell */
+            #stats td:first-child {
+                width:30%;
+            }
+
+            /* Last Table Cell */
+            #stats td:last-child {
+                width:10%;
+            }
+
+            /* Stats */
+            /* Sets the style for stats. */
+            .stat {
+                width:100%;
+                background-color:#333; /* background color */
+                height:20px;
+            }
+
+            /* Skills */
+            /* Sets the style for all skills. */
+            .skill {
+                background-color:#1de; /* background color */
+                color:#000; /* text color */
+                height:20px;
+            }
+
+            /* These set the length of the skillbars. **/
+            .skill1 {
+                width:90%; /* 9 out of 10 = 90% width */
+            }
+
+            .skill2 {
+                width:80%; /* 8 out of 10 = 80% width */
+            }
+
+            .skill3 {
+                width:70%; /* 7 out of 10 = 70% width */
+            }
+
+            .skill4 {
+                width:80%; /* 8 out of 10 = 80% width */
+            }
+
+            .skill5 {
+                width:0%; /* 0 out of 10 = 0% width */
+            }
+
+            .skill6 {
+                width:80%; /* 8 out of 10 = 80% width */
+            }
+
+            /* ICONS */
+            #icons, #icons2 {
+                display:flex;
+                flex-direction:column;
+                justify-content:space-between;
+                align-items:center;
+            }
+
+            /* ICONS 1 */
+            #icons {
+                grid-columns:1/2;
+                grid-row-start:2;
+                grid-row-end:3;
+            }
+
+            /* ICONS 2 */
+            #icons2 {
+                grid-column-start:3;
+                grid-column-end:4;
+                grid-row-start:3;
+                grid-row-end:4;
+            }
+
+            /* Icon Images */
+            .image img {
+                width:96px;
+                height:96px;
+            }
+
+            /* Delete if you don't want grayscale images */
+            /* Images */
+            img {
+                filter:grayscale(100%); /* value between 0% and 100% */
+                -webkit-filter:grayscale(100%);
+                -o-filter:grayscale(100%);
+                -moz-filter:grayscale(100%);
+            }
+
+            /* Images | Hover */
+            img:hover {
+                filter:grayscale(0%); /* value between 0% and 100% */
+                -webkit-filter:grayscale(0%);
+                -o-filter:grayscale(0%);
+                -moz-filter:grayscale(0%);
+            }
+
+            /* Image | Transitions */
+            img, img:hover {
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* QUOTE */
+            #quote {
+                grid-column-start:1;
+                grid-column-end:4;
+                grid-row-start:4;
+                grid-row-end:5;
+            }
+
+            /* APPEAREANCES */
+            #appeareances {
+                grid-column-start:1;
+                grid-column-end:4;
+                grid-row-start:5;
+                grid-row-end:6;
+            }
+
+            /* SLIDER */
+            /* Slider Images */
+            img {
+                vertical-align:middle;
+                max-width:100%;
+            }
+
+            /* Slider Container */
+            #sliderwrap {
+                margin:0 auto;
+                max-width:100%;
+            }
+
+            /* Position the image container (needed to position the left and right arrows) */
+            .container {
+                position:relative;
+            }
+
+            /* Hide the images by default */
+            .mySlides {
+                display:none;
+            }
+
+            /* Add a pointer when hovering over the thumbnail images */
+            .demo:hover {
+                cursor:pointer;
+            }
+
+            /* Next & previous buttons */
+            .prev, .next {
+                opacity:.6;
+                border-bottom:none;
+                cursor:pointer;
+                position:absolute;
+                top:40%;
+                width:auto;
+                padding:16px;
+                margin-top:-50px;
+                color:#1de; /* text color */
+                background-color:rgba(17,17,17,0.2); /* background color */
+                font-weight:bold; /* bold text */
+                font-size:calc(1em + 4px);
+                border-radius:0 3px 3px 0;
+                -webkit-user-select:none;
+                -o-user-select:none;
+                -moz-user-select:none;
+                user-select:none;
+                -webkit-transition:0.5s ease-in;
+                -o-transition:0.5s ease-in;
+                -moz-transition:0.5s ease-in;
+                transition:0.5s ease-in;
+            }
+
+            /* Position the "next button" to the right */
+            .next {
+                right:0;
+                border-radius:3px 0 0 3px;
+            }
+
+            /* On hover, add a black background color with a little bit see-through */
+            .prev:hover, .next:hover {
+                opacity:1;
+                -webkit-transition: 0.5s ease-out;
+                -o-transition:0.5s ease-out;
+                -moz-transition:0.5s ease-out;
+                transition:0.5s ease-out;
+                background-color:rgba(17, 17, 17, 0.7); /* background */
+                color:#1de; /* text color */
+                border-bottom:none;
+            }
+
+            /* Number text (1/3 etc) */
+            .numbertext {
+                color:#fff; /* text color */
+                font-size:calc(1em - 4px);
+                padding:8px 12px;
+                position:absolute;
+                top:0;
+            }
+
+            /* Caption text */
+            .caption {
+                background:#111; /* background color */
+                color:#fff; /* text color */
+                font-size:1em;
+                padding:8px 12px;
+                text-align:center;
+                margin:0 auto;
+                top:70%;
+            }
+
+            .row:after {
+                content:"";
+                display:table;
+                clear:both;
+            }
+
+            /* Six columns side by side */
+            .column {
+                float:left;
+                width:calc(100% / 6); /* 100% / number of slides */
+            }
+
+            /* Add a transparency effect for thumnbail images */
+            .demo {
+                -webkit-transition:0.5s ease-in;
+                -o-transition:0.5s ease-in;
+                -moz-transition:0.5s ease-in;
+                transition:0.5s ease-in;
+                opacity:0.5;
+            }
+
+            .active, .demo:hover{
+                -webkit-transition:0.5s ease-out;
+                -o-transition:0.5s ease-out;
+                -moz-transition:0.5s ease-out;
+                transition:0.5s ease-out;
+                opacity:1;
+            }
+
+            /* Fading animation */
+            .fade {
+                -webkit-animation-name:fade;
+                -o-animation-name:fade;
+                -moz-animation-name:fade;
+                animation-name:fade;
+                -webkit-animation-duration:1.5s;
+                -o-animation-duration:1.5s;
+                -moz-animation-duration:1.5s;
+                animation-duration:1.5s;
+            }
+
+            @-webkit-keyframes fade {
+                0%{
+                    opacity:0.5;
+                }
+
+                100%{
+                    opacity:1;
+                }
+            }
+
+            @keyframes fade {
+                0%{
+                    opacity:0.5;
+                }
+
+                100%{
+                    opacity:1;
+                }
+            }
+
+    /* ––– END LAYOUT | START EXTRAS  ––– */
+
+            /* Hides the tumblr app button, by @yeoli-thm */
+            .tmblr-iframe--app-cta-button {
+                display:none!important;
+            }
+
+            /* CUSTOM CONTROLS */
+            /* Container */
+            #custom-controls {
+                position:fixed;
+                top:8px;
+                right:8px;
+                width:calc(2 * 36px + 4px);
+                height:calc(2 * 36px + 8px);
+                display:flex;
+                flex-wrap:wrap;
+                justify-content:space-between;
+                align-items:space-between;
+            }
+
+            /* Control Link */
+            a.conlink {
+                border-bottom:none;
+                box-shadow:none;
+                text-decoration:none;
+            }
+
+            /* Control Element */
+            .cont {
+                background-color:#1de; /* background color */
+                color:#000; /* text color */
+                font-size:calc(1em - 2px);
+                width:36px;
+                height:36px;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+
+            /* Control Element on Hover */
+            .cont:hover {
+                transform:scale(0.98) rotate(360deg); /* smaller, rotate */
+            }
+
+            /* Transitions */
+            .cont, .cont:hover {
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* Hides standard tumblr controls */
+            body > iframe:first-child {
+                display: none!important;
+            }
+
+            /* Credit – Don't touch! */
+            #cd {
+                position:fixed;
+                bottom:8px;
+                left:8px;
+            }
+
+    /* ––– END EXTRAS | START RESPONSIVE LAYOUT  ––– */
+
+            /* LARGE SCREENS | DESKTOP */
+            @media only screen and (min-width:800px) {
+                /* MOBILE FOOTER */
+                #mobile-footer {
+                    display:none;
+                }
+            }
+
+            /* SMALL SCREENS | TABLETS */
+            @media only screen and (max-width:800px) {
+                /* MAIN CONTAINER */
+                #container {
+                    width:calc(100vw - 4em);
+                    margin:2em;
+                    margin-bottom:calc(10vh + 2em);
+                    display:grid;
+                    grid-template-columns:96px 96px auto 96px 96px;
+                    grid-template-rows:auto auto auto auto auto auto;
+                }
+
+                /* TITLES, ABOUT, QUOTE, APPEAREANCES */
+                #titles, #about, #quote, #appeareances {
+                    grid-column-start:1;
+                    grid-column-end:6;
+                }
+
+                /* TITLES */
+                #titles {
+                    grid-row-start:1;
+                    grid-row-end:2;
+                }
+
+                /* ABOUT */
+                #about {
+                    grid-row-start:6;
+                    grid-row-end:7;
+                }
+
+                /* QUICK INFO */
+                #quick-info{
+                    grid-row-start:2;
+                    grid-row-end:3;
+                    grid-column-start:2;
+                    grid-column-end:6;
+                }
+
+                /* STATS */
+                #stats {
+                    grid-row-start:3;
+                    grid-row-end:4;
+                    grid-column-start:1;
+                    grid-column-end:5;
+                }
+
+                /* ICONS 1 */
+                #icons {
+                    grid-column-start:1;
+                    grid-column-end:2;
+                }
+
+                /* ICONS 2 */
+                #icons2 {
+                    grid-column-start:5;
+                    grid-column-end:6;
+                }
+
+                /* QUOTE */
+                #quote {
+                    grid-row-start:4;
+                    grid-row-end:5;
+                }
+
+                /* APPEAREANCES */
+                #appeareances {
+                    grid-row-start:5;
+                    grid-row-end:6;
+                }
+
+                /* Section Title */
+                .sect-title {
+                    margin-top:8px;
+                }
+
+                /* MOBILE FOOTER */
+                #mobile-footer {
+                    display:flex;
+                    align-items:center;
+                    justify-content:space-evenly;
+                    background-color:#1de; /* background color */
+                    position:fixed;
+                    bottom:0;
+                    left:0;
+                    width:100vw;
+                    height:10vh;
+                }
+
+                /* Navigation Element */
+                .mf-nav {
+                    width:36px;
+                    height:36px;
+                    font-size:calc(1em - 2px);
+                    background-color:#000; /* background color */
+                    color:#fff; /* text color */
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                }
+
+                /* Navigation Element on Hover */
+                .mf-nav:hover {
+                    color:#1de; /* text color */
+                    cursor:pointer;
+                    transform:scale(0.98) rotate(360deg); /* smaller */
+                }
+
+                /* Navigation Element Transitions */
+                .mf-nav, .mf-nav:hover {
+                    transition:0.5s;
+                    -moz-transition:0.5s;
+                    -o-transition:0.5s;
+                    -webkit-transition:0.5s;
+                }
+
+                /* Navigation Link */
+                a.mf-link {
+                    border-bottom:none;
+                }
+
+                /* Custom Controls, Credit */
+                #custom-controls, #cd {
+                    display:none;
+                }
+            }
+
+            /* SMALL SCREENS | PHONES */
+            @media only screen and (max-width:500px) {
+                /* MAIN CONTAINER */
+                #container {
+                    margin:0;
+                    width:calc(100vw - 10px);
+                    margin-bottom:10vh;
+                    display:block;
+                }
+
+                /* ICONS 1, ICONS 2 */
+                #icons, #icons2 {
+                    display:flex;
+                    flex-direction:row;
+                    margin-top:1em;
+                    margin-bottom:1em;
+                }
+
+                /* Slider Container */
+                #sliderwrap {
+                    margin-bottom:1em;
+                }
+
+                /* Tables */
+                table {
+                    text-align:left;
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <!-- MAIN CONTAINER -->
+        <div id="container">
+          <!-- TITLES -->
+          <div id="titles">
+              <!-- Main Title -->
+              <div id="title">Charakter</div>
+              <!-- Main Subtitle -->
+              <div id="subtitle">Charakter</div>
+          </div> <!-- // end titles -->
+
+          <!-- QUICK INFO -->
+          <div id="quick-info">
+              <!-- Section Title -->
+              <div class="sect-title">Quick Info</div>
+              <!-- Section Subtitle -->
+              <div class="sect-subtitle">Quick Info</div>
+              <!-- Table -->
+              <table>
+                  <!-- 1st Row -->
+                  <tr>
+                        <td>X:</td>
+                        <td>Y</td>
+                    </tr>
+                    <!-- 2nd Row -->
+                    <tr>
+                        <td>X:</td>
+                        <td>Y</td>
+                      </tr>
+                    <!-- 3rd Row -->
+                    <tr>
+                        <td>X:</td>
+                        <td>Y</td>
+                    </tr>
+                    <!-- 4th Row -->
+                    <tr>
+                        <td>X:</td>
+                        <td>Y</td>
+                    </tr>
+                    <!-- 5th Row -->
+                    <tr>
+                        <td>X:</td>
+                        <td>Y</td>
+                    </tr>
+                    <!-- 6th Row -->
+                    <tr>
+                        <td>X:</td>
+                        <td>Y</td>
+                    </tr>
+                </table> <!-- // end table -->
+            </div> <!-- // end quick info -->
+
+            <!-- ICONS 1 -->
+            <div id="icons">
+                <!-- 1st Icon -->
+                <div class="image">
+                    <img src="https://66.media.tumblr.com/b6d5125726a05d81b7e3310772fb52f2/tumblr_pdvo5vlqQP1wsskx3o5_r1_1280.png" alt="first image"/>
+                </div>
+                <!-- 2nd Icon -->
+                <div class="image">
+                    <img src="https://66.media.tumblr.com/fffea87e467017d6fd885bf45af016e4/tumblr_pdvo5vlqQP1wsskx3o1_1280.png" alt="second image"/>
+                </div>
+            </div> <!-- // end icons 1 -->
+
+            <!-- STATS -->
+            <div id="stats">
+                <!-- Section Title -->
+                <div class="sect-title">Stats</div>
+                <!-- Section Subtitle -->
+                <div class="sect-subtitle">Stats</div>
+                <!-- Table -->
+                <table>
+                    <!-- 1st Row -->
+                    <tr>
+                        <td>Skill 1</td>
+                        <td>
+                            <div class="stat">
+                                <div class="skill skill1"></div>
+                            </div>
+                        </td>
+                        <td>9/10</td>
+                    </tr>
+                    <!-- 2nd Row -->
+                    <tr>
+                        <td>Skill 2</td>
+                        <td>
+                            <div class="stat">
+                              <div class="skill skill2"></div>
+                            </div>
+                        </td>
+                        <td>7/10</td>
+                    </tr>
+                    <!-- 3rd Row -->
+                    <tr>
+                        <td>Skill 3</td>
+                        <td>
+                            <div class="stat">
+                                <div class="skill skill3"></div>
+                            </div>
+                        </td>
+                        <td>8/10</td>
+                    </tr>
+                    <!-- 4th Row -->
+                    <tr>
+                        <td>Skill 4</td>
+                        <td>
+                            <div class="stat">
+                                <div class="skill skill4"></div>
+                            </div>
+                        </td>
+                        <td>8/10</td>
+                    </tr>
+                    <!-- 5th Row -->
+                    <tr>
+                        <td>Skill 5</td>
+                        <td>
+                            <div class="stat">
+                                <div class="skill skill5"></div>
+                            </div>
+                        </td>
+                        <td>0/10</td>
+                    </tr>
+                    <!-- 6th Row -->
+                    <tr>
+                        <td>Skill 6</td>
+                        <td>
+                            <div class="stat">
+                                <div class="skill skill6"></div>
+                            </div>
+                        </td>
+                        <td>8/10</td>
+                    </tr>
+                </table> <!-- // end table -->
+            </div> <!-- // end stats -->
+
+            <!-- ICONS 2 -->
+            <div id="icons2">
+                <!-- 1st Icon -->
+                <div class="image">
+                    <img src="https://66.media.tumblr.com/dcb6808e46fa47f1b6e24cd1975dc17f/tumblr_pdvo5vlqQP1wsskx3o6_r1_1280.png" alt="third image"/>
+                </div>
+                <!-- 2nd Icon -->
+                <div class="image">
+                    <img src="https://66.media.tumblr.com/d70d9cf668ce772fecb914229a0cb38d/tumblr_pdvo5vlqQP1wsskx3o2_1280.png" alt="fourth image"/>
+                </div>
+            </div> <!-- // end icons 2 -->
+
+            <!-- QUOTE -->
+            <div id="quote">
+                <!-- Section Title -->
+                <div class="sect-title">Quote</div>
+                <!-- Section Subtitle -->
+                <div class="sect-subtitle">Quote</div>
+                <!-- Text -->
+                <div class="text">
+                    [Insert a quote here.]
+                </div> <!-- // end text -->
+            </div> <!-- // end quote -->
+
+            <!-- APPEAREANCES -->
+            <div id="appeareances">
+                <!-- Section Title -->
+                <div class="sect-title">Appeareance</div>
+                <!-- Section Subtitle -->
+                <div class="sect-subtitle">Appeareance</div>
+                <div id="sliderwrap">
+                <!-- Container for the image gallery -->
+                <div class="container">
+
+                    <!-- SLIDES -->
+                    <!-- 1st Slide -->
+                    <div class="mySlides fade">
+                        <!-- Slide Number -->
+                        <div class="numbertext">1 / 6</div>
+                        <!-- Slide Image -->
+                        <img src="https://66.media.tumblr.com/e63229b67212d4e9ac0213ed8cf715b4/8a526ff833cb69f4-76/s1280x1920/7fe3d53d58a9d99cfeb5d4e1368faf9c883af4cd.png" style="width:100%">
+                        <!-- Slide Caption -->
+                        <div class="caption">1st Slide</div>
+                    </div>
+
+                    <!-- 2nd Slide -->
+                    <div class="mySlides fade">
+                        <!-- Slide Number -->
+                        <div class="numbertext">2 / 6</div>
+                        <!-- Slide Image -->
+                        <img src="https://66.media.tumblr.com/9e8d4216f1e264bbce059f2f3cd8b075/8a526ff833cb69f4-44/s1280x1920/67f3b1bdb394904e80ddd354be48a75f9b2074df.png" style="width:100%">
+                        <!-- Slide Caption -->
+                        <div class="caption">2nd Slide</div>
+                    </div>
+
+                    <!-- 3rd Slide -->
+                    <div class="mySlides fade">
+                        <!-- Slide Number -->
+                        <div class="numbertext">3 / 6</div>
+                        <!-- Slide Image -->
+                        <img src="https://66.media.tumblr.com/878695d37e4a918e54343a45c5bc1202/8a526ff833cb69f4-3c/s1280x1920/b7aa201ff74bb34b6a27ff6ab695380cfdad1b9f.png" style="width:100%">
+                        <!-- Slide Caption -->
+                        <div class="caption">3rd Slide</div>
+                    </div>
+
+                    <!-- 4th Slide -->
+                    <div class="mySlides fade">
+                        <!-- Slide Number -->
+                        <div class="numbertext">4 / 6</div>
+                        <!-- Slide Image -->
+                        <img src="https://66.media.tumblr.com/ac68ccd754aa74dfdfbb09df55ebdb8a/8a526ff833cb69f4-6e/s1280x1920/872de7524c13b7dd8eff96acf39c4919b1fce2de.png" style="width:100%">
+                        <!-- Slide Caption -->
+                        <div class="caption">4th Slide</div>
+                    </div>
+
+                    <!-- 5th Slide -->
+                    <div class="mySlides fade">
+                        <!-- Slide Number -->
+                        <div class="numbertext">5 / 6</div>
+                        <!-- Slide Image -->
+                        <img src="https://66.media.tumblr.com/5715d3fc84c52aa10e2e46d3b9ffb787/8a526ff833cb69f4-75/s1280x1920/5a5fa399c7ed73f2a980c69624151d61ae8fa40c.png" style="width:100%">
+                        <!-- Slide Caption -->
+                        <div class="caption">5th Slide</div>
+                    </div>
+
+                    <!-- 6th Slide -->
+                    <div class="mySlides fade">
+                        <!-- Slide Number -->
+                        <div class="numbertext">6 / 6</div>
+                        <!-- Slide Image -->
+                        <img src="https://66.media.tumblr.com/dc24e16e3a1b936c3749650e3ec9d1b3/8a526ff833cb69f4-69/s1280x1920/a2f15194bb821b5c0a83ed9d5ef5b8ca910b6d3c.png" style="width:100%">
+                        <!-- Slide Caption -->
+                        <div class="caption">6th Slide</div>
+                    </div>
+
+                    <!-- If you need more, add them here and remember to
+                    change the numbers in the code further down below! -->
+
+                    <!-- BUTTONS -->
+                    <!-- Previous Slide -->
+                    <a class="prev" onclick="plusSlides(-1)">
+                        <span class="fas fa-chevron-left"></span>
+                    </a>
+                    <!-- Next Slide -->
+                    <a class="next" onclick="plusSlides(1)">
+                        <span class="fas fa-chevron-right"></span>
+                    </a>
+
+                    <!-- THUMBNAIL IMAGES -->
+                    <div class="row">
+                        <!-- 1st Column -->
+                        <div class="column">
+                            <img class="demo" src="https://66.media.tumblr.com/e63229b67212d4e9ac0213ed8cf715b4/8a526ff833cb69f4-76/s1280x1920/7fe3d53d58a9d99cfeb5d4e1368faf9c883af4cd.png" style="width:100%" onclick="currentSlide(1)" alt="1st Slide">
+                        </div>
+
+                        <!-- 2nd Column -->
+                        <div class="column">
+                            <img class="demo" src="https://66.media.tumblr.com/9e8d4216f1e264bbce059f2f3cd8b075/8a526ff833cb69f4-44/s1280x1920/67f3b1bdb394904e80ddd354be48a75f9b2074df.png" style="width:100%" onclick="currentSlide(2)" alt="2nd Slide">
+                        </div>
+
+                        <!-- 3rd Column -->
+                        <div class="column">
+                            <img class="demo" src="https://66.media.tumblr.com/878695d37e4a918e54343a45c5bc1202/8a526ff833cb69f4-3c/s1280x1920/b7aa201ff74bb34b6a27ff6ab695380cfdad1b9f.png" style="width:100%" onclick="currentSlide(3)" alt="3rd Slide">
+                        </div>
+
+                        <!-- 4th Column -->
+                        <div class="column">
+                            <img class="demo" src="https://66.media.tumblr.com/ac68ccd754aa74dfdfbb09df55ebdb8a/8a526ff833cb69f4-6e/s1280x1920/872de7524c13b7dd8eff96acf39c4919b1fce2de.png" style="width:100%" onclick="currentSlide(4)" alt="4th Slide">
+                        </div>
+
+                        <!-- 5th Column -->
+                        <div class="column">
+                            <img class="demo" src="https://66.media.tumblr.com/5715d3fc84c52aa10e2e46d3b9ffb787/8a526ff833cb69f4-75/s1280x1920/5a5fa399c7ed73f2a980c69624151d61ae8fa40c.png" style="width:100%" onclick="currentSlide(5)" alt="5th Slide">
+                        </div>
+
+                        <!-- 6th Column -->
+                        <div class="column">
+                            <img class="demo" src="https://66.media.tumblr.com/dc24e16e3a1b936c3749650e3ec9d1b3/8a526ff833cb69f4-69/s1280x1920/a2f15194bb821b5c0a83ed9d5ef5b8ca910b6d3c.png" style="width:100%" onclick="currentSlide(6)" alt="6th Slide">
+                        </div>
+                    </div> <!-- // end thumbnail images -->
+                </div> <!-- // end slider container -->
+                </div> <!-- // end sliderwrap -->
+            </div> <!-- // end appeareances -->
+
+            <!-- ABOUT SECTION -->
+            <div id="about">
+                <!-- Section Title -->
+                <div class="sect-title">About</div>
+                <!-- Section Subtitle -->
+                <div class="sect-subtitle">About</div>
+                <!-- Text -->
+                <div class="text">
+                    [Insert a long text here.]
+                </div> <!-- // end text -->
+            </div> <!-- // end about -->
+        </div> <!-- // end main container -->
+
+        <!-- SCRIPTS -->
+        <!-- Particle Background, by Zhiming Zhou -->
+        <!--
+        INFO:
+        There are three color values that you can change.
+        I have marked them with comments for you.
+        Don't change anything else, just those; it'll be enough.
+        The empty background element is necessary to apply the effect.
+        -->
+        <div id="background"></div>
+        <script>
+            function F__ID(){
+                $.getScript('https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js',function(){
+                    particlesJS("background", {
+                        "particles": {
+                            "number": {
+                                "value": 100,
+                                "density": {
+                                    "enable": true,
+                                    "value_area": 800
+                                }
+                            },
+                            "color": {
+                                "value": "#1de" /* change color here */
+                            },
+                            "shape": {
+                                "type": "circle",
+                                "stroke": {
+                                    "width": 0,
+                                    "color": "#111" /* change color here */
+                                },
+                                "polygon": {
+                                    "nb_sides": 5
+                                },
+                                "image": {
+                                    "src": "img/github.svg",
+                                    "width": 100,
+                                    "height": 100
+                                }
+                            },
+                            "opacity": {
+                                "value": 0.5,
+                                "random": false,
+                                "anim": {
+                                    "enable": false,
+                                    "speed": 1,
+                                    "opacity_min": 0.1,
+                                    "sync": false
+                                }
+                            },
+                            "size": {
+                                "value": 3,
+                                "random": true,
+                                "anim": {
+                                    "enable": false,
+                                    "speed": 40,
+                                    "size_min": 0.1,
+                                    "sync": false
+                                }
+                            },
+                            "line_linked": {
+                                "enable": true,
+                                "distance": 150,
+                                "color": "#1de", /* change color here */
+                                "opacity": 0.4,
+                                "width": 1
+                            },
+                            "move": {
+                                "enable": true,
+                                "speed": 1,
+                                "direction": "none",
+                                "random": false,
+                                "straight": false,
+                                "out_mode": "out",
+                                "bounce": false,
+                                "attract": {
+                                    "enable": false,
+                                    "rotateX": 600,
+                                    "rotateY": 1200
+                                }
+                            }
+                        },
+                        "interactivity": {
+                            "detect_on": "canvas",
+                            "events": {
+                                "onhover": {
+                                    "enable": true,
+                                    "mode": "grab"
+                                },
+                                "onclick": {
+                                    "enable": true,
+                                    "mode": "push"
+                                },
+                                "resize": true
+                            },
+                            "modes": {
+                                "grab": {
+                                    "distance": 140,
+                                    "line_linked": {
+                                        "opacity": 1
+                                    }
+                                },
+                                "bubble": {
+                                    "distance": 400,
+                                    "size": 40,
+                                    "duration": 2,
+                                    "opacity": 8,
+                                    "speed": 3
+                                },
+                                "repulse": {
+                                    "distance": 200,
+                                    "duration": 0.4
+                                },
+                                "push": {
+                                    "particles_nb": 4
+                                },
+                                "remove": {
+                                    "particles_nb": 2
+                                }
+                            }
+                        },
+                        "retina_detect": true
+                    });
+                });
+            }
+        </script>
+        <script>
+            F__ID();
+        </script>
+
+        <!-- CUSTOM CONTROLS -->
+        <div id="custom-controls">
+            <!-- Dashboard Link -->
+            <a href="https://www.tumblr.com/dashboard" title="go to dashboard" class="conlink">
+                <div class="cont">
+                    <span class="fab fa-tumblr" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Message -->
+            <!-- Takes people to dashboard to send you a message. -->
+            <a href="https://www.tumblr.com/message/{Name}" title="send a message to {Name}" class="conlink">
+                <div class="cont">
+                    <span class="fas fa-comment-dots" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Customize -->
+            <!-- Takes you, the blog owner, to the customization. -->
+            <a href="https://www.tumblr.com/customize/{Name}?redirect_to=https%3A%2F%2F{Name}.tumblr.com" title="customize page" class="conlink">
+                <div class="cont">
+                    <span class="fas fa-palette" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Follow -->
+            <!-- Takes people to a page so that they can follow you. -->
+            <a href="https://www.tumblr.com/follow/{Name}" title="follow {Name}" class="conlink">
+                <div class="cont">
+                    <span class="fas fa-plus" aria-hidden="true"></span>
+                </div>
+            </a>
+        </div> <!-- // end custom controls -->
+
+        <!-- MOBILE FOOTER -->
+        <div id="mobile-footer">
+            <!-- Desktop Link -->
+            <a href="https://www.tumblr.com/dashboard" title="go to dashboard" class="mf-link">
+                <div class="mf-nav">
+                    <span class="fab fa-tumblr" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Message -->
+            <!-- Takes people to dashboard to send you a message. -->
+            <a href="https://www.tumblr.com/message/{Name}" title="send a message to {Name}" class="mf-link">
+                <div class="mf-nav">
+                    <span class="fas fa-comment-dots" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Home Link -->
+            <a href="/" title="return to blog" class="mf-link">
+                <div class="mf-nav">
+                    <span class="fas fa-home" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Follow -->
+            <!-- Takes people to a page so that they can follow you. -->
+            <a href="https://www.tumblr.com/follow/{Name}" title="follow {Name}" class="mf-link">
+                <div class="mf-nav">
+                    <span class="fas fa-plus" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Credit – Do not touch! -->
+            <a href="https://silbrigthemes.tumblr.com/" title="page by silbrigthemes" class="mf-link">
+                <div class="mf-nav">
+                    <span class="fas fa-code" aria-hidden="true"></span>
+                </div>
+            </a>
+        </div> <!-- // end mobile footer -->
+
+        <!-- CREDIT -->
+        <!-- Do not touch! -->
+        <div id="cd">
+            <a href="https://silbrigthemes.tumblr.com/" title="page by silbrigthemes" class="conlink">
+                <div class="cont">
+                    <span class="fas fa-code" aria-hidden="true"></span>
+                </div>
+            </a>
+        </div>
+
+        <!-- SLIDER GALLERY -->
+        <!-- Tutorial by w3schools. -->
+        <!-- Huge thanks to coffeestainedbooks for fixing this! -->
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex = slideIndex + n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var slides = document.getElementsByClassName("mySlides");
+                var thumbnail = document.getElementsByClassName("demo");
+                if (n > 6) { /* change depending on number of slides */
+                    slideIndex = 1
+                }
+                if (n < 1) {
+                    slideIndex = 6
+                    /* change depending on number of slides */
+                }
+                slides[0].style.display = "none";
+                slides[1].style.display = "none";
+                slides[2].style.display = "none";
+                slides[3].style.display = "none";
+                slides[4].style.display = "none";
+                slides[5].style.display = "none";
+                /* add or delete depending on number of slides */
+                slides[slideIndex - 1].style.display = "block";
+
+              for (i = 0; i < thumbnail.length; i++) {
+                  thumbnail[i].className = thumbnail[i].className.replace(" active", "");
+              }
+                thumbnail[slideIndex-1].className += " active";
+            }
+        </script>
+
+        <!-- Tooltips, TippyJs -->
+        <script src="https://unpkg.com/popper.js@1"></script>
+        <script src="https://unpkg.com/tippy.js@5/dist/tippy-bundle.iife.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/svg-arrow.css" />
+
+        <script>
+            tippy('a[title]', {
+              theme: 'charakter',
+              arrow: tippy.roundArrow,
+              zIndex: 9999999999,
+              maxWidth: 300,
+
+              content(reference) {
+                const title = reference.getAttribute('title');
+                reference.removeAttribute('title');
+                return title;
+              },
+            });
+        </script>
+
+    </body>
+</html>
