@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+
+SWEETHEART (Page #6) by @silbrigthemes
+
+A simple bias / family / network page with filtering.
+
+RULES:
+    1) Don't use this code as base.
+    2) Dont't steal (parts of) this code.
+    3) Don't claim this code as your own.
+    4) Don't edit beyond recognition.
+    5) Don't delete or alter the credit.
+    
+Annotations have been made to simpify customization.
+
+Have fun with this page and don't be afraid to send a message if there is problem that you cannot solve.
+
+-->
+
+    <head>
+    
+    <!-- Tab title; can be changed here. -->
+    <title>Sweetheart</title>
+    
+    <!-- Custom google fonts; Lato and Playfair Display. -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&amp;subset=cyrillic,latin-ext,vietnamese" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+    
+    <!-- Necessary for the icon font to work. -->
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <style>
+        
+        body{
+            background-color:#f7cac9; /* body background color */ 
+            margin:0;
+            font-family:"Lato", Verdana; /* global font family */
+            font-size:1em; /* globale font-size (16px) */
+            color:#43090c; /* global text color */
+            overflow:hidden;
+        }
+        
+        /** CUSTOM SELECTION **/
+        ::selection{
+            background-color:#ce1c25; /* selection bg color */
+            color:#fff; /* selection text color */
+        }
+        
+        ::-webkit-selection{
+            background-color:#ce1c25;
+            color:#fff;
+        }
+        
+        ::-moz-selection{
+            background-color:#ce1c25;
+            color:#fff;
+        }
+        
+        ::-o-selection{
+            background-color:#ce1c25;
+            color:#fff;
+        }
+        
+        /** CUSTOM SCROLLBAR **/
+        ::-webkit-scrollbar{
+            width:4px;
+            background-color:#ce1c25; /* scrollbar bg color */
+            border:1.5px solid #f3a5a9; /* scrollbar border color */
+        }
+        
+        ::-webkit-scrollbar-thumb{
+                background-color:#ce1c25; /* scrollbar thumb bg color */
+                width:2px;
+                border:1px solid #f3a5a9; /* scrollbar thumbr border color */
+            }
+        
+        
+        /** GENERAL TEXT STYLING **/
+        b, strong{
+            font-weight:bold;
+            color:#e74b53; /* text color of bold text */
+        }
+        
+        i, em{
+            font-style:italic;
+            color:#b41820; /* text color of italic text */
+        }
+        
+        a{
+            color:#ce1c25; /* text color of links */
+            text-decoration:none;
+            transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+        }
+        
+        
+        /** CONTAINER **/
+        #container{
+            width:80vw;
+            height:102vh;
+            max-height:100vh;
+            background-color:#f6bcbf; /* container bg color */
+            display:flex;
+            align-items:flex-start;
+            justify-content:flex-start;
+            flex-direction:row;
+            flex-wrap:wrap;
+            overflow-y:scroll;
+        }
+        
+        /* CARD */
+        .card{
+            width:20vw;
+            height:50vh;
+            background-color:#fce9ea; /* bg color of the cards */
+            border:5px solid #ce1c25; /* border color around cards */
+            border-radius:5px;
+            margin:2.5vw;
+        }
+        
+        /* CARD ICON */
+        .card-image{
+            width:100%;
+            height:30%;
+        }
+        
+        .card-image img{
+            width:100px;
+            height:100px;
+            border-radius:50%;
+            border:5px solid #ce1c25; /* border color around icons */
+            margin-left:calc(50% - 50px);
+            margin-top:10px;
+        }
+        
+        /* CARD TEXT */
+        .card-text{
+            width:100%;
+            height:70%;
+        }
+        
+        /* NAME */
+        .card-text h2{
+            font-family:"Playfair Display", "Times New Roman"; /* name font family */
+            font-size:1.5em; /* font size = 24px */
+            color:#e74b53; /* text color of names */
+            text-shadow:1px 1px 2px #f3a5a9; /* text shadow on names */
+            text-align:center;
+        }
+        
+        /* URL */
+        .card-text h3 {
+            font-size:1em; /* font size = 16px */
+            text-align:center;
+        }
+        
+        .card-text a{
+            text-decoration:none;
+            line-height:0.25em;
+            transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+        }
+        
+        .card-text mark{
+            background-color:#ce1c25; /* background color of URLs */
+            color:#fff; /* text color of URLs */
+            padding:0.25em;
+            border-radius:5px;
+            text-decoration:none;
+            transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+        }
+        
+        .card-text mark:hover{
+            background-color:#f3a5a9; /* background color of URLs on hover */
+            color:#ce1c25; /* text color of URLs on hover */
+            text-decoration:none;
+            transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+        }
+        
+        /* DESCRIPTION */
+        .card-text p{
+            padding:0.5em;
+            padding-top:0.75em;
+            overflow-y:scroll;
+            max-height:50%;
+            text-align:justify;
+        }
+        
+        
+        /** SIDEBAR **/
+        #sidebar{
+            width:20vw;
+            height:100vh;
+            background-color:#f3a5a9; /* sidebar bg color */
+            margin-left:80vw;
+            margin-top:-100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            flex-direction:column;
+        }
+        
+        #side-image{
+            width:128px;
+            height:128px;
+            border-radius:50%;
+            /* your blog icon is the bg image */
+            background-image:url("{PortraitURL-128}");
+            border:5px solid #ce1c25; /* border around the image */
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        
+        #side-circle{
+            width:5em;
+            height:5em;
+            background-color:#ce1c25; /* background color of the circle */
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        
+        #side-circle i{
+            color:#f6bcbf; /* icon color */
+            font-size:1.5em;
+            transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+        }
+        
+        #side-circle i:hover{
+            color:#f3a5a9; /* icon color on hover */
+            font-size:1.75em;
+            transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+        }
+        
+        #side-image a{
+            text-decoration:none;
+        }
+        
+        #side-title{
+            font-size:2em;
+            /* side title font-family */
+            font-family:"Playfair Display", "Times New Roman";
+            color:#fff; /* text color */
+            width:15vw;
+            font-style:italic;
+            text-shadow:1px 1px 2px #ce1c25; /* text-shadow */
+            text-align:center;
+        }
+        
+        #side-desc{
+            width:15vw;
+            padding-top:0.5em;
+            padding-bottom:0.5em;
+            text-align:center;
+        }
+        
+        .behaelter {
+            overflow: hidden;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            flex-direction:row;
+            margin-top:1em;
+        }
+        
+        .filterDiv {
+            display: none; /* Hidden by default */
+        }
+        
+        /* The "show" class is added to the filtered elements */
+        .show {
+            display: block;
+        }
+        
+        /* Style the buttons */
+        .btn {
+          font-size:0.75em;
+          padding: 12px 16px;
+          background-color: #f6bcbf; /* button bg color */
+          border:1px solid rgba(255,255,255,0);
+          color:#ce1c25; /* button text color */
+          width:15vw;
+          cursor: pointer;
+          border-radius:5px;
+          margin-left:2.5vw;
+          margin-top:0.5em;
+          outline:none;
+          text-transform:lowercase;
+          font-weight:bold;
+          font-family:"Lato"; /* button font-family */
+          transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+        }
+        
+        /* Add a coral background on mouse-over */
+        .btn:hover {
+          background-color: #e74b53; /* button bg color on hover */
+          color:#fff; /* button text color on hover */
+          transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+        }
+        
+        /* Add a red background to the active button */
+        .btn.active {
+          background-color: #ce1c25; /* active button bg color */
+          color: #fff; /* active button text color */
+          border:1px solid rgba(255,255,255,0);
+        }
+        
+        
+         /*
+        Don't delete or alter the credit!
+        Taking the credit off free things is rude;
+        I have spent much time on this.
+        */
+            #credit img{
+                height:50px;
+                right:50px;
+                bottom:5px;
+                position:absolute;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <!-- START CONTAINER -->
+        <div id="container">
+        
+            <!-- FIRST CARD -->
+            <div class="card filterDiv all filter1">
+                <div class="card-image">
+                    <img src="https://78.media.tumblr.com/fd0e8fb766e63e53065b51d204675a82/tumblr_p3jmkwDy4c1wsskx3o2_r1_1280.jpg" alt="red gradient">
+                </div>
+                <div class="card-text">
+                    <h2>Name</h2>
+                    <a href="URL" title="username">
+                        <h3>
+                            <mark>@URL</mark>
+                        </h3>
+                    </a>
+                    <p>
+                        Description goes here.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- FIRST CARD -->
+            <div class="card filterDiv all filter1">
+                <div class="card-image">
+                    <img src="https://78.media.tumblr.com/fd0e8fb766e63e53065b51d204675a82/tumblr_p3jmkwDy4c1wsskx3o2_r1_1280.jpg" alt="red gradient">
+                </div>
+                <div class="card-text">
+                    <h2>Name</h2>
+                    <a href="URL" title="username">
+                        <h3>
+                            <mark>@URL</mark>
+                        </h3>
+                    </a>
+                    <p>
+                        Description goes here.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- FIRST CARD -->
+            <div class="card filterDiv all filter1">
+                <div class="card-image">
+                    <img src="https://78.media.tumblr.com/fd0e8fb766e63e53065b51d204675a82/tumblr_p3jmkwDy4c1wsskx3o2_r1_1280.jpg" alt="red gradient">
+                </div>
+                <div class="card-text">
+                    <h2>Name</h2>
+                    <a href="URL" title="username">
+                        <h3>
+                            <mark>@URL</mark>
+                        </h3>
+                    </a>
+                    <p>
+                        Description goes here.
+                    </p>
+                </div>
+            </div>
+            
+            
+            <!--
+        
+            Copy and paste the following lines to add more cards.
+            
+            <div class="card filterDiv all filtername">
+                <div class="card-image">
+                    <img src="image url" alt="image title">
+                </div>
+                <div class="card-text">
+                    <h2>Name</h2>
+                    <a href="URL" title="username">
+                        <h3>
+                            <mark>@URL</mark>
+                        </h3>
+                    </a>
+                    <p>
+                        Description goes here.
+                    </p>
+                </div>
+            </div>
+            
+            -->
+        
+        <!-- This is the closing </div> of the container! -->    
+        </div>
+        <!-- END CONTAINER -->
+
+
+        <!-- SIDEBAR -->
+        <div id="sidebar">
+            <div id="side-image">
+                <a href="/">
+                    <div id="side-circle">
+                        <i class="fa fa-heart"></i>
+                    </div>
+                </a>
+            </div>
+            <div id="side-title">Title</div>
+            <div id="side-desc">
+                Short description.
+            </div>
+            
+            <!-- Control buttons -->
+            <div id="behaelter">
+              <button class="btn active" onclick="filterSelection('all')"> 
+                Show All
+              </button>
+              <button class="btn" onclick="filterSelection('filter1')"> 
+                Filter 1
+              </button>
+              <button class="btn" onclick="filterSelection('filter2')"> 
+                Filter 2
+              </button>
+              <button class="btn" onclick="filterSelection('filter3')"> 
+                Filter 3
+              </button>
+              <button class="btn" onclick="filterSelection('filter4')"> 
+                Filter 4
+              </button>
+            </div>
+        
+             
+            <!--
+        Don't delete or alter the credit!
+        Taking the credit off free things is rude;
+        I have spent much time on this.
+        -->
+        <div id="credit">
+            <a href="https://silbrigthemes.tumblr.com/">
+                <img src="https://78.media.tumblr.com/7854d98ef9b778a43fc9dd83b828ab02/tumblr_p3jmkwDy4c1wsskx3o1_1280.png" alt="credit: @silbrigthemes">
+            </a>
+
+        </div>
+            
+        </div>
+        
+        
+        
+        <!-- This script is necessary for the filtering to work! -->
+        <script>
+            filterSelection("all")
+            function filterSelection(c) {
+              var x, i;
+              x = document.getElementsByClassName("filterDiv");
+              if (c == "all") c = "";
+              // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+              for (i = 0; i < x.length; i++) {
+                w3RemoveClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+              }
+            }
+            
+            // Show filtered elements
+            function w3AddClass(element, name) {
+              var i, arr1, arr2;
+              arr1 = element.className.split(" ");
+              arr2 = name.split(" ");
+              for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) {
+                  element.className += " " + arr2[i];
+                }
+              }
+            }
+            
+            // Hide elements that are not selected
+            function w3RemoveClass(element, name) {
+              var i, arr1, arr2;
+              arr1 = element.className.split(" ");
+              arr2 = name.split(" ");
+              for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                  arr1.splice(arr1.indexOf(arr2[i]), 1); 
+                }
+              }
+              element.className = arr1.join(" ");
+            }
+            
+            // Add active class to the current control button (highlight it)
+            var btnContainer = document.getElementById("myBtnContainer");
+            var btns = btnContainer.getElementsByClassName("btn");
+            for (var i = 0; i < btns.length; i++) {
+              btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+              });
+            }
+        </script>
+        
+      
+    </body>
+</html>
