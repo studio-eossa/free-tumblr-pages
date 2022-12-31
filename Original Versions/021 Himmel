@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+
+HIMMEL
+Page #21 by silbrigthemes
+
+This responsive about page matches with Leben | Chai (Theme #18).
+
+----------
+
+Rules:
+
+    1) Do not use as base code.
+    2) Do not customize beyond recognition.
+    3) Do not steal (parts of) the code.
+    4) Do not claim as your own.
+    5) Do not delete or alter the credit.
+
+----------
+
+Useful comments to this code have been made.
+
+If you need any help, feel free to send me a message via silbrigthemes.tumblr.com/ask or send a message to my official support blog, silbrigsupport.tumblr.com.
+
+Have fun!
+
+Love,
+Julia <3
+
+----------
+
+Note:
+
+    This work is protected by a creative commons
+    Attribution-NonCommercial-NoDerivatives 4.0 International
+    (CC BY-NC-ND 4.0)
+    license.
+
+-->
+
+    <head>
+
+    <meta charset="utf-16">
+    <title>{Title} | About</title>
+    {block:Description}
+    <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+    <link rel="shortcut icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+
+    <!-- Necessary for the theme to be responsive. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Necessary for the scripts to work. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+    <!-- Icon font, by fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- Changes the toolbar color on mobile. -->
+    <meta name="theme-color" content="#6791db"/>
+
+    <!-- Tooltip Script -->
+    <script src="https://static.tumblr.com/rzl30kg/eAxm7a751/jquery.style-my-tooltips.js"></script>
+    <script>
+        (function($){
+            $(document).ready(function(){
+                $("[title]").style_my_tooltips({
+                    tip_follows_cursor:true,
+                    tip_delay_time:200,
+                    tip_fade_speed:300
+                }
+                    );
+            });
+        })(jQuery);
+    </script>
+
+    <!-- Custom Font -->
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,700&display=swap&subset=cyrillic,hebrew,latin-ext" rel="stylesheet">
+
+        <style>
+
+            body{
+                margin:0;
+                top:0;
+                left:0;
+                font-size:18px; /* font size */
+                font-family:"Rubik", Verdana; /* font family */
+                color:#333; /* text color */
+                background-color:#e0edf9; /* background color */
+                overflow-x:hidden;
+                text-align:justify; /* alt.: left */
+                /*
+                background-image:url("IMAGE URL HERE");
+                background-attachment:fixed;
+                background-size:cover;
+                background-position:center center;
+                */
+            }
+
+            /* CUSTOM SCROLLBAR */
+            ::-webkit-scrollbar{
+                width:10px;
+                background-color:white; /* background color */
+                border-radius:9px;
+            }
+
+            ::-webkit-scrollbar-thumb{
+                width:10px;
+                background-color:#c8dff7; /* background color */
+                border-radius:5px; /* round corners */
+            }
+
+            /* CUSTOM TEXT SELECTION */
+            /* Text Selection */
+            ::selection{
+                background-color:#6791db; /* background color */
+                color:#fff; /* text color */
+            }
+
+            /* Mozilla Firefox */
+            ::-moz-selection{
+                background-color:#6791db; /* background color */
+                color:#fff; /* text color */
+            }
+
+            /* Opera */
+            ::-o-selection{
+                background-color:#6791db; /* background color */
+                color:#fff; /* text color */
+            }
+
+            /* Chrome */
+            ::-webkit-selection{
+                background-color:#6791db; /* background color */
+                color:#fff; /* text color */
+            }
+
+            /* Custom Tooltips */
+            #s-m-t-tooltip{
+                max-width:300px;
+                margin:15px;
+                padding:0.5em;
+                background-color:#e0edf9; /* background color */
+                color:#306bac; /* text color */
+                z-index:9999999999999;
+                font-size:12px; /* font size */
+                text-transform:uppercase; /* alt.: normal, lowercase */
+                font-weight:300; /* alt.: 400 (normal), 700 (bold) */
+                font-family:"Rubik", Verdana; /* font family, fallback */
+                border-radius:1em; /* rounded corners */
+            }
+
+            /* TEXT STYLES */
+            /* Bold Text */
+            b, strong{
+                font-weight:bold;
+                color:#555; /* text color */
+            }
+
+            /* Italic Text */
+            i, em{
+                font-weight:300; /* alt.: 400 (normal), 700 (bold) */
+                font-style:italic;
+                color:#111; /* text color */
+            }
+
+            /* Marked Text */
+            mark{
+                color:#333; /* text color */
+                background-color:#e0edf9; /* background color */
+                padding:0 0.25em;
+                border-radius:1em; /* rounded corners */
+            }
+
+            /* Underlined Text */
+            u{
+                text-decoration:none;
+                border-bottom:2px solid #333; /* height type color */
+            }
+
+            /* Small Text */
+            small{
+                font-size:calc(1em - 4px); /* font-size */
+            }
+
+            /* Preformatted Text */
+            pre{
+                word-wrap:break-all;
+                white-space:pre-wrap;
+                background-color:#e0edf9; /* background color */
+                padding:0.75em 1em;
+                margin-left:-1em;
+                margin-right:-1em;
+                border-top:1px solid #c8dff7; /* height type color */
+                border-bottom:1px solid #c8dff7; /* height type color */
+            }
+
+            /* Blockquote */
+            blockquote{
+                border-left:4px solid #306bac; /* height type color */
+                background-color:#c8dff7; /* background color */
+                padding:0.5em 1em;
+                border-radius:0 0.5em 0.5em 0; /* rounded corners */
+            }
+
+            /* Text Line */
+            hr{
+                width:80%;
+                height:4px;
+                background-color:#e0edf9; /* background color */
+                border:none;
+                border-radius:4px; /* rounded corners */
+                box-shadow:0 8px #c8dff7; /* to left, to top, color */
+            }
+
+            /* Empty Paragraphs */
+            p:empty{
+                display:none;
+            }
+
+            /* LISTS */
+            /* Ordered List */
+            ol{
+                list-style-type:decimal;
+                /* alt.: lower roman, lower alpha, etc. pp. */
+            }
+
+            /* Unordered List */
+            ul{
+                list-style-type:none;
+            }
+
+            /* List Element */
+            ul li{
+                margin-left:-1.25em;
+            }
+
+            /* Icon Before List Elements */
+            ul li:before{
+                font-family:"Font Awesome\ 5 Free";
+                content:"\f0c2"; /* add unicode to change icon */
+                font-weight:700;
+                font-size:calc(1em - 4px);
+                position:relative;
+                margin-right:6px;
+                color:#306bac; /* text color */
+            }
+
+            /* Even list elements */
+            li:nth-child(even){
+                color:#999; /* text color */
+            }
+
+            /* Odd List Elements */
+            li:nth-child(odd){
+                color:#333; /* text color */
+            }
+
+            /* LINKS */
+            /* Link */
+            a{
+                text-decoration:none;
+                border-bottom:2px solid #6791db; /* height type color */
+                color:#6791db; /* text color */
+            }
+
+            /* Link on Hover */
+            a:hover{
+                text-decoration:none;
+                border-bottom:2px solid #306bac; /* height type color */
+                color:#306bac; /* text color */
+            }
+
+            /* Transitions */
+            a, a:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* HEADINGS */
+            /* First Heading */
+            h1{
+                font-size:1.75em; /* font-size */
+                border-bottom:2px solid #6791db; /* height type color */
+                color:#6791db; /* text color */
+                font-weight:400; /* alt.: 300 (thin), 700 (bold) */
+            }
+
+            /* Second Heading */
+            h2{
+                font-size:1.5em; /* font-size */
+                border-bottom:2px solid #306bac; /* height type color */
+                color:#306bac; /* text color */
+                font-weight:300; /* alt.: 400 (normal), 700 (bold) */
+            }
+
+            /* Third Heading */
+            h3{
+                font-size:1.25em; /* font-size */
+                border-bottom:2px dashed #6791db; /* height type color */
+                color:#6791db; /* text color */
+            }
+
+            h1 b, h1 strong, h3 b, h3 strong{
+                color:#82a5e1; /* text color */
+            }
+
+            h1 i, h1 em, h3 i, h3 em{
+                color:#5577b4; /* text color */
+            }
+
+            /* Fourth Heading */
+            h4{
+                font-size:1em; /* font-size */
+                border-bottom:2px dashed #306bac; /* height type color */
+                color:#306bac; /* text color */
+            }
+
+            h2 b, h2 strong, h4 b, h4 strong{
+                color:#5585bb; /* text color */
+            }
+
+            h2 i, h2 em, h4 i, h4 em{
+                color:#28588d; /* text color */
+            }
+
+            /* Fifth Heading */
+            h5{
+                font-size:calc(1em - 2px); /* font-size */
+                background-color:#6791db; /* background color */
+            }
+
+            /* Sixth Heading */
+            h6{
+                font-size:calc(1em - 4px); /* font-size */
+                background-color:#306bac; /* background color */
+            }
+
+            h5, h6{
+                padding:0.25em 0.5em;
+                color:#f9fcff; /* text color */
+            }
+
+            h5 b, h5 strong, h6 b, h6 strong{
+                color:#e5f2ff; /* text color */
+            }
+
+            h5 i, h5 em, h6 i, h6 em{
+                color:#fbfdff; /* text color */
+            }
+
+            /* COLORED TEXT */
+            /* Red Text */
+            .npf_color_joey {
+                color:#f15156!important; /* text color */
+            }
+
+            /* Orange Text */
+            .npf_color_monica {
+                color:#f19c51!important; /* text color */
+            }
+
+            /* Yellow Text */
+            .npf_color_phoebe {
+                color:#f1d251!important; /* text color */
+            }
+
+            /* Green Text */
+            .npf_color_ross {
+                color:#19e312!important; /* text color */
+            }
+
+            /* Blue Text */
+            .npf_color_rachel {
+                color:#518bf1!important; /* text color */
+            }
+
+            /* Purple Text */
+            .npf_color_chandler {
+                color:#9c51f1!important; /* text color */
+            }
+
+            /* Pink Text */
+            .npf_color_niles {
+                color:#f151a6!important; /* text color */
+            }
+
+    /* –– END TEXT STYLES || START LAYOUT –– */
+
+            /* BUBBLES */
+            #bubble1, #bubble2, #bubble3, #bubble4{
+                position:fixed;
+                border-radius:50%; /* rounded corners */
+                z-index:-100!important;
+            }
+
+            /* Large Bubble, Top Left */
+            #bubble1{
+                top:-250px;
+                left:-100px;
+                width:400px;
+                height:400px;
+                background-color:#f9fcff; /* background color */
+                background-image:url("https://66.media.tumblr.com/45aed361cf13da925c613966fed4ae29/tumblr_pqoxykOdiM1qa6y0bo1_1280.jpg");
+                background-size:cover;
+            }
+
+            /* Large Bubble, Bottom Right */
+            #bubble2{
+                width:300px;
+                height:300px;
+                background-color:#c8dff7; /* background color */
+                bottom:-150px;
+                right:-100px;
+                background-image:url("https://66.media.tumblr.com/45aed361cf13da925c613966fed4ae29/tumblr_pqoxykOdiM1qa6y0bo1_1280.jpg");
+                background-size:cover;
+            }
+
+            /* Small Bubble, Top Left */
+            #bubble3{
+                width:200px;
+                height:200px;
+                left:-120px;
+                top:50px;
+                background-color:#c8dff7; /* background color */
+                /*
+                background-image:url("IMAGE URL GOES HERE");
+                background-size:cover;
+                */
+            }
+
+            /* Small Bubble, Bottom Right */
+            #bubble4{
+                width:150px;
+                height:150px;
+                right:150px;
+                bottom:-100px;
+                background-color:#f9fcff; /* background color */
+                /*
+                background-image:url("IMAGE URL GOES HERE");
+                background-size:cover;
+                */
+            }
+
+            /* GRID */
+            /* Grid Container */
+            #grid{
+                width:calc(50vw + 2 * 18px);
+                margin-top:calc((100vh - (57.5vh + 88px + 72px)) / 2);
+                margin-left:calc(25vw - 2 * 18px);
+                display:grid;
+                grid-template-columns:126px calc(20vw - 126px) 30vw;
+                grid-column-gap:18px;
+                grid-template-rows:12.5vh 45vh 88px;
+                grid-row-gap:18px;
+                padding:18px;
+                background-color:#6791db; /* background color */
+                border-radius:18px; /* rounded corners */
+            }
+
+            /* Title */
+            #g-title{
+                padding:18px;
+                font-size:3em; /* font-size */
+                color:#306bac; /* text color */
+                text-align:center; /* alt.: left */
+                grid-rows:1/2;
+                grid-column-start:1;
+                grid-column-end:4;
+                background-color:white; /* background color */
+                border-radius:9px; /* rounded corners */
+            }
+
+            /* Quick Info */
+            #short-info{
+                padding:18px;
+                background-color:white; /* background color */
+                border-radius:9px; /* rounded corners */
+                grid-row-start:2;
+                grid-row-end:3;
+                grid-column-start:1;
+                grid-column-end:3;
+            }
+
+            /* Quick Info Title */
+            #si-title{
+                font-size:1.5em; /* font-size */
+                text-align:center; /* alt.: left */
+                color:#306bac; /* text color */
+                margin-bottom:8px;
+            }
+
+            /* Table Columns */
+            td{
+                vertical-align:top;
+                padding-right:8px;
+                border-bottom:1px solid #c8dff7; /* height style color */
+            }
+
+            td:nth-child(odd){
+                font-weight:bold; /* left column has bold text */
+            }
+
+            /* About Section */
+            #about{
+                padding:18px;
+                background-color:white; /* background color */
+                border-radius:9px; /* rounded corners */
+                grid-row-start:2;
+                grid-row-end:4;
+                grid-columns:2/3;
+                overflow-y:scroll; /* scrolls for vertical overflow */
+            }
+
+            /* Navigation */
+            #navigation{
+                grid-rows:3/4;
+                grid-columns:1/2;
+                display:flex;
+                align-items:space-between;
+                justify-content:space-between;
+                flex-wrap:wrap;
+            }
+
+            /* Navigation Link */
+            a.navlink{
+                border-bottom:none;
+                margin-bottom:0;
+            }
+
+            /* Navigation Element */
+            .nav{
+                width:36px;
+                height:36px;
+                background-color:white; /* background color */
+                border-radius:9px; /* rounded corners */
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+
+            /* Navigation Element on Hover */
+            .nav:hover{
+                transform:scale(1.05); /* increase size */
+            }
+
+            /* Transitions */
+            .nav, .nav:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* Small Text Field */
+            #image{
+                background-color:white; /* background color */
+                border-radius:9px; /* rounded corners */
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                color:#306bac; /* text color */
+                text-align:center; /* alt.: left, justify, right */
+                padding:18px;
+            }
+
+            /* CREDIT */
+            /* Don't touch! */
+            #credit{
+                position:fixed;
+                bottom:18px;
+                left:18px;
+            }
+
+            /* Control Element */
+            .s-nav{
+                width:36px;
+                height:36px;
+                border-radius:50%; /* rounded corners */
+                background-color:#f9fcff; /* background color */
+                color:#6791db; /* text color */
+                font-size:calc(1em - 4px); /* font-size */
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+
+            /* Control Element on Hover */
+            .s-nav:hover{
+                transform:scale(1.05); /* increase size */
+                cursor:pointer;
+                color:#306bac; /* text color */
+            }
+
+            /* Transitions */
+            .s-nav, .s-nav:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* Control Link */
+            a.s-link{
+                border-bottom:none;
+            }
+
+            /* CUSTOM CONTROLS */
+            /* Hides standard tumblr controls */
+            body > iframe:first-child {
+                display: none !important;
+            }
+
+            /* Container */
+            #custom-controls{
+                width:calc(36px * 5 + 8px * 4);
+                position:fixed;
+                right:18px;
+                top:18px;
+                z-index:1000!important;
+                display:flex;
+                align-items:center;
+                justify-content:space-between;
+            }
+
+    /* –– END LAYOUT || START RESPONSIVE LAYOUT –– */
+
+            @media only screen and (min-width:800px){
+                /* Mobile Footer */
+                #mb-footer{
+                    display:none;
+                }
+
+                /* About Section Title */
+                #a-title{
+                    display:none;
+                }
+            }
+
+            /* RESPONSIVE LAYOUT | TABLETS */
+            @media only screen and (max-width:800px){
+                /* Grid Container */
+                #grid{
+                    width:calc(80vw + 2 * 18px);
+                    margin-top:calc((100vh - (57.5vh + 88px + 72px)) / 2);
+                    margin-left:calc(10vw - 2 * 18px);
+                    grid-template-columns:126px calc(35vw - 126px) 45vw;
+                }
+
+                /* Grid Title */
+                #g-title{
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                }
+            }
+
+            @media only screen and (min-width:450px){
+                /* Mobile Footer */
+                #mb-footer{
+                    display:none;
+                }
+
+                /* About Section Title */
+                #a-title{
+                    display:none;
+                }
+            }
+
+            /* RESPONSIVE LAYOUT | PHONES */
+            @media only screen and (max-width:450px){
+                /* Bubbles */
+                #bubble1, #bubble2, #bubble3, #bubble4{
+                    display:none;
+                }
+
+                /* Grid Container */
+                #grid{
+                    display:block;
+                    margin-left:0;
+                    margin-top:0;
+                    background-color:transparent;
+                    padding:0;
+                    width:100vw;
+                    margin-bottom:10vh;
+                }
+
+                /* About Section Title */
+                #a-title{
+                    font-size:1.5em; /* font-size */
+                    text-align:center; /* alt.: left */
+                    color:#306bac; /* text color */
+                    background-color:white; /* background color */
+                }
+
+                /* Grid Title, Quick Info, About Section */
+                #g-title, #short-info, #about{
+                    border-radius:0;
+                }
+
+                /* Navigation, Small Text Field */
+                #navigation, #image{
+                    display:none;
+                }
+
+                /* MOBILE FOOTER */
+                #mb-footer{
+                    position:fixed;
+                    width:100vw;
+                    height:10vh;
+                    margin-left:0;
+                    margin-bottom:0;
+                    left:0;
+                    bottom:0;
+                    border-radius:0;
+                    border:none;
+                    background-color:#c8dff7; /* background color */
+                    display:flex;
+                    align-items:center;
+                    justify-content:space-between;
+                }
+
+                /* Mobile Footer Navigation */
+                .mbf-nav{
+                    height:10vh;
+                    width:20vw;
+                    background-color:inherit; /* background color */
+                    color:#6791db; /* text color */
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                }
+
+                .mbfn2{
+                    background-color:#6791db; /* background color */
+                    color:#c8dff7; /* text color */
+                }
+
+                /* Mobile Footer Navigation Icon */
+                .mbf-nav span{
+                    font-size:1em; /* font size */
+                }
+
+                /* Mobile Footer Navigation on Hover */
+                .mbf-nav:hover{
+                    color:#3264ba; /* text color */
+                    cursor:pointer;
+                }
+
+                .mbfn2:hover{
+                    background-color:#3264ba; /* background color */
+                    color:#c8dff7; /* text color */
+                }
+
+                /* Transitions */
+                .mbf-nav, .mbf-nav:hover{
+                    transition:0.5s;
+                    -moz-transition:0.5s;
+                    -o-transition:0.5s;
+                    -webkit-transition:0.5s;
+                }
+
+                /* Mobile Footer Navigation Link */
+                a.mbf-link{
+                    border-bottom:none;
+                }
+
+                /* Credit, Custom Controls */
+                #credit, #custom-controls{
+                    display:none;
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <!-- GRID -->
+        <div id="grid">
+            <!-- Grid Title -->
+            <div id="g-title">Title</div>
+            <!-- Quick Info -->
+            <div id="short-info">
+                <!-- Quick Info Title -->
+                <div id="si-title">Quick Info</div>
+                <table>
+                    <tr>
+                        <td>Name:</td>
+                        <td>…</td>
+                    </tr>
+                    <tr>
+                        <td>Age:</td>
+                        <td>…</td>
+                    </tr>
+                    <tr>
+                        <td>Location:</td>
+                        <td>…</td>
+                    </tr>
+                    <tr>
+                        <td>Occupation:</td>
+                        <td>…</td>
+                    </tr>
+                    <tr>
+                        <td>Likes:</td>
+                        <td>…</td>
+                    </tr>
+                    <tr>
+                        <td>Dislikes:</td>
+                        <td>…</td>
+                    </tr>
+                </table>
+            </div> <!-- // end quick info -->
+            <!-- About Section Title | mobile only -->
+            <div id="a-title">About Me</div>
+            <!-- About Section -->
+            <div id="about">
+                long description here
+            </div> <!-- // end about section -->
+            <!-- Navigation -->
+            <div id="navigation">
+                <!-- Index Link -->
+                <a href="/" title="home" class="navlink">
+                    <div class="nav">
+                        <span class="fas fa-home"></span>
+                    </div>
+                </a>
+                <!-- Ask Link -->
+                <a href="/ask" title="{AskLabel}" class="navlink">
+                    <div class="nav">
+                        <span class="fas fa-envelope"></span>
+                    </div>
+                </a>
+                <!-- Archive Link -->
+                <a href="/archive" title="browse archive" class="navlink">
+                    <div class="nav">
+                        <span class="fas fa-archive"></span>
+                    </div>
+                </a>
+                <!-- Custom Link 1 -->
+                <a href="/" title="custom link 1" class="navlink">
+                    <div class="nav">
+                        <span class="fas fa-link"></span>
+                    </div>
+                </a>
+                <!-- Custom Link 2 -->
+                <a href="/" title="custom link 2" class="navlink">
+                    <div class="nav">
+                        <span class="fas fa-link"></span>
+                    </div>
+                </a>
+                <!-- Custom Link 3 -->
+                <a href="/" title="custom link 3" class="navlink">
+                    <div class="nav">
+                        <span class="fas fa-link"></span>
+                    </div>
+                </a>
+            </div> <!-- // end navigation -->
+            <!-- Small Text Field -->
+            <div id="image">
+                small text here
+            </div>
+        </div> <!-- // end grid -->
+
+    <!-- /// END GRID || START MOBILE FOOTER /// -->
+
+        <!-- MOBILE FOOTER -->
+        <div id="mb-footer">
+            <!-- Archive Link -->
+            <a href="/archive" title="browse archive" class="mbf-link">
+                <div class="mbf-nav mbfn1">
+                    <span class="fas fa-archive"></span>
+                </div>
+            </a>
+            <!-- Ask Link -->
+            <a href="/ask" title="{AskLabel}" class="mbf-link">
+                <div class="mbf-nav mbfn2">
+                    <span class="fas fa-envelope"></span>
+                </div>
+            </a>
+            <!-- Index -->
+            <a href="/" title="index" class="mbf-link">
+                <div class="mbf-nav mbfn1">
+                    <span class="fas fa-home"></span>
+                </div>
+            </a>
+            <!-- Tumblr Dashboard -->
+            <a href="https://www.tumblr.com/dashboard" title="tumblr dashboard" class="mbf-link">
+                <div class="mbf-nav mbfn2">
+                    <span class="fab fa-tumblr"></span>
+                </div>
+            </a>
+            <!-- Theme Credit -->
+            <!-- Don't touch! -->
+            <a href="https://silbrigthemes.tumblr.com/" title="theme credit" class="mbf-link">
+                <div class="mbf-nav mbfn1">
+                    <span class="fas fa-code"></span>
+                </div>
+            </a>
+        </div> <!-- // end mobile footer -->
+
+    <!-- /// END MOBILE FOOTER || START BUBBLES /// -->
+
+        <!-- BUBBLES -->
+        <div id="bubble1"></div>
+        <div id="bubble2"></div>
+        <div id="bubble3"></div>
+        <div id="bubble4"></div>
+
+    <!-- /// END BUBBLES || START CUSTOM CONTROLS /// -->
+
+        <!-- CUSTOM CONTROLS -->
+        <div id="custom-controls">
+            <!-- Dashboard Link -->
+            <a href="https://www.tumblr.com/dashboard" title="go to dashboard" class="s-link">
+                <div class="s-nav">
+                    <span class="fab fa-tumblr" aria-hidden="true"></span>
+                </div>
+            </a>
+            <!-- Message -->
+            <!-- Takes people to dashboard to send you a message. -->
+            <a href="https://www.tumblr.com/message/{Name}" title="send a message to {Name}" class="s-link">
+                <div class="s-nav">
+                    <span class="fas fa-comment-dots" aria-hidden="true"></span>
+                </div>
+            </a>
+            <!-- Customize -->
+            <!-- Takes you, the blog owner, to the customization. -->
+            <a href="https://www.tumblr.com/customize/{Name}?redirect_to=https%3A%2F%2F{Name}.tumblr.com" title="customize theme" class="s-link">
+                <div class="s-nav">
+                    <span class="fas fa-palette" aria-hidden="true"></span>
+                </div>
+            </a>
+            <!-- Settings -->
+            <!-- Takes you to your blog's settings. -->
+            <a href="https://www.tumblr.com/settings/blog/{Name}" title="change settings" class="s-link">
+                <div class="s-nav">
+                    <span class="fas fa-cog" aria-hidden="true"></span>
+                </div>
+            </a>
+            <!-- Follow -->
+            <!-- Takes people to a page so that they can follow you. -->
+            <a href="https://www.tumblr.com/follow/{Name}" title="follow {Name}" class="s-link">
+                <div class="s-nav">
+                    <span class="fas fa-plus" aria-hidden="true"></span>
+                </div>
+            </a>
+        </div> <!-- // end custom controls -->
+
+    <!-- /// END CUSTOM CONTROLS || START CREDIT /// -->
+
+        <!-- CREDIT -->
+        <!-- Don't touch! -->
+        <a href="https://silbrigthemes.tumblr.com/" title="page by silbrigthemes" class="s-link">
+            <div class="s-nav" id="credit">
+                <span class="fas fa-code"></span>
+            </div>
+        </a>
+
+    </body>
+</html>
