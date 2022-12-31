@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+
+WOLKENLOS
+Page #24 by silbrigthemes
+
+Wolkenlos is a responsive all in one page, with an aesthetic similar to that of Brutal (Theme 8).
+
+----------
+
+Rules:
+
+    1) Do not use as base code.
+    2) Do not customize beyond recognition.
+    3) Do not steal (parts of) the code.
+    4) Do not claim as your own.
+    5) Do not delete or alter the credit.
+    6) Do not redistribute to other sites.
+
+----------
+
+Useful comments to this code have been made.
+
+If you need any help for a problem , feel free to send me a message via silbrigthemes.tumblr.com/ask or send a message to my official support blog, silbrigsupport.tumblr.com.
+
+Have fun!
+
+Love,
+Julia <3
+
+----------
+
+Note:
+
+    This work is protected by a creative commons
+    Attribution-NonCommercial-NoDerivatives 4.0 International
+    (CC BY-NC-ND 4.0)
+    license.
+
+-->
+
+    <head>
+
+    <meta charset="utf-16">
+    <title>{Title} | Wolkenlos</title> <!-- {Title} is your blog title. Change after the "|". -->
+    <link rel="shortcut icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+
+    <!-- Changes the toolbar color on mobile. -->
+    <meta name="theme-color" content="#007fff"/>
+
+    <!-- Necessary for the theme to be responsive. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Icon font, by fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- Necessary for the scripts to work. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+    <!-- Masonry Libraries -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
+    <!-- OTHER FONTS -->
+    <!-- Cormorant Garamond -->
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese" rel="stylesheet">
+    <!-- Dancing Script -->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+
+    <!-- TITLE FONT | Raleway -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <!-- ACCENT FONT | Roboto Mono -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <!-- BODY FONT | Open Sans -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+
+        <style>
+
+            body{
+                margin:0;
+                top:0;
+                left:0;
+                font-size:1em; /* font size */
+                /* Changing the font-size here will affect all other
+                   font-sizes of this page! */
+                overflow-x:hidden;
+                background-color:#f9faff; /* background color */
+                color:#343638; /* text color */
+                font-family:"Open Sans", Verdana; /* font */
+            }
+
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar{
+                width:10px;
+            }
+
+            ::-webkit-scrollbar-thumb{
+                width:10px;
+                background-color:#343638; /* background color */
+                border-radius:5px; /* rounded corners */
+            }
+
+            /* Custom Text Selection */
+            ::selection{
+                background-color:#f9faff; /* background color */
+                color:#007fff; /* text color */
+            }
+
+            ::-moz-selection{
+                background-color:#f9faff; /* background color */
+                color:#007fff; /* text color */
+            }
+
+            ::-o-selection{
+                background-color:#f9faff; /* background color */
+                color:#007fff; /* text color */
+            }
+
+            ::-webkit-selection{
+                background-color:#f9faff; /* background color */
+                color:#007fff; /* text color */
+            }
+
+            /* Custom Tooltips */
+            .tippy-tooltip.wolkenlos-theme {
+                background-color:#343638; /* background color */
+                color:#f9faff; /* text color */
+                text-align:left; /* alt.: center, right, justify */
+            }
+
+            .tippy-tooltip.wolkenlos-theme .tippy-svg-arrow {
+                fill:#007fff; /* background color */
+            }
+
+    /* ––– END GENERAL | START TEXT STYLES ––– */
+
+            /* Bold Text */
+            b, strong{
+                font-weight:bold;
+                font-weight:700;
+                color:#585a5c; /* text color */
+            }
+
+            /* Italic Text */
+            i, em{
+                font-weight:300; /* alt.: 400 */
+                font-style:italic; /* alt.: normal */
+                color:#1d1e1f; /* text color */
+            }
+
+            /* Marked Text */
+            mark{
+                background-color:#343638; /* background color */
+                color:#f9faff; /* text color */
+                padding:0 8px;
+                border-radius:1em; /* round corners */
+            }
+
+            /* Preformatted Text */
+            pre{
+                font-family:"Roboto Mono", Courier; /* font */
+                font-size:calc(1em - 2px);
+                word-wrap:break-all;
+                white-space:pre-wrap;
+                background-color:#343638; /* background color */
+                color:#f9faff; /* text color */
+                padding:16px;
+            }
+
+            /* Small Text */
+            small{
+                font-size:calc(1em - 4px);
+            }
+
+            /* Underlined Text */
+            u{
+                text-decoration:none;
+                border-bottom:2px solid #343638; /* strength style color */
+            }
+
+            /* Text Line */
+            hr{
+                width:80%;
+                height:4px;
+                border:none;
+                border-radius:4px; /* round corners */
+                background-color:#343638; /* background color */
+            }
+
+            /* Empty Paragraphs */
+            p:empty{
+                display:none;
+            }
+
+            /* Embedded Media */
+            #about img, #about iframe{
+                max-width:100%;
+            }
+
+            /* Blockquote */
+            blockquote{
+                border-left:4px solid #007fff; /* strength style color */
+                padding-left:16px;
+            }
+
+            /* LINKS */
+            /* Link */
+            a{
+                text-decoration:none;
+                color:#007fff; /* text color */
+                border-bottom:2px solid #007fff; /* strength style color */
+            }
+
+            /* Link on Hover */
+            a:hover{
+                color:#343638; /* text color */
+            }
+
+            /* Transitions */
+            a, a:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* COLORED TEXT */
+            /* Red Text */
+            .npf_color_joey {
+                color:#ff1000; /* text color */
+            }
+
+            /* Orange Text */
+            .npf_color_monica {
+                color:#ff6a00; /* text color */
+            }
+
+            /* Yellow Text */
+            .npf_color_phoebe {
+                color:#ffbb00; /* text color */
+            }
+
+            /* Green Text */
+            .npf_color_ross {
+                color:#22e200; /* text color */
+            }
+
+            /* Blue Text */
+            .npf_color_rachel {
+                color:#007fff; /* text color */
+            }
+
+            /* Purple Text */
+            .npf_color_chandler {
+                color:#9d00ff; /* text color */
+            }
+
+            /* Pink Text */
+            .npf_color_niles {
+                color:#ff00d0; /* text color */
+            }
+
+            /* SPECIAL FONTS */
+            /* Quirky Font */
+            .npf_quirky{
+                font-family: "Dancing Script", cursive; /* font */
+                font-size:1.5em;
+            }
+
+            /* Chat Font */
+            .npf_chat{
+                font-family:"Roboto Mono", Courier; /* font */
+            }
+
+            /* Quote Font */
+            .npf_quote{
+                font-family:"Cormorant Garamond", "Palatino"; /* font */
+                font-size:1.25em;
+            }
+
+            /* HEADINGS */
+            /* First Heading */
+            h1{
+                font-size:1.75em;
+                font-weight:400; /* alt.: 300, 700 */
+            }
+
+            /* Second Heading */
+            h2{
+                font-size:1.5em;
+                font-weight:300; /* alt.: 400, 700 */
+            }
+
+            h1, h2{
+                font-family:"Raleway", Georgia; /* font */
+            }
+
+            /* Third Heading */
+            h3{
+                font-size:1.25em;
+            }
+
+            /* Fourth Heading */
+            h4{
+                font-size:1em;
+            }
+
+            /* Fifth Heading */
+            h5{
+                font-size:calc(1em - 2px);
+            }
+
+            /* Sixth Heading */
+            h6{
+                font-size:calc(1em - 4px);
+            }
+
+            h5, h6{
+                text-transform:uppercase;
+                /* alt.: capitalize, none, lowercase */
+            }
+
+            body.access h5, body.access h6{
+                text-transform:none;
+                /* alt.: uppercase, capitalize, lowercase */
+            }
+
+            h3, h4{
+                font-family:"Open Sans", Verdana; /* font */
+            }
+
+            h5, h6{
+                font-family:"Roboto Mono", Courier; /* font */
+            }
+
+    /* ––– END TEXT STYLES | START LAYOUT ––– */
+
+            /* HEADER */
+            header{
+                width:calc(100vw - 4em);
+                height:calc(100vh - 4em);
+                padding:2em;
+                top:0;
+                left:0;
+                position:absolute;
+                background-color:#f9faff; /* background color */
+                z-index:99999!important;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                flex-direction:column;
+            }
+
+            /* Header Title */
+            #h-title{
+                font-size:5em;
+                margin-top:25vh;
+                margin-bottom:8px;
+                font-family:"Raleway", Georgia; /* font */
+                border-bottom:4px solid #007fff; /* strength style color */
+            }
+
+            /* Header Description */
+            #h-desc{
+                margin-bottom:25vh;
+                font-size:1.25em;
+                font-family:"Roboto Mono", Courier; /* font */
+                text-align:center;
+            }
+
+            /* Scroll Down */
+            #h-down{
+                width:48px;
+                height:48px;
+                border-radius:50%; /* round corners */
+                color:#f9faff; /* text color */
+                background-color:#343638; /* background color */
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+
+            /* Scroll Down on Hover */
+            #h-down:hover{
+                background-color:#007fff; /* background color */
+            }
+
+            /* Transitions */
+            #h-down, #h-down:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* Links */
+            a.hl, a.sl, a.flwl, a.nl{
+                text-decoration:none;
+                border-bottom:none;
+            }
+
+            /* EVERYTHING ELSE */
+            /* Everything below the header. */
+            #else{
+                width:100vw;
+                height:100vh;
+                z-index:-300!important;
+            }
+
+            /* Section */
+            .section{
+                width:calc(90vw - 4em);
+                padding:2em;
+            }
+
+            /* Section Title */
+            .sect-title{
+                font-family:"Raleway", Georgia; /* font */
+                font-size:2em;
+                margin-bottom:16px;
+                border-bottom:4px solid #007fff; /* strength style color */
+                padding-bottom:8px;
+            }
+
+            /* Section Subtitle */
+            .sect-subtitle{
+                font-size:1.25em;
+                font-family:"Roboto Mono", Courier; /* font */
+                border-bottom:4px solid #343638; /* strength style color */
+                margin-bottom:8px;
+                padding-bottom:4px;
+                margin-top:8px;
+            }
+
+            /* Sub-Section */
+            .subsect{
+                display:flex;
+                flex-wrap:wrap;
+            }
+
+            /* ABOUT SECTION */
+            #about{
+                margin-top:100vh;
+            }
+
+            /* NAVIGATION SECTION */
+            /* Tag Box */
+            .box{
+                padding:1em;
+                width:calc(26vw - 2em);
+                margin-right:1em;
+                margin-bottom:1em;
+                display:flex;
+                flex-wrap:wrap;
+            }
+
+            /* Tag Box Title */
+            .boxtitle{
+                font-size:calc(1em + 2px);
+                border-bottom:4px solid #007fff; /* strength style color */
+                margin-bottom:8px;
+                font-weight:700; /* alt.: 300, 400 */
+                width:100%;
+            }
+
+            /* Navigation Link */
+            a.nl{
+                padding:4px 8px;
+                border-radius:1em; /* round corners */
+                background-color:#007fff; /* background color */
+                color:#f9faff; /* text color */
+                margin-right:4px;
+                margin-bottom:4px;
+            }
+
+            /* Navigation Link on Hover */
+            a.nl:hover{
+                color:#f9faff; /* text color */
+                background-color:#343638; /* background color */
+            }
+
+            /* Transitions */
+            a.nl, a.nl:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* SEARCHBAR */
+            .sb-search .query {
+                border:0;
+                outline:0;
+                padding:4px 8px;
+                width:calc(90vw - 4em - 16px);
+                font-family:"Open Sans", Verdana; /* font */
+                font-size:1em;
+                color:#f9faff; /* text color */
+                background-color:#343638; /* background color */
+                text-transform:capitalize;
+                /* alt.: lowercase, none, uppercase */
+                text-align:left; /* alt.: center, right, justify */
+                margin-bottom:4px;
+                border-radius:1em; /* round corners */
+            }
+
+            /* Sidebar Searchbar on Hover */
+            .sb-search .query:hover{
+                background-color:#007fff; /* background color */
+                color:#f9faff; /* text color */
+            }
+
+            /* Sidebar Searchbar on Focus */
+            .sb-search .query:focus{
+                background-color:#f9faff; /* background color */
+                color:#343638; /* text color */
+            }
+
+            /* Transitions */
+            .sb-search .query, .sb-search .query:hover, .sb-search .query:focus{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* Placeholder */
+            ::-webkit-input-placeholder {
+                color:inherit;
+            }
+
+            ::-o-placeholder {
+                color:inherit;
+                opacity:1;
+            }
+
+            ::-moz-placeholder {
+                color:inherit;
+                opacity:1;
+            }
+
+            :-ms-input-placeholder {
+                color:inherit;
+            }
+
+            /* Placeholder on Focus */
+            input:focus::-webkit-input-placeholder {
+                color:transparent;
+            }
+
+            input:focus::-o-placeholder {
+                color:transparent;
+            }
+
+            input:focus::-moz-placeholder {
+                color:transparent;
+            }
+
+            input:focus:-ms-input-placeholder {
+                color:transparent;
+            }
+
+            /* FAQ SECTION */
+            /* Question */
+            .question{
+                width:60%;
+                padding:0.5em 1em;
+                border-radius:0 1em 1em 0; /* round corners */
+                background-color:#343638; /* background color */
+                color:#f9faff; /* text color */
+                margin-bottom:8px;
+            }
+
+            /* Answer */
+            .answer{
+                width:95%;
+                margin-left:calc(5% - 16px);
+                padding:0.5em 1em;
+                border-radius:0 1em 1em 0; /* round corners */
+                background-color:#007fff; /* background color */
+                color:#f9faff; /* text color */
+                margin-bottom:1em;
+            }
+
+            /* Last Answer */
+            .answer:last-child{
+                margin-bottom:0;
+            }
+
+            /* Question + Answer Paragraphs */
+            .question p, .answer p{
+                padding:0;
+                margin:0;
+                margin-bottom:4px;
+                margin-top:4px;
+            }
+
+            /* BLOGROLL */
+            /* Followed User Container */
+            .followed{
+                width:calc(20vw - 2em);
+                padding:1em;
+                margin-right:1em;
+                margin-bottom:1em;
+                display:flex;
+            }
+
+            /* Followed User Link */
+            a.flwl{
+                display:flex;
+            }
+
+            /* Followed User Icon */
+            .flw-icon img{
+                width:56px;
+                height:56px;
+                border-radius:50%; /* round corners */
+                margin-right:8px;
+                /* Grayscale */
+                filter:grayscale(100%);
+                -moz-filter:grayscale(100%);
+                -o-filter:grayscale(100%);
+                -webkit-filter:grayscale(100%);
+            }
+
+            /* Followed User Icon on Hover */
+            .flw-icon img:hover{
+                /* Grayscale */
+                filter:grayscale(0%);
+                -moz-filter:grayscale(0%);
+                -o-filter:grayscale(0%);
+                -webkit-filter:grayscale(0%);
+            }
+
+            /* Followed User Icon | Transitions */
+            .flw-icon img, .flw-icon img:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* Followed User Blog Title */
+            .flw-title{
+                font-size:1.25em;
+                color:#343638; /* text color */
+                font-weight:700; /* alt.: 300, 400 */
+                font-family:"Raleway", Georgia; /* font */
+                word-break:break-word;
+            }
+
+            /* Followed User Blog Title on Hover */
+            .flw-title:hover{
+                color:#007fff; /* text color */
+            }
+
+            /* Followed User Blog Title | Transitions */
+            .flw-title, .flw-title:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* Followed User Name */
+            .flw-name{
+                color:#007fff; /* text color */
+                font-family:"Roboto Mono", Courier; /* font */
+                word-break:break-word;
+            }
+
+            /* Followed User Name on Hover */
+            .flw-name:hover{
+                color:#343638; /* text color */
+            }
+
+            /* Followed User Name | Transitions */
+            .flw-name, .flw-name:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* SIDEBAR */
+            #sidebar{
+                width:calc(10vw - 2em);
+                height:calc(100vh - 2em);
+                padding:1em;
+                position:fixed;
+                top:0;
+                right:0;
+                display:flex;
+                flex-direction:column;
+                justify-content:center;
+            }
+
+            /* Sidebar Link */
+            a.sl{
+                background-color:#343638; /* background color */
+                color:#f9faff; /* text color */
+                margin-top:4px;
+                margin-bottom:4px;
+                padding:4px 8px;
+                border-radius:1em; /* round corners */
+            }
+
+            /* Sidebar Link on Hover */
+            a.sl:hover{
+                background-color:#007fff; /* background color */
+            }
+
+            /* Transitions */
+            a.sl, a.sl:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+    /* ––– END LAYOUT | START EXTRAS ––– */
+
+            /* Hides the tumblr app button, by @yeoli-thm */
+            .tmblr-iframe--app-cta-button {
+                display:none!important;
+            }
+
+            /* CUSTOM CONTROLS */
+            /* Container */
+            #custom-controls{
+                position:fixed;
+                top:1em;
+                right:calc(1em + 10px);
+                width:calc(2 * 36px + 4px);
+                height:calc(2 * 36px + 8px);
+                display:flex;
+                flex-wrap:wrap;
+                justify-content:space-between;
+                align-items:space-between;
+            }
+
+            /* Control Link */
+            a.conlink{
+                border-bottom:none;
+                box-shadow:none;
+                text-decoration:none;
+            }
+
+            /* Control Element */
+            .cont{
+                background-color:#343638; /* background color */
+                color:#f9faff; /* text color */
+                border-radius:50%; /* round corners */
+                font-size:calc(1em - 2px);
+                width:36px;
+                height:36px;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+
+            /* Control Element on Hover */
+            .cont:hover{
+                background-color:#007fff; /* background color */
+            }
+
+            /* Transitions */
+            .cont, .cont:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* Hides standard tumblr controls */
+            body > iframe:first-child {
+                display: none !important;
+            }
+
+            /* Credit – Don't touch! */
+            #cd{
+                position:fixed;
+                bottom:1em;
+                right:1em;
+            }
+
+    /* ––– END EXTRAS | START RESPONSIVE LAYOUT ––– */
+
+            /* LARGE SCREENS | DESKTOP */
+            @media only screen and (min-width:800px){
+                /* Mobile Footer */
+                #mobile-footer{
+                    display:none;
+                }
+            }
+
+            /* SMALL SCREENS | TABLETS */
+            @media only screen and (max-width:800px){
+                /* Sidebar */
+                #sidebar{
+                    display:none;
+                }
+
+                /* Section */
+                .section{
+                    width:calc(100vw - 4em);
+                }
+
+                /* Questions */
+                .question{
+                    width:calc(100% - 10px - 1.5em);
+                    border-radius:1em 1em 0 0; /* round corners */
+                }
+
+                /* Answers */
+                .answer{
+                    width:calc(100% - 10px - 1.5em);
+                    margin-left:0;
+                    border-radius:0 0 1em 1em; /* round corners */
+                }
+
+                /* FAQ */
+                #faq{
+                    margin-bottom:calc(10vh + 2em);
+                    {block:Following}
+                    margin-bottom:0;
+                    {/block:Following}
+                }
+
+                /* Blogroll */
+                {block:Following}
+                #blogroll{
+                   margin-bottom:calc(10vh + 2em);
+                }
+                {/block:Following}
+
+                /* Tag Boxes, Followed Users */
+                .box, .followed{
+                    width:calc(40vw - 2em);
+                }
+
+                /* Mobile Footer */
+                #mobile-footer{
+                    display:flex;
+                    align-items:center;
+                    justify-content:space-evenly;
+                    background-color:#007fff; /* background color */
+                    position:fixed;
+                    bottom:0;
+                    left:0;
+                    width:100vw;
+                    height:10vh;
+                }
+
+                /* Navigation Element */
+                .mf-nav{
+                    width:36px;
+                    height:36px;
+                    font-size:calc(1em - 2px);
+                    border-radius:8px; /* rounded corners */
+                    background-color:#f9faff; /* background color */
+                    color:#007fff; /* text color */
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                }
+
+                /* Navigation Element on Hover */
+                .mf-nav:hover{
+                    color:#34363a; /* text color */
+                    cursor:pointer;
+                }
+
+                /* Navigation Element Transitions */
+                .mf-nav, .mf-nav:hover{
+                    transition:0.5s;
+                    -moz-transition:0.5s;
+                    -o-transition:0.5s;
+                    -webkit-transition:0.5s;
+                }
+
+                /* Navigation Element Links */
+                .mf-link, body.night .mf-link{
+                    border-bottom:none;
+                }
+
+                /* Credit, Custom Controls */
+                #cd, #custom-controls{
+                    display:none;
+                }
+            }
+
+            /* SMALL SCREENS | PHONES */
+            @media only screen and (max-width:450px){
+                /* Tag Boxes, Followed Users */
+                .box, .followed{
+                    width:calc(90vw - 4em);
+                    padding:0;
+                }
+            }
+
+        </style>
+    </head>
+
+    <!-- ... END CSS | START HTML ... -->
+
+    <body>
+
+        <!-- HEADER -->
+        <header>
+            <!-- Header Title -->
+            <div id="h-title">[TITLE]</div>
+            <!-- Header Description -->
+            <div id="h-desc">
+                [DESCRIPTION]
+            </div>
+
+            <!-- Scroll Down -->
+            <a href="#about" title="go down" class="hl">
+                <div id="h-down">
+                    <span class="fas fa-chevron-down"></span>
+                </div>
+            </a>
+
+        </header> <!-- // end header -->
+
+        <!-- EVERYTHING ELSE -->
+        <div id="else">
+            <!-- SIDEBAR -->
+            <div id="sidebar">
+                <!-- Jump to ABOUT section. -->
+                <a href="#about" title="go to about" class="sl">
+                    About
+                </a>
+                <!-- Jump to NAVIGATION section. -->
+                <a href="#navigation" title="go to navigation" class="sl">
+                    Navigation
+                </a>
+                <!-- Jump to FAQ section. -->
+                <a href="#faq" title="go to faq" class="sl">
+                    FAQ
+                </a>
+                <!-- Jump to BLOGROLL section. -->
+                {block:Following}
+                <a href="#blogroll" title="go to blogroll" class="sl">
+                    Blogroll
+                </a>
+                {/block:Following}
+                <!-- Return to Blog. -->
+                <a href="/" title="return to blog" class="sl">
+                    Home
+                </a>
+            </div> <!-- // end sidebar -->
+
+            <!-- ABOUT SECTION -->
+            <div class="section" id="about">
+                <!-- Section Title -->
+                <div class="sect-title">About</div>
+                <!-- Your text goes here! -->
+            </div> <!-- // end about section -->
+
+            <!-- NAVIGATION SECTION -->
+            <div class="section" id="navigation">
+                <!-- Section Title -->
+                <div class="sect-title">Navigation</div>
+                <!-- Section Subtitle | Links -->
+                <div class="sect-subtitle">Links</div>
+                <!-- Subsection | Links -->
+                <div class="subsect" id="links">
+                    <!-- Links go here. -->
+                    <a href="[URL]" title="[Link Title]" class="nl">[Link Title]</a>
+                    <a href="[URL]" title="[Link Title]" class="nl">[Link Title]</a>
+                    <a href="[URL]" title="[Link Title]" class="nl">[Link Title]</a>
+                    <!-- Copy and paste this if you need more! -->
+                    <!-- <a href="[URL]" title="[Link Title]" class="nl">[Link Title]</a> -->
+                </div>
+
+                <!-- Section Subtitle | Tags -->
+                <div class="sect-subtitle">Tags</div>
+                <!-- Subsection | Tags -->
+                <div class="subsect" id="tags">
+                    <!-- Category -->
+                    <div class="box">
+                        <!-- Category Title -->
+                        <div class="boxtitle"><!-- Category Title --></div>
+                        <!-- Tags go here. -->
+                        <a href="/tagged/[TAG]" title="tagged as: [TAG]" class="nl">[TAG]</a>
+                        <a href="/tagged/[TAG]" title="tagged as: [TAG]" class="nl">[TAG]</a>
+                        <a href="/tagged/[TAG]" title="tagged as: [TAG]" class="nl">[TAG]</a>
+                    </div> <!-- // end category -->
+
+                    <!-- Copy and paste this if you need more! -->
+                    <!--
+                    <div class="box">
+                        <div class="boxtitle">Category Title</div>
+                        <a href="/tagged/[TAG]" title="tagged as: [TAG]" class="nl">[TAG]</a>
+                        <a href="/tagged/[TAG]" title="tagged as: [TAG]" class="nl">[TAG]</a>
+                        <a href="/tagged/[TAG]" title="tagged as: [TAG]" class="nl">[TAG]</a>
+                    </div>
+                  -->
+                </div>
+
+                <!-- Section Subtitle | Search -->
+                <div class="sect-subtitle">Search</div>
+                <!-- Searchbar -->
+                <div id="sb-searchbar">
+                    <form action="/search" method="get" class="sb-search">
+                        <input type="text" name="q" value="{SearchQuery}" class="query" placeholder="Search Blog">
+                    </form>
+                </div>
+            </div> <!-- // end navigation section -->
+
+            <!-- FAQ SECTION -->
+            <div class="section" id="faq">
+                <!-- Section Title -->
+                <div class="sect-title">FAQ</div>
+                <!-- 1st Question -->
+                <div class="question">
+                    <p><!-- Question goes here! --></p>
+                </div>
+                <!-- 1st Answer -->
+                <div class="answer">
+                    <p><!-- Answer goes here! --></p>
+                </div>
+
+                <!-- Copy and paste this if you need more! -->
+                <!--
+                <div class="question">
+                    <p>…</p>
+                </div>
+                <div class="answer">
+                    <p>…</p>
+                </div>
+                -->
+
+                <!-- Last Question -->
+                <div class="question">
+                    <p>Has your question not been answered yet?</p>
+                </div>
+                <!-- Last Answer -->
+                <div class="answer">
+                    <p>Shoot me a message and I'll get to it as soon as I can. Please be patient!</p>
+                    <p>
+                        <iframe frameborder="0" height="200" id="ask_form"
+scrolling="no" src="https://www.tumblr.com/ask_form/{Name}.tumblr.com"
+width="100%"></iframe>
+                        <!--[if IE]><script type="text/javascript">document.getElementById('ask_form').
+                        allowTransparency=true;</script>
+                        <![endif]-->
+                    </p>
+                </div>
+            </div> <!-- // end faq section -->
+
+            <!-- BLOGROLL SECTION -->
+            <!-- Only active if you are following people! -->
+            <!-- You don't have to edit anything here! -->
+            {block:Following}
+            <div class="section" id="blogroll">
+                <!-- Section Title -->
+                <div class="sect-title">Blogroll</div>
+                <!-- Blogroll Masonry Container -->
+                <div id="broll">
+                    {block:Followed}
+                        <!-- Followed User Container -->
+                        <div class="followed">
+                        <!-- Followed User Link -->
+                        <a href="{FollowedURL}" title="follow {FollowedName}" class="flwl">
+                            <!-- Followed User Icon -->
+                            <div class="flw-icon">
+                                <img src="{FollowedPortraitURL-128}" alt="{FollowedName}'s icon"/>
+                            </div>
+                            <!-- Followed User Info -->
+                            <div class="flw-info">
+                                <!-- Followed User Blog Title -->
+                                <div class="flw-title">{FollowedTitle}</div>
+                                <!-- Followed User Name -->
+                                <div class="flw-name">@{FollowedName}</div>
+                            </div>
+                        </a>
+                        </div>
+                    {/block:Followed}
+                </div> <!-- // end blogroll masonry container -->
+            </div> <!-- // end blogroll section -->
+            {/block:Following}
+        </div> <!-- // end everything else -->
+
+        <!-- MOBILE FOOTER -->
+        <div id="mobile-footer">
+            <!-- Desktop Link -->
+            <a href="https://www.tumblr.com/dashboard" title="go to dashboard" class="mf-link">
+                <div class="mf-nav">
+                    <span class="fab fa-tumblr" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Message -->
+            <!-- Takes people to dashboard to send you a message. -->
+            <a href="https://www.tumblr.com/message/{Name}" title="send a message to {Name}" class="mf-link">
+                <div class="mf-nav">
+                    <span class="fas fa-comment-dots" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Home Link -->
+            <a href="/" title="return to blog" class="mf-link">
+                <div class="mf-nav">
+                    <span class="fas fa-home" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Follow -->
+            <!-- Takes people to a page so that they can follow you. -->
+            <a href="https://www.tumblr.com/follow/{Name}" title="follow {Name}" class="mf-link">
+                <div class="mf-nav">
+                    <span class="fas fa-plus" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Credit – Do not touch! -->
+            <a href="https://silbrigthemes.tumblr.com/" title="page by silbrigthemes" class="mf-link">
+                <div class="mf-nav">
+                    <span class="fas fa-code" aria-hidden="true"></span>
+                </div>
+            </a>
+        </div> <!-- // end mobile footer -->
+
+        <!-- CUSTOM CONTROLS -->
+        <div id="custom-controls">
+            <!-- Dashboard Link -->
+            <a href="https://www.tumblr.com/dashboard" title="go to dashboard" class="conlink">
+                <div class="cont">
+                    <span class="fab fa-tumblr" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Message -->
+            <!-- Takes people to dashboard to send you a message. -->
+            <a href="https://www.tumblr.com/message/{Name}" title="send a message to {Name}" class="conlink">
+                <div class="cont">
+                    <span class="fas fa-comment-dots" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Customize -->
+            <!-- Takes you, the blog owner, to the customization. -->
+            <a href="https://www.tumblr.com/customize/{Name}?redirect_to=https%3A%2F%2F{Name}.tumblr.com" title="customize page" class="conlink">
+                <div class="cont">
+                    <span class="fas fa-palette" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Follow -->
+            <!-- Takes people to a page so that they can follow you. -->
+            <a href="https://www.tumblr.com/follow/{Name}" title="follow {Name}" class="conlink">
+                <div class="cont">
+                    <span class="fas fa-plus" aria-hidden="true"></span>
+                </div>
+            </a>
+        </div> <!-- // end custom controls -->
+
+        <!-- CREDIT -->
+        <!-- Do not touch! -->
+        <div id="cd">
+            <a href="https://silbrigthemes.tumblr.com/" title="page by silbrigthemes" class="conlink">
+                <div class="cont">
+                    <span class="fas fa-code" aria-hidden="true"></span>
+                </div>
+            </a>
+        </div>
+
+        <!--Smooth Header Scrolling script. -->
+        <script type="text/javascript">
+            $(function() {
+                $('#h-down').click (function() {
+                  $('html, body').animate({scrollTop: $('#about').offset().top }, 2500);
+                  return false;
+                });
+              });
+        </script>
+
+        <!-- Masonry Script, by DeSandro -->
+        <!-- Masonry for Blogroll -->
+        <script type="text/javascript" charset="utf-8">$(document).ready(function(){
+        var $grid = $("#broll").masonry({
+             itemSelector: ".followed",
+             initLayout: 1
+            });
+            $grid.imagesLoaded().progress(function() {
+             $grid.masonry("layout")
+            });
+            });
+        </script>
+
+        <!-- Masonry for Tags -->
+        <script type="text/javascript" charset="utf-8">$(document).ready(function(){
+        var $grid = $("#tags").masonry({
+             itemSelector: ".box",
+             initLayout: 1
+            });
+            $grid.imagesLoaded().progress(function() {
+             $grid.masonry("layout")
+            });
+            });
+        </script>
+
+        <!-- Tooltips, TippyJs -->
+        <script src="https://unpkg.com/popper.js@1"></script>
+        <script src="https://unpkg.com/tippy.js@5/dist/tippy-bundle.iife.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/svg-arrow.css" />
+
+        <script>
+            tippy('a[title]', {
+              theme: 'wolkenlos',
+              arrow: tippy.roundArrow,
+              zIndex: 9999999999,
+              maxWidth: 300,
+
+              content(reference) {
+                const title = reference.getAttribute('title');
+                reference.removeAttribute('title');
+                return title;
+              },
+            });
+        </script>
+
+    </body>
+</html>
