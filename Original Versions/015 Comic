@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+
+COMIC
+Page #15 by silbrigthemes
+
+A simple about page, accompanying "Mondrian" (Theme #4).
+
+Rules:
+    1) Do not use as a base code.
+    2) Do not edit beyond recognition.
+    3) Do not delete / alter the credit.
+    4) Do not steal (parts of) the code.
+    5) Do not claim as your own.
+    
+The code has been annotated for easier customization.
+
+If you have any problems, please feel free to send me a message.
+
+Have fun!
+
+-->
+
+    <head>
+    
+    <meta charset="utf-16">
+    <title>{Title} | About</title> <!-- change title here -->
+    <link rel="shortcut icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+    
+    <!-- Necessary for the page to be responsive. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Necessary for the icon font to work. -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    <!-- Changes the toolbar color on mobile. -->
+    <meta name="theme-color" content="{color:Color 4}"/>
+    
+    <!-- Necessary for the scripts to work. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    
+    <!-- Tooltip Script -->
+    <script src="https://static.tumblr.com/rzl30kg/eAxm7a751/jquery.style-my-tooltips.js"></script>
+    <script>
+       (function($){
+           $(document).ready(function(){
+               $("[title]").style_my_tooltips({
+                   tip_follows_cursor:true,
+                   tip_delay_time:200,
+                   tip_fade_speed:300
+               }
+                   );
+           });
+       })(jQuery);
+    </script>
+    
+    <!-- Body Font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    
+        <style>
+            
+            body{
+                margin:0;
+                top:0;
+                left:0;
+                font-size:1em; /* 1em = 16px */
+                color:black; /* text color */
+                background:white; /* body background */
+                font-family:"Roboto Mono", Verdana;
+                /* custom font, fallback font */
+                text-align:justify;
+                /* alt.: left, center, right */
+            }
+            
+            /* Hides the tumblr app button. By @yeoli-thm */
+            .tmblr-iframe--app-cta-button {
+                display: none!important;
+            }
+            
+            /* Custom Text Selection */
+            ::selection{
+                background-color:black; /* background color */
+                color:white; /* text color */
+            }
+            
+            ::-moz-selection{
+                background-color:black;
+                color:white;
+            }
+            
+            ::-o-selection{
+                background-color:black;
+                color:white;
+            }
+            
+            ::-webkit-selection{
+                background-color:black;
+                color:white;
+            }
+            
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar{
+                width:8px;
+                background-color:black; /* scrollbar background */
+                border:3px solid white; /* scrollbar border */
+            }
+            
+            ::-webkit-scrollbar-thumb{
+                width:8px;
+                background-color:white; /* scrollbar thumb background */
+                border:3px solid black; /* scrollbar thumb border */
+            }
+            
+            /* Custom Tooltips */
+            #s-m-t-tooltip{
+                max-width:300px;
+                margin:15px;
+                padding:0.25em 0.5em;
+                background:white; /* tooltip background color */
+                color:black; /* toolip color */
+                z-index:999999;
+                font-size:12px; /* tooltip font size */
+                text-transform:uppercase; /* alt.: normal, lowercase */
+                font-weight:bold; /* alt.: 300 (thin), 400 (normal) */
+                border:4px solid black;
+            }
+            
+            /* Links */
+            a{
+                color:black; /* black text color */
+                text-decoration:none;
+                border-bottom:4px solid blue; /* blue bottom border */
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            /* Links on Hover */
+            a:hover{
+                color:black; /* black text color */
+                text-decoration:none;
+                border-bottom:4px solid red; /* red bottom border */
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            /* Bold */
+            b, strong{
+                font-weight:700; /* 700 = bold */
+            }
+            
+            /* Italic */
+            i, em{
+                font-weight:300; /* 300 = thin */
+                font-style:italic;
+            }
+            
+            /* Marked Text */
+            mark{
+                padding:0 0.25em;
+                background-color:#ffe300; /* yellow background */
+                color:black; /* black text color */
+            }
+            
+            /* Underlined Text */
+            u{
+                text-decoration:none;
+                border-bottom:4px solid black; /* black bottom border */
+            }
+            
+            /* Line Break */
+            hr{
+                width:80%;
+                height:4px;
+                border:none;
+                background-color:black;
+            }
+            
+            /* Container for Everything */
+            #all{
+                width:80vw;
+                height:80vh;
+                margin-left:10vw;
+                margin-top:10vh;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+            
+            /* Container for icon, quick info and about section */
+            #main-container{
+                width:400px;
+                height:80vh;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                flex-direction:column;
+            }
+            
+            /* Container for icon and quick info */
+            #head-container{
+                width:auto;
+                height:auto;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+            
+            /* Icon */
+            #one{
+                width:100px;
+                height:100px;
+                border:4px solid black;
+                margin-right:4px;
+            }
+            
+            #one img{
+                width:100px;
+                height:100px;
+            }
+            
+            /* Quick Info */
+            #two{
+                width:250px;
+                height:100px;
+                border:4px solid black;
+                margin-left:4px;
+                background-color:white;
+            }
+            
+            #two ul{
+                list-style-type:none;
+            }
+            
+            #two li{
+                margin-left:-2em;
+                line-height:1.5em;
+            }
+            
+            #two-title{
+                display:none;
+            }
+            
+            /* About Section */
+            #three{
+                width:364px;
+                height:400px;
+                max-height:400px;
+                overflow-y:scroll;
+                border:4px solid black;
+                margin-top:8px;
+                background-color:white;
+            }
+            
+            #three p{
+                padding-left:1em;
+                padding-right:1em;
+            }
+            
+            /* Container for Navigation Links */
+            #side-container{
+                width:calc(36px + 2 * 19.2px);
+                height:calc(400px + 100px + 8px + 8px);
+                border:4px solid black;
+                background-color:white;
+                display:flex;
+                align-items:center;
+                justify-content:space-evenly;
+                flex-direction:column;
+            }
+            
+            .sidelink{
+                width:36px;
+                height:36px;
+                border:4px solid black;
+                background-color:white;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            .alpha:hover{
+                background-color:#ffe300; /* yellow hover background */
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            .beta:hover{
+                background-color:red; /* red hover background */
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            a.side{
+                border-bottom:none;
+                text-decoration:none;
+                color:black;
+            }
+            
+            i.fa{
+                font-size:24px;
+                color:black;
+            }
+            
+            /* Hide standard tumblr controls */
+            body > iframe:first-child {
+                display: none !important;
+            }
+            
+            /** RESPONSIVE LAYOUT **/
+            /* Responsive Layout for large screens */
+            @media only screen and (min-width:1600px){
+                body{
+                    font-size:20px;
+                }
+                
+                #one, #one img{
+                    width:150px;
+                    height:150px;
+                }
+                
+                #two{
+                    width:calc(350px - 0.5em);
+                    height:150px;
+                    padding:0 0.5em;
+                }
+                
+                #three{
+                    width:calc(150px + 350px + 8px + 8px + 8px);
+                    height:500px;
+                    max-height:500px;
+                }
+                
+                #side-container{
+                    height:calc(500px + 150px + 8px + 8px);
+                    margin-left:4em;
+                }
+            }
+            
+            /* Responsive Layout for Tablets */
+            @media only screen and (max-width:800px){
+                body{
+                    font-size:1em;
+                }
+                
+                #all{
+                    width:80vw;
+                    height:80vh;
+                    margin-left:10vw;
+                    margin-top:10vh;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                }
+                
+                #main-container{
+                    width:60vw;
+                    height:80vh;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    flex-direction:column;
+                }
+            }
+            
+            /* Responsive Layout for Mobile Phones */
+            @media only screen and (max-width:500px){
+                body{
+                    font-size:1em;
+                }
+                
+                #all{
+                    width:100vw;
+                    height:100vh;
+                    margin-top:0;
+                    margin-left:0;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                }
+                
+                #one, #one img{
+                    width:75px;
+                    height:75px;
+                }
+                
+                #two{
+                    height:75px;
+                    width:calc(200px - 0.5em);
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    padding:0 0.5em;
+                }
+                
+                #two ul{
+                    display:none;
+                }
+                
+                #three{
+                    width:calc(75px + 200px + 8px + 8px + 8px);
+                }
+                
+                #side-container{
+                    display:none;
+                }
+                
+                #two-title{
+                    display:block;
+                    font-size:2em;
+                    text-transform:uppercase;
+                    font-weight:700;
+                    color:black;
+                }
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        
+        <div id="all">
+            <div id="main-container">
+                
+                <div id="head-container">
+                    <div id="one">
+                        <img src="https://78.media.tumblr.com/731f39bdb3be2c0a4b11ad88ba7fcf23/tumblr_osi9bgneFx1u5nu6fo1_500.jpg" alt="icon">
+                    </div>
+                    
+                    <div id="two">
+                        <div id="two-title">About</div>
+                        
+                        <ul>
+                            <li><mark>Name:</mark> Julia</li>
+                            <li><mark>Age:</mark> 20</li>
+                            <li><mark>Country:</mark> Germany</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="three">
+                    <p>
+                        This is an accompanying page to the theme "<i>Mondrian</i>", made to be used as an about page. You can get the code <a href="https://pastebin.com/jxFngwg6" title="code on pastebin">here on pastebin</a>.
+                    </p>
+                    <hr>
+                    <p>
+                        <b>Lorem ipsum</b> dolor sit amet, consetetur sadipscing elitr, sed diam nonumy <mark>eirmod tempor</mark> invidunt ut <i>labore et dolore</i> magna aliquyam erat, <u>sed diam voluptua</u>.
+                        
+                        <ol>
+                            <li>lorem</li>
+                            <li>ipsum</li>
+                            <li>dolor</li>
+                        </ol>
+                    </p>
+                    <p>
+                        <a href="/" title="example link">At vero eos</a> et accusam et justo duo dolores et ea rebum. <sup>Stet clita</sup> kasd <sub>gubergren</sub>, no sea takimata sanctus est <small>Lorem ipsum dolor</small> sit amet. 
+                    </p>
+                    <hr>
+                    <p>
+                        At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                        <ul>
+                            <li>lorem</li>
+                            <li>ipsum</li>
+                            <li>dolor</li>
+                        </ul>
+                    </p>
+                </div>
+                
+            </div>
+            
+            <div id="side-container">
+                <a href="/" title="return to index" class="side">
+                    <div class="sidelink alpha">
+                        <i class="fa fa-home"></i>
+                    </div>
+                </a>
+                
+                <a href="/ask" title="send a message" class="side">
+                    <div class="sidelink beta">
+                        <i class="fa fa-envelope"></i>
+                    </div>
+                </a>
+                
+                <a href="/archive" title="go to archive" class="side">
+                    <div class="sidelink alpha">
+                        <i class="fa fa-archive"></i>
+                    </div>
+                </a>
+                
+                <a href="/" title="custom link" class="side">
+                    <div class="sidelink beta">
+                        <i class="fa fa-link"></i>
+                    </div>
+                </a>
+                
+                <a href="/" title="custom link" class="side">
+                    <div class="sidelink alpha">
+                        <i class="fa fa-link"></i>
+                    </div>
+                </a>
+                
+                <a href="/" title="custom link" class="side">
+                    <div class="sidelink beta">
+                        <i class="fa fa-link"></i>
+                    </div>
+                </a>
+                
+                <a href="https://www.tumblr.com/follow/{Name}" title="follow {Name}" class="side">
+                    <div class="sidelink alpha">
+                        <i class="fa fa-plus"></i>
+                    </div>
+                </a>
+                
+                <a href="https://www.tumblr.com/message/mondriantheme" title="chat with {Name}" class="side">
+                    <div class="sidelink beta">
+                        <i class="fa fa-comment"></i>
+                    </div>
+                </a>
+                
+                <!-- Do not delete or alter this credit! -->
+                <a href="https://silbrigthemes.tumblr.com/" title="page by @silbrigthemes" class="side">
+                    <div class="sidelink alpha">
+                        <i class="fa fa-code"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+    </body>
+</html>
