@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<head>
+ 
+<!------------------------------------------------------------------
+
+FRAGEN
+Page #9 by silbrigthemes
+
+A simple FAQ page.
+
+Rules:
+
+1) Do not claim as your own.
+2) Do not steal (parts of) the code.
+3) Do not edit beyond recognition.
+4) Do not use as a base code.
+5) Do not delete or alter the credit.
+6) Please like / reblog if you’re using this page. 
+ 
+------------------------------------------------------------------->
+ 
+<title>FAQ | {Title}</title>
+<link rel="shortcut icon" href="{Favicon}">
+
+<!-- WEBFONTS -->
+<link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Tooltip Script -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="https://static.tumblr.com/rzl30kg/eAxm7a751/jquery.style-my-tooltips.js"></script>
+<script>
+    (function($){
+    $(document).ready(function(){
+        $("[title]").style_my_tooltips({
+            tip_follows_cursor:true,
+            tip_delay_time:200,
+            tip_fade_speed:300
+            }
+        );
+    });
+    })(jQuery);
+</script>
+ 
+<style type="text/css">
+ 
+/** BODY **/
+body{
+    margin:0px;
+    background-color:#fefefe; /* change background color here */
+    overflow-x:hidden;
+    font-family:"Quicksand", Verdana; 
+    /* Verdana is a system font and functions as a fallback*/
+
+}
+ 
+/* Custom Tooltips */
+#s-m-t-tooltip{
+    max-width:300px;
+    margin:15px;
+    padding:0.5em;
+    background:#666; /* Tooltip Background Color */
+    color:#d6a6a3; /* Toolip Color */
+    z-index:999999;
+    font-size:12px;
+    text-transform:uppercase;
+    font-weight:bold;
+}
+
+/** SCROLLBAR **/
+::-webkit-scrollbar{
+    width:7px;
+    background:#e8e6e7;
+}
+
+
+::-webkit-scrollbar-thumb{
+    background:#d6a6a3;
+    border-radius:10px;
+    border:2px solid #e8e6e7;
+}
+
+
+/** SELECTION **/
+::selection{
+    background-color:#666;
+    color:#d6a6a3;
+    text-shadow:0.5px 0.5px #e1cecd; /* offset left | offset top | color */
+}
+
+
+::-moz-selection{
+    background-color:#666;
+    color:#d6a6a3;
+    text-shadow:0.5px 0.5px #e1cecd;
+}
+
+::-webkit-selection{
+    background-color:#666;
+    color:#d6a6a3;
+    text-shadow:0.5px 0.5px #e1cecd;
+}
+
+i, em{
+    font-style:italic;
+}
+
+b, strong{
+    font-weight:bold;
+    color:#777;
+}
+
+a{
+    color:#d6a6a3;
+    text-decoration:none;
+    transition:0.5s;
+    -moz-transition:0.5s;
+    -o-transition:0.5s;
+    -webkit-transition:0.5s;
+    
+}
+
+a:hover{
+    color:#666;
+    text-decoration:underline;
+    cursor:pointer;
+    text-decoration-color:#d6a6a3;
+    transition:0.5s;
+    -moz-transition:0.5s;
+    -o-transition:0.5s;
+    -webkit-transition:0.5s;
+    
+}
+
+mark{
+    background-color:#d6a6a3;
+    color:#fefefe;
+}
+
+
+/** HEADER **/
+header{
+    width:100vw;
+    height:20vh;
+    top:0;
+    background-color:#d6a6a3;
+    position:absolute;
+    border-bottom:5px solid #e1cecd;
+}
+
+/* TITLE */
+#title{
+    font-size:3.5em; /* 1em = 16px */
+    font-family:"Quicksand", Verdana;
+    /* Verdana is a system font and functions as a fallback*/
+    font-weight:bold;
+    text-transform:uppercase;
+    color:#eee;
+    text-align:center;
+    text-shadow:2px 2px #e1cecd;
+    width:100vw;
+    margin:0px auto;
+    margin-top:5vh;
+    margin-bottom:5vh;
+}
+
+#main-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:60vw;
+    height:50vw;
+    margin-top:calc(10vh - 5px);
+    margin-left:20vw;
+}
+
+#left-side{
+    width:27.5vw;
+    height:50vh;
+    background-color:#fafafa;
+    border:1px solid #e8e6e7;
+    /*
+    margin-left:20vw;
+    margin-top:30vh; /* height header + 10vh */
+    overflow-x:hidden;
+    overflow-y:scroll;
+}
+
+.faq-tab{
+    position:relative;
+    width:25vw;
+    overflow:hidden;
+    margin-left:1.25vw;
+    transition:all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+input{
+    position:absolute;
+    opacity:0;
+    z-index:-1;
+}
+
+label{
+    position:relative;
+    display:block;
+    padding:15px;
+    background-color:#e8e6e7;
+    color:#888;
+    font-family:"Quicksand", Verdana;
+    /* Verdana is a system font and functions as a fallback*/
+    font-weight:bold;
+    font-size:14px;
+    cursor:pointer;
+    border:1px solid #d2d0d1;
+    transition:all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+.tab-content{
+    max-height:0;
+    overflow:hidden;
+    background:#f2f2f2;
+    font-size:13px;
+    font-family:"Quicksand", Verdana;
+    /* Verdana is a system font and functions as a fallback*/
+    color:#999;
+    margin-bottom:5px;
+    transition: max-height 0.5s;
+    -webkit-transition: max-height 0.5s;
+    -o-transition: max-height 0.5s;
+    -moz-transition: max-height 0.5s;
+}
+
+.tab-content p{
+    margin:15px;
+}
+
+input:checked ~ .tab-content{
+    max-height:150px;
+}
+
+label::after{
+    position:absolute;
+    top:0;
+    right:0;
+    display:block;
+    width:3em;
+    height:3em;
+    text-align:center;
+    line-height:3;
+    text-align:center;
+    transition:all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+input[type=checkbox] + label::after{
+    content:"+";
+}
+
+input[type=checkbox]:checked + label::after{
+    transform:rotate(135deg);
+}
+
+#middle-nav{
+   display:none;
+}
+
+#middle-nav a{
+    display:none;
+}
+
+#middle-nav mark{
+    display:none;
+}
+
+#middle-nav mark:hover{
+    display:none;
+}
+
+#right-side{
+    width:27.5vw;
+    height:50vh;
+    background-color:#fafafa;
+    border:1px solid #e8e6e7;
+    margin-left:5vw;
+    overflow-x:hidden;
+    overflow-y:scroll;
+}
+
+#right-side iframe{
+    width:25vw;
+    margin-left:1.25vw;
+}
+
+#right-side #ask_form{
+    filter:hue-rotate(145deg) saturate(55%);
+    -moz-filter:hue-rotate(145deg) saturate(55%);
+    -ms-filter:hue-rotate(145deg) saturate(55%);
+    -o-filter:hue-rotate(145deg) saturate(55%);
+    -webkit-filter:hue-rotate(145deg) saturate(55%);
+}
+
+#right-side #ask_form img{
+    filter:hue-rotate(0deg) saturate (100%);
+    -moz-filter:hue-rotate(0deg) saturate(100%);
+    -ms-filter:hue-rotate(0deg) saturate(100%);
+    -o-filter:hue-rotate(0deg) saturate(100%);
+    -webkit-filter:hue-rotate(0deg) saturate(100%);
+}
+    
+#right-side #submit_form{
+    filter:hue-rotate(145deg) saturate(55%);
+    -moz-filter:hue-rotate(145deg) saturate(55%);
+    -ms-filter:hue-rotate(145deg) saturate(55%);
+    -o-filter:hue-rotate(145deg) saturate(55%);
+    -webkit-filter:hue-rotate(145deg) saturate(55%);
+}    
+
+.side-heading{
+    font-size:20px;
+    font-family:"Playfair Display", "Times New Roman";
+    /* TNR is a system font and functions as a fallback*/
+    font-weight:bold;
+    font-style:italic;
+    margin-left:15px;
+    margin-top:10px;
+    color:#666;
+    text-shadow:1px 2px #d2d0d1;
+    text-align:center;
+}
+
+
+/* FOOTER */
+footer{
+    width:60vw; /* (2 * width side) + 10vw*/
+    height:10vh;
+    min-height:80px;
+    background-color:#e1cecd;
+    margin-top:-12vh;
+    /*margin-top:8.5vh;
+    /* the (-1px) has to be included because of the top border*/
+    /*margin-bottom:-1px;
+    /*100vh - (height header + height side + height footer + 10vh) */
+    margin-left:20vw; /* same as with #left-side */
+    border-top:1px solid #d6a6a3;
+    border-left:1px solid #d6a6a3;
+    border-right:1px solid#d6a6a3;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+}
+
+
+.bulletleft{
+    height:60px;
+    width:60px;
+    background-color:#e8e6e7;
+    border-radius:50%;
+    border:1px solid #d6a6a3;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    
+}
+
+.bulletleft svg{
+    height:35px;
+    width:35px;
+    transition:0.5s;
+    -webkit-transition-duration:.5s;
+    -moz-transition-duration:.5s;
+    -o-transition-duration:.5s;
+    -ms-transition-duration:.5s;
+}
+
+.bulletleft svg polygon {
+    fill:#d6a6a3;
+}
+
+.bulletleft svg path {
+    fill:#d6a6a3;
+}
+
+.bulletleft svg:hover{
+    height:30px;
+    width:30px;
+    transition:0.5s;
+    -webkit-transition-duration:.5s;
+    -moz-transition-duration:.5s;
+    -o-transition-duration:.5s;
+    -ms-transition-duration:.5s;
+}
+
+.bulletmiddle{
+    height:60px;
+    width:60px;
+    background-color:#e8e6e7;
+    border-radius:50%;
+    border:1px solid #d6a6a3;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.bulletmiddle svg{
+    height:35px;
+    width:35px;
+    transition:0.5s;
+    -webkit-transition-duration:.5s;
+    -moz-transition-duration:.5s;
+    -o-transition-duration:.5s;
+    -ms-transition-duration:.5s;
+}
+
+.bulletmiddle svg path{
+    fill:#d6a6a3;
+}
+
+.bulletmiddle svg:hover{
+    height:30px;
+    width:30px;
+    transition:0.5s;
+    -webkit-transition-duration:.5s;
+    -moz-transition-duration:.5s;
+    -o-transition-duration:.5s;
+    -ms-transition-duration:.5s;
+}
+
+.bulletright{
+    height:60px;
+    width:60px;
+    background-color:#e8e6e7;
+    border-radius:50%;
+    border:1px solid #d6a6a3;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.bulletright svg{
+    height:35px;
+    width:35px;
+    transition:0.5s;
+    -webkit-transition-duration:.5s;
+    -moz-transition-duration:.5s;
+    -o-transition-duration:.5s;
+    -ms-transition-duration:.5s;
+}
+
+.bulletright svg polygon {
+    fill:#d6a6a3;
+}
+
+.bulletright svg rect {
+    fill:#d6a6a3;
+}
+
+.bulletright svg:hover{
+    height:30px;
+    width:30px;
+    transition:0.5s;
+    -webkit-transition-duration:.5s;
+    -moz-transition-duration:.5s;
+    -o-transition-duration:.5s;
+    -ms-transition-duration:.5s;
+}
+
+
+/**CREDIT*/
+.credit img{
+    width:72px;
+    height:72px;
+    margin-top:100%;
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    border:5px solid #fefefe; 
+    /* match this color with the body background color */
+    border-radius:50%;
+    transition:0.5s;
+    -moz-transition:0.5s;
+    -o-transition:0.5s;
+    -webkit-transition:0.5s;
+    
+}
+
+.credit img:hover{
+    border:5px solid #e8e6e7;
+    border-radius:50%;
+    transition:0.5s;
+    -moz-transition:0.5s;
+    -o-transition:0.5s;
+    -webkit-transition:0.5s;
+    
+}
+
+/* 
+
+IMPORTANT NOTICE
+While the following section will repeat many of the CSS rules above, I kindly ask you to leave all CSS after this comment intact as it is meant to maybe this page accessible for mobile users as well. 
+
+*/
+
+
+@media only screen and (max-width:800px) {
+    
+    header{
+        height:10vh;
+        min-height:80px;
+    }
+    
+    #title{
+        font-size:3em;
+        margin-top:10px;
+    }
+    
+    #main-container{
+        width:100vw;
+        height:70vh;
+        margin-left:0px;
+        background-color:#fafafa;
+        overflow-y:scroll;
+        overflow-x:hidden;
+        margin-top:20vh;
+        border-top:1px solid #e8e6e7;
+        border-bottom:1px solid #e8e6e7;
+        display:block;
+    }
+    
+    #left-side{
+        width:100vw;
+        height:40vh;
+        margin-left:0px;
+        margin-top:0vh;
+        margin-bottom:5vh;
+        border-left:0px;
+        border-right:0px;
+        border-top:0px;
+    }
+    
+    .faq-tab{
+        width:calc(100vw - 30px);
+    }
+    
+    #middle-nav{
+        display:block;
+        width:100vw;
+        height:10vh;
+        background-color:#e1cecd;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+    
+    #middle-nav a{
+        display:inline;
+        text-decoration:none;
+        padding-left:20px;
+    }
+    
+    #middle-nav mark{
+        display:inline;
+        background-color:#d6a6a3;
+        color:#fefefe;
+        padding:0.5em;
+        font-size:1em;
+        text-transform:uppercase;
+        font-weight:bold;
+        border-radius:5px;
+        transition:0.5s;
+        -moz-transition:0.5s;
+        -o-transition:0.5s;
+        -webkit-transition:0.5s;
+    }
+    
+    #middle-nav mark:hover{
+        display:inline;
+        background-color:#fefefe;
+        color:#d6a6a3;
+        cursor:pointer;
+        transition:0.5s;
+        -moz-transition:0.5s;
+        -o-transition:0.5s;
+        -webkit-transition:0.5s;
+    }
+   
+    #right-side{
+        width:100vw;
+        height:100vh;
+        margin-top:5vh;
+        margin-left:0px;
+        border-left:0px;
+        border-bottom:0px;
+        border-right:0px;
+        overflow-y:scroll;
+    }
+    
+    #right-side iframe{
+        width:calc(100vw - 30px);
+    }
+    
+    footer{
+        width:100vw;
+        margin-left:0px;
+        border-left:0px;
+        border-right:0px;
+        margin-bottom:-1px;
+    }
+    
+    .bulletleft{
+        margin-left:10%;
+    }
+    
+    .bulletmiddle{
+        margin-left:calc(50% - 31px);
+    }
+    
+    .bulletright{
+        margin-left:calc(90% - 62px);
+    }
+    
+    .credit img{
+        display:none;
+    }
+    
+    footer{
+        display:none;
+    }
+    
+}
+
+.tmblr-iframe--app-cta-button {
+    display: none!important;
+}
+ 
+</style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <!-- TITLE -->
+        <div id="title">Fragen?</div>
+    </header>
+    
+    <div id="main-container">
+    <div id="left-side">
+        <div class="side-heading">Frequently Asked</div>
+        <br>
+        <div class="faq-tab">
+            <input id="question-one" type="checkbox" name="tabs">
+            <label for="question-one">
+                What is this page?
+            </label>
+            <div class="tab-content">
+                <p>
+                    This is a FAQ page with a combined ask and submit.
+                </p>
+            </div>
+        </div>
+        
+        <div class="faq-tab">
+            <input id="question-two" type="checkbox" name="tabs">
+            <label for="question-two">
+                How do I customize this page?
+            </label>
+            <div class="tab-content">
+                <p>Fear not my friend; I have put comments in the code which will help you. And if that isn't enough, my askbox is open; all you have to do is send me a message.</p>
+            </div>
+        </div>
+        
+        <div class="faq-tab">
+            <input id="question-three" type="checkbox" name="tabs">
+            <label for="question-three">
+                Can you help with everything?
+            </label>
+            <div class="tab-content">
+                <p>Unfortunately not, some things sheerly work because of trial and error.</p>
+            </div>
+        </div>
+        
+         <div class="faq-tab">
+            <input id="question-four" type="checkbox" name="tabs">
+            <label for="question-four">
+                What will links and bold text look like?
+            </label>
+            <div class="tab-content">
+                <p><b>This is how bold text looks like,</b><i> this is how italic text looks like </i><a href="" title="example link">and this is how a link looks like.</a> <br><mark>Even better, you can also mark text!</mark></p>
+            </div>
+        </div>
+    </div>
+    
+<!-- 
+If you want more questions to be displayed, copy and paste this code:
+
+<div class="faq-tab">
+            <input id="question-[number]" type="checkbox" name="tabs">
+            <label for="question-[number]">
+                Here goes the question.
+            </label>
+            <div class="tab-content">
+                <p>Here goes the answer.</p>
+            </div>
+        </div>
+
+after the last question that was being displayed. Change [number] to the number of the box in order. 
+-->   
+
+<div id="middle-nav">
+    <a href="/" title="Index"><mark>Index</mark></a>
+    <a href="/ask" title="Ask"><mark>Message</mark></a>
+    <a href="/archive" title="Archive"><mark>Archive</mark></a>
+    <a href="https://silbrigthemes.tumblr.com/" title="Credit"><mark>Credit</mark></a>
+</div>
+
+    
+    <div id="right-side">
+        <div class="side-heading">Ask Away!</div>
+        <!-- ASK BOX CODE -->
+        <p>
+<iframe frameborder="0" height="200" id="ask_form" 
+scrolling="no" src="http://www.tumblr.com/ask_form/{Name}.tumblr.com" 
+width="100%"></iframe>
+<!--[if IE]><script type="text/javascript">document.getElementById('ask_form').
+allowTransparency=true;</script>
+<![endif]-->
+</p>
+        
+        <div class="side-heading">Submit Something!</div>
+        <!-- SUBMIT BOX CODE -->
+<p>
+<iframe frameborder="0" height="400" id="submit_form" 
+scrolling="no" src="http://www.tumblr.com/submit_form/{NAME}.tumblr.com" 
+width="100%"></iframe>
+</p> 
+    </div>
+    </div>
+    
+    <footer>
+       <div class="bulletleft">
+    <a href="/" title="home">
+        
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 63.115 63.115" style="enable-background:new 0 0 63.115 63.115;" xml:space="preserve">
+
+			<g>
+				<polygon points="61.025,27.941 31.088,9.592 2.141,27.925 0,24.546 31.053,4.879 63.115,24.531 				"/>
+			</g>
+			<g>
+				<path d="M57.57,58.236H46.637v-23h-8.133v23H5.57v-37h52V58.236z M50.637,54.236h2.934v-29h-44v29h24.934v-23h16.133
+					L50.637,54.236L50.637,54.236z"/>
+			</g>
+			<g>
+				<polygon points="31.57,50.236 12.57,50.236 12.57,31.236 31.57,31.236 31.57,35.236 16.57,35.236 16.57,46.236 27.57,46.236 
+					27.57,41.736 31.57,41.736 				"/>
+			</g>
+		
+</svg>
+
+    </a>
+</div>
+
+<div class="bulletmiddle">
+    <a href="/ask" title="ask">
+        
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 64.006 64.006" style="enable-background:new 0 0 64.006 64.006;" xml:space="preserve">
+
+			<g>
+				<path d="M4.628,61.943l13.148-27.14l35.27-3.778L13.354,10.95l8.919,18.557H0v-4h15.912L4.646,2.063l59.36,30.022L4.628,61.943z
+					 M20.409,38.543L13.372,53.07l34.802-17.5L20.409,38.543z"/>
+			</g>
+		
+        </svg>
+
+    </a>
+</div>
+
+<div class="bulletright">
+    <a href="/archive" title="archive">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 64 64" style="enable-background:new 0 0 64 64;" xml:space="preserve" width="64px" height="64px"> <g>
+                    <polygon points="64,63 0,63 0,28.395 8.336,15.891 11.664,18.109 4,29.605 4,59 60,59 60,29.605 52.336,18.109 55.664,15.891        64,28.395      " fill="#92a8d1"/>
+                </g> <g>
+                    <rect x="2" y="27" width="59" height="4" fill="#92a8d1"/>
+                </g> <g>
+                    <polygon points="56,25 52,25 52,11 12,11 12,25 8,25 8,7 56,7      " fill="#92a8d1"/>
+                </g> <g>
+                <rect x="22" y="37" width="20" height="4" fill="#92a8d1"/>
+            </g> <g>
+                <rect x="16" y="15" width="16" height="4" fill="#92a8d1"/>
+            </g> <g>
+                <rect x="16" y="21" width="23" height="4" fill="#92a8d1"/>
+            </g> <polygon points="53,7 49,7 49,5 15,5 15,7 11,7 11,1 53,1     " fill="#92a8d1"/>
+        </svg>    
+        
+    </a>
+    
+</div>
+    </footer>
+    
+    <div class="credit">
+        <a href="https://silbrigthemes.tumblr.com/" title="Credit: @silbrigthemes"><img src="https://78.media.tumblr.com/b6da066ce1dbef3917716da815df769d/tumblr_oymniwJZwJ1wsskx3o2_r1_540.png"></a>
+    </div>
+
+</body>
+</html>
