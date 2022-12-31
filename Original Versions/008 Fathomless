@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+
+FATHOMLESS
+Page #8 by silbrigthemes
+
+This is a revamp of page "Greenery". It's a responsive about page.
+
+----------
+
+Rules:
+
+    1) Do not use as base code.
+    2) Do not customize beyond recognition.
+    3) Do not steal (parts of) the code.
+    4) Do not claim as your own.
+    5) Do not delete or alter the credit.
+    6) Do not redistribute to other sites.
+
+----------
+
+Useful comments to this code have been made.
+
+If you need any help for a problem , feel free to send me a message via silbrigthemes.tumblr.com/ask or send a message to my official support blog, silbrigsupport.tumblr.com.
+
+Have fun!
+
+Love,
+Julia <3
+
+----------
+
+Note:
+
+    This work is protected by a creative commons
+    Attribution-NonCommercial-NoDerivatives 4.0 International
+    (CC BY-NC-ND 4.0)
+    license.
+
+-->
+
+    <head>
+
+    <meta charset="utf-16">
+    <title>{Title} | Fathomless</title>
+    {block:Description}
+    <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+    <link rel="shortcut icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+
+    <!-- Necessary for the theme to be responsive. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Necessary for the scripts to work. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+    <!-- Changes the toolbar color on mobile. -->
+    <meta name="theme-color" content="#000979c"/>
+
+    <!-- Icon font, by fontawesome. -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- Tooltip Script -->
+    <script src="https://static.tumblr.com/rzl30kg/eAxm7a751/jquery.style-my-tooltips.js"></script>
+    <script>
+        (function($){
+            $(document).ready(function(){
+                $("[title]").style_my_tooltips({
+                    tip_follows_cursor:true,
+                    tip_delay_time:200,
+                    tip_fade_speed:300
+                }
+                    );
+            });
+        })(jQuery);
+    </script>
+
+    <!-- Roboto Slab -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <!-- Open Sans -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+
+    <!-- Other Fonts -->
+    <!-- Roboto Mono -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <!-- Cormorant Garamond -->
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese" rel="stylesheet">
+    <!-- Dancing Script -->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+
+        <style>
+
+            body{
+                margin:0;
+                top:0;
+                left:0;
+                background-color:#00979c; /* background color */
+                font-size:1em; /* font-size, 1em = 16px */
+                color:#333; /* text color */
+                font-family:"Open Sans", Verdana; /* font-family */
+                text-align:justify;
+                overflow-x:hidden;
+            }
+
+            /* Night Mode */
+            body.night{
+                color:white; /* text color */
+                background-color:#006164; /* background color */
+            }
+
+            /* Accessible Mode */
+            body.access{
+                text-align:left;
+                font-size:18px; /* font-size */
+                /* should be bigger than the one under body */
+            }
+
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar{
+                width:10px;
+            }
+
+            ::-webkit-scrollbar-thumb{
+                width:10px;
+                background-color:white;
+                border-radius:5px;
+            }
+
+            /* Custom Text Selection */
+            ::selection{
+                background-color:#00979c; /* background-color */
+                color:white; /* text color */
+            }
+
+            ::-moz-selection{
+                background-color:#00979c; /* background-color */
+                color:white; /* text color */
+            }
+
+            ::-o-selection{
+                background-color:#00979c; /* background-color */
+                color:white; /* text color */
+            }
+
+            ::-webkit-selection{
+                background-color:#00979c; /* background-color */
+                color:white; /* text color */
+            }
+
+            /* Custom Tooltips */
+            #s-m-t-tooltip{
+                max-width:300px;
+                margin:15px;
+                padding:8px;
+                background-color:#046aaa; /* background color */
+                color:white; /* text color */
+                z-index:9999999999999;
+                font-size:calc(1em - 4px);
+                text-transform:uppercase;
+                font-weight:400;
+                font-family:"Open Sans", Verdana; /* font-family */
+                border-radius:8px;
+            }
+
+            body.night #s-m-t-tooltip{
+                background-color:#03446d; /* background color */
+            }
+
+            body.access #s-m-t-tooltip{
+                text-transform:none;
+            }
+
+    /** –– TEXT STYLES –– **/
+            /* Bold Text */
+            b, strong{
+                font-weight:bold;
+                color:#89999b; /* text color */
+            }
+
+            body.night b, body.night strong{
+                color:#b3bebf; /* text color */
+            }
+
+            /* Italic Text */
+            i, em{
+                font-weight:300;
+                font-style:italic;
+                color:#607278; /* text color */
+            }
+
+            body.night i, body.night em{
+                color:#99a5a9; /* text color */
+            }
+
+            body.access i, body.access em{
+                font-style:normal;
+                font-weight:400;
+            }
+
+            /* Empty Paragraphs */
+            p:empty{
+                display:none;
+            }
+
+            /* Underlined Text */
+            u{
+                text-decoration:none;
+                border-bottom:2px solid #333; /* height style color */
+            }
+
+            body.night u{
+                border-bottom:2px solid white; /* height style color */
+            }
+
+            body.access u{
+                border-bottom:none;
+            }
+
+            /* Small Text */
+            small{
+                font-size:calc(1em - 4px);
+            }
+
+            body.access small{
+                font-size:calc(1em - 2px);
+            }
+
+            /* Text Line */
+            hr{
+                width:80%;
+                height:4px;
+                border-radius:4px;
+                border:none;
+                background-color:#046aaa; /* background-color */
+            }
+
+            body.night hr{
+                background-color:#5fa0c8; /* background color */
+            }
+
+            /* Sub- and supscripted Text */
+            body.access sub, body.access sup{
+                vertical-align:baseline;
+            }
+
+            /* Marked Text */
+            mark{
+                background-color:#00979c; /* background color */
+                color:white; /* text color */
+                padding:0 8px;
+                border-radius:1em;
+            }
+
+            body.night mark{
+                background-color:#5cbcc0; /* background color */
+                color:#333; /* text color */
+            }
+
+            /* Blockquote */
+            blockquote{
+                border-left:4px solid #00979c; /* width style color */
+                color:#00979c; /* text color */
+                padding-left:1em;
+            }
+
+            body.night blockquote{
+                color:#5cbcc0; /* text color */
+                border-left:4px solid #5cbcc0; /* width style color */
+            }
+
+            /* Preformatted Text */
+            pre{
+                border-left:4px solid #046aaa; /* width style color */
+                color:#046aaa; /* text color */
+                padding-left:16px;
+                font-family:"Roboto Mono", Courier; /* font-family */
+                font-size:calc(1em - 2px);
+                word-wrap:break-all;
+                white-space:pre-wrap;
+            }
+
+            body.night pre{
+                border-left:4px solid #5fa0c8; /* width style color */
+                color:#5fa0c8; /* text color */
+            }
+
+            body.access pre{
+                font-family:"Open Sans", Verdana; /* font-family */
+            }
+
+            /* LINKS */
+            /* Link */
+            a{
+                color:#046aaa; /* text color */
+                border-bottom:2px solid #046aaa; /* height style color */
+                text-decoration:none;
+            }
+
+            body.night a{
+                color:#5fa0c8; /* text color */
+                border-bottom:2px solid #5fa0c8; /* height style color */
+            }
+
+            body.access a{
+                border-bottom:none;
+            }
+
+            /* Hover Link */
+            a:hover{
+                color:#00979c; /* text color */
+                border-bottom:2px solid #00979c; /* height style color */
+            }
+
+            body.night a:hover{
+                color:#5cbcc0; /* text color */
+                border-bottom:2px solid #5cbcc0; /* height style color */
+            }
+
+            body.access a:hover{
+                border-bottom:none;
+            }
+
+            a, a:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* COLORED TEXT */
+            /* Red Text */
+            .npf_color_joey {
+                color:#f21000;
+            }
+
+            /* Orange Text */
+            .npf_color_monica {
+                color:#f26d00;
+            }
+
+            /* Yellow Text */
+            .npf_color_phoebe {
+                color:#f2b100;
+            }
+
+            /* Green Text */
+            .npf_color_ross {
+                color:#009b17;
+            }
+
+            /* Blue Text */
+            .npf_color_rachel {
+                color:#0040f2;
+            }
+
+            body.night .npf_color_rachel{
+                color:#3e6ef2;
+            }
+
+            /* Purple Text */
+            .npf_color_chandler {
+                color:#b900f2;
+            }
+
+            /* Pink Text */
+            .npf_color_niles {
+                color:#f20099;
+            }
+
+            /* depending on text and background color, you might have to
+               add a color for the night mode to ensure readbility */
+
+            /* SPECIAL FONTS */
+            /* Quirky Font */
+            .npf_quirky{
+                font-family: "Dancing Script", cursive;
+                font-size:1.5em;
+            }
+
+            /* Chat Font */
+            .npf_chat{
+                font-family:"Roboto Mono", Courier;
+            }
+
+            /* Quote Font */
+            .npf_quote{
+                font-family:"Cormorant Garamond", "Palatino";
+                font-size:1.25em;
+            }
+
+            body.access .npf_quirky, body.access .npf_chat, body.access .npf_quote{
+                font-family:"Open Sans", Verdana; /* font family */
+                font-size:1em;
+            }
+
+            /* HEADINGS */
+            /* Title */
+            #title{
+                font-size:2.5em;
+                font-family:"Roboto Slab", Georgia; /* font-family */
+                color:#00979c; /* text color */
+                padding:0.5em 1em;
+                text-align:center;
+            }
+
+            body.night #title{
+                color:#5cbcc0; /* text color */
+            }
+
+            body.access #title{
+                font-family:"Open Sans", Verdana; /* font family */
+                text-align:left;
+            }
+
+            /* First Heading */
+            h1{
+                font-size:1.75em;
+                font-weight:400;
+            }
+
+            /* Second Heading */
+            h2{
+                font-size:1.5em;
+                font-weight:300;
+            }
+
+            h1, h2{
+                font-family:"Roboto Slab", Georgia;
+            }
+
+            body.access h1, body.access h2{
+                font-family:"Open Sans", Verdana;
+                font-weight:400;
+            }
+
+            /* Third Heading */
+            h3{
+                font-size:1.25em;
+            }
+
+            /* Fourth Heading */
+            h4{
+                font-size:1em;
+            }
+
+            /* Fifth Heading */
+            h5{
+                font-size:calc(1em - 2px);
+            }
+
+            /* Sixth Heading */
+            h6{
+                font-size:calc(1em - 4px);
+            }
+
+            h5, h6{
+                text-transform:uppercase;
+            }
+
+            body.access h5, body.access h6{
+                text-transform:none;
+            }
+
+            h3, h4, h5, h6{
+                font-family:"Open Sans", Verdana;
+            }
+
+            /* Container */
+            #container{
+                width:60vw;
+                height:auto;
+                margin-top:10vh;
+                margin-bottom:10vh;
+                margin-left:20vw;
+                background-color:white; /* background color */
+                border-radius:8px; /* round corners */
+                overflow:hidden;
+            }
+
+            body.night #container{
+                background-color:#333; /* background color */
+            }
+
+            /* About Section */
+            #about{
+                padding:0 2em;
+            }
+
+            /* CUSTOM CONTROLS */
+            /* Hides standard tumblr controls */
+            body > iframe:first-child {
+                display:none !important;
+            }
+
+            /* Hides the tumblr app button, by @yeoli-thm */
+            .tmblr-iframe--app-cta-button {
+                display:none!important;
+            }
+
+            /* Control Element */
+            .cont{
+                width:32px;
+                height:32px;
+                background-color:white; /* background color */
+                border-radius:8px; /* rounded corners */
+                font-size:calc(1em - 2px);
+                color:#046aaa; /* text color */
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+
+            body.night .cont{
+                background-color:#333; /* background color */
+                color:#5fa0c8; /* text color */
+            }
+
+            /* Control Element on Hover */
+            .cont:hover{
+                transform:scale(1.05);
+            }
+
+            /* Transitions */
+            .cont, .cont:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* Control Element Links */
+            a.conlink, body.night a.conlink{
+                border-bottom:none;
+                color:inherit;
+            }
+
+            /* Custom Control Container */
+            #custom-controls{
+                width:calc(2 * 32px + 6px);
+                height:calc(3 * 32px + 16px);
+                position:fixed;
+                top:1em;
+                right:1em;
+                display:flex;
+                align-items:space-between;
+                justify-content:space-between;
+                flex-wrap:wrap;
+            }
+
+            /* Day/Night Toggle */
+            .daynight{
+                position:fixed;
+                top:1em;
+                left:1em;
+                cursor:pointer;
+            }
+
+            /* Accessible Toggle */
+            .accessible{
+                position:fixed;
+                left:1em;
+                top:calc(1em + 32px + 8px);
+            }
+
+            /* Credit – Don't touch! */
+            #credit{
+                position:fixed;
+                bottom:1em;
+                left:1em;
+            }
+
+            /* RESPONSIVE LAYOUT */
+            /* Desktop */
+            @media only screen and (min-width:800px){
+                #mobile-footer{
+                    display:none;
+                }
+            }
+
+            /* Tablet */
+            @media only screen and (max-width:800px){
+                #container{
+                    width:80vw;
+                    margin-left:10vw;
+                }
+
+                #custom-controls{
+                    width:32px;
+                    height:calc(6 * 32px + 5 * 8px);
+                }
+
+                #mobile-footer{
+                    display:none;
+                }
+            }
+
+            @media only screen and (min-width:450px){
+                #mobile-footer{
+                    display:none;
+                }
+            }
+
+            /* Phone */
+            @media only screen and (max-width:450px){
+                body{
+                    background-color:white; /* background color */
+                }
+
+                body.night{
+                    background-color:#333; /* background color */
+                }
+
+                ::-webkit-scrollbar{
+                    width:10px;
+                }
+
+                ::-webkit-scrollbar-thumb{
+                    width:10px;
+                    background-color:#00979c; /* background color */
+                    border-radius:5px; /* round corners */
+                }
+
+                #container{
+                    width:100vw;
+                    margin-left:0;
+                    margin-top:0;
+                    border-radius:0;
+                }
+
+                #custom-controls, #credit, .daynight, .accessible{
+                    display:none;
+                }
+
+                /* Mobile Footer */
+                #mobile-footer{
+                    display:flex;
+                    align-items:center;
+                    justify-content:space-evenly;
+                    background-color:#00979c; /* background color */
+                    position:fixed;
+                    bottom:0;
+                    left:0;
+                    width:100vw;
+                    height:10vh;
+                }
+
+                body.night #mobile-footer{
+                    background-color:#006164; /* background color */
+                }
+
+                /* Navigation Element */
+                .mf-nav{
+                    width:32px;
+                    height:32px;
+                    font-size:calc(1em - 2px);
+                    border-radius:8px; /* rounded corners */
+                    background-color:white; /* background color */
+                    color:#00979c; /* text color */
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                }
+
+                body.night .mf-nav{
+                    color:#5cbcc0; /* text color */
+                    background-color:#333; /* background color */
+                }
+
+                /* Navigation Element on Hover */
+                .mf-nav:hover{
+                    color:#046aaa; /* text color */
+                    cursor:pointer;
+                }
+
+                body.night .mf-nav:hover{
+                    color:#5fa0c8; /* text color */
+                }
+
+                /* Navigation Element Transitions */
+                .mf-nav, .mf-nav:hover{
+                    transition:0.5s;
+                    -moz-transition:0.5s;
+                    -o-transition:0.5s;
+                    -webkit-transition:0.5s;
+                }
+
+                /* Navigation Element Links */
+                .mf-link, body.night .mf-link{
+                    border-bottom:none;
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <!-- Main Container -->
+        <div id="container">
+            <!-- Title -->
+            <div id="title"><!-- Title goes here! --></div>
+            <!-- About Section -->
+            <div id="about">
+                <!-- Here goes your text! -->
+            </div> <!-- // end about section -->
+        </div> <!-- // end container -->
+
+        <!-- Mobile Footer -->
+        <div id="mobile-footer">
+            <!-- Desktop Link -->
+            <a href="https://www.tumblr.com/dashboard" title="go to dashboard" class="mf-link">
+                <div class="mf-nav">
+                    <span class="fab fa-tumblr" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Day/Night Toggle -->
+            <div class="dn mf-nav" title="toggle day/night-mode">
+                <span class="fas fa-moon"></span>
+            </div>
+
+            <script>
+                $(document).ready(function(){
+                  $('.dn').click(function(){
+                     $('body').toggleClass('night');
+                     $('.dn span').toggleClass('fa-sun');
+                  });
+               });
+            </script>
+
+            <!-- Home Link -->
+            <a href="/" title="return to blog" class="mf-link">
+                <div class="mf-nav">
+                    <span class="fas fa-home" aria-hidden="true"></span>
+                </div>
+                </a>
+
+                <!-- Accessibility Toggle -->
+            <div class="acs mf-nav" title="increase readability">
+                <span class="fas fa-font"></span>
+            </div>
+
+            <script>
+                $(document).ready(function(){
+                  $('.acs').click(function(){
+                     $('body').toggleClass('access');
+                     $('.acs span').toggleClass('fa-italic');
+                  });
+               });
+            </script>
+
+            <!-- Credit – Do not touch! -->
+            <a href="https://silbrigthemes.tumblr.com/" title="page by silbrigthemes" class="mf-link">
+                <div class="mf-nav">
+                    <span class="fas fa-code" aria-hidden="true"></span>
+                </div>
+            </a>
+        </div> <!-- // end mobile footer -->
+
+        <!-- CUSTOM CONTROLS -->
+        <div id="custom-controls">
+            <!-- Home Link -->
+            <a href="/" title="return to blog" class="conlink">
+                <div class="cont">
+                    <span class="fas fa-home" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Dashboard Link -->
+            <a href="https://www.tumblr.com/dashboard" title="go to dashboard" class="conlink">
+                <div class="cont">
+                    <span class="fab fa-tumblr" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Message -->
+            <!-- Takes people to dashboard to send you a message. -->
+            <a href="https://www.tumblr.com/message/{Name}" title="send a message to {Name}" class="conlink">
+                <div class="cont">
+                    <span class="fas fa-comment-dots" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Customize -->
+            <!-- Takes you, the blog owner, to the customization. -->
+            <a href="https://www.tumblr.com/customize/{Name}?redirect_to=https%3A%2F%2F{Name}.tumblr.com" title="customize page" class="conlink">
+                <div class="cont">
+                    <span class="fas fa-palette" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Settings -->
+            <!-- Takes you to your blog's settings. -->
+            <a href="https://www.tumblr.com/settings/blog/{Name}" title="change settings" class="conlink">
+                <div class="cont">
+                    <span class="fas fa-cog" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Follow -->
+            <!-- Takes people to a page so that they can follow you. -->
+            <a href="https://www.tumblr.com/follow/{Name}" title="follow {Name}" class="conlink">
+                <div class="cont">
+                    <span class="fas fa-plus" aria-hidden="true"></span>
+                </div>
+            </a>
+        </div> <!-- // end custom controls -->
+
+        <!-- TOGGLES -->
+        <!-- Day/Night Toggle -->
+        <div class="daynight cont" title="toggle day/night-mode">
+            <span class="fas fa-moon"></span>
+        </div>
+
+        <script>
+            $(document).ready(function(){
+              $('.daynight').click(function(){
+                 $('body').toggleClass('night');
+                 $('.daynight span').toggleClass('fa-sun');
+              });
+           });
+        </script>
+
+        <!-- Accessibility Toggle -->
+        <div class="accessible cont" title="increase readability">
+            <span class="fas fa-font"></span>
+        </div>
+
+        <script>
+            $(document).ready(function(){
+              $('.accessible').click(function(){
+                 $('body').toggleClass('access');
+                 $('.accessible span').toggleClass('fa-italic');
+              });
+           });
+        </script>
+
+        <!-- Credit. Don't touch! -->
+        <a href="https://silbrigthemes.tumblr.com/" title="page by silbrigthemes" class="conlink">
+            <div class="cont" id="credit">
+                <span class="fas fa-code"></span>
+            </div>
+        </a>
+
+    </body>
+</html>
