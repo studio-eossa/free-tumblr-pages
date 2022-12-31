@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+
+PFIRSICHBLÜTE
+Page #10 by @silbrigthemes
+
+A simple about page with a peachy color scheme.
+
+----------------------------------------------------------------------------
+
+Rules:
+
+    1) Dont claim as your own.
+    2) Dont steal (parts of) the code.
+    3) Do not delete the credit.
+    4) Do not edit / customize beyond recognition.
+    5) Please like / reblog if using.
+
+----------------------------------------------------------------------------
+
+The code has been annotated to make customization easier. If you still encounter problems or need help, you can contact me via 
+    
+    -> silbrigthemes.tumblr.com/ ask <-
+
+or via my official support blog, at 
+    
+    -> silbrigsupport.tumblr.com. <-
+  
+----------------------------------------------------------------------------
+    
+I hope you're having fun with this page!    
+
+-->
+
+    <head>
+    
+    <meta charset="utf-16">
+    <title>Pfirsichblüte | About</title>
+    <link rel="shortcut icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+    
+    <!-- Necessary for the theme to be responsive. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Necessary for the icon font (by @saturnthms) to work. -->
+    <link href="//solrainha.github.io/saturnicons/saturnicons.css" rel="stylesheet">
+    
+    <!-- Changes the toolbar color on mobile. -->
+    <meta name="theme-color" content="#ffb38d"/>
+
+    <!-- Necessary for the scripts to work. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+    <!-- Tooltips Script, by @acuite -->
+    <script src="https://static.tumblr.com/rzl30kg/eAxm7a751/jquery.style-my-tooltips.js"></script>
+    <script>
+       (function($){
+           $(document).ready(function(){
+               $("[title]").style_my_tooltips({
+                   tip_follows_cursor:true,
+                   tip_delay_time:200,
+                   tip_fade_speed:300
+               }
+                   );
+           });
+       })(jQuery);
+    </script>
+    
+    <!-- Custom Text Font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    
+        <style>
+            
+            body{
+                margin:0;
+                font-size:1em;
+                background-color:#ffd5c0; /* fallback background */
+                background:linear-gradient(to bottom right, #ffd5c0, #ffc0cb); /* gradient, (direction, first color, second color) */
+                height:100vh;
+                width:100vw;
+                overflow:hidden;
+                font-family:"Open Sans"; /* global font-family */
+            }
+            
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar{
+                width:10px;
+                border:4px solid #ff9e98; /* scrollbar border */
+                background-color:white; /* scrollbar background */
+                border-radius:5px;
+            }
+
+            ::-webkit-scrollbar-thumb{
+                width:10px;
+                background-color:#ff8da1; /* thumb background */
+                border:4px solid white; /* thumb border */
+                border-radius:5px;
+            }
+            
+            /* Custom Text Selection */
+            ::selection{
+                background-color:#ffeded; /* selection background */
+                color:#333; /* selection text color */
+            }
+            
+            ::-moz-selection{
+                background-color:#ffeded;
+                color:#333;
+            }
+            
+            ::-o-selection{
+                background-color:#ffeded;
+                color:#333;
+            }
+            
+            ::-webkit-selection{
+                background-color:#ffeded;
+                color:#333;
+            }
+            
+            /* Custom Tooltips */
+            #s-m-t-tooltip{
+                max-width:300px;
+                margin:15px;
+                padding:0.25em 0.5em;
+                background-color:#ff8da1; /* tooltip background color */
+                background:linear-gradient(to top left, #ffb38d,#ff8da1);
+                /* gradient, (direction, first color, second color) */
+                color:#fff; /* toolip text color */
+                z-index:999999;
+                font-size:12px;
+                text-transform:uppercase;
+                font-weight:bold;
+            }
+            
+            /* Text Styles */
+            mark{
+                background-color:#ffd3d1; /* marked text background */
+                padding:0 0.25em;
+                color:#333; /* marked text color */
+            }
+
+            i, em{
+                font-style:italic;
+            }
+
+            b, strong{
+                font-weight:bold;
+            }
+
+            a{
+                color:white; /* link text color */
+                text-decoration:none;
+                border-bottom:2px solid #ffd5c0; /* color border bottom */
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            a:hover{
+                border-bottom:2px solid #ffc9c6; /* color border bottom */
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            u{
+                text-decoration:none;
+                border-bottom:2px solid white; /* color border bottom */
+            }
+
+            ul, ol{
+                list-style-type:none;
+            }
+
+            li{
+                margin-left:-2em;
+            }
+
+            li:before{
+                content:"\e2b0"; /* replaces number or dot with an icon */
+                font-family:"saturnicons";
+                margin-right:0.25em;
+                color:white; /* list color */
+            }
+            
+            #container{
+                width:600px;
+                height:600px;
+                background-color:#ffc9c6; /* fallback background */
+                background:linear-gradient(to top left, #ffb38d,#ff8da1);
+                /* gradient, (direction, first color, second color) */
+                border-radius:50%;
+                border:4px solid white; /* border color around the circle */
+                margin-top:calc(50vh - 300px);
+                margin-left:calc(50vw - 300px);
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                flex-wrap:wrap;
+            }
+            
+            #content{
+                width:350px;
+                height:351px;
+                max-height:350px;
+                overflow-y:scroll;
+                background-color:inherit;
+                padding:1em;
+            }
+            
+            #s-ci-cont{
+                margin-left:0.5em;
+            }
+            
+            .s-circle{
+                width:80px;
+                height:80px;
+                border-radius:50%;
+                margin-bottom:0.5em;
+                background-color:#ff8da1; /* fallback background */
+                background:linear-gradient(to bottom right, #ffb38d,#ff8da1); /* gradient, (direction, first color, second color) */
+                border:4px solid white; /* border color around the circle */
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            .s-circle span{
+                font-size:1.5em;
+            }
+            
+            .s-circle:hover{
+                transform:scale(0.95);
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            #title{
+                font-size:2em;
+                padding:0.5em;
+                padding-bottom:0;
+                font-weight:bold;
+                color:white; /* title text color */
+            }
+            
+            #text{
+                padding:1em;
+                color:white; /* text color */
+                text-align:justify; 
+                /* text align; alternatively: left, right, center */
+            }
+            
+            /* Hides the tumblr app button. By @yeoli-thm */
+            .tmblr-iframe--app-cta-button {
+                display: none!important;
+            }
+            
+            /* Hides standard tumblr controls */
+            body > iframe:first-child {
+                display: none !important;
+            }
+
+            /* Custom Tumblr Controls */
+            #big-box{
+                height:40px;
+                width:auto;
+                position:absolute;
+                right:0.5em;
+                top:1em;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+
+            a.tb{
+                text-decoration:none;
+                color:#fff; /* text color */
+                border:none;
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            a.tb:hover{
+                color:#ffeded; /* text color on hover */
+                transform:scale(1.1);
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            .box{
+                width:28px;
+                height:28px;
+                border-radius:50%;
+                background-color:#ff8da1; /* fallback background */
+                background:linear-gradient(to bottom right, #ffb38d,#ff8da1); /* gradient, (direction, first color, second color) */
+                margin-left:0.5em;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                border:4px solid white; /* border color around the circle */
+            }
+            
+            /** RESPONSIVE LAYOUT **/
+            /* Small Screens */
+            @media only screen and (max-width:750px){
+                #container{
+                    width:500px;
+                    height:500px;
+                    margin-top:calc(50vh - 250px);
+                    margin-left:calc(50vw - 250px);
+                }
+                
+                #content{
+                    width:300px;
+                    height:301px;
+                    max-height:300px;
+                    overflow-y:scroll;
+                }
+                
+                .s-circle{
+                    width:64px;
+                    height:64px;
+                    border-radius:50%;
+                    margin-bottom:0.5em;
+                }
+            }
+            
+            @media only screen and (max-width:400px){
+                body{
+                    font-size:14px;
+                }
+                
+                #container{
+                    width:350px;
+                    height:350px;
+                    margin-top:calc(50vh - 175px);
+                    margin-left:calc(50vw - 175px);
+                }
+                
+                #content{
+                    width:200px;
+                    height:201px;
+                    max-height:200px;
+                    overflow-y:scroll;
+                }
+                
+                .s-circle{
+                    width:48px;
+                    height:48px;
+                    border-radius:50%;
+                }
+            }
+            
+            /* Large Screens */
+            @media only screen and (min-width:1500px){
+                body{
+                    font-size:20px;
+                }
+                
+                #s-m-t-tooltip{
+                    font-size:16px;
+                }
+                
+                #container{
+                    width:750px;
+                    height:750px;
+                    margin-left:calc(50vw - 375px);
+                    margin-top:calc(50vh - 375px);
+                }
+                
+                #content{
+                    width:450px;
+                    height:451px;
+                    max-height:450px;
+                    overflow-y:scroll;
+                }
+                
+                #big-box{
+                    height:60px;
+                }
+                
+                a.tb{
+                    font-size:20px;
+                }
+                
+                .box{
+                    width:48px;
+                    height:48px;
+                }
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        <div id="container">
+            <div id="content">
+                <div id="title">Pfirsichblüte</div>
+                <div id="text">
+                    <p><b>Lorem ipsum dolor</b> sit amet, consetetur sadipscing elitr, sed <a href="/" title="link">diam nonumy eirmod</a> tempor invidunt ut labore et dolore magna aliquyam erat, <i>sed diam voluptua</i>.</p>
+                    <p><mark>At vero</mark> eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, <u>no sea takimata</u> sanctus est Lorem ipsum dolor sit amet.</p>
+                    <ul>
+                        <li>lorem ipsum</li>
+                        <li>dolor sit</li>
+                        <li>amet</li>
+                    </ul>
+                    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                    <ol>
+                        <li>lorem ipsum</li>
+                        <li>dolor sit</li>
+                        <li>amet</li>
+                    </ol>
+                    <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                </div>
+            </div>
+            <div id="s-ci-cont">
+                <a href="/" title="Index">
+                    <div class="s-circle">
+                        <span class="sf sf-home-o"></span>
+                    </div>
+                </a>
+                <a href="/ask" title="Message">
+                    <div class="s-circle">
+                        <span class="sf sf-envelope-3-o"></span>
+                    </div>
+                </a>
+                <a href="/archive" title="Archive">
+                    <div class="s-circle">
+                        <span class="sf sf-apps-o"></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Custom tumblr controls -->
+        <div id="big-box">
+            <a class="tb" href="https://www.tumblr.com/dashboard" title="dashboard">
+                <div class="box">
+                    <span class="sf sf-exit-o"></span>
+                </div>
+            </a>
+
+            <a class="tb" href="https://www.tumblr.com/message/{Name}" title="message">
+                <div class="box b">
+                    <span class="sf sf-chat-o"></span>
+                </div>
+            </a>
+
+            <a class="tb" href="https://www.tumblr.com/customize/{Name}?redirect_to=https%3A%2F%2F{Name}.tumblr.com" title="customize">
+                <div class="box">
+                    <span class="sf sf-palette-o"></span>
+                </div>
+            </a>
+
+            <a class="tb" href="https://www.tumblr.com/settings/blog/{Name}" title="settings">
+                <div class="box b">
+                    <span class="sf sf-cog-o"></span>
+                </div>
+            </a>
+
+            <a class="tb" href="https://www.tumblr.com/follow/{Name}" title="follow">
+                <div class="box">
+                    <span class="sf sf-plus-o"></span>
+                </div>
+            </a>
+
+            <a class="tb" href="https://silbrigthemes.tumblr.com/" title="page by @silbrigthemes">
+                <div class="box">
+                    <span class="sf sf-code-o"></span>
+                </div>
+            </a>
+        </div>
+    </body>
+</html>
