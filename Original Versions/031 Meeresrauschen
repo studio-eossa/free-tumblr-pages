@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+
+MEERESRAUSCHEN
+Page 31 by silbrigthemes
+
+Meeresrauschen is a responsive about page with a color palette inspired by the ocean.
+
+----------
+
+Rules:
+
+    1) Do not use as base code.
+    2) Do not customize beyond recognition.
+    3) Do not steal (parts of) the code.
+    4) Do not claim as your own.
+    5) Do not delete or alter the credit.
+    6) Do not redistribute to other sites.
+
+----------
+
+Useful comments to this code have been made.
+
+If you need any help for a problem , feel free to send me a message via silbrigthemes.tumblr.com/ask or send a message to my official support blog, silbrigsupport.tumblr.com.
+
+Have fun!
+
+Love,
+Julia <3
+
+----------
+
+Note:
+
+    This work is protected by a creative commons
+    Attribution-NonCommercial-NoDerivatives 4.0 International
+    (CC BY-NC-ND 4.0)
+    license.
+
+-->
+
+    <head>
+
+    <meta charset="utf-16">
+    <title>{Title} | Aprilscherz</title> <!-- Page title. -->
+    <link rel="shortcut icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+
+    <!-- Mobile Toolbar -->
+    <meta name="theme-color" content="#007ea7"/>
+
+    <!-- Necessary for responsive layout. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Icon font, by Remix Icon. -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Necessary for scripts to work. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+    <!-- FONTS -->
+    <!-- Merriweather -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700&display=swap&subset=cyrillic,cyrillic-ext,latin-ext,vietnamese" rel="stylesheet">
+    <!-- Merriweather Sans -->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:300,400,700&display=swap&subset=latin-ext" rel="stylesheet">
+    <!-- Open Sans -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+
+    <!-- OTHER FONTS -->
+    <!-- Roboto Mono -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <!-- Cormorant Garamond -->
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese" rel="stylesheet">
+    <!-- Dancing Script -->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+
+        <style>
+
+            body{
+                margin:0;
+                top:0;
+                left:0;
+                background-color:#007ea7; /* background color */
+                font-size:1em; /* font size */
+                color:#222; /* text color */
+                font-family:"Open Sans", Verdana; /* font */
+                overflow-x:hidden;
+                text-align:justify; /* alt.: left */
+            }
+
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar{
+                width:10px;
+                background-color:#fff; /* background color */
+            }
+
+            ::-webkit-scrollbar-thumb{
+                width:10px;
+                background-color:#007ea7; /* background color */
+            }
+
+            /* Custom Text Selection */
+            ::selection{
+                background-color:#64b8c1; /* background color */
+                color:#fff; /* text color */
+            }
+
+            ::-moz-selection{
+                background-color:#64b8c1; /* background color */
+                color:#fff; /* text color */
+            }
+
+            ::-o-selection{
+                background-color:#64b8c1; /* background color */
+                color:#fff; /* text color */
+            }
+
+            ::-webkit-selection{
+                background-color:#64b8c1; /* background color */
+                color:#fff; /* text color */
+            }
+
+            /* Custom Tooltips */
+            .tippy-tooltip.aprilscherz-theme {
+                background-color:#003249; /* background color */
+                color:#fff; /* text color */
+                text-align:left;
+            }
+
+            .tippy-tooltip.aprilscherz-theme .tippy-svg-arrow {
+                fill:#003249; /* background color */
+            }
+
+    /* ––– END GENERAL | START TEXT STYLES ––– */
+
+            /* TEXT STYLES */
+            /* Bold */
+            b, strong{
+                font-weight:bold;
+                color:#444; /* text color */
+            }
+
+            /* Italic */
+            i, em{
+                font-style:italic;
+                font-weight:300; /* alt.: 400 */
+                color:#000; /* text color */
+            }
+
+            /* Marked */
+            mark{
+                background-color:#007ea7; /* background color */
+                padding:0 4px;
+                color:#fff; /* text color */
+            }
+
+            /* Preformatted */
+            pre{
+                font-family:"Roboto Mono", Courier;
+                font-size:calc(1em - 2px);
+                word-wrap:break-all;
+                white-space:pre-wrap;
+                background-color:#003249; /* background color */
+                color:#fff; /* text color */
+                padding:1em;
+            }
+
+            /* Small */
+            small{
+                font-size:calc(1em - 4px);
+            }
+
+            /* Underlined */
+            u{
+                text-decoration:none;
+                border-bottom:2px solid #222; /* width style color */
+            }
+
+            /* Blockquote */
+            blockquote{
+                border-left:2px solid #007ea7; /* width style color */
+                padding-left:1em;
+            }
+
+            /* Embedded Media */
+            img, iframe{
+                max-width:100%;
+            }
+
+            /* Empty Paragraphs */
+            p:empty{
+                display:none;
+            }
+
+            /* Text Line */
+            hr{
+                width:90%;
+                height:2px;
+                border:none;
+                background-color:#007ea7; /* background color */
+                box-shadow:0 4px #003249, 0 -4px #64b8c1;
+                /* offset right | offset top | color */
+            }
+
+            /* LISTS */
+            /* Ordered Lists */
+            ol{
+                list-style-type:decimal-leading-zero;
+            }
+
+            /* Unordered Lists */
+            ul{
+                list-style-type:square;
+            }
+
+            /* LINKS */
+            /* Link */
+            a{
+                text-decoration:none;
+                border-bottom:2px solid #007ea7; /* width style color */
+                color:#007ea7; /* text color */
+            }
+
+            /* Link | Hover */
+            a:hover{
+                border-bottom:2px solid #003249; /* width style color */
+                color:#003249; /* text color */
+            }
+
+            /* Link | Transition */
+            a, a:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* COLORED TEXT */
+            /* Red Text */
+            .npf_color_joey {
+                color:#ff3b21; /* text color */
+            }
+
+            /* Orange Text */
+            .npf_color_monica {
+                color:#ff8821; /* text color */
+            }
+
+            /* Yellow Text */
+            .npf_color_phoebe {
+                color:#ffcb21; /* text color */
+            }
+
+            /* Green Text */
+            .npf_color_ross {
+                color:#50c950; /* text color */
+            }
+
+            /* Blue Text */
+            .npf_color_rachel {
+                color:#212fff; /* text color */
+            }
+
+            /* Purple Text */
+            .npf_color_chandler {
+                color:#9721ff; /* text color */
+            }
+
+            /* Pink Text */
+            .npf_color_niles {
+                color:#ff21b5; /* text color */
+            }
+
+            /* CUSTOM FONTS */
+            /* Quirky Font */
+            .npf_quirky{
+                font-family:"Dancing Script", cursive;
+                font-size:1.25em;
+            }
+
+            /* Chat Font */
+            .npf_chat{
+                font-family:"Roboto Mono", Courier;
+            }
+
+            /* Quote Font */
+            .npf_quote{
+                font-family:"Cormorant Garamond", "Palatino";
+                font-size:1.25em;
+            }
+
+            /* HEADINGS */
+            /* First Heading */
+            h1{
+                font-size:1.75em;
+                border-bottom:2px solid #64b8c1; /* width style color */
+            }
+
+            /* Second Heading */
+            h2{
+                font-size:1.5em;
+                border-bottom:2px solid #007ea7; /* width style color */
+            }
+
+            /* Third Heading */
+            h3{
+                font-size:1.25em;
+                border-bottom:2px solid #003249; /* width style color */
+            }
+
+            /* Fourth Heading */
+            h4{
+                font-size:1em;
+                background-color:#64b8c1; /* background color */
+            }
+
+            /* Fifth Heading */
+            h5{
+                font-size:calc(1em - 2px);
+                background-color:#007ea7; /* background color */
+            }
+
+            /* Sixth Überschrift */
+            h6{
+                font-size:calc(1em - 4px);
+                background-color:#003249; /* background color */
+            }
+
+            h1, h2, h3, h4, h5, h6{
+                font-weight:400;
+            }
+
+            h1, h2, h3{
+                padding-bottom:4px;
+            }
+
+            h4, h5, h6{
+                padding:4px 8px;
+                text-transform:uppercase;
+                color:#fff; /* text color */
+            }
+
+    /* ––– END TEXT STYLES | START Layout ––– */
+
+            /* SIDEBAR */
+            #sidebar{
+                width:calc(30vw - 2em);
+                height:calc(100vh - 2em);
+                padding:1em;
+                position:fixed;
+                top:0;
+                right:0;
+                background-color:#fff; /* background color */
+                box-shadow:0 -4px 8px #003249;
+                /* offset right | offset top | blur | color */
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                flex-direction:column;
+            }
+
+            /* Sidebar | Icon */
+            #s-icon img{
+                width:96px;
+                height:96px;
+                margin-bottom:8px;
+            }
+
+            /* Sidebar | Title */
+            #s-title{
+                color:#007ea7; /* text color */
+                font-size:2.5em;
+                font-family:"Merriweather", Georgia; /* font */
+            }
+
+            /* Sidebar | Description */
+            #s-desc{
+                text-align:center;
+                max-height:40vh;
+                overflow-y:scroll;
+            }
+
+            /* Sidebar | Navigation */
+            #s-nav{
+                margin-top:8px;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                flex-wrap:wrap;
+            }
+
+            /* Navigation Link */
+            a.nav-link{
+                background-color:#007ea7; /* background color */
+                color:#fff; /* text color */
+                padding:4px 8px;
+                border-bottom:none;
+                font-size:calc(1em - 2px);
+                margin-right:2px;
+                margin-left:2px;
+                margin-bottom:4px;
+            }
+
+            /* Navigation Link | Hover */
+            a.nav-link:hover{
+                background-color:#003249; /* background color */
+                color:#fff; /* text color */
+            }
+
+            /* Navigation Link | Transitions */
+            a.nav-link, a.nav-link:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* ABOUT */
+            /* Container */
+            #container{
+                width:50vw;
+                padding:1em;
+                margin-top:10vh;
+                margin-bottom:10vh;
+                margin-left:calc(10vw - 1em);
+                background-color:#fff; /* background color */
+                box-shadow:0 0 8px #003249;
+                /* offset right | offset top | blur | color */
+            }
+
+            /* Container Title */
+            #c-title{
+                font-size:3em;
+                text-align:center; /* alt.: left */
+                color:#007ea7; /* text color */
+                font-family:"Merriweather", Georgia; /* font */
+            }
+
+    /* ––– END LAYOUT | START EXTRAS ––– */
+
+            /* CUSTOM CONTROLS */
+            /* Hide tumblr controls */
+            body > iframe:first-child {
+                display:none !important;
+            }
+
+            /* Hide tumblr app button, by @yeoli-thm */
+            .tmblr-iframe--app-cta-button {
+                display:none!important;
+            }
+
+            /* Control Container */
+            #custom-controls{
+                width:calc(5 * 36px + 4 * 8px);
+                height:36px;
+                display:flex;
+                justify-content:space-between;
+                position:fixed;
+                right:calc(15vw - (2.5 * 36px + 2 * 4px));
+                top:8px;
+            }
+
+            /* Control Element */
+            .cont{
+                width:36px;
+                height:36px;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                background-color:#007ea7; /* background color */
+                color:#fff; /* text color */
+            }
+
+            /* Control Element | Hover */
+            .cont:hover{
+                background-color:#003249; /* background color */
+                color:#fff; /* text color */
+            }
+
+            /* Control Element | Transitions */
+            .cont, .cont:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* Control Element | Link */
+            a.con-link{
+                border-bottom:none;
+            }
+
+    /* ––– END EXTRAS | START RESPONSIVE LAYOUT ––– */
+
+            /* LARGE SCREENS | PC, LAPTOP */
+            @media only screen and (min-width:800px){
+                /* Mobile Footer */
+                #mb-footer{
+                    display:none;
+                }
+            }
+
+            /* SMALL SCREENS | TABLETS, PHONES */
+            @media only screen and (max-width:800px){
+                /* Custom Scrollbar */
+                ::-webkit-scrollbar{
+                    width:10px;
+                    background-color:#007ea7; /* background color */
+                }
+
+                ::-webkit-scrollbar-thumb{
+                    width:10px;
+                    background-color:#fff; /* background color */
+                }
+
+                #sidebar, #custom-controls, #credit{
+                    display:none;
+                }
+
+                /* Container */
+                #container{
+                    width:80vw;
+                    margin-bottom:calc(10vh + 2em);
+                }
+
+                /* MOBILE FOOTER */
+                #mb-footer{
+                    width:100vw;
+                    height:10vh;
+                    background-color:#fff; /* background color */
+                    box-shadow:0 -2px 8px #003249;
+                    /* offset right | offset top | blur | color */
+                    position:fixed;
+                    left:0;
+                    bottom:0;
+                    display:flex;
+                    justify-content:space-evenly;
+                    align-items:center;
+                }
+
+                /* Mobile Footer Element */
+                .mbf-nav{
+                    width:36px;
+                    height:36px;
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    background-color:#007ea7; /* background color */
+                    color:#fff; /* text color */
+                }
+
+                /* Mobile Footer Element | Hover */
+                .mbf-nav:hover{
+                    background-color:#003249; /* background color */
+                    color:#fff; /* text color */
+                }
+
+                /* Mobile Footer Element | Transitions */
+                .mbf-nav, .mbf-nav:hover{
+                    transition:0.5s;
+                    -moz-transition:0.5s;
+                    -o-transition:0.5s;
+                    -webkit-transition:0.5s;
+                }
+
+                /* Mobile Footer Element | Link */
+                a.mbf-link{
+                    border-bottom:none;
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <!-- SIDEBAR -->
+        <div id="sidebar">
+            <!-- Icon -->
+            <div id="s-icon">
+                <img src="https://images.unsplash.com/photo-1441829266145-6d4bfbd38eb4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1102&q=80" alt="sidebar icon"/>
+            </div>
+            <!-- Title -->
+            <div id="s-title">Meeresrauschen</div>
+            <!-- Description -->
+            <div id="s-desc">
+                Blaue Wogen rauschen sanft; am Horizont küssen sie die Wolken.
+            </div>
+            <!-- Navigation -->
+            <div id="s-nav">
+                <!-- Home -->
+                <a href="/" class="nav-link" title="return to blog">
+                    <span class="ri-home-line"></span> Index
+                </a>
+
+                <!-- Ask Box -->
+                {block:AskEnabled}
+                <a href="/ask" class="nav-link" title="{AskLabel}">
+                    <span class="ri-mail-line"></span> {AskLabel}
+                </a>
+                {/block:AskEnabled}
+
+                <!-- Submissions -->
+                {block:SubmissionsEnabled}
+                <a href="/submit" class="nav-link" title="{SubmitLabel}">
+                    <span class="ri-send-plane-line"></span> {SubmitLabel}
+                </a>
+                {/block:SubmissionsEnabled}
+
+                <!-- Archive -->
+                <a href="/archive" class="nav-link" title="archive">
+                    <span class="ri-archive-line"></span> Archive
+                </a>
+
+                <!-- Custom Link 1 -->
+                <a href="/" class="nav-link" title="custom 1">
+                    <span class="ri-link"></span> Custom 1
+                </a>
+
+                <!-- Custom Link 2 -->
+                <a href="/" class="nav-link" title="custom 2">
+                    <span class="ri-link"></span> Custom 2
+                </a>
+
+                <!-- Custom Link 3 -->
+                <a href="/" class="nav-link" title="custom 3">
+                    <span class="ri-link"></span> Custom 3
+                </a>
+                <!-- ADD MORE LINKS HERE -->
+            </div>
+            <!-- // end navigation -->
+        </div>
+        <!-- // end sidebar -->
+
+        <!-- CONTAINER -->
+        <div id="container">
+            <div id="c-title">About</div>
+            <h1>First Heading</h1>
+                <p><b>Lorem ipsum dolor</b> sit amet, consetetur sadipscing elitr, <i>sed diam nonumy</i> eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <mark>At vero eos</mark> et accusam et justo duo dolores et ea rebum. <a href="/" title="test">Stet clita kasd gubergren</a>, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                <h2>Second Heading</h2>
+                <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                <hr>
+                <h3>Third Heading</h3>
+                <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                <h4>Fourth Heading</h4>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                <blockquote>At vero eos et accusam et justo duo dolores et ea rebum.</blockquote>
+                <p><small>Stet clita kasd</small> gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                <pre>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</pre>
+                <ul>
+                    <li>Lorem ipsum dolor sit amet,</li>
+                    <li>consetetur sadipscing elitr,</li>
+                    <li>sed diam nonumy eirmod tempor.</li>
+                </ul>
+                <h5>Fifth Heading</h5>
+                <p>At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <span class="npf_color_niles">Lorem ipsum dolor</span> <span class="npf_color_joey">sit amet</span>, <span class="npf_color_monica">consetetur sadipscing elitr</span>, <span class="npf_color_phoebe">sed diam nonumy eirmod</span> <span class="npf_color_ross">tempor invidunt ut labore</span> <span class="npf_color_rachel">et dolore magna aliquyam erat</span>, <span class="npf_color_chandler">sed diam voluptua</span> At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+                <h6>Sixth Heading</h6>
+                <p><sup>Lorem ipsum dolor</sup> sit amet, <sub>consetetur sadipscing elitr</sub>, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. <small>At vero eos</small> et accusam et justo duo dolores et ea rebum. <u>Stet clita kasd gubergren</u>, no sea <strike>takimata sanctus</strike> est Lorem ipsum dolor sit amet. <span class="npf_quirky">Lorem ipsum dolor</span> sit amet, <span class="npf_chat">consetetur sadipscing</span> elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, <span class="npf_quote">sed diam voluptua</span>.</p>
+                <ol>
+                    <li>Lorem ipsum dolor sit amet,</li>
+                    <li>consetetur sadipscing elitr,</li>
+                    <li>sed diam nonumy eirmod tempor.</li>
+                </ol>
+        </div>
+        <!-- // ende container -->
+
+        <!-- MOBILE FOOTER -->
+        <div id="mb-footer">
+            <!-- Dashboard -->
+            <a href="https://www.tumblr.com/dashboard" title="go to dashboard" class="mbf-link">
+                <div class="mbf-nav">
+                    <span class="ri-tumblr-line" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Direct Messages -->
+            <a href="https://www.tumblr.com/message/{Name}" title="send a message to {Name}" class="mbf-link">
+                <div class="mbf-nav">
+                    <span class="ri-chat-3-line" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Home | Index -->
+            <a href="/" title="return to blog" class="mbf-link">
+                <div class="mbf-nav">
+                    <span class="ri-home-line" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Follow -->
+            <a href="https://www.tumblr.com/follow/{Name}" title="follow {Name}" class="mbf-link">
+                <div class="mbf-nav">
+                    <span class="ri-add-line" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Credit - Don't touch! -->
+            <a href="https://silbrigthemes.tumblr.com/" title="page by silbrigthemes" class="mbf-link">
+                <div class="mbf-nav">
+                    <span class="ri-code-line" aria-hidden="true"></span>
+                </div>
+            </a>
+        </div>
+        <!-- // ende mobile footer -->
+
+        <!-- CUSTOM CONTROLS -->
+        <div id="custom-controls">
+            <!-- Dashboard -->
+            <a href="https://www.tumblr.com/dashboard" title="go to dashboard" class="con-link">
+                <div class="cont">
+                    <span class="ri-tumblr-line" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Direct Messages -->
+            <a href="https://www.tumblr.com/message/{Name}" title="send a message to {Name}" class="con-link">
+                <div class="cont">
+                    <span class="ri-chat-3-line" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Customization -->
+            <a href="https://www.tumblr.com/customize/{Name}?redirect_to=https%3A%2F%2F{Name}.tumblr.com" title="customize page" class="con-link">
+                <div class="cont">
+                    <span class="ri-palette-line" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Follow -->
+            <a href="https://www.tumblr.com/follow/{Name}" title="follow {Name}" class="con-link">
+                <div class="cont">
+                    <span class="ri-add-line" aria-hidden="true"></span>
+                </div>
+            </a>
+            
+            <!-- CREDIT -->
+            <!-- Don't touch! -->
+            <a href="https://silbrigthemes.tumblr.com/" class="con-link" title="page by silbrigthemes">
+                <div class="cont">
+                    <span class="ri-code-line"></span>
+                </div>
+            </a>
+            <!-- // end credit -->
+        </div>
+        <!-- // end custom controls -->
+
+        <!-- TOOLTIPS, Tippy.js by atomiks -->
+        <!-- Custom tooltips. -->
+        <script src="https://unpkg.com/popper.js@1"></script>
+        <script src="https://unpkg.com/tippy.js@5/dist/tippy-bundle.iife.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/svg-arrow.css" />
+
+        <script>
+            tippy('a[title], #credit', {
+              theme: 'aprilscherz',
+              arrow: tippy.roundArrow,
+              zIndex: 9999999999,
+              maxWidth: 300,
+
+              content(reference) {
+                const title = reference.getAttribute('title');
+                reference.removeAttribute('title');
+                return title;
+              },
+            });
+        </script>
+
+    </body>
+</html>
