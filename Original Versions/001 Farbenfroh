@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<head>
+ 
+<!------------------------------------------------------------------
+ 
+Page "farbenfroh" by ©silbrigthemes. Please do not remove the credit, it's rude and you surely wouldn't want anyone to steal your work either.
+
+I will try my best to answer any questions in regards to this page. Please keep in mind that it might take some time before I answer your question though.
+
+The most important things in this code are annotated to make things easy to use and to customize. If there are any bugs in the code, feel free to tell me right away.
+
+Thank you very much and have fun with this page.
+
+xoxo, Julia
+
+------------------------------------------------------------------->
+ 
+<title>Colours</title>
+<link rel="shortcut icon" href="{Favicon}">
+ 
+<!-- TOOLTIP SCRIPTS -->
+<script type="text/javascript"
+src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+<script src="http://static.tumblr.com/rzl30kg/eAxm7a751/jquery.style-my-tooltips.js"></script>
+<script>
+   (function($){
+       $(document).ready(function(){
+           $("[title]").style_my_tooltips({
+               tip_follows_cursor:true,
+               tip_delay_time:200,
+               tip_fade_speed:300
+           }
+               );
+       });
+   })(jQuery);
+</script>
+ 
+<style type="text/css">
+ 
+/* BODY */
+body{
+font-family:"Avenir"; /*change body font here*/
+font-size:12px; /*change font-size here*/
+background-image:url(http://media.tumblr.com/tumblr_mex6qbS3q71rbvno1.png);
+/*you can add an image here if you want; else, just delete the above line*/
+/*for a full page background, add the line
+
+background-size:cover
+
+and change…*/
+background-repeat:repeat; /*this to "no-repeat"*/
+background-attachment:fixed;
+margin-top:0px;
+margin-left:0px;
+margin-right:0px;
+margin-bottom:0px;
+}
+
+#content{
+    width:650px;
+    margin-left:50px;
+    height:500px;
+    overflow-y:auto;
+    background:rgba(255, 255, 255, 0.4); /*vary the last number between 0 and 1 for the opacity*/
+    border:1px solid #ccc;
+}
+
+#footer{
+    background-color:#fff;
+    margin-bottom:0px;
+    margin-right:0px;
+    margin-left:0px;
+    margin-top:25px;
+    height:50px;
+    text-align:center;
+}
+
+::-webkit-scrollbar {
+    height: 10px;
+    width: 7px;
+    background:#eee;
+}
+           
+::-webkit-scrollbar-thumb:vertical {
+    background: #eee;
+    border: 3px solid #ccc;
+}
+
+/*colors of the text selection*/
+::selection{
+    background:#333;
+    color:#fff;
+}
+
+::-moz-selection{
+    background:#333;
+    color:#fff;
+}
+
+#tumblr_controls,.tmblr-iframe {
+        transform:scale(1);
+        -webkit-transform:scale(1);
+        position:fixed;
+        top:0;
+        right:0px!important;
+        filter:invert(100%);
+        -webkit-filter:invert(100%);
+        opacity:.3; 
+    }
+
+#sidebar{
+    width:25%;
+    background-color:#fff;
+    background-image:url("https://s-media-cache-ak0.pinimg.com/736x/4a/ff/7b/4aff7bbbbbf9ffa3a6c60367f8f3c875--spray-paint-cans-spray-can.jpg");
+    /*add an image url here or leave this blank, it's your choice*/
+    background-size:cover; /*this needs to be cover in oder to fill the whole sidebar*/
+    right:0px;
+    height:100%;
+    position:fixed;
+    top:0px;
+}
+
+/* TOOLTIPS */
+#s-m-t-tooltip{
+max-width:300px; 
+margin:15px;
+padding:5px 5px;
+background:#000; /** tooltip background color **/
+color:#fff; /** toolip color **/
+z-index:999999;
+font-size:11px;
+text-transform:uppercase;
+}
+ 
+/* LINKS */
+.links{
+    margin-top:20px;
+}
+
+a{
+font-size:14px;
+text-decoration:none;
+text-transform:uppercase;
+color:#555;
+}
+ 
+a:hover{
+color:#ccc;
+text-decoration:none;
+transition:0.5s;
+-webkit-transition:0.5s;
+-moz-transition:0.5s;
+-o-transition:0.5s;
+}
+ 
+/* TITLE */
+#title{
+font-size:40px;
+color:#333; /** title color **/
+text-transform:uppercase;
+width:900px;
+margin:0 auto;
+margin-top:30px;
+margin-bottom:10px;
+margin-left:50px;
+}
+
+/*SUBTITLE*/
+#subtitle{
+    font-size:15px;
+    color:#555;
+    font-family:"Didot";
+    margin-left:50px;
+    width:650px;
+    margin-bottom:25px;
+}
+
+/* TOPLINKS */
+#toplinks{
+    font-size:11px;
+    margin-top:5px;
+    margin-left:50px;
+} 
+
+h2{
+    font-family:"Avenir";
+    font-size:20px;
+    margin-left:10px;
+    text-align:center;
+    margin-right:14px;
+    margin-bottom:0px;
+    font-weight:bold;
+    color:#fff;
+    background:#333;
+}
+
+h3{
+    font-family:"Avenir";
+    font-size:16px;
+    margin-left:10px;
+    text-align:left;
+    margin-bottom:-5px;
+    color:#555;
+}
+
+/* ---------- */
+
+/* For every new row, you will need to add
+
+    margin-left: 10px;
+    
+in order to have a homogenous margin from the border.    
+
+*/
+
+/*COLORS*/
+  .color:hover {
+      opacity: 1;
+      transition: opacity .25s ease-in-out;
+      -moz-transition: opacity .25s ease-in-out;
+      -webkit-transition: opacity .25s ease-in-out;
+      border: 1px solid #fff; /* match this color with the background color from #content (or don't, it's your choice) */
+    }
+    
+    /* SHADES OF PINK */
+   
+    .one { /* color one, set to pink */
+        width: 100px;
+        height: 100px;
+        position: relative;
+        display: inline-block; 
+        margin-left: 10px;
+        margin-right: 1px;
+        margin-top: 20px;
+        background-color: #ff66b3; /* pink color of the first box */
+        border: 1px solid #ff3399;
+        opacity: .7;
+    }
+    
+    
+    .two { /* color two, set to thulian pink */
+        width: 100px;
+        height: 100px;
+        position: relative;
+        display: inline-block;
+        margin-right: 1px;
+        margin-top: 20px;
+        background-color: #de6fa1; /* thulian pink color of the second box */
+        border: 1px solid #d54485;
+        opacity: .7;
+    }
+    
+    
+    .three { /* color three, set to blush */
+        width: 100px;
+        height: 100px;
+        position: relative;
+        display: inline-block;
+        margin-right: 1px;
+        margin-top: 20px;
+        background-color: #de5d83; /* blush color of the third box */
+        border: 1px solid #d8416e;
+        opacity: .7;
+    }
+    
+    
+    .four { /* color four, set to lavender blush */
+        width: 100px;
+        height: 100px;
+        position: relative;
+        display: inline-block;
+        margin-right: 1px;
+        margin-top: 20px;
+        background-color: #fff0f5; /* lavender blush color of the fourth box */
+        border: 1px solid #ffccdd;
+        opacity: .7;
+    }
+    
+    
+    /* SHADES OF RED */
+    
+    .five { /* color five, set to crimson */
+        width: 100px;
+        height: 100px;
+        position: relative;
+        display: inline-block;
+        margin-left:10px;
+        margin-right: 1px;
+        margin-top: 20px;
+        background-color: #dc143c; /* crimson color of the fifth box */
+        border: 1px solid #bb1133;
+        opacity: .7;
+    }
+   
+    .six { /* color six, set to red */
+        width: 100px;
+        height: 100px;
+        position: relative;
+        display: inline-block;
+        margin-right: 1px;
+        margin-top: 20px;
+        background-color: #ff3333; /* red color of the sixth box */
+        border: 1px solid #ff0000;
+        opacity: .7;
+    }
+    
+     .seven { /* color seven, set to vermilion */
+        width: 100px;
+        height: 100px;
+        position: relative;
+        display: inline-block;
+        margin-right: 1px;
+        margin-top: 20px;
+        background-color: #e7584b; /* vermillion color of the seventh box */
+        border: 1px solid #e02f1f;
+        opacity: .7;
+    }
+    
+    
+    /* SHADES OF ORANGE */
+    
+    .eight { /* color eight, set to tea rose */
+        width: 100px;
+        height: 100px;
+        position: relative;
+        display: inline-block;
+        margin-right: 1px;
+        margin-top: 20px;
+        margin-left:10px;
+        background-color: #f88379; /* tea rose color of the eighth box */
+        border: 1px solid #f66355;
+        opacity: .7;
+   }
+    
+    
+    .nine { /* color nine, set to melon */
+        width: 100px;
+        height: 100px;
+        position: relative;
+        display: inline-block;
+        margin-right: 1px;
+        margin-top: 20px;
+        background-color: #fdbcb4; /* melon color of the ninth box */
+        border: 1px solid #fc9183;
+        opacity: .7;
+   }
+    
+   
+   .ten { /* color ten, set to rose peach */
+        width: 100px;
+        height: 100px;
+        position: relative;
+        display: inline-block;
+        margin-right: 1px;
+        margin-top: 20px;
+        background-color: #f2c6aa; /* rose peach color of the tenth box */
+        border: 1px solid #eaa57b;
+        opacity: .7;
+   }
+   
+   
+    /* SHADES OF YELLOW */   
+   
+    .eleven { /* color eleven, set to yellow */
+        width: 100px;
+        height: 100px;
+        position: relative;
+        display: inline-block;
+        margin-right: 1px;
+        margin-top: 20px;
+        margin-left:10px;
+        background-color: #ffd633; /* yellow color of the 11th box */
+        border: 1px solid #ffcc00;
+        opacity: .7;
+       
+   }
+   
+   
+   .twelve { /* color twelve, set to mellow yellow */
+        width: 100px;
+        height: 100px;
+        position: relative;
+        display: inline-block;
+        margin-right: 1px;
+        margin-top: 20px;
+        background-color: #f8de7e; /* mellow yellow color of the 12th box */
+        border: 1px solid #f6d355;
+        opacity: .7;
+       
+   }
+
+
+.thirteen { /* color thirteen, set to vanilla */
+        width: 100px;
+        height: 100px;
+        position: relative;
+        display: inline-block;
+        margin-right: 1px;
+        margin-top: 20px;
+        background-color: #f3e5ab; /* vanilla color of the 13th box */
+        border: 1px solid #efdc8f;
+        opacity: .7;
+       
+   }   
+   
+
+    /* SHADES OF GREEN */   
+   
+   .fourteen { /* color fourteen, set to tea */
+       width: 100px;
+       height: 100px;
+       position: relative;
+       display: inline-block;
+       margin-right: 1px;
+       margin-top: 20px;
+       margin-left:10px;
+       background-color: #d0f0c0; /* tea color of the 14th box */
+       border: 1px solid #b2e798;
+       opacity: .7;
+   }
+   
+    .fifteen { /* color fifteen, set to lush */
+       width: 100px;
+       height: 100px;
+       position: relative;
+       display: inline-block;
+       margin-right: 1px;
+       margin-top: 20px;
+       background-color: #ccffcc; /* lush color of the 15th box */
+       border: 1px solid #99ff99;
+       opacity: .7;
+   }
+   
+   
+   .sixteen { /* color sixteen, set to light green */
+       width: 100px;
+       height: 100px;
+       position: relative;
+       display: inline-block;
+       margin-right: 1px;
+       margin-top: 20px;
+       background-color: #90ee90; /* light green color of the 16th box */
+       border: 1px solid #65e765;
+       opacity: .7;
+   }
+  
+  
+  
+   /* SHADES OF CYAN */
+   
+   .seventeen { /* color seventeen, set to aquamarine */
+       width: 100px;
+       height: 100px;
+       position: relative;
+       display: inline-block;
+       margin-right: 1px;
+       margin-top: 20px;
+       margin-left:10px;
+       background-color: #7fffd4; /* aquamarine color of the 17th box */
+       border: 1px solid #4dffc3;
+       opacity: .7;
+   }
+   
+    .eighteen { /* color eighteen, set to turquoise */
+       width: 100px;
+       height: 100px;
+       position: relative;
+       display: inline-block;
+       margin-right: 1px;
+       margin-top: 20px;
+       background-color: #40e0d0; /* turquoise color of the 18th box */
+       border: 1px solid #24dbc9;
+       opacity: .7;
+   }
+   
+   
+   .nineteen { /* color nineteen, set to teal */
+       width: 100px;
+       height: 100px;
+       position: relative;
+       display: inline-block;
+       margin-right: 1px;
+       margin-top: 20px;
+       background-color: #008080; /* teal color of the 19th box */
+       border: 1px solid #00b3b3;
+       opacity: .7;
+   }
+   
+   
+   
+   /* SHADES OF BLUE */
+   
+   .twenty { /* color twenty, set to sky */
+       width: 100px;
+       height: 100px;
+       position: relative;
+       display: inline-block;
+       margin-right: 1px;
+       margin-top: 20px;
+       margin-left:10px;
+       background-color: #87ceeb; /* sky color of the 20th box */
+       border: 1px solid #66c1e5;
+       opacity: .7;
+   }
+   
+   
+   .twentyone { /* color twentyone, set to cerulean */
+       width: 100px;
+       height: 100px;
+       position: relative;
+       display: inline-block;
+       margin-right: 1px;
+       margin-top: 20px;
+       background-color: #98b4d4; /* cerulean color of the 21st box */
+       border: 1px solid #81a3ca;
+       opacity: .7;
+   }
+   
+   
+   .twentytwo { /* color twentytwo, set to blue */
+       width: 100px;
+       height: 100px;
+       position: relative;
+       display: inline-block;
+       margin-right: 1px;
+       margin-top: 20px;
+       background-color: #3385ff; /* blue color of the 22nd box */
+       border: 1px solid #0066ff;
+       opacity: .7;
+   }
+   
+   
+    /* SHADES OF PURPLE */
+ 
+   .twentythree { /* color twentythree, set to lavender */
+       width: 100px;
+       height: 100px;
+       position: relative;
+       display: inline-block;
+       margin-right: 1px;
+       margin-top: 20px;
+       margin-left:10px;
+       background-color: #e6e6fa; /* lavender color of the 23rd box */
+       border: 1px solid #bfbff2;
+       opacity: .7;
+   }
+   
+   
+   .twentyfour { /* color twentyfour, set to lilac */
+       width: 100px;
+       height: 100px;
+       position: relative;
+       display: inline-block;
+       margin-right: 1px;
+       margin-top: 20px;
+       background-color: #c69fc6; /* lilac color of the 24th box */
+       border: 1px solid #b380b3;
+       opacity: .7;
+   }
+   
+   
+ .twentyfive { /* color twentyfive, set to  css purle*/
+       width: 100px;
+       height: 100px;
+       position: relative;
+       display: inline-block;
+       margin-right: 1px;
+       margin-top: 20px;
+       background-color: #800080; /* css purple color of the 25th box */
+       border: 1px solid #b300b3;
+       opacity: .7;
+   }   
+ 
+
+ /* ––– */ 
+ /*NEUTRALS*/
+ /*SHADES OF GRAY*/
+ 
+ .w { /* color w, set to white */
+       width: 100px;
+       height: 100px;
+       position: relative;
+       display: inline-block;
+       margin-right: 1px;
+       margin-left:10px;
+       margin-top: 20px;
+       margin-bottom:10px;
+       background-color: #fff; /* white color of the w box */
+       border: 1px solid #e6e5e6;
+       opacity: .7;
+ }
+   
+   
+   .s { /* color s, set to silver */
+       width: 100px;
+       height: 100px;
+       position: relative;
+       display: inline-block;
+       margin-right: 1px;
+       margin-top: 20px;
+       margin-bottom:10px;
+       background-color: #c0c0c0; /* silver color of the s box */
+       border: 1px solid #a6a6a6;
+       opacity: 1;
+   }
+  
+   
+    a[tooltip]:hover:after {
+        content: attr(tooltip);
+        width:100px;
+        height:15px;
+        font-size: 10px;
+        font-weight:bold;
+        color: #808080;
+        position: absolute;
+        text-align:center;
+        background-color:#fff;
+        margin-top:100px;
+        white-space: nowrap;
+        /*
+        z-index: 20;
+        -moz-border-radius: 3px;
+        -webkit-border-radius: 3px;
+        border-radius: 3px;
+        -moz-box-shadow: 0px 0px 2px #c0c1c2;
+        -webkit-box-shadow: 0px 0px 2px #c0c1c2;
+        box-shadow: 0px 0px 2px #c0c1c2;*/
+   }
+ /*END COLORS*/
+ 
+ 
+</style>
+</head>
+<body>
+<!-- Add your title here. --> 
+<div id="title">Colours</div> 
+
+<!-- Add a quote or whatever else of text you would like here. -->
+<div id="subtitle">„<i>Die Farbe hat mich. Ich brauche nicht nach ihr zu haschen. Sie hat mich für immer. Das ist der glücklichen Stunde Sinn: ich und die Farbe sind eins. Ich bin Maler.</i>“ – Paul Klee</div>
+
+<!-- This is where your sidebar starts. -->
+<div id="sidebar">
+    
+</div>
+ 
+<div id="content">
+   <div id="box">
+   
+   <!-- change the "/tagged/xx" to the tag for you use, change the "tooltip=xx" to the text that shows up in the tooltip when you hover -->
+   
+   <!-- The h3 headings will only work properly if you add the "</a>" after the last color in the category. Else the whole thing will begin to look odd. -->
+   
+       <h2>Colours</h2>
+       <h3>Shades of Pink</h3>
+       <!-- SHADES OF PINK -->
+       <a href="/tagged/pink" class="color one" tooltip="pink">
+       <a href="/tagged/thulian-pink" class="color two" tooltip="thulian pink">
+       <a href="/tagged/blush" class="color three" tooltip="blush">
+       <a href="/tagged/lavender-blush" class="color four" tooltip="lavender blush">        
+       
+    </a>
+       
+       
+       <h3>Shades of Red</h3>
+       <!-- SHADES OF RED -->
+       <a href="/tagged/crimson" class="color five" tooltip="crimson">
+       <a href="/tagged/red" class="color six" tooltip="red">
+       <a href="/tagged/vermilion" class="color seven" tooltip="vermilion">
+           
+    </a>
+       
+       
+       <h3>Shades of Orange</h3>
+       <!-- SHADES OF ORANGE -->
+       <a href="/tagged/tea-rose" class="color eight" tooltip="tea rose">
+       <a href="/tagged/melon" class="color nine" tooltip="melon">
+       <a href="/tagged/rose-peach" class="color ten" tooltip="rose peach">
+      
+    </a>
+       
+       
+       <h3>Shades of Yellow</h3>
+       <!-- SHADES OF YELLOW -->
+       <a href="/tagged/yellow" class="color eleven" tooltip="yellow">
+       <a href="/tagged/mellow-yellow" class="color twelve" tooltip="mellow yellow">
+       <a href="/tagged/vanilla" class="color thirteen" tooltip="vanilla">
+       
+    </a> 
+       
+       
+       <h3>Shades of Green</h3>
+       <!-- SHADES OF GREEN -->
+       <a href="/tagged/tea" class="color fourteen" tooltip="tea">
+       <a href="/tagged/lush" class="color fifteen" tooltip="lush">
+       <a href="/tagged/light+green" class="color sixteen" tooltip="light green">
+           
+    </a>
+       
+       
+       <h3>Shades of Cyan</h3>
+       <!-- SHADES OF CYAN -->
+       <a href="/tagged/aquamarine" class="color seventeen" tooltip="aquamarine">
+       <a href="/tagged/turquoise" class="color eighteen" tooltip="turquoise">
+       <a href="/tagged/teal" class="color nineteen" tooltip="teal">
+           
+    </a>
+       
+       
+       <h3>Shades of Blue</h3>
+       <!-- SHADES OF BLUE -->
+       <a href="/tagged/sky" class="color twenty" tooltip="sky">
+       <a href="/tagged/cerulean" class="color twentyone" tooltip="cerulean">
+       <a href="/tagged/blue" class="color twentytwo" tooltip="blue">
+    
+    </a>
+    
+    
+       <h3>Shades of Purple</h3>
+       <!-- SHADES OF PURPLE -->
+       
+       <a href="/tagged/lavender" class="color twentythree" tooltip="lavender">
+       <a href="/tagged/css-purple" class="color twentyfour" tooltip="css purple">
+       <a href="/tagged/lilac" class="color twentyfive" tooltip="lilac">
+       
+  </a>
+  
+     <br><br>
+     
+       <h2>Neutrals</h2>
+   
+       <h3>Shades of Gray</h3>
+       <a href="/tagged/white" class="color w" tooltip="white">
+       <a href="/tagged/silver" class="color s" tooltip="silver">
+     
+  </a>
+   
+   </div> 
+</div>
+
+<!-- This is where you can add your navigation links. -->
+<div id="footer">
+    <div class="links">
+        <br>
+        <a href="/">Home</a> | <a href="/ask">Ask</a> | <a href="/archive">Past</a> | <a href="https://silbrigthemes.tumblr.com" title="page by julia">Credit</a>
+    </div>
+</div>
+ 
+</body>
+</html>
