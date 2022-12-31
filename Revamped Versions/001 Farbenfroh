@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+
+Farbenfroh – Revamp (Page #1.1)
+by @silbrigthemes
+
+---
+
+This page is a "revamped" version of my first page, "Farbenfroh".
+
+If you compare this version to the original one, you will notice that they are entirely different design wise.
+
+Essentially it is to show how I have developed as a theme maker.
+
+The old code still exists though, don't worry.
+
+---
+
+Rules:
+
+    Do not claim as your own.
+    Do not steal (parts of) the code.
+    Do not alter beyond recognition.
+    Leave the credit intact.
+    Please like / reblog if you are using this code.
+    
+---
+
+Have fun!
+
+-->
+
+
+    <head>
+    
+    <!-- Without this line the page will not be responsive. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Necessary for the custom font, "Roboto Condensed", to work. -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&amp;subset=cyrillic-ext,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    
+    <!-- TOOLTIP SCRIPTS -->
+    <script type="text/javascript"
+    src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js"></script>
+    <script src="https://static.tumblr.com/rzl30kg/eAxm7a751/jquery.style-my-tooltips.js"></script>
+    <script>
+       (function($){
+           $(document).ready(function(){
+               $("[title]").style_my_tooltips({
+                   tip_follows_cursor:true,
+                   tip_delay_time:200,
+                   tip_fade_speed:300
+               }
+                   );
+           });
+       })(jQuery);
+    </script>
+    
+        <style>
+        
+            body{
+                background-color:#f8f9fa;
+                background:linear-gradient(to bottom right, #f8f9fa, #e1e6ea);
+                margin:0;
+                font-size:1em;
+                font-family:"Roboto Condensed";
+            }
+
+        /* Custom Scrollbar */
+            ::-webkit-scrollbar{
+                width:8px;
+                background-color:#fff;
+            }
+
+            ::-webkit-scrollbar-thumb{
+                background-color:#333;
+                width:8px;
+            }
+
+            /* Custom Selection */
+            ::selection{
+                background-color:#333;
+                color:#f8f9fa;
+            }
+
+            ::-webkit-selection{
+                background-color:#333;
+                color:#f8f9fa;
+            }
+
+            ::-o-selection{
+                background-color:#333;
+                color:#f8f9fa;
+            }
+
+            ::-moz-selection{
+                background-color:#333;
+                color:#f8f9fa;
+            }
+            
+        /** TOOLTIPS **/
+            #s-m-t-tooltip{
+                max-width:300px;
+                margin:15px;
+                padding:0.25em;
+                background:#333; /** tooltip background color **/
+                color:#f8f9fa; /** toolip color **/
+                box-shadow:4px 4px cornflowerblue;
+                z-index:999999;
+                font-size:0.75em;
+                text-transform:uppercase;
+            }
+            
+            a{
+                color:#333;
+                text-decoration:none;
+            }
+            
+            #everything{
+                width:100vw;
+                height:100vh;
+                display:flex;
+                align-items:flex-start;
+                justify-content:center;
+            }
+            
+            #sidebar{
+                background-color:cornflowerblue;
+                background:linear-gradient(to bottom right, cornflowerblue, #4881ea);
+                height:100vh;
+                width:25vw;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                flex-direction:column;
+            }
+            
+            #s-icon img{
+                width:96px;
+                height:96px;
+                box-shadow:4px 4px #333;
+            }
+            
+            #s-desc{
+                width:192px;
+                height:auto;
+                padding:0.5em;
+                margin-top:0.5em;
+                background-color:#fff;
+                box-shadow:4px 4px #333;
+            }
+            
+            #content{
+                width:75vw;
+                height:auto;
+                max-height:100vh;
+                overflow-y:scroll;
+                display:flex;
+                align-items:space-between;
+                justify-content:space-between;
+                flex-wrap:wrap;
+            }
+            
+            .d-box{
+                width:calc(75vw + 0.5em);
+                padding:0.25em;
+                margin:0.5em;
+                background-color:#fff;
+                box-shadow:4px 4px #333;
+            }
+            
+            .filterbox{
+                display:none;
+            }
+            
+            #title{
+                font-size:2.5em;
+            }
+            
+            #desc{
+                font-size:1.05em;
+            }
+            
+            #links{
+                display:flex;
+                align-items:center;
+                justify-content:space-between;
+            }
+            
+            .box{
+                width:150px;
+                height:200px;
+                background-color:#fff;
+                box-shadow:4px 4px #333;
+                margin:0.5em;
+                display: none;
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            .box:hover{
+                transform:scale(1.05);
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            .box-link{
+                border-bottom:4px solid #ed6495;
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            .box-link:hover{
+                border-bottom:4px solid #95ed64;
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            .text{
+                padding:0.25em;
+                height:50px;
+            }
+            
+            .b{
+                width:150px;
+                height:150px;
+            }
+            
+            .one{
+                background-color:#a76c97;
+            }
+            
+            .two{
+                background-color:#f7cac9;
+            }
+            
+            .three{
+                background-color:#92a8d1;
+            }
+            
+            .four{
+                background-color:#ff8d94;
+            }
+            
+            .five{
+                background-color:cornflowerblue;
+            }
+            
+            .six{
+                background-color:#5f5b8b;
+            }
+            
+            .seven{
+                background-color:#d2738d;
+            }
+            
+            .eight{
+                background-color:#d94f70;
+            }
+            
+            .nine{
+                background-color:#848dc5;
+            }
+            
+            .ten{
+                background-color:#b09fca;
+            }
+            
+            .eleven{
+                background-color:#e290b2;
+            }
+            
+            
+            /* FILTER BUTTONS */
+            
+            #s-contain{
+                width:204px;
+                height:auto;
+                margin-top:0.5em;
+                display:flex;
+                align-items:space-between;
+                justify-content:space-between;
+                flex-wrap:wrap;
+            }
+           
+            /* The "show" class is added to the filtered elements */
+            .show {
+                display: block;
+            }
+            
+            /* Style the buttons */
+            .btn {
+              border: none;
+              outline: none;
+              padding:12px;
+              width:96px;
+              background-color: #fff;
+              box-shadow:4px 4px #333;
+              cursor: pointer;
+              margin-bottom:8px;
+              font-size:0.75em;
+              font-family:"Roboto Condensed";
+              transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            /* Add a light grey background on mouse-over */
+            .btn:hover {
+              box-shadow:4px 4px #ed6495;
+              transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            /* Add a dark background to the active button */
+            .btn.active {
+              box-shadow:4px 4px #95ed64;
+              background-color:#333;
+              color:#fff;
+            }
+            
+            /** START RESPONSIVE CODE FOR SMALL SCREENS **/
+            
+            @media only screen and (max-width: 750px){
+                #sidebar{
+                    display:none;
+                }
+                
+                #content{
+                    width:80vw;
+                }
+                
+                .d-box{
+                    width:100vw;
+                    display:block;
+                }
+                
+                #links{
+                    display:block;
+                    display:flex;
+                    align-items:space-between;
+                    justify-content:space-between;
+                    flex-direction:row;
+                    flex-wrap:wrap;
+                }
+                
+                .filterbox{
+                    display:block;
+                    display:flex;
+                    align-items:space-between;
+                    justify-content:space-between;
+                    flex-direction:row;
+                    flex-wrap:wrap;
+                }
+                
+                .box{
+                    width:250px;
+                    height:300px;
+                }
+                
+                .b{
+                    width:250px;
+                    height:250px;
+                }
+            }
+            
+            
+            
+            /** START RESPONSIVE CODE FOR PHONES **/
+            
+            @media only screen and (max-width: 450px){
+                
+                body{
+                    font-size:20px;
+                }
+                
+                .btn{
+                    font-size:16px;
+                    width:120px;
+                }
+                
+                #content{
+                    width:100vw;
+                }
+                
+                .box{
+                    width:calc(100vw - (1.5em + 4px));
+                    margin:0.5em;
+                }
+                
+                .b{
+                    width:100%;
+                    max-height:400px;
+                }
+                
+            }
+            
+        
+            
+        </style>
+    </head>
+    
+    <body>
+        <div id="everything">
+        
+            <div id="sidebar">
+                <div id="s-icon">
+                    <img src="https://78.media.tumblr.com/b83488d4c36724ab10e7679ec5977e1f/tumblr_p3smscNMS61wsskx3o4_r1_1280.jpg" alt="page icon">
+                </div>
+                <div id="s-desc">
+                    <p>
+                    A simple page meant to showcase the colors on a blog.
+                    </p>
+                    <p>
+                        This is a revamp of "<b>Farbenfroh</b>" (Page #1).
+                    </p>
+                </div>
+                <div id="s-contain">
+                <!-- Control buttons -->
+                    <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+                    <button class="btn" onclick="filterSelection('pink')"> Pink</button>
+                    <button class="btn" onclick="filterSelection('red')"> Red</button>
+                    <button class="btn" onclick="filterSelection('orange')"> Orange</button>
+                    <button class="btn" onclick="filterSelection('yellow')"> Yellow</button>
+                    <button class="btn" onclick="filterSelection('green')"> Green</button>
+                    <button class="btn" onclick="filterSelection('turquoise')"> Turquoise</button>
+                    <button class="btn" onclick="filterSelection('blue')"> Blue</button>
+                    <button class="btn" onclick="filterSelection('purple')"> Purple</button>
+                    <button class="btn" onclick="filterSelection('neutral')"> Neutrals</button>
+
+
+                </div>
+            </div>
+            
+            <div id="content">
+                <div class="d-box">
+                    <div id="title">Farbenfroh</div>
+                </div>
+                
+                <div class="d-box">
+                    <div id="desc">
+                        <i>„Die Farbe hat mich. Ich brauche nicht nach ihr zu haschen. Sie hat mich für immer. Das ist der glücklichen Stunde Sinn: ich und die Farbe sind eins. Ich bin Maler.“</i> – Paul Klee
+                    </div>
+                </div>
+                
+                <div class="d-box filterbox">
+                    <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+                    <button class="btn" onclick="filterSelection('pink')"> Pink</button>
+                    <button class="btn" onclick="filterSelection('red')"> Red</button>
+                    <button class="btn" onclick="filterSelection('orange')"> Orange</button>
+                    <button class="btn" onclick="filterSelection('yellow')"> Yellow</button>
+                    <button class="btn" onclick="filterSelection('green')"> Green</button>
+                    <button class="btn" onclick="filterSelection('turquoise')"> Turquoise</button>
+                    <button class="btn" onclick="filterSelection('blue')"> Blue</button>
+                    <button class="btn" onclick="filterSelection('purple')"> Purple</button>
+                    <button class="btn" onclick="filterSelection('neutral')"> Neutrals</button>
+                </div>
+                
+                <!--
+                For more color boxes, just add:
+                
+                <a href="/tagged/[Color Tag]" title="tagged: [Color Tag]">
+                    <div class="box [Color Filter]">
+                        <div class="b [Box Number]"></div>
+                        <div class="text">[Color Name] | #[HEX Value]</div>
+                    </div>
+                </a>
+                
+                -->    
+                
+                <a href="/tagged/mulberry" title="tagged: mulberry">
+                    <div class="box purple">
+                        <div class="b one"></div>
+                        <div class="text">Mulberry | #a76c97</div>
+                    </div>
+                </a>
+                
+                <a href="/tagged/rose-quartz" title="tagged: rose quartz">
+                    <div class="box pink">
+                        <div class="b two"></div>
+                        <div class="text">Rose Quartz | #f7cac9</div>
+                    </div>
+                </a>
+                
+                <a href="/tagged/serenity" title="tagged: serenity">
+                    <div class="box blue">
+                        <div class="b three"></div>
+                        <div class="text">Serenity | #92a8d1</div>
+                    </div>
+                </a>
+                
+                <a href="/tagged/salmon-rose" title="tagged: salmon rose">
+                    <div class="box pink">
+                        <div class="b four"></div>
+                        <div class="text">Salmon Rose | #ff8d94</div>
+                    </div>
+                </a>
+                
+                <a href="/tagged/cornflowerblue" title="tagged: cornflowerblue">
+                    <div class="box blue">
+                        <div class="b five"></div>
+                        <div class="text">Cornflowerblue | #6495ed</div>
+                    </div>
+                </a>
+                
+                <a href="/tagged/ultra-violet" title="tagged: ultra violet">
+                    <div class="box purple">
+                        <div class="b six"></div>
+                        <div class="text">Ultra Violet | #5f4b8b</div>
+                    </div>
+                </a>
+                
+                <a href="/tagged/chateau-rose" title="tagged: chateau rose">
+                    <div class="box pink">
+                        <div class="b seven"></div>
+                        <div class="text">Chateau Rose | #d2738f</div>
+                    </div>
+                </a>
+                
+                <a href="/tagged/honeysuckle" title="tagged: honeysuckle">
+                    <div class="box pink">
+                        <div class="b eight"></div>
+                        <div class="text">Honeysuckle | #d94f70</div>
+                    </div>
+                </a>
+                
+                <a href="/tagged/jacaranda" title="tagged: jacaranda">
+                    <div class="box blue">
+                        <div class="b nine"></div>
+                        <div class="text">Jacaranda | #848dc5</div>
+                    </div>
+                </a>
+                
+                <a href="/tagged/purple-rose" title="tagged: purple rose">
+                    <div class="box purple">
+                        <div class="b ten"></div>
+                        <div class="text">Purple Rose | #b09fca</div>
+                    </div>
+                </a>
+                
+                <a href="/tagged/rosebloom" title="tagged: rosebloom">
+                    <div class="box pink">
+                        <div class="b eleven"></div>
+                        <div class="text">Rosebloom | #e290b2</div>
+                    </div>
+                </a>
+                
+                <div class="d-box">
+                    <div id="links">
+                        
+                        <a href="/" title="Index">
+                            <div class="box-link">Index</div>
+                        </a>
+                        
+                        <a href="/ask" title="Message">
+                            <div class="box-link">Message</div>
+                        </a>
+                        
+                        <a href="/archive" title="Archive">
+                            <div class="box-link">Archive</div>
+                        </a>
+                        
+                        <a href="/" title="Custom 1">
+                            <div class="box-link">Custom 1</div>
+                        </a>
+                        
+                        <a href="/" title="Custom 2">
+                            <div class="box-link">Custom 2</div>
+                        </a>
+                        
+                        <a href="https://silbrigthemes.tumblr.com/" title="Page by @silbrigthemes">
+                            <div class="box-link">Credit</div>
+                        </a>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <!-- FILTER SCRIPT (w3schools) -->
+        <script>
+            filterSelection("all")
+                function filterSelection(c) {
+                  var x, i;
+                  x = document.getElementsByClassName("box");
+                  if (c == "all") c = "";
+                  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+                  for (i = 0; i < x.length; i++) {
+                    w3RemoveClass(x[i], "show");
+                    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+                  }
+                }
+                
+                // Show filtered elements
+                function w3AddClass(element, name) {
+                  var i, arr1, arr2;
+                  arr1 = element.className.split(" ");
+                  arr2 = name.split(" ");
+                  for (i = 0; i < arr2.length; i++) {
+                    if (arr1.indexOf(arr2[i]) == -1) {
+                      element.className += " " + arr2[i];
+                    }
+                  }
+                }
+                
+                // Hide elements that are not selected
+                function w3RemoveClass(element, name) {
+                  var i, arr1, arr2;
+                  arr1 = element.className.split(" ");
+                  arr2 = name.split(" ");
+                  for (i = 0; i < arr2.length; i++) {
+                    while (arr1.indexOf(arr2[i]) > -1) {
+                      arr1.splice(arr1.indexOf(arr2[i]), 1); 
+                    }
+                  }
+                  element.className = arr1.join(" ");
+                }
+                
+                // Add active class to the current control button (highlight it)
+                var btnContainer = document.getElementById("s-contain");
+                var btns = btnContainer.getElementsByClassName("btn");
+                for (var i = 0; i < btns.length; i++) {
+                  btns[i].addEventListener("click", function() {
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    this.className += " active";
+                  });
+                }
+
+        </script>
+        
+    </body>
+</html>
