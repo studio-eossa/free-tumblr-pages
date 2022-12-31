@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <!--
+
+    STECKBRIEF
+    Page#2 by @silbrigthemes
+
+    This is a simple about page featuring a header image, a contact box, social media icons and more.
+
+    Please do not edit or delete the credit.
+    Please do not change the style / layout beyond recognition.
+    Don't use this code as a base.
+    Don't distribute this code as your own.
+
+    Thank you for following the rules and have fun with it.
+
+    Customization help is given in comments.
+
+    -->
+    
+    <meta charset="utf-16">
+    <title>{Title}</title>
+    <link rel="shortcut icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+
+    <!-- Necessary for the theme to be responsive. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Icon font, by fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- Necessary for the scripts to work. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    
+    <!-- Changes the toolbar color on mobile. -->
+    <meta name="theme-color" content="#f99659"/>
+
+    <!-- Tooltip Script -->
+    <script src="https://static.tumblr.com/rzl30kg/eAxm7a751/jquery.style-my-tooltips.js"></script>
+    <script>
+        (function($){
+            $(document).ready(function(){
+                $("[title]").style_my_tooltips({
+                    tip_follows_cursor:true,
+                    tip_delay_time:200,
+                    tip_fade_speed:300
+                }
+                    );
+            });
+        })(jQuery);
+    </script>
+
+    <!-- Custom font scripts -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+
+        <style type="text/css">
+
+        body{
+            margin:0;
+            top:0;
+            left:0;
+            background-color:#000; /* edit global background color */
+            font-family:"Quicksand", Verdana; /* edit font-family ; Verdana is a fall-back system font */
+            color:#fefefe; /* edit global text color */
+            font-size:1em; /* 1em = 16px */
+            overflow:hidden;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar{
+            width:6px;
+            background-color:#111; /* background color of the scrollbar */
+        }
+
+        ::-webkit-scrollbar-thumb{
+            background-color:#f99659; /* background color of the scrollbar thumb */
+        }
+
+        ::-webkit-scrollbar-track{
+            background-color:#f99659; /* background color of the scrollbar track */
+            border:2px solid #111; /* border around the scrollbar track*/
+        }
+
+        /* Custom selection */
+        ::selection{
+            background-color:#06a2cc; /* selection background color */
+            color:#fefefe; /* selection text color */
+        }
+
+        ::-webkit-selection{
+            background-color:#999;
+            color:#fefefe;
+        }
+
+        ::-o-selection{
+            background-color:#999;
+            color:#fefefe;
+        }
+
+        ::-moz-selection{
+            background-color:#999;
+            color:#fefefe;
+        }
+        
+        /* Custom Tooltips */
+        #s-m-t-tooltip{
+            max-width:300px;
+            margin:15px;
+            padding:0.5em;
+            background-color: #f99659;
+            color:#111;
+            z-index:9999999999999;
+            font-size:12px;
+            text-transform:uppercase;
+            font-weight:400;
+            font-family:"Quicksand", Verdana;
+        }
+
+        /* The card */
+        #card{
+            height:80vh; /* vh = viewport height */
+            width:50vw; /* vw = viewport width */
+            background-color:#111; /* background color of the card */
+            margin-left:25vw; /* distance to the left | (100 - width) / 2 */
+            margin-top:10vh; /* distance to top | (100 - height) / 2 */
+            border-radius:2px; /* increase to round corners more, set to "none" for pointy corners */
+            display:flex;
+            flex-direction:column;
+        }
+
+        /* The header with the image */
+        #heading{
+            background-color:#f99659;
+            background-image:url("https://img.search.brave.com/ySBKb2qbKyDh8nW2AhCQUgUNpG0YX58rEOBPCoDuraQ/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly9pbWFn/ZXMzLmFscGhhY29k/ZXJzLmNvbS8xMDkv/MTA5OTY3OS5qcGc");
+            background-size:contain; /* change this depending on your image */
+            background-repeat:no-repeat;
+            background-attachment:fixed;
+            background-position:top center; /* change this depending on your image | top OR center OR bottom / left OR center OR right */
+            height:25vh; /* height of the image */
+        }
+
+        /* The title */
+        #title{
+            font-size:2em;
+            text-align:center;
+            padding-top:10px;
+            padding-bottom:5px;
+            font-family:"Playfair Display", "Times New Roman"; /* change font-family here, TNR is a fall-back system font */
+            font-weight:bold;
+            font-style:italic;
+            color:#fefefe; /* text color of the title */
+            text-shadow:2px 2px 1px #666; /* shadow of the title | offset to left, offset to top, blur, color*/
+        }
+
+        /* The description + specifications */
+        #description{
+            text-align:justify; /* text align: left OR center OR right OR justify*/
+            width:45vw;
+            height:45vh;
+            margin-top:10px;
+            padding-left:2.5vw;
+            padding-right:2.5vw;
+            overflow-y:scroll; /* if the text gets longer than the height of the box a scrollbar appears */
+        }
+
+        #description a{
+            color:#f99659; /* link color */
+            font-weight:bold;
+            text-decoration:none;
+            transition: 0.5s;
+            -moz-transition:0.5s;
+            -o-transition:0.5s;
+            -webkit-transition:0.5s;
+        }
+
+        #description a:hover{
+            cursor:pointer;
+            color:#888; /* link color on hover */
+            transition: 0.5s;
+            -moz-transition:0.5s;
+            -o-transition:0.5s;
+            -webkit-transition:0.5s;
+        }
+
+        #description b, strong{
+            font-weight:bold;
+            color:#aaa; /* bold text color */
+        }
+
+        #description i, em{
+            font-style:italic;
+            color:#aaa; /* italic text color */
+        }
+
+        #description mark{
+            background-color:#f99659; /* marker background color */
+            color:#111; /* marker text color */
+            font-weight:bold;
+            padding:2px;
+            border-radius:2px; /* rounded corners on the marked text */
+        }
+
+        #description ul, ol{
+            list-style-type:none;
+        }
+
+        #description li{
+            padding-bottom:8px;
+            margin-left:-2.5em;
+        }
+
+        /* The link section at the bottom of the card */
+        #links{
+            background-color:#f99659; /* background color of the section with the button */
+            height:10vh;
+            display:flex;
+            justify-content:center;
+        }
+
+        /* The button which opens the modal */
+        button{
+            background-color:#fefefe; /* button background color */
+            border-radius:2px;
+            border:none;
+            margin-top:20px;
+            padding:4px;
+            color:#333; /* button text color */
+            font-size:1em;
+            text-transform:uppercase;
+            width:100px;
+            font-family:"Quicksand", Verdana; /* button font-family */
+            font-weight:bold;
+            text-shadow:1px 1px 1px #aaa; /* button text shadow */
+            transition: 0.5s;
+            -moz-transition:0.5s;
+            -o-transition:0.5s;
+            -webkit-transition:0.5s;
+        }
+
+        button:hover{
+            background-color:#333; /* button background color on hover */
+            color:#fefefe; /* button text color on hover */
+            cursor:pointer;
+            transition: 0.5s;
+            -moz-transition:0.5s;
+            -o-transition:0.5s;
+            -webkit-transition:0.5s;
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Header */
+        .modal-header {
+            padding: 2px 16px;
+            background-color: #f99659; /* header background color */
+            color: #fefefe; /* header text color */
+            font-family:"Playfair Display", "Times New Roman"; /* header font-family */
+            font-weight:bold;
+            font-style:italic;
+            font-size:1.5em; /* 1.5 em = 24px*/
+            text-align:center;
+            text-shadow:2px 2px 1px #666; /* header text shadow | offset to top, offset tp left, blur, color */
+        }
+
+        /* Modal Body */
+        .modal-body {
+            padding: 2px 16px;
+        }
+        
+        .modal-body p{
+            text-align:center;
+        }
+
+        /* Modal Footer */
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: #f99659; /* footer background color */
+            color: white; /* footer text color */
+            text-align:center;
+        }
+
+        .modal-footer a{
+            color:#fefefe; /* link text color */
+            text-shadow:2px 2px 1px #666; /* link text shadow color */
+            text-align:center;
+            font-size:1.5em;
+            padding-left:25px;
+        }
+
+        .modal-footer a:hover{
+            color:#111; /* link text color on hover */
+            text-shadow:2px 2px 1px #666; /* link text shadow on hover */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: relative;
+            background-color: #111;
+            border: 1px solid #111;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+            animation-name: animatetop;
+            animation-duration: 0.4s;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+        }
+
+        /* Add Animation */
+        @keyframes animatetop {
+            from {top: -300px; opacity: 0}
+            to {top: 0; opacity: 1}
+        }
+
+        /* The Close Button */
+        .close {
+            color: #fefefe;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #111;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        /* CREDIT */
+        /* Do not delete the credit! You will be blocked and reported! */
+         #credit{
+             width:50vw;
+             height:36px;
+             background-color:#111;
+             color:#f99659;
+             display:flex;
+             align-items:center;
+             justify-content:space-evenly;
+             transition: 0.5s;
+             -moz-transition:0.5s;
+             -o-transition:0.5s;
+             -webkit-transition:0.5s;
+             left:25vw;
+             bottom:calc(5vh - 18px);
+             position:absolute;
+             font-weight:bold;
+         }
+         
+         #credit:hover{
+             color:#111;
+             background-color:#f99659;
+             transition: 0.5s;
+             -moz-transition:0.5s;
+             -o-transition:0.5s;
+             -webkit-transition:0.5s;
+         }
+         
+         a.credlink, a.navlink, a.conlink{
+             text-decoration:none;
+             border-bottom:none;
+         }
+
+        /* Responsive layout for screens with a width below 750px */
+        @media only screen and (max-width:750px){
+            #card{
+                min-width:250px;
+                min-height:350px;
+            }
+
+            #description{
+                height:calc(35% + 100px);
+                min-width:230px;
+                padding-right:5px;
+                padding-left:15px;
+            }
+
+            #links{
+                margin-top:0;
+                min-width:250px;
+            }
+
+            #heading{
+                height:150px;
+            }
+
+            #links{
+                min-height:75px;
+                display:flex;
+                justify-content:center;
+            }
+
+            button{
+                margin-top:20px;
+            }
+        }
+
+        /* Responsive layout for screens with a width below 1000px */
+        @media only sreen and (max-width:1000px){
+            #heading{
+                height:200px;
+            }
+
+            #description{
+                height:calc(35% + 50px);
+            }
+        }
+        
+        #custom-controls{
+            width:220px;
+            height:36px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            position:absolute;
+            top:calc(5vh - 18px);
+            margin-left:calc(50vw - 110px);
+        }
+        
+        .control{
+            width:36px;
+            height:36px;
+            border-radius:50%;
+            background-color:#111;
+            color:#f99659;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            transition: 0.5s;
+             -moz-transition:0.5s;
+             -o-transition:0.5s;
+             -webkit-transition:0.5s;
+        }
+        
+        .control:hover{
+            background-color:#f99659;
+            color:#111;
+            transition: 0.5s;
+             -moz-transition:0.5s;
+             -o-transition:0.5s;
+             -webkit-transition:0.5s;
+        }
+        
+        /* Hides standard tumblr controls */
+        body > iframe:first-child {
+            display: none !important;
+        }
+
+        </style>
+    </head>
+    <body>
+    
+    <div id="custom-controls">
+        <a href="https://www.tumblr.com/dashboard" title="return to dashboard" class="conlink">
+            <div class="control"><span class="fas fa-home"></span></div>
+        </a>
+        
+        <a href="https://www.tumblr.com/message/{Name}" title="send {Name} a message" class="conlink">
+            <div class="control">
+                <span class="fas fa-comment-medical"></span>
+            </div>
+        </a>
+        
+        <a href="https://www.tumblr.com/customize/{Name}?redirect_to=https%3A%2F%2F{Name}.tumblr.com" title="customize" class="conlink">
+            <div class="control"><span class="fas fa-palette"></span></div>
+        </a>
+        
+        <a href="https://www.tumblr.com/settings/blog/{Name}" title="change settings" class="conlink">
+            <div class="control"><span class="fas fa-cog"></span></div>
+        </a>
+        
+        <a href="/" title="follow {Name}" class="conlink follow">
+            <div class="control"><span class="fas fa-plus"></span></div>
+        </a>
+    </div>
+
+    <div id="card">
+        <div id="heading"></div> <!-- // end heading -->
+        <div id="title">Tess Holliday</div> <!-- Add your title here. -->
+        <div id="description">
+        <!-- Here goes your description. -->
+        <!-- An unordered list; delete it if you don't need it. -->
+        <ul>
+            <li><mark>Age:</mark> 32 </li>
+            <li><mark>Nationality:</mark> American</li>
+            <li><mark>Occupation:</mark> model, make-up artist, blogger</li>
+        </ul>
+
+        Missisippi born and L.A. bred, <b>Tess</b> has been modelling since 2010. She cut her teeth working for many indie designers and brands. She continues to work for some to show support for those who support her, such as <i>Orchard Corset</i>, <i>Domino Dollhouse</i>, and <i>Jessica Louise Clothing</i>.
+<br><br>
+She started the <mark>body positive</mark> movement <a href="https://twitter.com/hashtag/effyourbeautystandards?lang=de">#effyourbeautystandards</a> in 2013, and continues to pursue this avenue to empower people from all walks of life to embrace the body they are in right now.
+<br><br>
+        </div> <!-- // end description -->
+
+        <div id="links">
+            <div id="contact">
+                <button id="myBtn">Contact</button> <!-- Add your own button text here. -->
+                <!-- The Modal -->
+                <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Get In Touch</h2> <!-- Text on the header. -->
+                    </div> <!-- // end modal header -->
+                    <div class="modal-body">
+                        <p>This is where you can leave a message. Please remain friendly and do not send graphic content. Please be patient, we'll try to reply as soon as possible.</p> <!-- Content text. -->
+                    <p>
+                        <p><iframe frameborder="0" scrolling="no" width="100%" height="250px" src="http://www.tumblr.com/ask_form/{NAME}.tumblr.com" style="background-color:transparent; overflow:hidden;" id="ask_form"></iframe><!--[if IE]><script type="text/javascript">document.getElementById('ask_form').allowTransparency=true;</script><![endif]--></p>
+                        <!-- Don't delete this iframe or you won't have an askbox anymore. The {NAME} automatically gets your username for the askbox to work. -->
+                    </p>
+                    </div> <!-- // end modal body -->
+                    <div class="modal-footer">
+                        <h3>
+                        <!-- Navigation with the social media icons. -->
+                        <a href="http://facebook.com/tesshollidayofficial" class="navlink" title="facebook account">
+                            <span class="fab fa-facebook"></span>
+                        </a>
+                        <a href="https://instagram.com/tessholliday/" class="navlink" title="instagram account">
+                            <span class="fab fa-instagram"></span>
+                        </a>
+                      <a href="https://twitter.com/Tess_Holliday" class="navlink" title="twitter account">
+                          <span class="fab fa-twitter"></span>
+                      </a>
+                      </h3>
+                  </div> <!-- // end modal footer -->
+              </div> <!-- // end modal content -->
+
+            </div> <!-- // end modal -->
+          </div> <!-- // end contact -->
+
+      </div> <!-- // end links -->
+
+    </div> <!-- // end card -->
+    
+    <!-- CREDIT -->
+    <!-- Do not delete the credit! You will be blocked and reported! -->
+    <a href="https://silbrigthemes.tumblr.com/" title="page by silbrigthemes" class="credlink">
+        <div id="credit">
+            <span class="fas fa-code"></span> Page Credit 
+            <span class="fas fa-code"></span>
+        </div>        
+    </a>
+
+    <!-- SCRIPT TO OPEN THE MODAL ON CLICK -->
+    <script>
+        // Get the modal
+        var modal = document.getElementById('myModal');
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    </body>
+</html>
