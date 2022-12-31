@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+
+PASSIONSBLUME
+Page #12 by @silbrigthemes
+
+A simple navigation page.
+
+Features:
+    Custom scrollbar, tooltips, text selection and mobile toolbar.
+    Responsive layout.
+    Gooey menu.
+    Searchbar.
+
+Rules:
+    1) Do not edit beyond recogniton.
+    2) Do not steal (parts of) the code.
+    3) Do not claim as your own.
+    4) Do not delete the credit.
+    5) Please like / reblog if using.
+
+If you have any questions, need help or notice any oddities, please feel free to contact me:
+
+    silbrigthemes.tumblr.com/ask
+    silbrigsupport.tumblr.com
+
+Have fun with this page!
+
+-->
+
+
+    <head>
+
+      <meta charset="utf-16">
+      <title>Navigation</title> <!-- Change title here. -->
+      <link rel="shortcut icon" href="{Favicon}"/>
+      <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+      <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+
+    <!-- Necessary for the theme to be responsive. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Tooltips Script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://static.tumblr.com/rzl30kg/eAxm7a751/jquery.style-my-tooltips.js"></script>
+    <script>
+       (function($){
+           $(document).ready(function(){
+               $("[title]").style_my_tooltips({
+                   tip_follows_cursor:true,
+                   tip_delay_time:200,
+                   tip_fade_speed:300
+               }
+                   );
+           });
+       })(jQuery);
+    </script>
+
+    <!-- Changes the toolbar color on mobile. -->
+    <meta name="theme-color" content="#ac9cfb"/>
+
+    <!-- Necessary for the icon font to work. -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+    <!-- Custom font: Open Sans -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+
+        <style>
+
+            body{
+                margin:0;
+                font-size:1em; /* font size, 16px */
+                font-family: "Open Sans", Verdana;
+                overflow-x:hidden;
+                background-color:white;
+            }
+
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar{
+                width:10px;
+                background:linear-gradient(to bottom, #ff6ffa, #6fbbff);
+                border:4px solid white;
+            }
+
+            ::-webkit-scrollbar-thumb{
+                background:linear-gradient(to bottom, #ff6ffa, #6fbbff);
+                width:10px;
+                border-radius:5px;
+            }
+
+            /* Custom Text Selection */
+            ::selection{
+                background-color:#ac9cfb;
+                color:white;
+            }
+
+            ::-moz-selection{
+                background-color:#ac9cfb;
+                color:white;
+            }
+
+            ::-o-selection{
+                background-color:#ac9cfb;
+                color:white;
+            }
+
+            ::-webkit-selection{
+                background-color:#ac9cfb;
+                color:white;
+            }
+
+            /* Custom Tooltips */
+            #s-m-t-tooltip{
+                max-width:300px;
+                margin:15px;
+                padding:0.5em;
+                background:white; /* Tooltip Background Color */
+                color:#6fbbff; /* Toolip Color */
+                z-index:999999;
+                font-size:12px;
+                text-transform:uppercase;
+                font-weight:300;
+            }
+
+            #left{
+                width:50vw;
+                height:100vh;
+                background-color:pink;
+                background:linear-gradient(to bottom, #ff6ffa, #6fbbff);
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                flex-direction:column;
+            }
+
+            #circle{
+                width:150px;
+                height:150px;
+                border-radius:50%;
+                margin-top:200px;
+                background-color:white;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+            
+            .sfm input {
+                background-color: white;
+                border-radius:16px;
+                font-size: 12px; 
+                border: 0px; 
+                text-transform: uppercase;  
+                color: black; 
+                width:150px;
+                text-align:center;
+                letter-spacing: 1px; 
+                padding: 4px 8px;
+                font-family: "Open Sans", Verdana;
+                margin-top:200px;
+            }
+
+            /* I have played with this by commenting out the .menu{}, and apparently it does not affect the styling on the customization page. */
+         .menu {
+              filter: url("#goo");
+         }
+
+         /* These lines are very important as they are responsible for styling the whole menu. Without them, the icons just appear in one row. */
+         .menu-item, .menu-open-button {
+              background-color: pink; /* pink background of the menu*/
+              background:linear-gradient(to bottom, #ff6ffa, #6fbbff);
+              border-radius: 50%; /* minimum is 50% for a perfect circle */
+              width: 80px; /* circle width */
+              height: 80px; /* circle height */
+              position: absolute;
+              color: white; /* color of the icons */
+              text-align: center; /* horizontal centering of icons */
+              line-height: 80px; /* vertical centering of icons */
+              transform: translate3d(0, 0, 0);
+              transition: transform ease-out 200ms;
+              /* transformation and duration of the transformation */
+         }
+
+         /* These lines seemingly only affect the margin to the left. */
+         .menu-open {
+              display: none;
+         }
+
+         /* Hamburger menu (≡) within the pink circle. */
+         .hamburger {
+              width: 25px; /* line width */
+              height: 3px; /* line height */
+              background: white; /* color of the lines (≡) */
+              display: block;
+              position: absolute;
+              top: 50%; /* offset from top */
+              left: 50%; /* offset from left */
+              /* since the lines are 25px long and 3px high, the following lines are necessary to center-align the menu properly */
+              margin-left: -12.5px;
+              margin-top: -1.5px;
+              /* transformation duration */
+              transition: transform 200ms;
+
+         }
+
+         .hamburger-1 {
+              transform: translate3d(0, -8px, 0);
+              /* (-8px) is the offset to the second line*/
+         }
+
+         .hamburger-2 {
+              transform: translate3d(0, 0, 0);
+         }
+
+         .hamburger-3 {
+              transform: translate3d(0, 8px, 0);
+              /* (8px) is the offset to the second line*/
+         }
+
+         /* Upon clicking on the menu, the lines of the hamburger menu rotate and realign. The middle line is scaled down to 0, so that it disappeares. The top and bottom lines will be rotated so that they form an (x). */
+         .menu-open:checked + .menu-open-button .hamburger-1 {
+            transform: translate3d(0, 0, 0) rotate(45deg);
+         }
+         .menu-open:checked + .menu-open-button .hamburger-2 {
+            transform: translate3d(0, 0, 0) scale(0, 1);
+         }
+         .menu-open:checked + .menu-open-button .hamburger-3 {
+            transform: translate3d(0, 0, 0) rotate(-45deg);
+         }
+
+         .menu {
+            position: relative;
+            font-size: 20px;
+            text-align: left;
+            border:2px solid rgba(255,255,255,0);
+            left: -40px;
+            top: -40px;
+            transition: 0.5s;
+            -moz-transition: 0.5s;
+            -o-transition: 0.5s;
+            -webkit-transition: 0.5s;
+
+         }
+
+          .menu-item:hover {
+              background: white;
+              color: #6fbbff;
+              border:2px solid rgba(255,255,255,0);
+              transition:0.5s;
+              -moz-transition:0.5s;
+              -o-transition:0.5s;
+              -webkit-transition:0.5s;
+
+          }
+
+          /*
+            duration for the items to be displayed
+            the items are displayed after one another
+          */
+          .menu-item:nth-child(3) {
+            transition-duration: 180ms;
+          }
+          .menu-item:nth-child(4) {
+            transition-duration: 180ms;
+          }
+          .menu-item:nth-child(5) {
+            transition-duration: 180ms;
+          }
+          .menu-item:nth-child(6) {
+            transition-duration: 180ms;
+          }
+          .menu-item:nth-child(7) {
+            transition-duration: 180ms;
+          }
+          .menu-item:nth-child(8) {
+            transition-duration: 180ms;
+          }
+          .menu-item:nth-child(9) {
+            transition-duration: 180ms;
+          }
+
+          .menu-open-button {
+              z-index: 2;
+              transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+              transition-duration: 400ms;
+              transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+              cursor: pointer;
+          }
+
+          .menu-open-button:hover {
+            transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+          }
+
+          .menu-open:checked + .menu-open-button {
+              transition-timing-function: linear;
+              transition-duration: 200ms;
+              transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+          }
+
+          .menu-open:checked ~ .menu-item {
+            transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
+          }
+          .menu-open:checked ~ .menu-item:nth-child(3) {
+              transition-duration: 180ms;
+              transform: translate3d(0.08361px, -104.99997px, 0);
+          }
+          .menu-open:checked ~ .menu-item:nth-child(4) {
+              transition-duration: 280ms;
+              transform: translate3d(90.9466px, -52.47586px, 0);
+          }
+          .menu-open:checked ~ .menu-item:nth-child(5) {
+              transition-duration: 380ms;
+              transform: translate3d(90.9466px, 52.47586px, 0);
+          }
+          .menu-open:checked ~ .menu-item:nth-child(6) {
+              transition-duration: 480ms;
+              transform: translate3d(0.08361px, 104.99997px, 0);
+          }
+          .menu-open:checked ~ .menu-item:nth-child(7) {
+              transition-duration: 580ms;
+              transform: translate3d(-90.86291px, 52.62064px, 0);
+          }
+          .menu-open:checked ~ .menu-item:nth-child(8) {
+              transition-duration: 680ms;
+              transform: translate3d(-91.03006px, -52.33095px, 0);
+          }
+          .menu-open:checked ~ .menu-item:nth-child(9) {
+              transition-duration: 780ms;
+              transform: translate3d(-0.25084px, -104.9997px, 0);
+          }
+
+            #right{
+                width:50vw;
+                height:101vh;
+                margin-left:50vw;
+                margin-top:-100vh;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                flex-direction:column;
+                max-height:100vh;
+                overflow-y:scroll;
+                overflow-x:hidden;
+            }
+
+            .section-title{
+                width:80%;
+                height:auto;
+                background-color:lightblue;
+                background:linear-gradient(to bottom, #ff6ffa, #6fbbff);
+                padding:0.25em 0.5em;
+                border-radius:1em;
+                font-size:1.5em;
+                color:white;
+                text-align:center;
+            }
+
+            .section{
+                width:80%;
+                height:auto;
+                border-radius:1em;
+                border:2px solid #f3f4f5;
+                display:flex;
+                align-items:space-evenly;
+                justify-content:space-evenly;
+                flex-wrap:wrap;
+                margin-bottom:1em;
+                margin-top:0.25em;
+                padding:0.5em;
+            }
+
+            a.sec-links{
+                text-decoration:none;
+                color:black;
+                border-bottom:2px solid #ff6ffa;
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+                margin-right:0.5em;
+                margin-bottom:0.5em;
+            }
+
+            a.sec-links:hover{
+                border-bottom:2px solid #6fbbff;
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            /* Hides the tumblr app button. By @yeoli-thm */
+            .tmblr-iframe--app-cta-button {
+                display: none!important;
+            }
+
+            /* Hides standard tumblr controls */
+            body > iframe:first-child {
+                display: none !important;
+            }
+            
+            /* Necessary for responsive layout */
+            @media only screen and (max-width:800px){
+                #left{
+                    width:100vw;
+                }
+
+                #right{
+                    width:100vw;
+                    margin-top:0;
+                    margin-left:0;
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div id="left">
+
+<div id="circle">
+<!-- HAMBURGER MENU -->
+<!-- Hamburger menu within the white circle. -->
+<nav class="menu">
+  <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+  <label class="menu-open-button" for="menu-open">
+    <span class="hamburger hamburger-1"></span>
+    <span class="hamburger hamburger-2"></span>
+    <span class="hamburger hamburger-3"></span>
+  </label>
+
+<!-- GOOEY MENU -->
+  <!-- This is where the menu links start. -->
+  <!-- Replace the '#' with the link of your choice. -->
+  <!-- i.e.: <a href="#"></a> ==> <a href="/ask"></a> -->
+  <!-- If you want to change the displayed icons, just change i.e.
+       'fa fa-heart' to 'fa fa-adjust' or any icon of your choice.
+       -->
+  <a href="/" title="index" class="menu-item"> <i class="fa fa-home"></i> </a>
+  <a href="/ask" title="ask" class="menu-item"> <i class="fa fa-envelope"></i> </a>
+  <a href="/archive" title="archive" class="menu-item"> <i class="fa fa-th-large"></i> </a>
+  <a href="/" title="about" class="menu-item"> <i class="fa fa-user"></i> </a>
+  <a href="/" title="custom link" class="menu-item"> <i class="fa fa-compass"></i> </a>
+  <!-- Don't touch this link it's my credit and I expect from you to leave it this way! -->
+  <a href="https://silbrigthemes.tumblr.com/" title="theme by @silbrigthemes" class="menu-item"> <i class="fa fa-code"></i> </a>
+
+</nav>
+</div>
+
+<form action="/search" method="get" class="sfm" name="theform">
+    <input type="text" name="q" value="SEARCH"/>
+</form>
+
+        </div>
+
+        <div id="right">
+            <!-- First Section -->
+            <div class="section-title">Pride</div>
+            <div class="section">
+                <a class="sec-links" href="/" title="">
+                    <div class="element">bisexual</div>
+                </a>
+
+                <a class="sec-links" href="/" title="">
+                    <div class="element">gay</div>
+                </a>
+
+                <a class="sec-links" href="/" title="">
+                    <div class="element">genderfluid</div>
+                </a>
+
+                <a class="sec-links" href="/" title="">
+                    <div class="element">lesbian</div>
+                </a>
+
+                <a class="sec-links" href="/" title="">
+                    <div class="element">non-binary</div>
+                </a>
+
+                <a class="sec-links" href="/" title="">
+                    <div class="element">pansexual</div>
+                </a>
+
+                <a class="sec-links" href="/" title="">
+                    <div class="element">trans</div>
+                </a>
+
+                <a class="sec-links" href="/" title="">
+                    <div class="element">third-gender</div>
+                </a>
+                    
+                <a class="sec-links" href="/" title="">
+                    <div class="element">questioning</div>
+                </a>
+            </div>
+
+            <!-- Second Section -->
+            <div class="section-title">Colors</div>
+            <div class="section">
+                <a class="sec-links" href="/" title="tagged: pink">
+                    <div class="element">pink</div>
+                </a>
+
+                <a class="sec-links" href="/" title="tagged: red">
+                    <div class="element">red</div>
+                </a>
+
+                <a class="sec-links" href="/" title="tagged: orange">
+                    <div class="element">orange</div>
+                </a>
+
+                <a class="sec-links" href="/" title="tagged: yellow">
+                    <div class="element">yellow</div>
+                </a>
+
+                <a class="sec-links" href="/" title="tagged: green">
+                    <div class="element">green</div>
+                </a>
+
+                <a class="sec-links" href="/" title="tagged:turquoise">
+                    <div class="element">turquoise</div>
+                </a>
+
+                <a class="sec-links" href="/" title="tagged: blue">
+                    <div class="element">blue</div>
+                </a>
+
+                <a class="sec-links" href="/" title="tagged: purple">
+                    <div class="element">purple</div>
+                </a>
+            </div>
+
+            <!-- Third Section -->
+            <div class="section-title">Section</div>
+            <div class="section">
+                <a class="sec-links" href="/" title="tagged: link">
+                    <div class="element">link</div>
+                </a>
+
+                <a class="sec-links" href="/" title="tagged: link">
+                    <div class="element">link</div>
+                </a>
+
+                <a class="sec-links" href="/" title="tagged: link">
+                    <div class="element">link</div>
+                </a>
+
+                <a class="sec-links" href="/" title="tagged: link">
+                    <div class="element">link</div>
+                </a>
+
+                <a class="sec-links" href="/" title="tagged: link">
+                    <div class="element">link</div>
+                </a>
+
+                <a class="sec-links" href="/" title="tagged:link">
+                    <div class="element">link</div>
+                </a>
+
+                <a class="sec-links" href="/" title="tagged: link">
+                    <div class="element">link</div>
+                </a>
+
+                <a class="sec-links" href="/" title="tagged: link">
+                    <div class="element">link</div>
+                </a>
+            </div> 
+        </div>
+
+    </body>
+</html>
