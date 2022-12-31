@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+ 
+VALENTINE
+ 
+Page #5 by @silbrigthemes
+ 
+A simple page for Valentine's Day, made to display a short love message.
+ 
+RULES
+
+1. Please do not use as a base code.
+2. Please do not distribute as your own.
+3. Please do not edit or remove the credit.
+4. Please do not edit beyond recognition.
+ 
+Helpful annotations have been made to this code.
+
+1. Do the both of us a favor and only change colors, message and font if you    need to. 
+2. Positioning is hell! Neither of us wants to do that!
+3. Keep the message short and sweet!
+4. Good contrasts, readable fonts and big enough font-sizes make your          message more accessible for anyone.
+
+// This code was last updated on the 13th September 2018, 11:40PM MEZ.
+ 
+Have fun and spread love!
+ 
+-->
+
+    <head>
+    
+    <meta charset="utf-16">
+    <title>Valentine | {Title}</title>
+    <link rel="shortcut icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+    
+    <!-- This script is necessary to make the custom font work. -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900" rel="stylesheet">
+    
+    <!-- This script is necessary to make the page responsive -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Necessary for the scripts to work. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    
+    <!-- Tooltip Script -->
+    <script src="https://static.tumblr.com/rzl30kg/eAxm7a751/jquery.style-my-tooltips.js"></script>
+        <script>
+            (function($){
+                $(document).ready(function(){
+                    $("[title]").style_my_tooltips({
+                        tip_follows_cursor:true,
+                        tip_delay_time:200,
+                        tip_fade_speed:300
+                }
+                    );
+            });
+        })(jQuery);
+    </script>
+
+    <!-- Changes the toolbar color on mobile. -->
+    <meta name="theme-color" content="#ce1c25"/>
+
+    
+        <style type="text/css">
+            body{
+                margin:0;
+                top:0;
+                left:0;
+                background:#f3a5a9; /* body background color*/
+                /*Custom font Playfair Display, Times New Roman serves as a fallback system font, in case the custom font cannot be displayed.*/
+                font-family:"Playfair Display", "Times New Roman";
+                color:#f9d2d4; /*body text color*/
+                overflow:hidden;
+            }
+            
+            /* Custom Text Selection */
+            ::selection{
+                text-shadow:none;
+                color:#ce1c25;
+                background-color:#fce9ea;
+            }
+            
+            ::-moz-selection{
+                text-shadow:none;
+                color:#ce1c25;
+                background-color:#fce9ea;
+            }
+            
+            ::-o-selection{
+                text-shadow:none;
+                color:#ce1c25;
+                background-color:#fce9ea;
+            }
+            
+            ::-webkit-selection{
+                text-shadow:none;
+                color:#ce1c25;
+                background-color:#fce9ea;
+            }
+            
+            /* Custom Tooltips */
+            #s-m-t-tooltip{
+                max-width:300px;
+                margin:15px;
+                padding:0.5em;
+                background-color: #ce1c25;
+                color:#fce9ea;
+                z-index:999999;
+                font-size:12px;
+                text-transform:uppercase;
+                font-weight:300;
+            }
+            
+            #heart-contain{
+                height:500px;
+                width:500px;
+                margin-left:calc(50vw - 250px);
+                margin-top:calc(50vh - 225px);
+                display:flex;
+                justify-content:center;
+                align-items:center;
+            }
+            
+            .heart {
+              background-color: #ce1c25; 
+              /*background color of the small heart*/
+              display: inline-block;
+              height: 350px;
+              margin: 0 10px;
+              position: relative;
+              top: 0;
+              transform: rotate(0deg);
+              width: 350px;
+              z-index:-25;
+            }
+            
+            .heart:before,
+            .heart:after {
+              content: "";
+              background-color: #ce1c25; 
+              /*background color of the small heart*/
+              border-radius: 50%;
+              height: 350px;
+              position: absolute;
+              width: 350px;
+              z-index:-25;
+            }
+            
+            .heart:before {
+              
+              top: -175px;
+              left: 0;
+            }
+            
+            .heart:after {
+              
+              left: 175px;
+              top: 0;
+            }
+            
+            .heart-2 {
+              background-color: #fce9ea;
+              /*background color of the big heart*/
+              display: inline-block;
+              height: 375px;
+              margin: 0 10px;
+              position: relative;
+              top: 0;
+              transform: rotate(-45deg);
+              width: 375px;
+              z-index:-50;
+              display:flex;
+              align-items:center;
+              justify-content:center;
+            }
+            
+            .heart-2:before,
+            .heart-2:after {
+              content: "";
+              background-color: #fce9ea;
+              /*background color of the big heart*/
+              border-radius: 50%;
+              height: 375px;
+              position: absolute;
+              width: 375px;
+              z-index:-50;
+            }
+            
+            .heart-2:before {
+              
+              top: -187.5px;
+              left: 0;
+            }
+            
+            .heart-2:after {
+              
+              left: 187.5px;
+              top: 0;
+            }
+            
+            .message{
+                z-index:1000;
+                width:450px;
+                height:450px;
+                border-radius:50%;
+                border:1px solid rgba(0,0,0,0);
+                position:relative;
+                transform:rotate(45deg);
+                margin-left:calc(50% - 200px);
+                margin-top:calc(50% - 250px);
+            }
+            
+            .message p{
+                text-align:center;
+                font-size:4.25em;
+                font-weight:bold;
+                font-style:italic;
+            }
+            
+        /* 
+        Don't delete or alter the credit! 
+        Taking the credit off free things is rude; 
+        I have spent much time on this.
+        */
+            #credit img{
+                height:50px;
+                right:25px;
+                bottom:25px;
+                position:absolute;
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            #credit img:hover{
+                transform:scale(1.05);
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            @media only screen and (max-width:690px) {
+            
+            .heart {
+              height: 250px;
+              width: 250px;
+            }
+            
+            .heart:before,
+            .heart:after {
+              height: 250px;
+              width: 250px;
+            }
+            
+            .heart:before {
+              
+              top: -125px;
+            }
+            
+            .heart:after {
+              
+              left: 125px;
+            }
+            
+            .heart-2 {
+              height: 275px;
+              width: 275px;
+              display:flex;
+              align-items:center;
+              justify-content:center;
+            }
+            
+            .heart-2:before,
+            .heart-2:after {
+              height: 275px;
+              width: 275px;
+            }
+            
+            .heart-2:before {
+              top: -137.5px;
+            }
+            
+            .heart-2:after {
+              left: 137.5px;
+            }
+            
+            .message{
+                width:350px;
+                height:350px;
+                margin-left:calc(50% - 150px);
+                margin-top:calc(50% - 200px);
+            }
+            
+            .message p{
+                font-size:3.25em;
+            }
+            
+            }
+            
+            @media only screen and (max-width:500px) {
+            
+            .heart {
+              height: 200px;
+              width: 200px;
+            }
+            
+            .heart:before,
+            .heart:after {
+              height: 200px;
+              width: 200px;
+            }
+            
+            .heart:before {
+              
+              top: -100px;
+            }
+            
+            .heart:after {
+              
+              left: 100px;
+            }
+            
+            .heart-2 {
+              height: 225px;
+              width: 225px;
+              display:flex;
+              align-items:center;
+              justify-content:center;
+            }
+            
+            .heart-2:before,
+            .heart-2:after {
+              height: 225px;
+              width: 225px;
+            }
+            
+            .heart-2:before {
+              top: -112.5px;
+            }
+            
+            .heart-2:after {
+              left: 112.5px;
+            }
+            
+            .message{
+                width:300px;
+                height:300px;
+                margin-left:calc(50% - 130px);
+                margin-top:calc(50% - 170px);
+            }
+            
+            .message p{
+                font-size:2.75em;
+            }
+            
+            }
+            
+            /* Hides the tumblr app button, by @yeoli-thm */
+            .tmblr-iframe--app-cta-button {
+                display: none!important;
+            }
+            
+            /* Hides standard tumblr controls */
+            body > iframe:first-child {
+                display: none !important;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="heart-contain">
+            <div class="heart-2">
+            <div class="heart">
+                
+                <div class="message">
+                    <p>I will love you until the end of time.</p>
+                </div>
+                
+            </div>
+            </div>
+            
+        </div>
+        
+        <!-- 
+        Don't delete or alter the credit! 
+        Taking the credit off free things is rude; 
+        I have spent much time on this.
+        -->
+        <div id="credit">
+            <a href="https://silbrigthemes.tumblr.com/" title="page by silbrigthemes">
+                <img src="https://78.media.tumblr.com/7854d98ef9b778a43fc9dd83b828ab02/tumblr_p3jmkwDy4c1wsskx3o1_1280.png" alt="credit: @silbrigthemes">
+            </a>
+            
+        </div>
+    </body>
+</html>
