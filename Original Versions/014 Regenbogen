@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+
+REGENBOGEN
+Page #14 by @silbrigthemes
+
+A simple FAQ page.
+
+Features:
+    Custom scrollbar, tooltips, text selection and mobile toolbar.
+    Responsive layout.
+    Combined ask and submit.
+    FAQ section.
+    Icon navigation.
+
+Rules:
+    1) Do not edit beyond recogniton.
+    2) Do not steal (parts of) the code.
+    3) Do not claim as your own.
+    4) Do not delete the credit.
+    5) Please like / reblog if using.
+
+The code has been annotated to make customization easier.
+If you have any questions, need help or notice any oddities, please feel free to contact me:
+
+    silbrigthemes.tumblr.com/ask
+    silbrigsupport.tumblr.com
+
+Have fun with this page!
+
+-->
+
+    <head>
+
+    <meta charset="utf-16">
+    <title>Contact | FAQ</title> <!-- Change title here. -->
+    <link rel="shortcut icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+
+    <!-- Necessary for the theme to be responsive. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Necessary for the icon font to work. -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+
+    <!-- Tooltips Script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://static.tumblr.com/rzl30kg/eAxm7a751/jquery.style-my-tooltips.js"></script>
+    <script>
+       (function($){
+           $(document).ready(function(){
+               $("[title]").style_my_tooltips({
+                   tip_follows_cursor:true,
+                   tip_delay_time:200,
+                   tip_fade_speed:300
+               }
+                   );
+           });
+       })(jQuery);
+    </script>
+
+    <!-- Changes the toolbar color on mobile. -->
+    <meta name="theme-color" content="#61b4ff"/>
+
+    <!-- Custom font: Lato -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <!-- Custom font: Playfair Display -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&amp;subset=cyrillic,latin-ext,vietnamese" rel="stylesheet">
+
+        <style>
+
+        /* Global Settings */
+        body{
+            margin:0; /* don't delete, it's important */
+            color:#3d3e3f; /* blueish-black text color */
+            font-size:1em; /* 1em = 16px */
+            font-family:"Lato", Verdana;
+            /* custom font Lato, fallback Verdana */
+            overflow-x:hidden;
+        }
+
+        /* Bold Text */
+        b, strong{
+            font-weight:700; /* bold */
+        }
+
+        /* Italic Text */
+        i, em{
+            font-weight:300; /* thin */
+            font-style:italic;
+        }
+
+        /* Marked Text */
+        mark{
+            background-color:#add8ff; /* blue background */
+            padding:0 0.25em; /* top/bottom and left/right padding */
+            border-radius:1em; /* rounded corners */
+        }
+
+        /* Underlined Text */
+        u{
+            text-decoration:none; /* no text-decoration */
+            border-bottom:2px solid #3d3e3f; /* height type color */
+        }
+
+        /* Links */
+        a{
+            text-decoration:none;
+            color:#3d3e3f;
+            border-bottom:2px solid #61b4ff;
+            transition:0.5s;
+            -moz-transition:0.5s;
+            -o-transition:0.5s;
+            -webkit-transition:0.5s;
+        }
+
+        a:hover{
+            border-bottom:2px solid #3d3e3f;
+            transition:0.5s;
+            -moz-transition:0.5s;
+            -o-transition:0.5s;
+            -webkit-transition:0.5s;
+        }
+
+        /* Custom Tooltips */
+        #s-m-t-tooltip{
+            max-width:300px;
+            margin:15px;
+            padding:0.5em;
+            background:white; /* tooltip background color */
+            color:#61b4ff; /* toolip text color */
+            z-index:999999;
+            font-size:12px; /* tooltip font size */
+            text-transform:uppercase;
+            font-weight:300; /* thin */
+        }
+
+        /* Custom Text Selection */
+        ::selection{
+            background-color:#61b4ff; /* blue background */
+            color:white; /* white text color */
+        }
+
+        ::-moz-selection{
+            background-color: #61b4ff;
+            color:white;
+        }
+
+        ::-o-selection{
+            background-color: #61b4ff;
+            color:white;
+        }
+
+        ::-webkit-selection{
+            background-color: #61b4ff;
+            color:white;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar{
+            width:10px;
+            background-color:#add8ff;
+            border:4px solid white;
+        }
+
+        ::-webkit-scrollbar-thumb{
+            width:10px;
+            background-color:white;
+            border:4px solid #add8ff;
+            border-radius:5px;
+        }
+
+        /* LEFT SIDE */
+        #left{
+            width:50vw;
+            height:100vh;
+            background-color:#add8ff; /* lightblue background */
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            flex-direction:column;
+        }
+
+        #left iframe{
+            margin-left:-25%;
+        }
+
+        /* Navigation */
+        #navbar{
+            width:50vw;
+            height:auto;
+            display:flex;
+            align-items:space-evenly;
+            justify-content:space-evenly;
+            flex-wrap:wrap;
+            position:absolute;
+            bottom:0;
+            left:0;
+            border-top:4px solid #61b4ff; /* blue top border */
+            background-color:#e0f0ff; /* lightblue background */
+        }
+
+        a.navlink{
+            text-decoration:none;
+            border-bottom:none;
+        }
+
+        .navcircle{
+            width:38px;
+            height:38px;
+            margin:0.5em;
+            border-radius:50%; /* circle */
+            background-color:#61b4ff; /* blue background */
+            color:white; /* white text */
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            transition:0.5s;
+            -moz-transition:0.5s;
+            -o-transition:0.5s;
+            -webkit-transition:0.5s;
+        }
+
+        .navcircle:hover{
+            color:#61b4ff; /* blue text color */
+            background-color:white; /* white background */
+            transform:scale(1.1); /* increase size by 10% */
+            transition:0.5s;
+            -moz-transition:0.5s;
+            -o-transition:0.5s;
+            -webkit-transition:0.5s;
+        }
+
+        .navcircle i.fas{
+            font-size:1em;
+        }
+
+        /* RIGHT SIDE */
+        #right{
+            width:50vw;
+            height:100vh;
+            background-color:white; /* white background */
+            margin-left:50vw;
+            margin-top:-100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        /* START FAQ */
+        #faq-contain{
+            width:80%;
+            height:auto;
+            max-height:80%;
+            overflow-y:scroll; /* faq overflows */
+        }
+
+        .faq{
+            position: relative;
+            margin-bottom: 1px;
+            width: 100%;
+            color: #fff; /* white text color */
+            overflow: hidden;
+        }
+
+        input {
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+        }
+
+        label {
+            position: relative;
+            display: block;
+            padding: 0 0 0 1em;
+            font-weight: bold;
+            line-height: 3;
+            cursor: pointer;
+            font-family:"Playfair Display", Verdana;
+        }
+
+        label.one{
+            background-color:red; /* red background */
+            text-shadow:1px 1px 1px #cc0000;
+        }
+
+        label.two{
+            background-color:orange; /* orange background */
+            text-shadow:1px 1px 1px #cc8500;
+        }
+
+        label.three{
+            background-color:#fcde00; /* yellow background */
+            text-shadow:1px 1px 1px #ccb400;
+        }
+
+        label.four{
+            background-color:#1bdf23; /* green background */
+            text-shadow:1px 1px 1px #16b61c;
+        }
+
+        label.five{
+            background-color:blue; /* blue background */
+            text-shadow:1px 1px 1px #0000cc;
+        }
+
+        label.six{
+            background-color:#7700ff; /* purple background */
+            text-shadow:1px 1px 1px #5f00cc;
+        }
+
+        .answer{
+            max-height:0;
+            overflow:hidden;
+            height:auto;
+            background: #f8f9fa; /* lightgray background */
+            color:#3d3e3f; /* blueish-black text color */
+            -webkit-transition: max-height .5s;
+            -o-transition: max-height .5s;
+            transition: max-height .5s;
+            text-align:justify;
+            padding:0 0.5em;
+        }
+
+        .answer p {
+            margin: 1em;
+        }
+
+        /* :checked */
+            input:checked ~ .answer {
+            height: auto;
+            max-height:15em;
+        }
+
+        /* Icon */
+        label::after {
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: block;
+            width: 3em;
+            height: 3em;
+            line-height: 3;
+            text-align: center;
+            -webkit-transition: all .35s;
+            -o-transition: all .35s;
+            transition: all .35s;
+        }
+
+        input[type=checkbox] + label::after {
+            content: "+";
+        }
+
+        input[type=checkbox]:checked + label::after {
+            transform: rotate(315deg);
+        }
+
+        /* Hides the tumblr app button. By @yeoli-thm */
+        .tmblr-iframe--app-cta-button {
+            display: none!important;
+        }
+
+        /* Hides standard tumblr controls */
+        body > iframe:first-child {
+            display: none !important;
+        }
+
+        @media only screen and (max-width:800px){
+            #left{
+                width:100vw;
+            }
+
+            #navbar{
+                width:100vw;
+            }
+
+            #right{
+                width:100vw;
+                margin-left:0;
+                margin-top:0;
+            }
+        }
+
+        </style>
+    </head>
+
+    <body>
+
+        <div id="left">
+            <!-- Iframe for Askbox -->
+            <p><iframe frameborder="0" scrolling="no" width="150%" height="150" src="http://www.tumblr.com/ask_form/{Name}.tumblr.com" style="background-color:transparent; overflow:hidden;" id="ask_form"></iframe><!--[if IE]><script type="text/javascript">document.getElementById('ask_form').allowTransparency=true;</script><![endif]--></p>
+
+            <!-- Iframe for submitbox -->
+            <p><iframe frameborder="0" scrolling="no" width="150%" height="400" id="submit_form" src="http://www.tumblr.com/submit_form/{Name}.tumblr.com" style="background-color:transparent; overflow:hidden;"></iframe><!--[if IE]><script type="text/javascript">document.getElementById('submit_form').allowTransparency=true;</script><![endif]--></p>
+
+            <div id="navbar">
+                <a class="navlink" href="/" title="index">
+                    <div class="navcircle">
+                        <i class="fas fa-home"></i>
+                    </div>
+                </a>
+
+                <a class="navlink" href="/ask" title="ask">
+                    <div class="navcircle">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                </a>
+
+                <a class="navlink" href="/archive" title="archive">
+                    <div class="navcircle">
+                        <i class="fas fa-archive"></i>
+                    </div>
+                </a>
+
+                <a class="navlink" href="/" title="link">
+                    <div class="navcircle">
+                        <i class="fas fa-link"></i>
+                    </div>
+                </a>
+
+                <a class="navlink" href="/" title="link">
+                    <div class="navcircle">
+                        <i class="fas fa-link"></i>
+                    </div>
+                </a>
+
+                <a class="navlink" href="/" title="link">
+                    <div class="navcircle">
+                        <i class="fas fa-link"></i>
+                    </div>
+                </a>
+
+                <a class="navlink" href="https://silbrigthemes.tumblr.com/" title="page by @silbrigthemes">
+                    <div class="navcircle">
+                        <i class="fas fa-code"></i>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+
+        <div id="right">
+        <div id="faq-contain">
+            <div class="faq">
+              <input id="question-one" type="checkbox" name="tabs">
+              <label class="one" for="question-one">Question 1</label>
+              <div class="answer">
+                <p>Answer 1</p>
+              </div>
+            </div>
+
+            <div class="faq">
+              <input id="question-two" type="checkbox" name="tabs">
+              <label class="two" for="question-two">Question 2</label>
+              <div class="answer">
+                <p>Answer 2</p>
+              </div>
+            </div>
+
+            <div class="faq">
+              <input id="question-three" type="checkbox" name="tabs">
+              <label class="three" for="question-three">Question 3</label>
+              <div class="answer">
+                <p>Answer 3</p>
+              </div>
+            </div>
+
+            <div class="faq">
+              <input id="question-four" type="checkbox" name="tabs">
+              <label class="four" for="question-four">Question 4</label>
+              <div class="answer">
+                <p>Answer 4</p>
+              </div>
+            </div>
+
+            <div class="faq">
+              <input id="question-five" type="checkbox" name="tabs">
+              <label class="five" for="question-five">Question 5</label>
+              <div class="answer">
+                <p>Answer 5</p>
+              </div>
+            </div>
+
+            <div class="faq">
+              <input id="question-six" type="checkbox" name="tabs">
+              <label class="six" for="question-six">Question 6</label>
+              <div class="answer">
+                <p>Answer 6</p>
+              </div>
+            </div>
+
+            <!-- To add more questions to the accordion, just copy and paste this code:
+
+            <div class="faq">
+              <input id="question-[number]" type="checkbox" name="tabs">
+              <label class="[number]" for="question-six">Question NUMBER</label>
+              <div class="answer">
+                <p>Answer NUMBER</p>
+              </div>
+            </div>
+
+          -->
+
+        </div>
+        </div>
+
+    </body>
+</html>
