@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+
+BLUMIG (Page #4) by @silbrigthemes
+
+Simple about and navigation page with a gooey menu and icon navigation.
+
+Rules:
+1. Do not edit or delete the credit.
+2. Do not change the style / layout beyond recognition.
+3. Do not use this code as a base.
+4. Do not distribute this code as your own.
+5. It would be nice if you reblogged / liked this post if you plan on using this page.
+
+-->
+
+    <head>
+    
+    <!-- Necessary for the icon font to work. -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=cyrillic-ext,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900&amp;subset=cyrillic,latin-ext,vietnamese" rel="stylesheet">
+    
+        <style>
+            
+            body{
+                margin:0;
+                background-color:#040404;
+                color:#666;
+                font-family:"Open Sans", Verdana;
+                overflow:hidden;
+            }
+            
+            a{
+                color:#040404;
+            }
+            
+            a:hover{
+                color:#fff;
+            }
+            
+            /* Custom scrollbar */
+        ::-webkit-scrollbar{
+            width:6px;
+            background-color:#fff; /* background color of the scrollbar */
+        }
+
+        ::-webkit-scrollbar-thumb{
+            background-color:#040404; /* background color of the scrollbar thumb */
+        }
+
+        ::-webkit-scrollbar-track{
+            background-color:#040404; /* background color of the scrollbar track */
+            border:2px solid #fff; /* border around the scrollbar track*/
+        }
+
+        /* Custom selection */
+         ::selection{
+                background-color:#040404; /* selection background color */
+                color:#fff; /* selection text color */
+            }
+
+            ::-webkit-selection{
+                background-color:#040404;
+                color:#fff;
+            }
+
+            ::-o-selection{
+                background-color:#040404;
+                color:#fff;
+            }
+
+            ::-moz-selection{
+                background-color:#040404;
+                color:#fff;
+            }
+            
+            #contain{
+                width:650px;
+                height:550px;
+                margin-left:calc(50vw - 325px);
+                margin-top:calc(50vh - 275px);
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                border:5px solid #fff;
+                border-radius:2%;
+                background-color:#C5291A;
+            }
+            
+            #circle{
+                width:200px;
+                height:200px;
+                border-radius:50%;
+                border:5px solid #C5291A;
+                margin-left:-134px;
+                z-index:20;
+                background-image:url("https://c1.staticflickr.com/5/4113/5019211988_5aa7316057_b.jpg");
+                background-size:cover;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+            
+            
+            #card{
+                width:400px;
+                height:500px;
+                border-radius:2%;
+                border:5px solid #C5291A;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                background-color:#fff;
+            }
+            
+            #about{
+                width:250px;
+                height:calc(400px - 2em);
+                margin-left:1em;
+
+            }
+            
+            #about-title{
+                font-size:3em;
+                text-align:center;
+                font-family:"Playfair Display", "Times New Roman";
+                font-weight:bold;
+                font-style:italic;
+                color:#040404;
+                text-shadow:2px 2px 2px #ccc;
+            }
+            
+            #about-text{
+                overflow-y:auto;
+                max-height:300px;
+                padding-right:1em;
+                text-align:justify;
+            }
+            
+            #about-text ul{
+                list-style-type:none;
+            }
+            
+            #about-text mark{
+                background-color:#C5291A;
+                color:#fff;
+                text-shadow:1px 1px 2px #040404;
+                font-weight:bold;
+                padding:0.25em;
+                line-height:2em;
+                border-radius:5px;
+            }
+            
+            .tmblr-iframe{
+                display:none!important;
+            }
+            
+            .tmblr-iframe-pushdown {
+                padding-top:0!important;
+                
+            }
+            
+            /* I have played with this by commenting out the .menu{}, and apparently it does not affect the styling on the customization page. */
+         .menu {
+          filter: url("#goo");
+         }
+         
+         /* These lines are very important as they are responsible for styling the whole menu. Without them, the icons just appear in one row. */
+         .menu-item, .menu-open-button {
+          background: #040404; /* pink background of the menu*/
+          border-radius: 50%; /* minimum is 50% for a perfect circle */
+          width: 80px; /* circle width */
+          height: 80px; /* circle height */
+          position: absolute;
+          color: #C5291A; /* color of the icons */
+          text-align: center; /* horizontal centering of icons */
+          line-height: 80px; /* vertical centering of icons */
+          transform: translate3d(0, 0, 0);
+          transition: transform ease-out 200ms; 
+          /* transformation and duration of the transformation */
+         }
+
+         /* These lines seemingly only affect the margin to the left. */
+         .menu-open {
+          display: none;
+         }
+         
+         /* Hamburger menu (≡) within the pink circle. */
+         .hamburger {
+          width: 25px; /* line width */
+          height: 3px; /* line height */
+          background: #C5291A; /* color of the lines (≡) */
+          display: block;
+          position: absolute;
+          top: 50%; /* offset from top */
+          left: 50%; /* offset from left */
+          /* since the lines are 25px long and 3px high, the following lines are necessary to center-align the menu properly */
+          margin-left: -12.5px; 
+          margin-top: -1.5px;
+          /* transformation duration */
+          transition: transform 200ms;
+         
+         }
+
+         .hamburger-1 {
+          transform: translate3d(0, -8px, 0); 
+          /* (-8px) is the offset to the second line*/
+         }
+
+         .hamburger-2 {
+          transform: translate3d(0, 0, 0);
+         }
+
+         .hamburger-3 {
+          transform: translate3d(0, 8px, 0);
+          /* (8px) is the offset to the second line*/
+         }
+
+         /* Upon clicking on the menu, the lines of the hamburger menu rotate and realign. The middle line is scaled down to 0, so that it disappeares. The top and bottom lines will be rotated so that they form an (x). */
+         .menu-open:checked + .menu-open-button .hamburger-1 {
+          transform: translate3d(0, 0, 0) rotate(45deg);
+         }
+         .menu-open:checked + .menu-open-button .hamburger-2 {
+          transform: translate3d(0, 0, 0) scale(0, 1);
+         }
+         .menu-open:checked + .menu-open-button .hamburger-3 {
+          transform: translate3d(0, 0, 0) rotate(-45deg);
+         }
+
+         .menu {
+          position: relative;
+            width: 380px;
+            height: 380px;
+            font-size: 20px;
+            text-align: left;
+            left: -40px;
+            top: 150px;
+            padding: 180px;
+            transition: 0.5s;
+            -moz-transition: 0.5s;
+            -o-transition: 0.5s;
+            -webkit-transition: 0.5s;
+          
+         }
+
+          .menu-item:hover {
+              background: #C5291A;
+              color: #040404;
+              border:2px solid rgba(255,255,255,0);
+              transition:0.5s;
+              -moz-transition:0.5s;
+              -o-transition:0.5s;
+              -webkit-transition:0.5s;
+          
+          }
+          
+          /* 
+            duration for the items to be displayed
+            the items are displayed after one another
+          */
+          .menu-item:nth-child(3) {
+          transition-duration: 180ms;
+          }
+          .menu-item:nth-child(4) {
+          transition-duration: 180ms;
+          }
+          .menu-item:nth-child(5) {
+          transition-duration: 180ms;
+          }
+          .menu-item:nth-child(6) {
+          transition-duration: 180ms;
+          }
+          .menu-item:nth-child(7) {
+          transition-duration: 180ms;
+          }
+          .menu-item:nth-child(8) {
+          transition-duration: 180ms;
+          }
+          .menu-item:nth-child(9) {
+          transition-duration: 180ms;
+          }
+
+          .menu-open-button {
+          z-index: 2;
+          transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          transition-duration: 400ms;
+          transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+          cursor: pointer;
+          }
+
+          .menu-open-button:hover {
+          transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+          }
+
+          .menu-open:checked + .menu-open-button {
+          transition-timing-function: linear;
+          transition-duration: 200ms;
+          transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+          }
+
+          .menu-open:checked ~ .menu-item {
+          transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
+          }
+          .menu-open:checked ~ .menu-item:nth-child(3) {
+          transition-duration: 180ms;
+          transform: translate3d(0.08361px, -104.99997px, 0);
+          }
+          .menu-open:checked ~ .menu-item:nth-child(4) {
+          transition-duration: 280ms;
+          transform: translate3d(90.9466px, -52.47586px, 0);
+          }
+          .menu-open:checked ~ .menu-item:nth-child(5) {
+          transition-duration: 380ms;
+          transform: translate3d(90.9466px, 52.47586px, 0);
+          }
+          .menu-open:checked ~ .menu-item:nth-child(6) {
+          transition-duration: 480ms;
+          transform: translate3d(0.08361px, 104.99997px, 0);
+          }
+          .menu-open:checked ~ .menu-item:nth-child(7) {
+          transition-duration: 580ms;
+          transform: translate3d(-90.86291px, 52.62064px, 0);
+          }
+          .menu-open:checked ~ .menu-item:nth-child(8) {
+          transition-duration: 680ms;
+          transform: translate3d(-91.03006px, -52.33095px, 0);
+          }
+          .menu-open:checked ~ .menu-item:nth-child(9) {
+          transition-duration: 780ms;
+          transform: translate3d(-0.25084px, -104.9997px, 0);
+          }
+          
+          a#credit {
+              position: fixed;
+              bottom: 1em;
+              right: 1em;
+              color: #C5291A;
+          }
+          
+          a#credit:hover {
+              transform: scale(1.1);
+              color: #fff;
+          }
+          
+          a#credit, a#credit:hover {
+              transition: 0.5s;
+              -moz-transition: 0.5s;
+              -o-transition: 0.5s;
+              -webkit-transition: 0.5s;
+              text-decoration: none;
+              font-weight: bold;
+              font-size: 1.25em;
+          }
+            
+        </style>
+    </head>
+    <body>
+        <div id="contain">
+            
+            <div id="card">
+                <div id="circle">
+
+<!-- HAMBURGER MENU -->
+<!-- Hamburger menu within the pink circle. -->
+<nav class="menu">
+  <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open"/>
+  <label class="menu-open-button" for="menu-open">
+    <span class="hamburger hamburger-1"></span>
+    <span class="hamburger hamburger-2"></span>
+    <span class="hamburger hamburger-3"></span>
+  </label>
+
+<!-- GOOEY MENU -->
+  <!-- This is where the menu links start. -->
+  <!-- Replace the '#' with the link of your choice. -->
+  <!-- i.e.: <a href="#"></a> ==> <a href="/ask"></a> -->
+  <!-- If you want to change the displayed icons, just change i.e. 
+       'fa fa-heart' to 'fa fa-adjust' or any icon of your choice. 
+       -->
+  <a href="/" class="menu-item"> <i class="fa fa-home"></i> </a>
+  <a href="/ask" class="menu-item"> <i class="fa fa-envelope"></i> </a>
+  <a href="/archive" class="menu-item"> <i class="fa fa-th-large"></i> </a>
+  <a href="/about" class="menu-item"> <i class="fa fa-user"></i> </a>
+  <a href="/navi" class="menu-item"> <i class="fa fa-compass"></i> </a>
+  <!-- Don't touch this link it's my credit and I expect from you to leave it this way! -->
+  <a href="https://silbrigthemes.tumblr.com/" class="menu-item"> <i class="fa fa-code"></i> </a>
+
+</nav>
+                </div>
+                
+                <!-- ABOUT SECTION -->
+                <div id="about">
+                    <div id="about-title">Hello!</div>
+                    <div id="about-text">
+                        <p>
+                    <b>Lorem</b> ipsum <i>dolor sit amet</i>, consetetur sadipscing elitr, sed diam <mark>nonumy</mark> eirmod tempor invidunt ut labore et dolore magna aliquyam erat, <a href="/">sed diam</a> voluptua.  
+                    </p>
+                    <blockquote>lorem ipsum dolor</blockquote>
+                    <pre>lorem ipsum dolor</pre>
+                    <p>
+                    <b>Lorem</b> ipsum <i>dolor sit amet</i>, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, <a href="/">sed diam</a> voluptua.  
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Credit -->
+        <a href="https://silbrigthemes.tumblr.com/" id="credit" title="page by julia">
+            <span class="fa fa-code"></span>
+        </a>
+        
+        
+<!-- Filters -->
+<!-- Keep those lines.-->
+<!-- Only delete / change them if you know what you are doing. -->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <filter id="shadowed-goo">
+
+          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+          <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
+          <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
+          <feOffset in="shadow" dx="1" dy="1" result="shadow" />
+          <feComposite in2="shadow" in="goo" result="goo" />
+          <feComposite in2="goo" in="SourceGraphic" result="mix" />
+      </filter>
+      <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+          <feComposite in2="goo" in="SourceGraphic" result="mix"/>
+      </filter>
+    </defs>
+</svg>       
+        
+    </body>
+</html>
