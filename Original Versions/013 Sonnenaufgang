@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+
+SONNENAUFGANG
+Page #13 by @silbrigthemes
+
+A simple about page, in the colors of the pan pride flag.
+
+Features:
+    Custom scrollbar, tooltips, text selection and mobile toolbar.
+    Responsive layout.
+    Multiple sections.
+    Icon navigation.
+
+Rules:
+    1) Do not edit beyond recogniton.
+    2) Do not steal (parts of) the code.
+    3) Do not claim as your own.
+    4) Do not delete the credit.
+    5) Please like / reblog if using.
+
+If you have any questions, need help or notice any oddities, please feel free to contact me:
+
+    silbrigthemes.tumblr.com/ask
+    silbrigsupport.tumblr.com
+
+Have fun with this page!
+
+-->
+
+
+    <head>
+    
+    <meta charset="utf-16">
+    <title>About</title> <!-- Change title here. -->
+    <link rel="shortcut icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+    
+    <!-- Necessary for the theme to be responsive. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Tooltips Script -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="https://static.tumblr.com/rzl30kg/eAxm7a751/jquery.style-my-tooltips.js"></script>
+    <script>
+       (function($){
+           $(document).ready(function(){
+               $("[title]").style_my_tooltips({
+                   tip_follows_cursor:true,
+                   tip_delay_time:200,
+                   tip_fade_speed:300
+               }
+                   );
+           });
+       })(jQuery);
+    </script>
+
+    <!-- Changes the toolbar color on mobile. -->
+    <meta name="theme-color" content="#ff6ffa"/>
+
+    <!-- Necessary for the icon font to work. -->
+    <link href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" rel="stylesheet">
+    
+    <!-- Custom font: Open Sans -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+
+    
+        <style>
+            
+            body{
+                margin:0;
+                background-color:white; /* body background */
+                color:black; /* body font color */
+                font-size:1em; /* font-size, 16px */
+                font-family:"Open Sans", Verdana; 
+                /* custom font + fallback */
+                text-align:justify; /* alt.: left, center, right */
+            }
+            
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar{
+                width:10px;
+                border:4px solid white;
+                background: linear-gradient(to bottom, #ff6ffa, #ffe86f, #ffe86f, #6fbbff, #6fbbff);
+            }
+            
+            ::-webkit-scrollbar-thumb{
+                width:10px;
+                border:1px solid white;
+                background: linear-gradient(to bottom, #ff6ffa, #ff6ffa, #ffe86f, #ffe86f, #6fbbff, #6fbbff);
+            }
+            
+            /* Custom Text Selection */
+            ::selection{
+                background-color:white; /* background */
+                color:black; /* text */
+                text-shadow:none; /* no text-shadow */
+            }
+            
+            ::-moz-selection{
+                background-color:white;
+                color:black;
+                text-shadow:none;
+            }
+            
+            ::-o-selection{
+                background-color:white;
+                color:black;
+                text-shadow:none;
+            }
+            
+            ::-webkit-selection{
+                background-color:white;
+                color:black;
+                text-shadow:none;
+            }
+            
+            /* Custom Tooltips */
+            #s-m-t-tooltip{
+                max-width:300px;
+                margin:15px;
+                padding:0.5em;
+                background:white; /* Tooltip Background Color */
+                color:#6fbbff; /* Toolip Color */
+                z-index:999999;
+                font-size:12px;
+                text-transform:uppercase;
+                font-weight:400;
+            }
+            
+            /* CONTAINER */
+            #container{
+                width:100vw;
+                height:100vh;
+                margin:0;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                flex-direction:column;
+            }
+            
+            /* TEXT STYLING */
+            /* Underlined */
+            u{
+                text-decoration:none;
+                border-bottom:2px solid white; /* white bottom border */
+            }
+            
+            /* Marked */
+            mark{
+                background-color:white; /* white background */
+                color:#098bff; /* blue text */
+                padding:0 0.25em;
+                border-radius:1em;
+                text-shadow:none; /* no text-shadow */
+            }
+            
+            /* Italic */
+            i, em{
+                font-style:italic;
+                font-weight:300; /* thin text */
+            }
+            
+            /* Bold */
+            b, strong{
+                font-weight:700; /* bold text */
+            }
+            
+            /* Link */
+            a{
+                text-decoration:none;
+                color:inherit;
+                border-bottom:2px solid #ffe86f; /* yellow border */
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            /* Link Hover */
+            a:hover{
+                border-bottom:2px solid #ff6bff; /* pink border */
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            /* CONTAIN */
+            /* circle + section */
+            .contain{
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+            
+            /* CIRCLE */
+            .circle{
+                width:200px; /* width */
+                height:200px; /* height */
+                border-radius:50%; /* round border */
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+            
+            /* Icon Font */
+            i.fas{
+                font-size:3em; /* font size, 48px */
+                color:white; /* white text */
+            }
+            
+            /* Pink Circle */
+            .pink{
+                background-color:#ff6ffa;
+                background: linear-gradient(to bottom right, #ff6ffa, #ff23f7);
+                margin-left:-200px;
+            }
+            
+            .pink i.fas{
+                text-shadow:1px 1px 2px #ff09f6;
+            }
+            
+            /* Yellow Circle */
+            .yellow{
+                background-color:#ffe86f;
+                background: linear-gradient(to bottom right, #ffe86f, #ffdc23);
+            }
+            
+            .yellow i.fas{
+                text-shadow:1px 1px 2px #ffd809;
+            }
+            
+            /* Blue Circle */
+            .blue{
+                background-color:#6fbbff;
+                background: linear-gradient(to bottom right, #6fbbff, #2397ff);
+                margin-left:200px;
+            }
+            
+            .blue i.fas{
+                text-shadow:1px 1px 2px #098bff;
+            }
+            
+            /* SECTION */
+            .section{
+                width:400px;
+                height:200px;
+            }
+            
+            /* Pink Section */
+            .pink2{
+                background-color:#ff6ffa;
+                background: linear-gradient(to bottom right, #ff6ffa, #ff23f7);
+                margin-left:200px;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                flex-direction:column;
+            }
+            
+            /* Section Title */
+            .sec-title{
+                text-align:center;
+                width:80%;
+                border-bottom:4px solid white;
+                font-size:3em;
+                color:white;
+                text-shadow:1px 1px 2px #ff09f6; /* pink shadow */
+            }
+            
+            /* Section Navigation Circles */
+            .sec-circle{
+                width:32px;
+                height:32px;
+                border-radius:50%;
+                border:2px solid white; /* white border */
+                background-color:#ff23f7; /* pink background */
+                margin:0.25em;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            .sec-circle:hover{
+                transform:scale(1.1); /* increase size by 10% */
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            /* Navigation Container */
+            .sec-nav{
+                width:80%;
+                height:auto;
+                margin-top:1em;
+                display:flex;
+                align-items:space-evenly;
+                justify-content:space-evenly;
+            }
+            
+            /* Navigation Links */
+            a.sec-link{
+                text-decoration:none; /* no text-decoration */
+                border-bottom:none; /* no bottom border */
+            }
+            
+            /* Navigation Icons */
+            .sec-circle i.fas{
+                font-size:1em;
+            }
+            
+            /* Yellow Section */
+            .yellow2{
+                background-color:#ffe86f; /* yellow background */
+                background: linear-gradient(to bottom right, #ffe86f, #ffdc23);
+                margin-left:200px;
+                color:#3d3e3f; /* black text */
+            }
+            
+            /* Lists */
+            .yellow2 ul{
+                list-style-type:none;
+            }
+            
+            .yellow2 li{
+                margin-left:-1em;
+                line-height:1.5em;
+            }
+            
+            /* Marked */
+            .yellow2 mark{
+                background-color:#ffd809; /* yellow background */
+                color:white;
+                text-shadow:1px 1px 2px #ff9409; /* orange text-shadow */
+                border-radius:0; /* no rounded borders */
+                font-weight:700; /* bold text */
+                padding:0 0.25em;
+            }
+            
+            /* Blue Section */
+            .blue2{
+                background-color:#6fbbff; /* blue background */
+                background: linear-gradient(to bottom right, #6fbbff, #2397ff);
+                margin-left:200px;
+                overflow-y:scroll; /* automatic overflow */
+            }
+            
+            .blue2 p{
+                padding:0 0.5em;
+                padding-right:1em;
+                text-align:justify; /* alt.: left, center, right */
+                color:white;
+                text-shadow:1px 1px 2px #098bff; /* blue text-shadow */
+            }
+            
+            /* Hides the tumblr app button. By @yeoli-thm */
+            .tmblr-iframe--app-cta-button {
+                display: none!important;
+            }
+
+            /* Hides standard tumblr controls */
+            body > iframe:first-child {
+                display: none !important;
+            }
+            
+            /* RESPONSIVE LAYOUT */
+            /* Tablets */
+            @media only screen and (max-width:800px){
+                .circle{
+                    display:none;
+                }
+                
+                .section{
+                    width:80vw;
+                    margin-left:10vw;
+                }
+            }
+            
+            /* Phones */
+            @media only screen and (max-width:500px){
+                #container{
+                    display:block;
+                }
+                
+                .section{
+                    width:100vw;
+                    margin-left:0;
+                    height:33.3vh;
+                }
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        
+        <div id="container">
+            <div class="contain">
+                <div class="circle pink">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="section pink2">
+                    <div class="sec-title">About</div>
+                    <div class="sec-nav">
+                        <a class="sec-link" href="/" title="index">
+                            <div class="sec-circle">
+                                <i class="fas fa-home"></i>
+                            </div>
+                        </a>
+                        
+                        <a class="sec-link" href="/ask" title="ask">
+                            <div class="sec-circle">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                        </a>
+                        
+                        <a class="sec-link" href="/archive" title="archive">
+                            <div class="sec-circle">
+                                <i class="fas fa-archive"></i>
+                            </div>
+                        </a>
+                        
+                        <a class="sec-link" href="/" title="custom link">
+                            <div class="sec-circle">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                        </a>
+                        
+                        <a class="sec-link" href="/" title="custom link">
+                            <div class="sec-circle">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                        </a>
+                        
+                        <a class="sec-link" href="/" title="custom link">
+                            <div class="sec-circle">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                        </a>
+                        
+                        <a class="sec-link" href="https://silbrigthemes.tumblr.com/" title="page by @silbrigthemes">
+                            <div class="sec-circle">
+                                <i class="fas fa-code"></i>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contain">
+                <div class="circle yellow">
+                    <i class="fas fa-list-ul"></i>
+                </div>
+                <div class="section yellow2">
+                    <ul>
+                        <li><mark>Name:</mark> Julia</li>
+                        <li><mark>Age:</mark> 19 (b. 2/8/98)</li>
+                        <li><mark>Nationality:</mark> German</li>
+                        <li><mark>Occupation:</mark> University Student</li>
+                        <li><mark>Major:</mark> B.Eng. Ocean Engineering, 3rd semester</li>
+                        <li><mark>Skills:</mark> HTML, CSS, C++</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="contain">
+                <div class="circle blue">
+                    <i class="fas fa-align-justify"></i>
+                </div>
+                <div class="section blue2">
+                  <p>Hello, I am a theme maker with currently more than ten released <a href="https://silbrigpreviews.tumblr.com/all-pages" title="all pages">pages</a> and four released <a href="https://silbrigpreviews.tumblr.com/themes" title="all themes">themes</a>.</p>
+                  <p>I have started coding just <i>about</i> a year ago, and I am only doing it as a hobby, not professionally. I am <b>self-tought</b>.</p>
+                  <p>As a student, I only get to code during free time, which also means that there are periods where I do not release codes or answer questions at all.</p>
+                  <p>I live in <mark>Germany</mark>, where I study as well. Since I am German, most of my themes and pages have <u>German</u> names. If you ever want to know what they mean, feel free to ask.</li>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+</html>
