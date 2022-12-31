@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+
+MINZE
+Page #23 by silbrigthemes
+
+Minze (ger.: mint) is a responsive masonry blogroll page.
+
+----------
+
+Rules:
+
+    1) Do not use as base code.
+    2) Do not customize beyond recognition.
+    3) Do not steal (parts of) the code.
+    4) Do not claim as your own.
+    5) Do not delete or alter the credit.
+
+----------
+
+Useful comments to this code have been made.
+
+If you need any help feel free to send me a message via silbrigthemes.tumblr.com/ask or send a message to my official support blog, silbrigsupport.tumblr.com.
+
+Have fun!
+
+Love,
+Julia <3
+
+----------
+
+Note:
+
+    This work is protected by a creative commons
+    Attribution-NonCommercial-NoDerivatives 4.0 International
+    (CC BY-NC-ND 4.0)
+    license.
+
+-->
+
+    <head>
+
+    <meta charset="utf-16">
+    <title>{Title} | Blogroll</title>
+    {block:Description}
+    <meta name="description" content="{MetaDescription}" />
+    {/block:Description}
+    <link rel="shortcut icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+
+    <!-- Necessary for the theme to be responsive. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Necessary for the scripts to work. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+    <!-- Changes the toolbar color on mobile. -->
+    <meta name="theme-color" content="#bbeedd"/>
+
+    <!-- Icon font, by fontawesome. -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- Masonry Libraries -->
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
+    <!-- Tooltip Script -->
+    <script src="https://static.tumblr.com/rzl30kg/eAxm7a751/jquery.style-my-tooltips.js"></script>
+    <script>
+        (function($){
+            $(document).ready(function(){
+                $("[title]").style_my_tooltips({
+                    tip_follows_cursor:true,
+                    tip_delay_time:200,
+                    tip_fade_speed:300
+                }
+                    );
+            });
+        })(jQuery);
+    </script>
+
+    <!-- Roboto Mono -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <!-- Open Sans -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+
+        <style>
+
+            body{
+                margin:0;
+                top:0;
+                left:0;
+                background-color:#bed; /* background color */
+                color:#222; /* text color */
+                font-size:1em; /* font size */
+                font-family:"Open Sans", Verdana; /* custom font */
+                overflow-x:hidden;
+            }
+
+            body.night{
+                background-color:#078c5f; /* background color */
+                color:white; /* text color */
+            }
+
+            body.access{
+                font-size:18px; /* font-size */
+            }
+
+            html{
+                visibility:hidden;
+                scroll-behavior:smooth;
+            }
+
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar{
+                width:10px;
+            }
+
+            ::-webkit-scrollbar-thumb{
+                width:10px;
+                border-radius:5px; /* round corners */
+                background-color:white; /* background color */
+            }
+
+            /* Custom Text Selection */
+            ::selection{
+                background-color:#bed; /* background color */
+            }
+
+            body.night ::selection{
+                background-color:#078c5f; /* background color */
+            }
+
+            ::-moz-selection{
+                background-color:#bed; /* background color */
+            }
+
+            body.night ::-moz-selection{
+                background-color:#078c5f; /* background color */
+            }
+
+            ::-o-selection{
+                background-color:#bed; /* background color */
+            }
+
+            body.night ::-o-selection{
+                background-color:#078c5f; /* background color */
+            }
+
+            ::-webkit-selection{
+                background-color:#bed; /* background color */
+            }
+
+            body.night ::-webkit-selection{
+                background-color:#078c5f; /* background color */
+            }
+
+            /* Custom Tooltips */
+            #s-m-t-tooltip{
+                max-width:300px;
+                margin:15px;
+                padding:8px;
+                background-color:#def4ed; /* background color */
+                color:#222; /* text color */
+                z-index:9999999999999;
+                font-size:calc(1em - 4px);
+                text-transform:uppercase; /* alt: capitalize, lowercase */
+                font-weight:400;
+                font-family:"Roboto Mono", Courier; /* custom font */
+            }
+
+            body.night #s-m-t-tooltip{
+                background-color:#046343; /* background color */
+                color:white; /* text color */
+            }
+
+            body.access #s-m-t-tooltip{
+                font-family:"Open Sans", Verdana; /* custom font */
+                text-transform:normal;
+            }
+
+            /* HEADER */
+            header{
+                width:100vw;
+                height:10vh;
+                position:fixed;
+                top:0;
+                left:0;
+                background-color:white; /* background color */
+                z-index:50!important;
+                display:flex;
+                align-items:center;
+                justify-content:space-between;
+            }
+
+            body.night header{
+                background-color:#222; /* background color */
+            }
+
+            /* Header Icon */
+            #h-icon img{
+                width:48px;
+                height:48px;
+                border-radius:50%; /* round corners */
+                border:4px solid #bed; /* height type color */
+                margin-left:1em;
+            }
+            
+            body.night #h-icon img{
+                border:4px solid #078c5f; /* height type color */
+            }
+
+            /* Header Title */
+            #h-title{
+                font-size:2em;
+                font-family:"Roboto Mono", Georgia; /* custom font */
+                border-bottom:4px solid #bed; /* height type color */
+            }
+
+            body.night #h-title{
+                border-bottom:4px solid #078c5f; /* height type color */
+            }
+
+            body.access #h-title{
+                font-family:"Open Sans", Verdana; /* custom font */
+            }
+
+            /* Header Link */
+            #h-link{
+                background-color:#bed; /* background color */
+                color:#078c5f; /* text color */
+                box-shadow:0 0 2px #3ac194; /* offset blur color */
+                margin-right:1em;
+                padding:4px 8px;
+                border-radius:1em; /* round corners */
+            }
+
+            body.night #h-link{
+                color:white; /* text color */
+                background-color:#078c5f; /* background color */
+            }
+
+            #h-link:hover{
+                transform:translate(4px);
+            }
+
+            #h-link, #h-link:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            a.h-link{
+                text-decoration:none;
+            }
+
+            /** MAIN LAYOUT **/
+            /* Container */
+            #container{
+                width:calc(69vw + 6em + 3em);
+                height:auto;
+                margin-top:calc(10vh + 1em);
+                margin-left:calc(15.5vw - 3em - 2.5em);
+            }
+
+            /* Followed User */
+            .fllw{
+                float:left;
+                width:23vw;
+                padding:1em;
+                background-color:white; /* background color */
+                box-shadow:0 0 4px #3ac194; /* offset blur color */
+                border-radius:8px; /* round corners */
+                margin-left:1em;
+                margin-bottom:1em;
+                display:flex;
+                align-items:center;
+                justify-content:flex-start;
+                flex-wrap:wrap;
+            }
+
+            body.night .fllw{
+                background-color:#222; /* background color */
+                box-shadow:0 0 4px #046343; /* offset blur color */
+            }
+            
+            /* Followed User Blog Icon */
+            .fllw-icon img{
+                width:48px;
+                height:48px;
+                margin-right:8px;
+                border-radius:50%; /* round corners */
+                border:4px solid #bed; /* height type color */
+            }
+
+            body.night .fllw-icon img{
+                border:4px solid #078c5f; /* height type color */
+            }
+            
+            /* Followed User Info */
+            .fllw-info{
+                width:calc(23vw - 48px - 8px - 8px);
+            }
+            
+            /* Followed User Blog Title */
+            .fllw-title{
+                font-size:1.25em;
+                margin-bottom:4px;
+                word-break:break-word;
+            }
+
+            /* Followed User Name */
+            .fllw-name{
+                font-family:"Roboto Mono", Courier; /* custom font */
+                word-break:break-word;
+            }
+
+            body.access .fllw-name{
+                font-family:"Open Sans", Verdana; /* custom font */
+            }
+            
+            .fllw-name mark{
+                background-color:#bed; /* background color */
+                color:#222; /* text color */
+                padding:4px 8px;
+                border-radius:4px; /* round corners */
+                line-height:2em;
+            }
+
+            body.night .fllw-name mark{
+                background-color:#078c5f; /* background color */
+                color:white; /* text color */
+            }
+            
+            .fllw-name mark:hover{
+                background-color:#9aedd1; /* background color */
+            }
+            
+            body.night .fllw-name mark:hover{
+                background-color:#006342; /* background color */
+            }
+            
+            .fllw-name mark, .fllw-name mark:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* Links */
+            a{
+                color:#222; /* text color */
+                text-decoration:none;
+            }
+
+            body.night a{
+                color:white; /* text color */
+            }
+
+            /* CUSTOM CONTROLS */
+            /* Hides standard tumblr controls */
+            body > iframe:first-child {
+                display: none !important;
+            }
+
+            /* Containers */
+            #custom-controls{
+                width:calc(38px * 2 + 0.5em);
+                height:calc(40px * 2 + 0.5em);
+                position:fixed;
+                right:1em;
+                top:calc(10vh + 1em);
+                z-index:500!important;
+                display:flex;
+                align-items:space-between;
+                justify-content:space-between;
+                flex-wrap:wrap;
+            }
+
+            /* Control Link */
+            a.conlink{
+                text-decoration:none;
+                border-bottom:none;
+            }
+
+            /* Control Element */
+            .cont{
+                width:36px;
+                height:36px;
+                border-radius:8px; /* round corners */
+                background-color:#bed; /* background color */
+                color:white; /* text color */
+                border:2px solid white; /* height type color */
+                text-shadow:0 0 2px #078c5f; /* offset blur color */
+                box-shadow:0 0 2px #078c5f; /* offset blur color */
+                cursor:pointer;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+
+            body.night .cont{
+                background-color:#078c5f; /* background color */
+                color:#222; /* text color */
+                border:2px solid #222; /* height type color */
+                text-shadow:0 0 2px #078c5f; /* offset blur color */
+                box-shadow:0 0 2px #078c5f; /* offset blur color */
+            }
+
+            /* Control Element on Hover */
+            .cont:hover{
+                transform:scale(0.95);
+            }
+
+            /* Transitions */
+            .cont, .cont:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* DayNight Toggle */
+            .daynight{
+                top:calc(10vh + 1em);
+            }
+
+            /* Accessible Toggle */
+            .accessible{
+                top:calc(10vh + 1em + 36px + 8px);
+            }
+
+            /* All Toggles */
+            .accessible, .daynight, .credit{
+                left:1em;
+                position:fixed;
+            }
+            
+            /* Credit –– Don't touch! */
+            .credit{
+                bottom:1em;
+            }
+
+            /* -- RESPONSIVE LAYOUT -- */
+            /* DESKTOP */
+            @media only screen and (min-width:800px){
+                /* Mobile Footer */
+                #mobile-footer{
+                    display:none;
+                }
+            }
+
+            /* TABLETS */
+            @media only screen and (max-width: 800px){
+                /* Container */
+                #container{
+                    width:80vw;
+                    margin-left:10vw;
+                }
+
+                /* Followed User */
+                .fllw{
+                    width:calc(40vw - 5em);
+                }
+                
+                /* Followed User Info */
+                .fllw-info{
+                    width:calc((40vw - 5em) - (48px + 8px + 8px));
+                }
+
+                /* Mobile Footer */
+                #mobile-footer{
+                    display:none;
+                }
+            }
+
+            @media only screen and (min-width:450px){
+                /* Mobile Footer */
+                #mobile-footer{
+                    display:none;
+                }
+            }
+
+            /* PHONES */
+            @media only screen and (max-width: 450px){
+                /* Header */
+                header{
+                    display:none;
+                }
+
+                /* Container */
+                #container{
+                    width:100vw;
+                    margin-left:0;
+                    margin-top:1em;
+                    margin-bottom:calc(10vh + 1em);
+                }
+
+                /* Followed User */
+                .fllw{
+                    width:calc(100vw - 4em);
+                }
+                
+                /* Followed User Info */
+                .fllw-info{
+                    width:calc((100vw - 4em) - (48px + 8px + 8px));
+                }
+
+                /* Custom Controls */
+                #custom-controls, .accessible, .daynight{
+                    display:none;
+                }
+
+                /* Mobile Footer */
+                #mobile-footer{
+                    display:flex;
+                    align-items:center;
+                    justify-content:space-evenly;
+                    background-color:white; /* background color */
+                    position:fixed;
+                    bottom:0;
+                    left:0;
+                    width:100vw;
+                    height:10vh;
+                }
+                
+                body.night #mobile-footer{
+                    background-color:#222; /* background color */
+                }
+
+                /* Navigation Element */
+                .mf-nav{
+                    width:36px;
+                    height:36px;
+                    font-size:1em;
+                    border-radius:8px; /* round corners */
+                    background-color:#bed; /* background color */
+                    color:white; /* text color */
+                    text-shadow:0 0 2px #078c5f; /* offset blur color */
+                    box-shadow:0 0 2px #078c5f; /* offset blur color */
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                }
+
+                body.night .mf-nav{
+                    background-color:#222; /* background color */
+                    color:#087c5f; /* text color */
+                }
+
+                /* Navigation Element on Hover */
+                .mf-nav:hover{
+                    transform:scale(1.05); /* increase size */
+                    cursor:pointer;
+                }
+
+                /* Navigation Element Transitions */
+                .mf-nav, .mf-nav:hover{
+                    transition:0.5s;
+                    -moz-transition:0.5s;
+                    -o-transition:0.5s;
+                    -webkit-transition:0.5s;
+                }
+
+                /* Navigation Element Links */
+                .mf-link, body.night .mf-link{
+                    border-bottom:none;
+                    text-decoration:none;
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <!-- HEADER -->
+        <header>
+            <!-- Header Icon -->
+            <div id="h-icon">
+                <img src="{PortraitURL-128}" alt="{Name}'s icon"/>
+            </div>
+
+            <!-- Header Title -->
+            <!-- This is practically all you have to edit in the HTML. -->
+            <div id="h-title">
+                Minze
+            </div>
+
+            <!-- Header Link -->
+            <a href="/" class="h-link" title="return to blog">
+                <div id="h-link">
+                    return to blog
+                    <span class="fas fa-chevron-right"></span>
+                </div>
+            </a>
+        </header> <!-- // end header -->
+
+        <!-- CONTAINER -->
+        <div id="container">
+            {block:Following}
+            {block:Followed}
+            <a href="{FollowedURL}" class="fllw-link" title="go to {FollowedName}">
+                <div class="fllw">
+                    <!-- Followed User Icon -->
+                    <div class="fllw-icon">
+                        <img src="{FollowedPortraitURL-128}" alt="{FollowedName}'s Blog Icon"/>
+                    </div>
+                    <!-- Followed User Info -->
+                    <div class="fllw-info">
+                        <!-- Folowed User Blog Title -->
+                        <div class="fllw-title">{FollowedTitle}</div>
+                        <!-- Followed User Name -->
+                        <div class="fllw-name">
+                            <mark>@{FollowedName}</mark>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {/block:Followed}
+            {/block:Following}
+        </div> <!-- // end container -->
+
+        <!-- TOGGLES -->
+        <!-- DayNight Toggle -->
+        <div class="daynight cont" title="day/night mode">
+            <span class="fas fa-moon"></span>
+        </div>
+
+        <!-- Accessible Toggle -->
+        <div class="accessible cont" title="accessible text">
+            <span class="fas fa-font"></span>
+        </div>
+        
+        <!-- Credit – Do not touch! -->
+        <a href="https://silbrigthemes.tumblr.com/" title="page by silbrigthemes" class="mf-link">
+            <div class="cont credit">
+                <span class="fas fa-code" aria-hidden="true"></span>
+            </div>
+        </a>
+
+        <!-- CUSTOM CONTROLS -->
+        <div id="custom-controls">
+            <!-- Dashboard Link -->
+            <a href="https://www.tumblr.com/dashboard" title="go to dashboard" class="conlink">
+                <div class="cont">
+                    <span class="fab fa-tumblr" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Message -->
+            <!-- Takes people to dashboard to send you a message. -->
+            <a href="https://www.tumblr.com/message/{Name}" title="send a message to {Name}" class="conlink">
+                <div class="cont">
+                    <span class="fas fa-comment-dots" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Customize -->
+            <!-- Takes you, the blog owner, to the customization. -->
+            <a href="https://www.tumblr.com/customize/{Name}?redirect_to=https%3A%2F%2F{Name}.tumblr.com" title="customize theme" class="conlink">
+                <div class="cont">
+                    <span class="fas fa-palette" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Follow -->
+            <!-- Takes people to a page so that they can follow you. -->
+            <a href="https://www.tumblr.com/follow/{Name}" title="follow {Name}" class="conlink">
+                <div class="cont">
+                    <span class="fas fa-plus" aria-hidden="true"></span>
+                </div>
+            </a>
+        </div> <!-- // end custom controls -->
+
+        <!-- MOBILE FOOTER -->
+        <div id="mobile-footer">
+            <!-- Desktop Link -->
+            <a href="https://www.tumblr.com/dashboard" title="go to dashboard" class="mf-link">
+                <div class="mf-nav">
+                    <span class="fab fa-tumblr" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Day/Night Toggle -->
+            <div class="dn mf-nav" title="toggle day/night-mode">
+                <span class="fas fa-moon"></span>
+            </div>
+
+            <!-- Home Link -->
+            <a href="/" title="return to blog" class="mf-link">
+                <div class="mf-nav">
+                    <span class="fas fa-home" aria-hidden="true"></span>
+                </div>
+                </a>
+
+            <!-- Accessibility Toggle -->
+            <div class="acs mf-nav" title="increase readability">
+                <span class="fas fa-font"></span>
+            </div>
+
+            <!-- Credit – Do not touch! -->
+            <a href="https://silbrigthemes.tumblr.com/" title="page by silbrigthemes" class="mf-link">
+                <div class="mf-nav">
+                    <span class="fas fa-code" aria-hidden="true"></span>
+                </div>
+            </a>
+        </div> <!-- // end mobile footer -->
+        
+        <!-- SCRIPTS -->
+        <script>
+            $(document).ready(function() {
+                // Mobile Accessible Toggle 
+                $('.acs').click(function() {
+                    $('body').toggleClass('access');
+                    $('.acs span').toggleClass('fa-italic');
+                });
+                
+                // Mobile DayNight Toggle
+                $('.dn').click(function() {
+                    $('body').toggleClass('night');
+                    $('.dn span').toggleClass('fa-sun');
+                });
+                
+                // Masonry, by DeSandro
+                var $grid = $("#container");
+                $grid.masonry({
+                    itemSelector: ".fllw",
+                    initLayout: 1
+                });
+                $(window).load(function(){
+              	    $grid.masonry();
+                });
+                
+                // Accessible Toggle
+                $('.accessible').click(function() {
+                    $('body,#container,.fllw').toggleClass('access');
+                    $('.accessible span').toggleClass('fa-italic');
+                    setTimeout(function(){
+                	    $grid.masonry('layout');
+                    },400);
+                });
+                
+                // DayNight Toggle
+                $('.daynight').click(function() {
+                    $('body').toggleClass('night');
+                    $('.daynight span').toggleClass('fa-sun');
+                });
+                
+                // HTML Visibility
+                document.getElementsByTagName("html")[0].style.visibility = "visible";
+            });
+        </script>
+
+    </body>
+</html>
