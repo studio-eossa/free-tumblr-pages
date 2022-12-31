@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<!--
+
+COUNTDOWN
+
+Page #3 by @silbrigthemes
+
+A simple countdown page for a project release.
+
+Please do not use as a base code.
+Please do not distribute as your own.
+Please do not edit or remove the credit.
+Please do not edit beyond recognition.
+
+Helpful annotations have been made to this code.
+
+Have fun!
+
+-->
+    <head>
+
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+    <!-- without this the custom font will not work -->
+    
+    <!-- This script is necessary to make the page responsive -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <style type="text/css">
+            body{
+                margin:0;
+                background-image:url("https://images.unsplash.com/photo-1493397212122-2b85dda8106b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a3cc3a8a1ec353a513b665b9d2e61718&auto=format&fit=crop&w=1651&q=80");
+                /* change your background image here */
+                background-repeat:no-repeat;
+                background-attachment:fixed;
+                background-size:cover;
+                font-family:"Quicksand", Verdana; /* change your font here; Verdana is a fall-back system font */
+                overflow:hidden;
+            }
+
+            #container{
+                width:60vw; /* vw = viewport width */
+                height:100vh; /* vh = viewport height */
+                margin-left:20vw;
+                background:linear-gradient(to bottom, rgba(9,125,158,0.8), rgba(184,205,211,0.8));
+                /* linear-gradient (direction, rgba(value red, value green, value blue, opacity), rgba()) */
+                /* the following lines should be kept as they make sure the content is centered nicely */
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                flex-direction:column;
+
+            }
+
+            #top{
+
+            }
+
+            #top img{
+                width:100px; /* change image width here */
+                height:100px; /* change image height here */
+                border-radius:50%; /* border-radius: 50%; creates a nice round shape */
+                border:2px solid #48a4b4; /* change border width and color here */
+
+            }
+
+            #middle{
+                text-align:center;
+            }
+
+            #middle h1{
+                font-size:4em; /* 4em = 4 * 16px = 64px */
+                font-weight:700;/* 700 = bold */
+                text-transform:uppercase; /* can also be set to "normal" or "lowercase" */
+                color:#b8cdd3; /* change heading 1 color here */
+                text-shadow:2px 2px 1px #097d9e; /* offset to top, offset to left, blur, shadow color */
+            }
+
+            #middle h2{
+                font-size:2em; /* 2em = 2 * 16px = 32px */
+                font-weight:500; /* 500 = medium */
+                color:#b8cdd3; /* change heading 2 color here */
+                text-shadow:1.5px 1.5px 1px #48a4b4; /* offset to top, offset to left, blur, shadow color */
+            }
+
+            #middle hr{
+                width:50%; /* width of the line in the middle */
+                border:4px solid #48a4b4; /* line width, line style, line color */
+            }
+
+            #bottom{
+                text-align:center;
+            }
+
+            #bottom p{
+                font-size:1.5em; /* 1.5em = 1.5 * 16px = 24px */
+                font-weight:300; /* 300 = light */
+                color:#20282c; /* text color */
+                text-shadow:0.5px 0.5px 0.5px #b8cdd3; /* offset to top, offset to left, blur, shadow color */
+            }
+           
+            
+            #bottom_nav mark{
+                background-color:#b8cdd3; /* mark background color */
+                color:#20282c; /* mark text color */
+                font-weight:700; /* 700 = bold */
+                font-size:1em; /* 1em = 16px */
+                padding:0.5em; /* 0.5em = 8px */
+                border-radius:5px;
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            #bottom_nav mark:hover{
+                background-color:#48a4b4; /* mark background color on hover */
+                color:#b8cdd3; /* mark text color on hover */
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+                
+            }
+            
+            #bottom_nav a{
+                text-decoration:none;
+                font-size:1em;
+                padding-left:15px;
+            }
+        </style>
+    </head>
+    <body>
+    <div id="container">
+        <div id="top">
+            <img src="https://images.unsplash.com/photo-1493397212122-2b85dda8106b?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a3cc3a8a1ec353a513b665b9d2e61718&auto=format&fit=crop&w=1651&q=80" alt="architecture">
+            <!-- you can change the round image here -->
+        </div>
+        <div id="middle">
+            <h1>Coming Soon</h1> <!-- change to what you like -->
+            <h2>New Project</h2> <!-- change to what you like -->
+            <hr>
+            <h2 id="demo">
+              <!-- this NEEDS to be empty or else the countdown code will NOT work -->
+            </h2>
+        </div>
+        <div id="bottom">
+            <p>Stay tuned!</p> <!-- change to what you like -->
+        
+            <div id="bottom_nav">
+                <a href="/"><mark>Home</mark></a>
+                <a href="/ask"><mark>Ask</mark></a>
+                <a href="/archive"><mark>Past</mark></a>
+                <a href="https://silbrigthemes.tumblr.com/"><mark>Credit</mark></a>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- COUNTDOWN CODE, DO NOT REMOVE !!! -->
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Mar 1, 2019 13:50:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+
+          // Get todays date and time
+          var now = new Date().getTime();
+
+          // Find the distance between now an the count down date
+          var distance = countDownDate - now;
+
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+          // Display the result in an element with id="demo"
+          document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+          + minutes + "m " + seconds + "s ";
+
+          // If the count down is finished, write some text
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "FINISHED";
+          }
+        }, 1000);
+    </script>
+
+    </body>
+</html>
