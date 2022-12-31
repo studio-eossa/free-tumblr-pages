@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+
+MEERESBRISE
+Page #25 by silbrigthemes
+
+Meeresbrise is a responsive network page based on Pantone®'s color of the year 2020, Classic Blue.
+
+----------
+
+Rules:
+
+    1) Do not use as base code.
+    2) Do not customize beyond recognition.
+    3) Do not steal (parts of) the code.
+    4) Do not claim as your own.
+    5) Do not delete or alter the credit.
+    6) Do not redistribute to other sites.
+
+----------
+
+Useful comments to this code have been made.
+
+If you need any help for a problem , feel free to send me a message via silbrigthemes.tumblr.com/ask or send a message to my official support blog, silbrigsupport.tumblr.com.
+
+Have fun!
+
+Love,
+Julia <3
+
+----------
+
+Note:
+
+    This work is protected by a creative commons
+    Attribution-NonCommercial-NoDerivatives 4.0 International
+    (CC BY-NC-ND 4.0)
+    license.
+
+-->
+
+    <head>
+    
+    <meta charset="utf-16">
+    <title>{Title} | Meeresbrise</title> <!-- {Title} is your blog title. Change after the "|". -->
+    <link rel="shortcut icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+
+    <!-- Changes the toolbar color on mobile. -->
+    <meta name="theme-color" content="#0f4c81"/>
+
+    <!-- Necessary for the theme to be responsive. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Icon font, by fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- Necessary for the scripts to work. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    
+        <style>
+            
+            body{
+                margin:0;
+                top:0;
+                left:0;
+                background-color:#0f4c81; /* background color */
+                font-size:1em; /* font-size */
+                color:#333; /* text color */
+                font-family:"Roboto", Verdana; /* font */
+                overflow-x:hidden;
+            }
+            
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar{
+                width:10px;
+            }
+            
+            ::-webkit-scrollbar-thumb{
+                width:10px;
+                border-radius:5px; /* rounded corners */
+                background-color:white; /* background color */
+            }
+            
+            /* Custom Text Selection */
+            ::selection{
+                background-color:#0f4c81; /* background color */
+                color:white; /* text color */
+            }
+            
+            ::-moz-selection{
+                background-color:#0f4c81; /* background color */
+                color:white; /* text color */
+            }
+            
+            ::-o-selection{
+                background-color:#0f4c81; /* background color */
+                color:white; /* text color */
+            }
+            
+            ::-webkit-selection{
+                background-color:#0f4c81; /* background color */
+                color:white; /* text color */
+            }
+            
+            /* Custom Tooltips */
+            .tippy-tooltip.meeresbrise-theme {
+                background-color:#0f4c81; /* background color */
+                color:white; /* text color */
+                text-align:left; /* alt.: center, right, justify */
+            }
+
+            .tippy-tooltip.meeresbrise-theme .tippy-svg-arrow {
+                fill:#0f4c81; /* background color */
+            }
+            
+    /* ––– END GENERAL | START TEXT STYLES  ––– */        
+            
+            /* Bold Text */
+            b, strong{
+                font-weight:bold;
+                font-weight:700;
+                color:#555; /* text color */
+            }
+
+            /* Italic Text */
+            i, em{
+                font-weight:300; /* alt.: 400 */
+                font-style:italic; /* alt.: normal */
+                color:#111; /* text color */
+            }
+
+            /* Marked Text */
+            mark{
+                background-color:#0f4c81; /* background color */
+                color:white; /* text color */
+                padding:0 8px;
+                border-radius:1em; /* round corners */
+            }
+
+            /* Preformatted Text */
+            pre{
+                font-family:"Roboto Mono", Courier; /* font */
+                font-size:calc(1em - 2px);
+                word-wrap:break-all;
+                white-space:pre-wrap;
+                color:#0f4c81; /* text color */
+                padding:16px;
+            }
+
+            /* Small Text */
+            small{
+                font-size:calc(1em - 4px);
+            }
+
+            /* Underlined Text */
+            u{
+                text-decoration:none;
+                border-bottom:2px solid #333; /* strength style color */
+            }
+
+            /* Text Line */
+            hr{
+                width:80%;
+                height:4px;
+                border:none;
+                border-radius:4px; /* round corners */
+                background-color:#0f4c81; /* background color */
+            }
+
+            /* Empty Paragraphs */
+            p:empty{
+                display:none;
+            }
+
+            /* Embedded Media */
+            #about img, #about iframe{
+                max-width:100%;
+            }
+
+            /* Blockquote */
+            blockquote{
+                border-left:4px solid #0f4c81; /* strength style color */
+                padding-left:16px;
+            }
+
+            /* LINKS */
+            /* Link */
+            a{
+                text-decoration:none;
+                color:#0f4c81; /* text color */
+                border-bottom:2px solid #0f4c81; /* strength style color */
+            }
+
+            /* Link on Hover */
+            a:hover{
+                color:#333; /* text color */
+            }
+
+            /* Transitions */
+            a, a:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* COLORED TEXT */
+            /* Red Text */
+            .npf_color_joey {
+                color:#820f22; /* text color */
+            }
+
+            /* Orange Text */
+            .npf_color_monica {
+                color:#82310f; /* text color */
+            }
+
+            /* Yellow Text */
+            .npf_color_phoebe {
+                color:#c98e18; /* text color */
+            }
+
+            /* Green Text */
+            .npf_color_ross {
+                color:#0f8237; /* text color */
+            }
+
+            /* Blue Text */
+            .npf_color_rachel {
+                color:#0f4c81; /* text color */
+            }
+
+            /* Purple Text */
+            .npf_color_chandler {
+                color:#690f82; /* text color */
+            }
+
+            /* Pink Text */
+            .npf_color_niles {
+                color:#820f50; /* text color */
+            }
+
+            /* SPECIAL FONTS */
+            /* Quirky Font */
+            .npf_quirky{
+                font-family: "Dancing Script", cursive; /* font */
+                font-size:1.5em;
+            }
+
+            /* Chat Font */
+            .npf_chat{
+                font-family:"Roboto Mono", Courier; /* font */
+            }
+
+            /* Quote Font */
+            .npf_quote{
+                font-family:"Cormorant Garamond", "Palatino"; /* font */
+                font-size:1.25em;
+            }
+
+            /* HEADINGS */
+            /* First Heading */
+            h1{
+                font-size:1.75em;
+                font-weight:400; /* alt.: 300, 700 */
+            }
+
+            /* Second Heading */
+            h2{
+                font-size:1.5em;
+                font-weight:300; /* alt.: 400, 700 */
+            }
+
+            h1, h2{
+                font-family:"Raleway", Georgia; /* font */
+            }
+
+            /* Third Heading */
+            h3{
+                font-size:1.25em;
+            }
+
+            /* Fourth Heading */
+            h4{
+                font-size:1em;
+            }
+
+            /* Fifth Heading */
+            h5{
+                font-size:calc(1em - 2px);
+            }
+
+            /* Sixth Heading */
+            h6{
+                font-size:calc(1em - 4px);
+            }
+
+            h5, h6{
+                text-transform:uppercase;
+                /* alt.: capitalize, none, lowercase */
+            }
+
+            body.access h5, body.access h6{
+                text-transform:none;
+                /* alt.: uppercase, capitalize, lowercase */
+            }
+
+            h3, h4{
+                font-family:"Open Sans", Verdana; /* font */
+            }
+
+            h5, h6{
+                font-family:"Roboto Mono", Courier; /* font */
+            }
+            
+    /* ––– END TEXT STYLES | START LAYOUT  ––– */        
+            
+            /* CONTAINER */
+            #container{
+                width:calc(60vw - 2em);
+                margin-top:10vh;
+                margin-bottom:10vh;
+                margin-left:calc(20vw - 1em);
+                padding:2em;
+                background-color:white; /* background colors */
+                border-radius:1em; /* rounded corners */
+            }
+            
+            /* Title */
+            #title{
+                font-size:2em;
+                color:#0f4c81; /* text color */
+                font-family:"Roboto Slab", Georgia; /* font */
+                margin-bottom:8px;
+            }
+            
+            /* Description */
+            #desc{
+                border-bottom:2px solid #0f4c81; /* strength style color */
+                margin-bottom:8px;
+                padding-bottom:8px;
+            }
+            
+            /* Network Container */
+            #network {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            /* Network Element */
+            .net{
+                width:calc(18vw - 2em);
+                padding:1em;
+                margin-bottom:8px;
+            }
+            
+            /* Network Link */
+            a.netlink{
+                text-decoration:none;
+                color:#333; /* text color */
+                border-bottom:none;
+                display:flex;
+                align-items:flex-start;
+            }
+            
+            /* Network Icon */
+            .net-icon img{
+                width:64px;
+                height:64px;
+                margin-right:8px;
+            }
+            
+            /* Network Title */
+            .net-title{
+                font-size:calc(1em + 2px);
+                font-family:"Roboto Slab", Georgia; /* font */
+                color:#0f4c81; /* text color */
+            }
+            
+            /* Network Username */
+            .net-username{
+                font-size:calc(1em - 2px);
+                font-family:"Roboto Mono", Courier; /* font */
+            }
+            
+    /* ––– END LAYOUT | START EXTRAS  ––– */        
+            
+            /* Hides the tumblr app button, by @yeoli-thm */
+            .tmblr-iframe--app-cta-button {
+                display:none!important;
+            }
+
+            /* CUSTOM CONTROLS */
+            /* Container */
+            #custom-controls{
+                position:fixed;
+                top:1em;
+                right:calc(1em + 10px);
+                width:calc(2 * 36px + 4px);
+                height:calc(2 * 36px + 8px);
+                display:flex;
+                flex-wrap:wrap;
+                justify-content:space-between;
+                align-items:space-between;
+            }
+
+            /* Control Link */
+            a.conlink{
+                border-bottom:none;
+                box-shadow:none;
+                text-decoration:none;
+            }
+
+            /* Control Element */
+            .cont{
+                background-color:white; /* background color */
+                color:#0f4c81; /* text color */
+                border-radius:50%; /* round corners */
+                font-size:calc(1em - 2px);
+                width:36px;
+                height:36px;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+
+            /* Control Element on Hover */
+            .cont:hover{
+                color:#333; /* background color */
+                transform:scale(0.98); /* smaller */
+            }
+
+            /* Transitions */
+            .cont, .cont:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* Hides standard tumblr controls */
+            body > iframe:first-child {
+                display: none !important;
+            }
+
+            /* Credit – Don't touch! */
+            #cd{
+                position:fixed;
+                bottom:1em;
+                right:1em;
+            }
+            
+    /* ––– END EXTRAS | START RESPONSIVE LAYOUT  ––– */    
+    
+            /* LARGE SCREENS | DESKTOP */
+            @media only screen and (min-width:800px){
+                /* Mobile Footer */
+                #mobile-footer{
+                    display:none;
+                }
+            }
+
+            /* SMALL SCREENS | TABLETS */
+            @media only screen and (max-width:800px){
+                /* Custom Scrollbar */
+                ::-webkit-scrollbar-thumb{
+                    background-color:#0f4c81; /* background color */
+                }
+                
+                /* Container */
+                #container{
+                    width:calc(100vw - 4em);
+                    margin-top:0;
+                    margin-left:0;
+                    border-radius:0;
+                }
+                
+                /* Network Element */
+                .net{
+                    width:calc(28vw - 2em);
+                    padding:1em;
+                    margin-right:8px;
+                    margin-bottom:8px;
+                }
+                
+                /* Mobile Footer */
+                #mobile-footer{
+                    display:flex;
+                    align-items:center;
+                    justify-content:space-evenly;
+                    background-color:#0f4c81; /* background color */
+                    position:fixed;
+                    bottom:0;
+                    left:0;
+                    width:100vw;
+                    height:10vh;
+                }
+
+                /* Navigation Element */
+                .mf-nav{
+                    width:36px;
+                    height:36px;
+                    font-size:calc(1em - 2px);
+                    border-radius:8px; /* rounded corners */
+                    background-color:white; /* background color */
+                    color:#0f4c81; /* text color */
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                }
+
+                /* Navigation Element on Hover */
+                .mf-nav:hover{
+                    color:#333; /* text color */
+                    cursor:pointer;
+                    transform:scale(0.98); /* smaller */
+                }
+
+                /* Navigation Element Transitions */
+                .mf-nav, .mf-nav:hover{
+                    transition:0.5s;
+                    -moz-transition:0.5s;
+                    -o-transition:0.5s;
+                    -webkit-transition:0.5s;
+                }
+
+                /* Navigation Element Links */
+                .mf-link, body.night .mf-link{
+                    border-bottom:none;
+                }
+
+                /* Credit, Custom Controls */
+                #cd, #custom-controls{
+                    display:none;
+                }
+            }
+
+            /* SMALL SCREENS | PHONES */
+            @media only screen and (max-width:450px){
+                /* Network Element */
+                .net{
+                    width:calc(80vw - 2em);
+                    padding:1em;
+                    margin-right:8px;
+                    margin-bottom:8px;
+                }
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        
+        <!-- CONTAINER -->
+        <div id="container">
+            <!-- TITLE -->
+            <div id="title">Meeresbrise</div>
+            <!-- DESCRIPTION -->
+            <div id="desc">
+                Und ich stehe am Strand, eine sanfte Meeresbrise spielt mit meinem Haar, und ich erinnere mich daran, wie es mit dir war.
+            </div>
+            <!-- NETWORK CONTAINER -->
+            <div id="network">
+                <!-- Network Element -->
+                <div class="net">
+                    <!-- Network Link -->
+                    <a href="/" title="username" class="netlink">
+                    <!-- Network Icon -->
+                    <div class="net-icon">
+                        <img src="https://66.media.tumblr.com/e30064aa147e88182421ca6758010032/tumblr_pgacndSzEE1xc8miro1_500.png" alt="user icon"/>
+                    </div>
+                    <!-- Network Info -->
+                    <div class="net-info">
+                        <!-- Network Title -->
+                        <div class="net-title">Blog Title</div>
+                        <!-- Network Username -->
+                        <div class="net-username">@username</div>
+                        <!-- Network Description -->
+                        <div class="net-desc">
+                            Description goes here! Keep it short, make it long – doesn't matter.
+                        </div>
+                    </div> <!-- // end network info -->
+                    </a> <!-- // end network link -->
+                </div>
+                
+                <div class="net">
+                    <a href="/" title="username" class="netlink">
+                    <div class="net-icon">
+                        <img src="https://66.media.tumblr.com/40d256d39925cb74234bdd6000092ac9/tumblr_pgacndSzEE1xc8miro2_500.png" alt="user icon"/>
+                    </div>
+                    <div class="net-info">
+                        <div class="net-title">Blog Title</div>
+                        <div class="net-username">@username</div>
+                        <div class="net-desc">
+                                Description goes here! Keep it short, make it long – doesn't matter.
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                
+                <div class="net">
+                    <a href="/" title="username" class="netlink">
+                    <div class="net-icon">
+                        <img src="https://66.media.tumblr.com/6902dd7b74733012dd12cce464bf1bd5/tumblr_pgacndSzEE1xc8miro8_500.png" alt="user icon"/>
+                    </div>
+                    <div class="net-info">
+                        <div class="net-title">Blog Title</div>
+                        <div class="net-username">@username</div>
+                        <div class="net-desc">
+                                Description goes here! Keep it short, make it long – doesn't matter.
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                
+                <div class="net">
+                    <a href="/" title="username" class="netlink">
+                    <div class="net-icon">
+                        <img src="https://66.media.tumblr.com/badd9cc8c855022704d62e656ceff609/tumblr_pgacndSzEE1xc8miro3_1280.png" alt="user icon"/>
+                    </div>
+                    <div class="net-info">
+                        <div class="net-title">Blog Title</div>
+                        <div class="net-username">@username</div>
+                        <div class="net-desc">
+                                Description goes here! Keep it short, make it long – doesn't matter.
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                
+                <div class="net">
+                    <a href="/" title="username" class="netlink">
+                    <div class="net-icon">
+                        <img src="https://66.media.tumblr.com/5ef4a7b2e1fb6f40781fa20ee89b8d45/tumblr_pgacndSzEE1xc8miro4_1280.png" alt="user icon"/>
+                    </div>
+                    <div class="net-info">
+                        <div class="net-title">Blog Title</div>
+                        <div class="net-username">@username</div>
+                        <div class="net-desc">
+                                Description goes here! Keep it short, make it long – doesn't matter.
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                
+                <div class="net">
+                    <a href="/" title="username" class="netlink">
+                    <div class="net-icon">
+                        <img src="https://66.media.tumblr.com/9e0144a413575da094572bdde17c4437/tumblr_pgacndSzEE1xc8miro6_500.png" alt="user icon"/>
+                    </div>
+                    <div class="net-info">
+                        <div class="net-title">Blog Title</div>
+                        <div class="net-username">@username</div>
+                        <div class="net-desc">
+                                Description goes here! Keep it short, make it long – doesn't matter.
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                
+                <div class="net">
+                    <a href="/" title="username" class="netlink">
+                    <div class="net-icon">
+                        <img src="https://66.media.tumblr.com/00bd24dc9ab75fe324d6d3bc1a2e6986/tumblr_pgacndSzEE1xc8miro7_1280.png" alt="user icon"/>
+                    </div>
+                    <div class="net-info">
+                        <div class="net-title">Blog Title</div>
+                        <div class="net-username">@username</div>
+                        <div class="net-desc">
+                                Description goes here! Keep it short, make it long – doesn't matter.
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                
+                <div class="net">
+                    <a href="/" title="username" class="netlink">
+                    <div class="net-icon">
+                        <img src="https://66.media.tumblr.com/b33c644fae11b7a6016ef8b66c1fade4/tumblr_pgacndSzEE1xc8miro5_500.png" alt="user icon"/>
+                    </div>
+                    <div class="net-info">
+                        <div class="net-title">Blog Title</div>
+                        <div class="net-username">@username</div>
+                        <div class="net-desc">
+                                Description goes here! Keep it short, make it long – doesn't matter.
+                        </div>
+                    </div>
+                    </a>
+                </div>
+                
+                <div class="net">
+                    <a href="/" title="username" class="netlink">
+                    <div class="net-icon">
+                        <img src="https://66.media.tumblr.com/007fd0e90bf173adedeb39e6ba27ef09/tumblr_pgacndSzEE1xc8miro9_500.png" alt="user icon"/>
+                    </div>
+                    <div class="net-info">
+                        <div class="net-title">Blog Title</div>
+                        <div class="net-username">@username</div>
+                        <div class="net-desc">
+                                Description goes here! Keep it short, make it long – doesn't matter.
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div> <!-- // end network container -->
+        </div> <!-- // end container -->
+        
+        <!-- MOBILE FOOTER -->
+        <div id="mobile-footer">
+            <!-- Desktop Link -->
+            <a href="https://www.tumblr.com/dashboard" title="go to dashboard" class="mf-link">
+                <div class="mf-nav">
+                    <span class="fab fa-tumblr" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Message -->
+            <!-- Takes people to dashboard to send you a message. -->
+            <a href="https://www.tumblr.com/message/{Name}" title="send a message to {Name}" class="mf-link">
+                <div class="mf-nav">
+                    <span class="fas fa-comment-dots" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Home Link -->
+            <a href="/" title="return to blog" class="mf-link">
+                <div class="mf-nav">
+                    <span class="fas fa-home" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Follow -->
+            <!-- Takes people to a page so that they can follow you. -->
+            <a href="https://www.tumblr.com/follow/{Name}" title="follow {Name}" class="mf-link">
+                <div class="mf-nav">
+                    <span class="fas fa-plus" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Credit – Do not touch! -->
+            <a href="https://silbrigthemes.tumblr.com/" title="page by silbrigthemes" class="mf-link">
+                <div class="mf-nav">
+                    <span class="fas fa-code" aria-hidden="true"></span>
+                </div>
+            </a>
+        </div> <!-- // end mobile footer -->
+
+        <!-- CUSTOM CONTROLS -->
+        <div id="custom-controls">
+            <!-- Dashboard Link -->
+            <a href="https://www.tumblr.com/dashboard" title="go to dashboard" class="conlink">
+                <div class="cont">
+                    <span class="fab fa-tumblr" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Message -->
+            <!-- Takes people to dashboard to send you a message. -->
+            <a href="https://www.tumblr.com/message/{Name}" title="send a message to {Name}" class="conlink">
+                <div class="cont">
+                    <span class="fas fa-comment-dots" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Customize -->
+            <!-- Takes you, the blog owner, to the customization. -->
+            <a href="https://www.tumblr.com/customize/{Name}?redirect_to=https%3A%2F%2F{Name}.tumblr.com" title="customize page" class="conlink">
+                <div class="cont">
+                    <span class="fas fa-palette" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Follow -->
+            <!-- Takes people to a page so that they can follow you. -->
+            <a href="https://www.tumblr.com/follow/{Name}" title="follow {Name}" class="conlink">
+                <div class="cont">
+                    <span class="fas fa-plus" aria-hidden="true"></span>
+                </div>
+            </a>
+        </div> <!-- // end custom controls -->
+
+        <!-- CREDIT -->
+        <!-- Do not touch! -->
+        <div id="cd">
+            <a href="https://silbrigthemes.tumblr.com/" title="page by silbrigthemes" class="conlink">
+                <div class="cont">
+                    <span class="fas fa-code" aria-hidden="true"></span>
+                </div>
+            </a>
+        </div>
+        
+        <!-- Tooltips, TippyJs -->
+        <script src="https://unpkg.com/popper.js@1"></script>
+        <script src="https://unpkg.com/tippy.js@5/dist/tippy-bundle.iife.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/svg-arrow.css" />
+
+        <script>
+            tippy('a[title]', {
+              theme: 'meeresbrise',
+              arrow: tippy.roundArrow,
+              zIndex: 9999999999,
+              maxWidth: 300,
+
+              content(reference) {
+                const title = reference.getAttribute('title');
+                reference.removeAttribute('title');
+                return title;
+              },
+            });
+        </script>
+        
+    </body>
+</html>
