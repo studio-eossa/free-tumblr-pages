@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+
+ENTWURF
+Page #27 by silbrigthemes
+
+Entwurf is a responsive WIP page, which can also be used to showcase books that you are currently reading.
+
+----------
+
+Rules:
+
+    1) Do not use as base code.
+    2) Do not customize beyond recognition.
+    3) Do not steal (parts of) the code.
+    4) Do not claim as your own.
+    5) Do not delete or alter the credit.
+    6) Do not redistribute to other sites.
+
+----------
+
+Useful comments to this code have been made.
+
+If you need any help for a problem , feel free to send me a message via silbrigthemes.tumblr.com/ask or send a message to my official support blog, silbrigsupport.tumblr.com.
+
+Have fun!
+
+Love,
+Julia <3
+
+----------
+
+Note:
+
+    This work is protected by a creative commons
+    Attribution-NonCommercial-NoDerivatives 4.0 International
+    (CC BY-NC-ND 4.0)
+    license.
+
+-->
+
+    <head>
+
+    <meta charset="utf-16">
+    <title>{Title} | Entwurf</title> <!-- {Title} is your blog title. Change after the "|". -->
+    <link rel="shortcut icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+
+    <!-- Changes the toolbar color on mobile. -->
+    <meta name="theme-color" content="#217c8e"/>
+
+    <!-- Icon font, by fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <!-- Necessary for the theme to be responsive. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Necessary for the scripts to work. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+
+    <!-- Global Font | Open Sans -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <!-- Title Font | Playfair Display -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap&subset=cyrillic,latin-ext,vietnamese" rel="stylesheet">
+
+    <!-- Other Fonts -->
+    <!-- Roboto Mono -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <!-- Cormorant Garamond -->
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese" rel="stylesheet">
+    <!-- Dancing Script -->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+
+        <style>
+
+            body{
+                margin:0;
+                top:0;
+                left:0;
+                background-color:#f3f1ec; /* background color */
+                font-size:1em; /* font-size, 1em = 16px */
+                color:#333; /* text color */
+                font-family:"Open Sans", Verdana; /* global font */
+                text-align:justify; /* alt.: left */
+                overflow-x:hidden;
+                scroll-behavior:smooth;
+            }
+
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar{
+                width:10px;
+            }
+
+            ::-webkit-scrollbar-thumb{
+                width:10px;
+                background-color:#217c8e; /* background color */
+            }
+
+            /* Custom Text Selection */
+            ::selection{
+                background-color:#217c8e; /* background color */
+                color:#fff; /* text color */
+            }
+
+            ::-moz-selection{
+                background-color:#217c8e; /* background color */
+                color:#fff; /* text color */
+            }
+
+            ::-o-selection{
+                background-color:#217c8e; /* background color */
+                color:#fff; /* text color */
+            }
+
+            ::-webkit-selection{
+                background-color:#217c8e; /* background color */
+                color:#fff; /* text color */
+            }
+
+            /* Custom Tooltips */
+            .tippy-tooltip.entwurf-theme {
+                background-color:#217c8e; /* background color */
+                color:#fff; /* text color */
+                text-align:left; /* alt.: center, right, justify */
+            }
+
+            .tippy-tooltip.entwurf-theme .tippy-svg-arrow {
+                fill:#217c8e; /* background color */
+            }
+
+    /* ––– END GENERAL | START TEXT STYLES ––– */
+
+            /* Bold Text */
+            b, strong{
+                font-weight:bold;
+                font-weight:700;
+                color:#555; /* text color */
+            }
+
+            /* Italic Text */
+            i, em{
+                font-weight:300; /* thin text */
+                font-style:italic;
+                color:#111; /* text color */
+            }
+
+            /* Marked Text */
+            mark{
+                padding:2px 4px;
+                background-color:#01596d; /* background color */
+                color:#fff; /* text color */
+            }
+
+            /* Preformatted Text */
+            pre{
+                font-family:"Roboto Mono", Courier; /* font-family */
+                font-size:calc(1em - 2px);
+                word-wrap:break-all;
+                white-space:pre-wrap;
+                color:#003c49; /* text color */
+            }
+
+            /* Small Text */
+            small{
+                font-size:calc(1em - 4px);
+            }
+
+            /* Underlined Text */
+            u{
+                text-decoration:none;
+                border-bottom:2px solid #333; /* width style color */
+            }
+
+            /* Blockquote */
+            blockquote{
+                border-left:4px solid #217c8e; /* width style color */
+                padding-left:8px;
+            }
+
+            /* Embedded Media */
+            img, iframe{
+                max-width:100%;
+            }
+
+            /* Text Line */
+            hr{
+                width:80%;
+                height:2px;
+                border:none;
+                background-color:#217c8e; /* background color */
+            }
+
+            /* LINKS */
+            /* Link */
+            a{
+                text-decoration:none;
+                color:#217c8e; /* text color */
+                border-bottom:2px solid #217c8e; /* width style color */
+            }
+
+            /* Link | Hover */
+            a:hover{
+                color:#01596d; /* text color */
+                border-bottom:2px solid #01596d; /* width style color */
+            }
+
+            /* Link | Transitions */
+            a, a:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* PARAGRAPHS */
+            /* First Paragraph */
+            p:first-child{
+                margin-top:0;
+            }
+
+            /* Empty Paragraphs */
+            p:empty{
+                display:none;
+            }
+
+            /* LISTS */
+            /* Ordered List */
+            ol{
+                list-style-type:decimal;
+            }
+
+            /* Unordered List */
+            ul{
+                list-style-type:disc;
+            }
+
+            /* COLORED TEXT */
+            /* Red Text */
+            .npf_color_joey {
+                color:#f21000; /* text color */
+            }
+
+            /* Orange Text */
+            .npf_color_monica {
+                color:#f26400; /* text color */
+            }
+
+            /* Yellow Text */
+            .npf_color_phoebe {
+                color:#f2ad00; /* text color */
+            }
+
+            /* Green Text */
+            .npf_color_ross {
+                color:#37ce00; /* text color */
+            }
+
+            /* Blue Text */
+            .npf_color_rachel {
+                color:#005cf2; /* text color */
+            }
+
+            /* Purple Text */
+            .npf_color_chandler {
+                color:#8d00f2; /* text color */
+            }
+
+            /* Pink Text */
+            .npf_color_niles {
+                color:#f200c1; /* text color */
+            }
+
+            /* SPECIAL FONTS */
+            /* Quirky Font */
+            .npf_quirky{
+                font-family: "Dancing Script", cursive;
+                font-size:1.5em;
+            }
+
+            /* Chat Font */
+            .npf_chat{
+                font-family:"Roboto Mono", Courier;
+            }
+
+            /* Quote Font */
+            .npf_quote{
+                font-family:"Cormorant Garamond", "Palatino";
+                font-size:1.25em;
+            }
+
+            /* HEADINGS */
+            /* First Heading */
+            h1{
+                font-size:1.75em;
+                font-weight:bold;
+                color:#217c8e; /* text color */
+            }
+
+            /* Second Heading */
+            h2{
+                font-size:1.5em;
+                font-weight:normal;
+                color:#01596d; /* text color */
+            }
+
+            /* Third Heading */
+            h3{
+                font-size:1.25em;
+                font-weight:300;
+                color:#003c49; /* text color */
+            }
+
+            /* Fourth Heading */
+            h4{
+                font-size:1em;
+                color:#002630; /* text color */
+            }
+
+            /* Fifth Heading */
+            h5{
+                font-size:calc(1em - 2px);
+                text-transform:uppercase;
+                color:#002630; /* text color */
+            }
+
+            /* Sixth Heading */
+            h6{
+                font-size:calc(1em - 4px);
+                text-transform:uppercase;
+                color:#002630; /* text color */
+            }
+
+    /* ––– END TEXT STYLES | START LAYOUT ––– */
+
+            /* SIDEBAR */
+            #sidebar{
+                padding:1em;
+                width:calc(30vw - 2em);
+                height:calc(100vh - 2em);
+                position:fixed;
+                top:0;
+                left:0;
+                background-color:#fff; /* background color */
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                flex-direction:column;
+            }
+
+            /* Sidebar Title */
+            #s-title{
+                font-size:2.5em;
+                font-family:"Playfair Display", Georgia; /* font-family */
+                text-transform:lowercase;
+                font-style:italic;
+                color:#217c8e; /* text color */
+            }
+
+            /* Sidebar Description */
+            #s-desc{
+                margin-bottom:8px;
+            }
+
+            /* Filter Container */
+            #myBtnContainer{
+                display:flex;
+                flex-wrap:wrap;
+                justify-content:center;
+            }
+
+            /* Filter Button */
+            .btn{
+                border:none;
+                outline:none;
+                padding:12px 16px;
+                background-color:#f3f1ec; /* background color */
+                cursor:pointer;
+                margin-right:4px;
+                margin-bottom:4px;
+                font-family:"Open Sans", Verdana; /* font-family */
+                font-size:calc(1em - 4px);
+                color:#333; /* text color */
+            }
+
+            /* Filter Button | Hover */
+            .btn:hover{
+                color:#217c8e; /* text color */
+            }
+
+            /* Filter Button | Active */
+            .btn.active{
+                background-color:#217c8e; /* background color */
+                color:#fff; /* text color */
+            }
+
+            /* Filter Button | Transitions */
+            .btn, .btn:hover, .btn.active{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* CONTAINER */
+            #container{
+                width:70vw;
+                margin-left:30vw;
+                height:auto;
+            }
+
+            /* WORK */
+            .work{
+                width:calc(50vw + 2em);
+                padding:1em;
+                background-color:#fff; /* background color */
+                margin-left:calc(10vw - 2em);
+                margin-bottom:5em;
+                margin-top:5em;
+                display:grid;
+                grid-template-columns:20vw 15vw 15vw;
+                grid-column-gap:1em;
+                grid-template-rows:auto 40vh auto auto;
+                grid-row-gap:1em;
+                float:left;
+                display:none;
+            }
+
+            /* The "show" class is added to the filtered elements */
+            .show {
+                display:grid;
+            }
+
+            /* Title */
+            .w-title{
+                grid-column-start:1;
+                grid-column-end:4;
+                font-size:2em;
+                font-family:"Playfair Display", Georgia; /* font-family */
+                text-transform:lowercase;
+                font-style:italic;
+                color:#217c8e; /* text color */
+            }
+
+            /* Subtitle */
+            .w-subt{
+                background-color:#217c8e; /* background color */
+                padding:4px 8px;
+                color:#fff; /* text color */
+                text-transform:uppercase;
+                margin-bottom:8px;
+            }
+
+            /* Long Description */
+            .w-desc{
+                grid-column-start:1;
+                grid-column-end:2;
+                grid-row-start:2;
+                grid-row-end:5;
+            }
+
+            /* Short Description */
+            .w-short{
+                grid-column-start:2;
+                grid-column-end:3;
+            }
+
+            /* -- Table */
+            table{
+                max-width:100%;
+            }
+
+            /* -- Table Cell */
+            td{
+                text-align:left;
+                vertical-align:top;
+            }
+
+            td:first-child{
+                padding-right:8px;
+            }
+
+            /* Image */
+            .w-image{
+                grid-column-start:3;
+                grid-column-end:4;
+            }
+
+            .w-image img{
+                max-width:100%;
+            }
+
+            /* Links */
+            .w-links{
+                grid-column-start:2;
+                grid-column-end:3;
+                grid-row-start:3;
+                grid-row-end:5;
+                display:flex;
+                flex-wrap:wrap;
+                justify-content:flex-start;
+                align-items:flex-start;
+            }
+
+            /* -- Link */
+            a.link{
+                color:#fff; /* text color */
+                background-color:#217c8e; /* background color */
+                padding:4px 8px;
+                margin-right:4px;
+                margin-bottom:4px;
+                border-bottom:none;
+            }
+
+            /* -- Link | Hover */
+            a.link:hover{
+                background-color:#01596d; /* background color */
+                color:#fff; /* text color */
+            }
+
+            /* -- Link | Transitions */
+            a.link, a.link:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* -- Link | Icon */
+            a.link span{
+                font-size:calc(1em - 2px);
+            }
+
+            /* Progress */
+            .w-progress{
+                grid-column-start:3;
+                grid-column-end:4;
+                grid-row-start:3;
+                grid-row-end:4;
+            }
+
+            /* -- Progress Bar */
+            .progressbar{
+                width:100%;
+                background-color:#f3f1ec; /* background color */
+                height:20px;
+            }
+
+            /* -- Progress */
+            /* Sets the style for all progress. */
+            .progress{
+                background-color:#217c8e; /* background color */
+                height:20px;
+            }
+
+            /* These set the length of the progress. **/
+            .p1{
+                width:60%;
+            }
+
+            /* Status */
+            .w-status{
+                grid-column-start:3;
+                grid-column-end:4;
+                grid-row-start:4;
+                grid-row-end:5;
+                background-color:#217c8e; /* background color */
+                color:#fff; /* text color */
+                padding:8px;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+
+    /* ––– END LAYOUT | START EXTRAS  ––– */
+
+            /* Hides the tumblr app button, by @yeoli-thm */
+            .tmblr-iframe--app-cta-button {
+                display:none!important;
+            }
+
+            /* CUSTOM CONTROLS */
+            /* Container */
+            #custom-controls{
+                position:fixed;
+                top:8px;
+                right:8px;
+                height:calc(4 * 36px + 3 * 4px);
+                width:36px;
+                display:flex;
+                flex-wrap:wrap;
+                justify-content:space-between;
+                align-items:space-between;
+            }
+
+            /* Control Link */
+            a.conlink{
+                border-bottom:none;
+                box-shadow:none;
+                text-decoration:none;
+            }
+
+            /* Control Element */
+            .cont{
+                background-color:#fff; /* background color */
+                color:#217c8e; /* text color */
+                font-size:calc(1em - 2px);
+                width:36px;
+                height:36px;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+
+            /* Control Element on Hover */
+            .cont:hover{
+                color:#01596d; /* background color */
+                transform:scale(0.95); /* smaller */
+            }
+
+            /* Transitions */
+            .cont, .cont:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* Hides standard tumblr controls */
+            body > iframe:first-child {
+                display: none !important;
+            }
+
+            /* Credit, Home Link, To Top */
+            #cd, #home, #top{
+                right:8px;
+                position:fixed;
+            }
+
+            /* Credit */
+            /* Do not touch! */
+            #cd{
+                bottom:8px;
+            }
+
+            /* Home Link */
+            #home{
+                bottom:calc(8px + 36px + 4px);
+            }
+
+            /* To Top */
+            #top{
+                bottom:calc(8px + 2 * 36px + 2 * 4px);
+                display:none;
+                outline:none;
+                border:none;
+            }
+
+            /* To Top | Hover */
+            #top:hover{
+                cursor:pointer;
+            }
+
+    /* ––– END EXTRAS | START RESPONSIVE LAYOUT  ––– */
+
+            /* DESKTOP */
+            @media only screen and (min-width:800px){
+                /* Mobile Footer */
+                #mobile-footer{
+                    display:none;
+                }
+            }
+
+            /* TABLETS */
+            @media only screen and (max-width:800px){
+                /* Multiple Elements */
+                #sidebar, #cd, #top, #custom-controls, #home{
+                    display:none;
+                }
+
+                /* Container */
+                #container{
+                    width:100vw;
+                    margin-left:0;
+                }
+
+                /* Work */
+                .work{
+                    width:calc(80vw + 2em);
+                    grid-template-columns:35vw 22.5vw 22.5vw;
+                    grid-template-rows:auto auto auto 2em;
+                    margin-top:3em;
+                    margin-bottom:3em;
+                }
+
+                .work:last-child{
+                    margin-bottom:calc(10vh + 3em);
+                }
+
+                /* Long Description */
+                .w-desc{
+                    grid-column-start:1;
+                    grid-column-end:2;
+                    grid-row-start:2;
+                    grid-row-end:5;
+                }
+
+                /* Short Description */
+                .w-short{
+                    grid-column-start:2;
+                    grid-column-end:4;
+                    grid-row-start:2;
+                    grid-row-end:3;
+                }
+
+                /* Image */
+                .w-image img{
+                    display:none;
+                }
+
+                /* Links */
+                .w-links{
+                    grid-column-start:2;
+                    grid-column-end:3;
+                    grid-row-start:3;
+                    grid-row-end:4;
+                }
+
+                /* Progress */
+                .w-progress{
+                    grid-column-start:3;
+                    grid-column-end:4;
+                    grid-row-start:3;
+                    grid-row-end:4;
+                }
+
+                /* Status */
+                .w-status{
+                    grid-column-start:3;
+                    grid-column-end:4;
+                    grid-row-start:4;
+                    grid-row-end:5;
+                }
+
+                /* Mobile Footer */
+                #mobile-footer{
+                    display:flex;
+                    align-items:center;
+                    justify-content:space-evenly;
+                    background-color:#003c49; /* background color */
+                    position:fixed;
+                    bottom:0;
+                    left:0;
+                    width:100vw;
+                    height:10vh;
+                }
+
+                /* Navigation Element */
+                .mf-nav{
+                    width:36px;
+                    height:36px;
+                    font-size:calc(1em - 2px);
+                    background-color:#fff; /* background color */
+                    color:#003649; /* text color */
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                }
+
+                /* Navigation Element on Hover */
+                .mf-nav:hover{
+                    color:#01596d; /* text color */
+                    cursor:pointer;
+                }
+
+                /* Navigation Element Transitions */
+                .mf-nav, .mf-nav:hover{
+                    transition:0.5s;
+                    -moz-transition:0.5s;
+                    -o-transition:0.5s;
+                    -webkit-transition:0.5s;
+                }
+
+                /* Navigation Element Links */
+                a.mf-link{
+                    border-bottom:none;
+                }
+            }
+
+            /* PHONES */
+            @media only screen and (max-width:500px){
+                /* Work */
+                .work{
+                    display:block;
+                    width:calc(80vw - 2em);
+                    margin-left:10vw;
+                }
+
+                /* Links */
+                .w-links{
+                    margin:4px 0;
+                }
+
+                /* Progress */
+                .w-progress{
+                    margin-bottom:8px;
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <!-- SIDEBAR -->
+        <div id="sidebar">
+            <!-- Sidebar Title -->
+            <div id="s-title">Entwurf</div>
+            <!-- Sidebar Description -->
+            <div id="s-desc">
+                Collection of my work(s) in progress.
+            </div>
+            <!-- Sidebar Filters -->
+            <div id="myBtnContainer">
+                <button class="btn active" onclick="filterSelection('all')">
+                    Show all
+                </button>
+                <button class="btn" onclick="filterSelection('filter1')">
+                    Filter 1
+                </button>
+                <button class="btn" onclick="filterSelection('filter2')">
+                    Filter 2
+                </button>
+                <button class="btn" onclick="filterSelection('filter3')">
+                    Filter 3
+                </button>
+                <button class="btn" onclick="filterSelection('filter4')">
+                    Filter 4
+                </button>
+                <!-- Add more here. -->
+            </div> <!-- // end sidebar filters -->
+        </div> <!-- // end sidebar -->
+
+        <!-- CONTAINER -->
+        <div id="container">
+            <!-- WORK -->
+            <div class="work filter1 filter2">
+                <!-- Title -->
+                <div class="w-title">[title here]</div>
+                <!-- Long Description -->
+                <div class="w-desc">
+                    <div class="w-subt">description</div>
+                    <div class="w-text">
+                        [summary here]
+                    </div>
+                </div> <!-- // end long description -->
+                <!-- Short Description -->
+                <div class="w-short">
+                    <div class="w-subt">short description</div>
+                    <table>
+                        <tr>
+                            <td>Title:</td>
+                            <td>[title here]</td>
+                        </tr>
+                        <tr>
+                            <td>Genre:</td>
+                            <td>[genres here]</td>
+                        </tr>
+                        <tr>
+                            <td>Main Characters:</td>
+                            <td>[characters here]</td>
+                        </tr>
+                        <tr>
+                            <td>Themes:</td>
+                            <td>[themes here]</td>
+                        </tr>
+                        <!-- Add more if you want to. -->
+                    </table>
+                </div> <!-- // end short description -->
+                <!-- Image -->
+                <div class="w-image">
+                    <img src="[image url here]" alt="image"/>
+                </div> <!-- // end image -->
+                <!-- Links -->
+                <div class="w-links">
+                    <a href="/" class="link" title="example link">
+                        <span class="fas fa-link"></span> Example Link
+                    </a>
+                    <!-- Add more if you want to. -->
+                </div> <!-- // end links -->
+                <!-- Progress -->
+                <div class="w-progress">
+                    <div class="progressbar">
+                        <div class="progress p1"></div>
+                    </div>
+                </div> <!-- // end progress -->
+                <!-- Status -->
+                <div class="w-status">
+                    [status here]
+                </div> <!-- // end status -->
+            </div> <!-- // end work -->
+
+            <!-- Add more here. -->
+
+            <!-- Copy and paste the following code:
+            <div class="work filter1 filter2">
+                <div class="w-title">[title here]</div>
+                <div class="w-desc">
+                    <div class="w-subt">description</div>
+                    <div class="w-text">
+                        [summary here]
+                    </div>
+                </div>
+                <div class="w-short">
+                    <div class="w-subt">short description</div>
+                    <table>
+                        <tr>
+                            <td>Title:</td>
+                            <td>[title here]</td>
+                        </tr>
+                        <tr>
+                            <td>Genre:</td>
+                            <td>[genres here]</td>
+                        </tr>
+                        <tr>
+                            <td>Main Characters:</td>
+                            <td>[characters here]</td>
+                        </tr>
+                        <tr>
+                            <td>Themes:</td>
+                            <td>[themes here]</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="w-image">
+                    <img src="[image url here]" alt="image"/>
+                </div>
+                <div class="w-links">
+                    <a href="/" class="link" title="example link">
+                        <span class="fas fa-link"></span> Example Link
+                    </a>
+                </div>
+                <div class="w-progress">
+                    <div class="progressbar">
+                        <div class="progress p1"></div>
+                    </div>
+                </div>
+                <div class="w-status">
+                    [status here]
+                </div>
+            </div>
+            -->
+
+        </div> <!-- // end container -->
+
+        <!-- MOBILE FOOTER -->
+        <div id="mobile-footer">
+            <!-- Desktop Link -->
+            <a href="https://www.tumblr.com/dashboard" title="go to dashboard" class="mf-link">
+                <div class="mf-nav">
+                    <span class="fab fa-tumblr" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Home Link -->
+            <a href="/" title="return to blog" class="mf-link">
+                <div class="mf-nav">
+                    <span class="fas fa-home" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Credit – Do not touch! -->
+            <a href="https://silbrigthemes.tumblr.com/" title="page by silbrigthemes" class="mf-link">
+                <div class="mf-nav">
+                    <span class="fas fa-code" aria-hidden="true"></span>
+                </div>
+            </a>
+        </div> <!-- // end mobile footer -->
+
+        <!-- CUSTOM CONTROLS -->
+        <div id="custom-controls">
+            <!-- Dashboard Link -->
+            <a href="https://www.tumblr.com/dashboard" title="go to dashboard" class="conlink">
+                <div class="cont">
+                    <span class="fab fa-tumblr" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Message -->
+            <!-- Takes people to dashboard to send you a message. -->
+            <a href="https://www.tumblr.com/message/{Name}" title="send a message to {Name}" class="conlink">
+                <div class="cont">
+                    <span class="fas fa-comment-dots" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Customize -->
+            <!-- Takes you, the blog owner, to the customization. -->
+            <a href="https://www.tumblr.com/customize/{Name}?redirect_to=https%3A%2F%2F{Name}.tumblr.com" title="customize page" class="conlink">
+                <div class="cont">
+                    <span class="fas fa-palette" aria-hidden="true"></span>
+                </div>
+            </a>
+
+            <!-- Follow -->
+            <!-- Takes people to a page so that they can follow you. -->
+            <a href="https://www.tumblr.com/follow/{Name}" title="follow {Name}" class="conlink">
+                <div class="cont">
+                    <span class="fas fa-plus" aria-hidden="true"></span>
+                </div>
+            </a>
+        </div> <!-- // end custom controls -->
+
+        <!-- CREDIT -->
+        <!-- Do not touch! -->
+        <a href="https://silbrigthemes.tumblr.com/" class="conlink">
+            <div class="cont" id="cd" title="page by silbrigthemes">
+                <span class="fas fa-code" aria-hidden="true"></span>
+            </div>
+        </a>
+
+        <!-- HOME -->
+        <a href="/" class="conlink">
+            <div class="cont" id="home" title="return to blog">
+                <span class="fas fa-home" aria-hidden="true"></span>
+            </div>
+        </a>
+
+        <!-- To top button -->
+        <button onclick="topFunction()" class="cont" id="top" title="go back up">
+            <span class="fas fa-chevron-up" aria-hidden="true"></span>
+        </button>
+
+        <script>
+            var mq = window.matchMedia( "(min-width: 800px)" );
+            if (mq.matches) {
+                //Get the button
+                var mybutton = document.getElementById("top");
+
+                // When the user scrolls down 20px from the top of the document, show the button
+                window.onscroll = function() {scrollFunction()};
+
+                function scrollFunction() {
+                    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                        mybutton.style.display = "block";
+                    } else {
+                        mybutton.style.display = "none";
+                    }
+                }
+
+                // When the user clicks on the button, scroll to the top of the document
+                function topFunction() {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                }
+            }
+            else {
+                mybutton.style.display = "none";
+            }
+        </script>
+
+        <!-- Filter Script -->
+        <script>
+            filterSelection("all")
+            function filterSelection(c) {
+                var x, i;
+                x = document.getElementsByClassName("work");
+                if (c == "all") c = "";
+                // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+                for (i = 0; i < x.length; i++) {
+                    w3RemoveClass(x[i], "show");
+                    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+                }
+            }
+
+            // Show filtered elements
+            function w3AddClass(element, name) {
+                var i, arr1, arr2;
+                arr1 = element.className.split(" ");
+                arr2 = name.split(" ");
+                for (i = 0; i < arr2.length; i++) {
+                    if (arr1.indexOf(arr2[i]) == -1) {
+                        element.className += " " + arr2[i];
+                    }
+                }
+            }
+
+            // Hide elements that are not selected
+            function w3RemoveClass(element, name) {
+                var i, arr1, arr2;
+                arr1 = element.className.split(" ");
+                arr2 = name.split(" ");
+                for (i = 0; i < arr2.length; i++) {
+                    while (arr1.indexOf(arr2[i]) > -1) {
+                        arr1.splice(arr1.indexOf(arr2[i]), 1);
+                    }
+                }
+                element.className = arr1.join(" ");
+            }
+
+            // Add active class to the current control button (highlight it)
+            var btnContainer = document.getElementById("myBtnContainer");
+            var btns = btnContainer.getElementsByClassName("btn");
+            for (var i = 0; i < btns.length; i++) {
+                btns[i].addEventListener("click", function() {
+                    var current = document.getElementsByClassName("active");
+                    current[0].className = current[0].className.replace(" active", "");
+                    this.className += " active";
+                });
+            }
+        </script>
+
+        <!-- Tooltips, TippyJs -->
+        <script src="https://unpkg.com/popper.js@1"></script>
+        <script src="https://unpkg.com/tippy.js@5/dist/tippy-bundle.iife.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/svg-arrow.css" />
+
+        <script>
+            tippy('a[title], #cd, #top, #home', {
+              theme: 'entwurf',
+              arrow: tippy.roundArrow,
+              zIndex: 9999999999,
+              maxWidth: 300,
+
+              content(reference) {
+                const title = reference.getAttribute('title');
+                reference.removeAttribute('title');
+                return title;
+              },
+            });
+        </script>
+
+    </body>
+</html>
