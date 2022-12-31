@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+
+CHARAKTERSTUDIE
+Page #30 by silbrigthemes
+
+Charakterstudie is a responsive page which allows you to display information on multiple characters at once.
+
+----------
+
+Rules:
+
+    1) Do not use as base code.
+    2) Do not customize beyond recognition.
+    3) Do not steal (parts of) the code.
+    4) Do not claim as your own.
+    5) Do not delete or alter the credit.
+    6) Do not redistribute to other sites.
+
+----------
+
+Useful comments to this code have been made.
+
+If you need any help for a problem , feel free to send me a message via silbrigthemes.tumblr.com/ask or send a message to my official support blog, silbrigsupport.tumblr.com.
+
+Have fun!
+
+Love,
+Julia <3
+
+----------
+
+Note:
+
+    This work is protected by a creative commons
+    Attribution-NonCommercial-NoDerivatives 4.0 International
+    (CC BY-NC-ND 4.0)
+    license.
+
+-->
+
+    <head>
+    
+    <meta charset="utf-16">
+    <title>{Title} | Charakterstudie</title> 
+    <!-- {Title} is your blog title. Change after the "|". -->
+    <link rel="shortcut icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+    
+    <!-- Necessary for the theme to be responsive. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Changes the toolbar color on mobile. -->
+    <meta name="theme-color" content="#d9d9d9"/>
+
+    <!-- Icon font, by Remix Icon. -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- Necessary for the scripts to work. -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    
+    <!-- FONTS -->
+    <!-- Body | Open Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Titles | Josefin Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- OTHER FONTS -->
+    <!-- Cormorant Garamond -->
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:300,400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext,vietnamese" rel="stylesheet">
+    <!-- Dancing Script -->
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+    <!-- Roboto Mono -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:300,400,700&display=swap&subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    
+        <style>
+            
+            body{
+                margin:0;
+                top:0;
+                left:0;
+                background-color:#fff; /* background color */
+                font-family:"Open Sans", Verdana; /* font family */
+                font-size:1em; /* 1em = 16px */
+                color:#222; /* text color */
+                overflow-x:hidden;
+                text-align:justify; /* alt.: left */
+            }
+            
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar{
+                width:10px;
+            }
+            
+            ::-webkit-scrollbar-thumb{
+                width:10px;
+                border-radius:5px;
+                box-shadow: inset 2px 2px 6px #b8b8b8, 
+                            inset -2px -2px 6px #ffffff;
+                /* (direction) offset-left offset-top color */            
+            }
+            
+            /* Custom Text Selection */
+            ::selection{
+                background-color:#ececec; /* background color */
+                color:#222; /* text color */
+            }
+            
+            ::-moz-selection{
+                background-color:#ececec; /* background color */
+                color:#222; /* text color */
+            }
+            
+            ::-o-selection{
+                background-color:#ececec; /* background color */
+                color:#222; /* text color */
+            }
+            
+            ::-webkit-selection{
+                background-color:#ececec; /* background color */
+                color:#222; /* text color */
+            }
+            
+            /* Custom Tooltips */
+            .tippy-tooltip.charakterstudie-theme{
+                background-color:#02182b; /* background color */
+                color:#fff; /* text color */
+                text-align:left; /* alt.: center, justify */
+                text-transform:lowercase; 
+                /* alt.: normal, uppercase, capitalize */
+            }
+
+            .tippy-tooltip.charakterstudie-theme .tippy-svg-arrow{
+                fill:#02182b; /* background color */
+            }
+            
+    /* ––– END GENERAL | START TEXT STYLES  ––– */            
+            
+            /* Bold Text */
+            b, strong{
+                font-weight:bold;
+                color:#444; /* text color */
+            }
+            
+            /* Italic Text */
+            i, em{
+                font-weight:300; /* thin, alt.: 400 */
+                font-style:italic;
+                color:#000; /* text color */
+            }
+            
+            /* Marked Text */
+            mark{
+                color:#222; /* text color */
+                background-color:#68c5db; /* background color */
+                border-radius:4px; /* rounded corners */
+                padding:0 4px;
+            }
+            
+            /* Preformatted Text */
+            pre{
+                background-color:#02182b; /* background color */
+                color:#fff; /* text color */
+                font-family:"Roboto Mono", Courier; /* font-family */
+                font-size:calc(1em - 2px); /* font size */
+                word-wrap:break-all;
+                white-space:pre-wrap;
+                padding:1em;
+            }
+            
+            /* Small Text */
+            small{
+                font-size:calc(1em - 4px); /* font size */
+            }
+
+            /* Underlined Text */
+            u{
+                text-decoration:none;
+                border-bottom:2px solid #222; /* width style color */
+            }
+            
+            /* Blockquote */
+            blockquote{
+                border-left:2px solid #02182b; /* width style color */
+                padding-left:1em;
+            }
+            
+            /* Embedded Media */
+            img, iframe{
+                max-width:100%;
+                height:auto;
+            }
+
+            /* Empty Paragraphs */
+            p:empty{
+                display:none;
+            }
+            
+            /* Text Line */
+            hr{
+                width:100%;
+                border:none;
+                height:4px;
+                border-radius:2px; /* rounded corners */
+                box-shadow: inset 1px 1px 3px #b8b8b8, 
+                            inset -1px -1px 3px #ffffff;
+                /* (direction) offset-left offset-top color */            
+            }
+            
+            /* LISTS */
+            /* Ordered Lists */
+            ol{
+                list-style-type:decimal;
+            }
+
+            /* Unordered Lists */
+            ul{
+                list-style-type:disc;
+            }
+            
+            /* LINKS */
+            /* Link */
+            a{
+                text-decoration:none;
+                color:#222; /* text color */
+                border-bottom:2px solid #0197f6; /* width style color */
+            }
+            
+            /* Link | Hover */
+            a:hover{
+                color:#0197f6; /* text color */
+                border-bottom:2px solid #0197f6; /* width style color */
+            }
+            
+            /* Link | Transitions */
+            a, a:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            /* SPECIAL FONTS */
+            /* Quirky Font */
+            .npf_quirky{
+                font-family: "Dancing Script", cursive; /* font family */
+                font-size:1.5em; /* font size */
+            }
+
+            /* Chat Font */
+            .npf_chat{
+                font-family:"Roboto Mono", Courier; /* font family */
+            }
+
+            /* Quote Font */
+            .npf_quote{
+                font-family:"Cormorant Garamond", "Palatino"; /* font */
+                font-size:1.25em; /* font size */
+            }
+            
+            /* HEADINGS */
+            /* First Heading */
+            h1{
+                color:#d7263d; /* text color */
+                font-size:1.625em; /* font size */
+            }
+            
+            /* Second Heading */
+            h2{
+                font-size:1.5em; /* font size */
+                color:#02182b; /* text color */
+            }
+            
+            /* Third Heading */
+            h3{
+                font-size:1.375em; /* font size */
+                color:#448fa3; /* text color */
+            }
+            
+            /* Fourth Heading */
+            h4{
+                font-size:1.25em; /* font size */
+                color:#d7263d; /* text color */
+            }
+            
+            /* Fifth Heading */
+            h5{
+                font-size:1.125em; /* font size */
+                color:#02182b; /* text color */
+            }
+            
+            /* Sixth Heading */
+            h6{
+                font-size:1em; /* font size */
+                color:#448fa3; /* text color */
+            }
+            
+            /* All Headings */
+            h1, h2, h3, h4, h5, h6{
+                font-weight:400; /* alt.: 300 (thin), 700 (bold) */
+            }
+            
+            /* COLORED TEXT */
+            /* Pink Text */
+            .npf_color_niles {
+                color:#f400cb; /* text color */
+            }
+            
+            /* Red Text */
+            .npf_color_joey {
+                color:#f40028; /* text color */
+            }
+
+            /* Orange Text */
+            .npf_color_monica {
+                color:#f47a00; /* text color */
+            }
+
+            /* Yellow Text */
+            .npf_color_phoebe {
+                color:#f4cc00; /* text color */
+            }
+
+            /* Green Text */
+            .npf_color_ross {
+                color:#15db15; /* text color */
+            }
+
+            /* Blue Text */
+            .npf_color_rachel {
+                color:#0051f4; /* text color */
+            }
+
+            /* Purple Text */
+            .npf_color_chandler {
+                color:#a300f4; /* text color */
+            }
+            
+    /* ––– END TEXT STYLES | START LAYOUT  ––– */            
+            
+            /* TOPBAR */
+            #topbar{
+                background-color:#d7263d; /* background color */
+                color:#fff; /* text color */
+                box-shadow: inset -20px -20px 60px #b72034, 
+                            inset 20px 20px 60px #f72c46,
+                            20px 20px 60px #d9d9d9, 
+                            -20px -20px 60px #ffffff;
+                /* (direction) offset-left offset-top color */
+                width:calc(80vw - 2em);
+                position:fixed;
+                left:10vw;
+                top:0;
+                height:56px;
+                padding:1em;
+                border-radius:0 0 3em 3em; /* rounded corners */
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+            
+            /* Topbar | Title */
+            #t-title{
+                font-size:3em; /* font size */
+                font-family:"Josefin Sans", "Open Sans", Verdana; /* font */
+            }
+            
+            /* CONTAINER */
+            #container{
+                margin-top:calc(10vh + 56px + 2em);
+            }
+            
+            /* CARD */
+            .card{
+                width:calc(60vw + 2em);
+                margin-left:calc(20vw - 1em);
+                min-height:60vh;
+                height:auto;
+                margin-top:10vh;
+                margin-bottom:10vh;
+                display:grid;
+                grid-template-rows:auto auto auto auto;
+                grid-row-gap:1em;
+                grid-template-columns:20vw 20vw 20vw;
+                grid-column-gap:1em;
+                border-radius:1em;
+                box-shadow: 20px 20px 60px #d9d9d9, 
+                            -20px -20px 60px #ffffff;
+                /* (direction) offset-left offset-top color */            
+            }
+            
+            /* Card | Title */
+            .card-title{
+                background-color:#02182b; /* background color */
+                color:#fff; /* text color */
+                box-shadow: inset 20px 20px 60px #021425, 
+                            inset -20px -20px 60px #021c31;
+                /* (direction) offset-left offset-top color */
+                font-size:1.5em; /* font size */
+                font-family:"Josefin Sans", "Open Sans", Verdana;
+                padding:1em;
+                grid-row-start:1;
+                grid-row-end:2;
+                grid-column-start:1;
+                grid-column-end:4;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                border-radius:1em 1em 0 0; /* rounded corners */
+            }
+            
+            /* Card | Image */
+            .card-image{
+                grid-row-start:2;
+                grid-row-end:5;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                padding:1em;
+            }
+            
+            /* -- Card | Odd Card | Image */
+            .card:nth-child(n) .card-image{
+                grid-column-start:1;
+                grid-column-end:2;
+            }
+            
+            /* -- Card | Even Card | Image */
+            .card:nth-child(2n) .card-image{
+                grid-column-start:3;
+                grid-column-end:4;
+            }
+            
+            /* -- Card | Image */
+            .card-image img{
+                max-width:100%;
+                max-height:100%;
+            }
+            
+            /* Card | Short Info */
+            .card-short-info{
+                grid-row-start:2;
+                grid-row-end:3;
+                padding:1em;
+            }
+            
+            /* -- Card | Short Info | Odd Card */
+            .card:nth-child(n) .csi1{
+                grid-column-start:2;
+                grid-column-end:3;
+            }
+            
+            /* -- Card | Short Info | Even Card */
+            .card:nth-child(2n) .csi1{
+                grid-column-start:1;
+                grid-column-end:2;
+            }
+            
+            /* -- Card | Short Info | Table */
+            .card-short-info table, .card-short-info table tr{
+                max-width:100%;
+            }
+            
+            .card-short-info table td{
+                text-align:left;
+                vertical-align:top;
+                padding:2px 4px;
+            }
+            
+            /* Card | Long Info */
+            .card-long-info{
+                grid-row-start:3;
+                grid-row-end:5;
+                padding:1em;
+            }
+            
+            /* -- Card | Long Info | Odd Card */
+            .card:nth-child(n) .card-long-info{
+                grid-column-start:2;
+                grid-column-end:4;
+            }
+            
+            /* -- Card | Long Info | Even Card */
+            .card:nth-child(2n) .card-long-info{
+                grid-column-start:1;
+                grid-column-end:3;
+            }
+            
+    /* ––– END LAYOUT | START EXTRAS  ––– */            
+            
+            /* CONTROLS */
+            /* Control Element */
+            .cont{
+                width:36px;
+                height:36px;
+                background-color:#fff; /* background color */
+                color:#02182b; /* text color */
+                box-shadow: inset 4px 4px 12px #d9d9d9, 
+                            inset -4px -4px 12px #ffffff,
+                            4px 4px 12px #d9d9d9, 
+                            -4px -4px 12px #ffffff;
+                /* (direction) offset-left offset-top color */
+                border-radius:8px; /* rounded corners */   
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            }
+            
+            /* Control Element | Hover */
+            .cont:hover{
+                transform:scale(1.05); /* increase size */
+                color:#d7263d; /* text color */
+            }
+            
+            /* Control Element | Transitions */
+            .cont, .cont:hover{
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+            
+            /* Control Element | Icon */
+            .cont span{
+                font-size:calc(1em - 2px); /* font size */
+            }
+            
+            /* CREDIT */
+            #credit{
+                position:fixed;
+                bottom:8px;
+                left:8px;
+            }
+            
+            /* HOME */
+            #home{
+                position:fixed;
+                top:8px;
+                left:8px;
+            }
+            
+            /* Hides standard tumblr controls */
+            body > iframe:first-child {
+                display: none !important;
+            }
+            
+            /* CUSTOM CONTROLS */
+            #custom-controls{
+                width:calc(2 * 36px + 8px);
+                height:calc(2 * 36px + 8px);
+                position:fixed;
+                right:8px;
+                top:8px;
+                display:flex;
+                align-items:flex-start;
+                justify-content:space-between;
+                flex-wrap:wrap;
+            }
+            
+            /* Controls | Link */
+            a.conlink{
+                border-bottom:none;
+            }
+            
+            /* Hides the tumblr app button, by @yeoli-thm */
+            .tmblr-iframe--app-cta-button {
+                display:none!important;
+            }
+            
+    /* ––– END EXTRAS | START RESPONSIVE LAYOUT  ––– */            
+            
+            /* RESPONSIVE LAYOUT | LARGE SCREENS (DESKTOP) */
+            @media only screen and (min-width:800px){
+                /* MOBILE FOOTER */
+                #mobile-footer{
+                    display:none;
+                }
+            }
+            
+            /* RESPONSIVE LAYOUT | SMALL SCREENS (TABLETS) */
+            @media only screen and (max-width:800px){
+                /* TOPBAR */
+                #topbar{
+                    width:calc(85vw - 2em);
+                    position:fixed;
+                    left:7.5vw;
+                }
+                
+                /* CONTAINER */
+                #container{
+                    margin-bottom:20vh;
+                }
+                
+                /* CARD */
+                .card{
+                    width:calc(75vw + 2em);
+                    margin-left:calc(12.5vw - 1em);
+                    grid-template-rows:auto auto auto auto auto;
+                }
+                
+                /* -- Odd Cards */
+                .card:nth-child(n){
+                    grid-template-columns:30vw 22.5vw 22.5vw;
+                }
+                
+                /* -- Even Cards */
+                .card:nth-child(2n){
+                    grid-template-columns:22.5vw 22.5vw 30vw;
+                }
+                
+                /* -- Card Short Info 1 */
+                .csi1{
+                    grid-row-start:2;
+                    grid-row-end:3;
+                }
+                
+                /* -- Card Short Info 2 */
+                .csi2{
+                    grid-row-start:3;
+                    grid-row-end:4;
+                }
+                
+                /* -- »» Odd Cards | Short Info */
+                .card:nth-child(n) .csi1, .card:nth-child(n) .csi2{
+                    grid-column-start:2;
+                    grid-column-end:4;
+                }
+                
+                /* -- »» Even Cards | Short Info */
+                .card:nth-child(2n) .csi1, .card:nth-child(2n) .csi2{
+                    grid-column-start:1;
+                    grid-column-end:3;
+                }
+                
+                /* -- Card Long Info */
+                .card-long-info{
+                    grid-row-start:4;
+                    grid-row-end:6;
+                }
+                
+                /* MOBILE FOOTER */
+                #mobile-footer{
+                    background-color:#448fa3; /* background color */
+                    box-shadow: inset -20px -20px 60px #3a7a8b, 
+                                inset 20px 20px 60px #4ea4bb,
+                                20px 20px 60px #d9d9d9, 
+                                -20px -20px 60px #ffffff;
+                    /* (direction) offset-left offset-top color */
+                    width:85vw;
+                    position:fixed;
+                    left:7.5vw;
+                    bottom:0;
+                    height:calc(56px + 2em);
+                    border-radius:3em 3em 0 0; /* rounded corners */
+                    display:flex;
+                    align-items:center;
+                    justify-content:space-between;
+                }
+                
+                /* -- Mobile Footer | Element */
+                .mf{
+                    width:calc(80vw / 5);
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                }
+                
+                /* Mobile Footer | Link */
+                a.mf-link{
+                    border-bottom:none;
+                    color:#fff; /* text color */
+                    font-size:calc(1em + 2px); /* font size */
+                }
+                
+                /* Mobile Footer | Link | Hover */
+                a.mf-link:hover{
+                    transform:scale(1.1); /* increase size */
+                }
+                
+                /* Mobile Footer | Link | Transitions */
+                a.mf-link, a.mf-link:hover{
+                    transition:0.5s;
+                    -moz-transition:0.5s;
+                    -o-transition:0.5s;
+                    -webkit-transition:0.5s;
+                }
+                
+                /* EXTRAS */
+                #credit, #custom-controls, #home{
+                    display:none;
+                }
+            }
+            
+            /* RESPONSIVE LAYOUT | SMALL SCREENS (PHONES) */
+            @media only screen and (max-width: 450px){
+                /* TOPBAR */
+                #topbar{
+                    border-radius:0 0 1em 1em; /* rounded corners */
+                }
+                
+                /* TOPBAR | Title */
+                #t-title{
+                    font-size:2em; /* font size */
+                }
+                
+                /* CARD | Image */
+                .card-image{
+                    display:none;
+                }
+                
+                /* CARD | Long + Short Info */
+                .card:nth-child(n) .csi1, .card:nth-child(2n) .csi1, 
+                .card:nth-child(n) .csi2, .card:nth-child(2n) .csi2,
+                .card:nth-child(n) .card-long-info,
+                .card:nth-child(2n) .card-long-info{
+                    grid-column-start:1;
+                    grid-column-end:4;
+                }
+                
+                /* MOBILE FOOTER */
+                #mobile-footer{
+                    border-radius:1em 1em 0 0; /* rounded corners */
+                }
+            }
+            
+        </style>
+    </head>
+    
+    <body>
+        
+        <!-- TOPBAR -->
+        <div id="topbar">
+            <!-- Page Title -->
+            <div id="t-title">Charakterstudie</div>
+        </div>
+        <!-- // end topbar -->
+        
+        <!-- CONTAINER -->    
+        <div id="container">
+            <!-- FIRST CARD -->
+            <div class="card">
+                <!-- Card Title -->
+                <div class="card-title">Tanjiro Kamado</div>
+                <!-- Card Image -->
+                <div class="card-image">
+                    <img src="https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/e/e1/Tanjiro_anime.png" alt="image"/>
+                </div>
+                <!-- Short Info 1 -->
+                <div class="card-short-info csi1">
+                    <table>
+                        <tr>
+                            <td>Name:</td>
+                            <td>Tanjiro Kamado</td>
+                        </tr>
+                        <tr>
+                            <td>Race:</td>
+                            <td>Human, Demon (formerly)</td>
+                        </tr>
+                        <tr>
+                            <td>Gender:</td>
+                            <td>Male</td>
+                        </tr>
+                        <tr>
+                            <td>Birthday:</td>
+                            <td>July 14th</td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- Short Info 2 -->
+                <div class="card-short-info csi2">
+                    <table>
+                        <tr>
+                            <td>Affiliation:</td>
+                            <td>Demon Slayer Corps</td>
+                        </tr>
+                        <tr>
+                            <td>Occupation:</td>
+                            <td>Demon Slayer</td>
+                        </tr>
+                        <tr>
+                            <td>Combat Style:</td>
+                            <td>Breath of Water, Dance of the Fire God, Breath of the Sun</td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- Long Info -->
+                <div class="card-long-info">
+                    <p><b>Tanjiro Kamado</b> (竈門かまど炭たん治じ郎ろう [<i>Kamado Tanjirō</i>]) is the main protagonist of <a href="https://kimetsu-no-yaiba.fandom.com/wiki/Kimetsu_no_Yaiba_(Manga)" title="kny wiki | manga">Demon Slayer: Kimetsu no Yaiba</a>. He is a Kanoe-ranked member of the <a href="https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Corps" title="kny wiki | demon slayer corps">Demon Slayer Corps</a>, who joined for the sake of hunting down the one responsible for the murder of his family and his sister's transformation into a <a href="https://kimetsu-no-yaiba.fandom.com/wiki/Demon" title="kny wiki | demon">Demon</a>.</p>
+                </div>
+            </div>
+            <!-- // end card 1 -->
+            
+            <!-- SECOND CARD -->
+            <div class="card">
+                <div class="card-title">Inosuke Hashibira</div>
+                <div class="card-image">
+                    <img src="https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/d/d4/Inosuke_anime.png" alt="image"/>
+                </div>
+                <div class="card-short-info csi1">
+                    <table>
+                        <tr>
+                            <td>Name:</td>
+                            <td>Inosuke Hashibira</td>
+                        </tr>
+                        <tr>
+                            <td>Race:</td>
+                            <td>Human</td>
+                        </tr>
+                        <tr>
+                            <td>Gender:</td>
+                            <td>Male</td>
+                        </tr>
+                        <tr>
+                            <td>Birthday:</td>
+                            <td>April 22nd</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card-short-info csi2">
+                    <table>
+                        <tr>
+                            <td>Affiliation:</td>
+                            <td>Demon Slayer Corps</td>
+                        </tr>
+                        <tr>
+                            <td>Occupation:</td>
+                            <td>Demon Slayer</td>
+                        </tr>
+                        <tr>
+                            <td>Combat Style:</td>
+                            <td>Breath of the Beast</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card-long-info">
+                    <p><b>Inosuke Hashibira</b> (嘴はし平びら伊い之の助すけ [<i>Hashibira Inosuke</i>]) is a <a href="https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Corps" title="kny wiki | demon slayer">Demon Slayer</a> in the <a href="https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Corps" title="kny wiki | demon slayer corps">Demon Slayer Corps</a> and traveling companion of Tanjiro Kamado and one of the main protagonists of <a href="https://kimetsu-no-yaiba.fandom.com/wiki/Kimetsu_no_Yaiba_(Manga)" title="kny wiki | manga">Demon Slayer: Kimetsu no Yaiba</a>.</p>
+                </div>
+            </div>
+            <!-- // end card 2 -->
+            
+            <!-- THIRD CARD -->
+            <div class="card">
+                <div class="card-title">Nezuko Kamado</div>
+                <div class="card-image">
+                    <img src="https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/4/4d/Nezuko_anime.png" alt="image"/>
+                </div>
+                <div class="card-short-info csi1">
+                    <table>
+                        <tr>
+                            <td>Name:</td>
+                            <td>Nezuko Kamado</td>
+                        </tr>
+                        <tr>
+                            <td>Race:</td>
+                            <td>Human, Demon (formerly)</td>
+                        </tr>
+                        <tr>
+                            <td>Gender:</td>
+                            <td>Female</td>
+                        </tr>
+                        <tr>
+                            <td>Birthday:</td>
+                            <td>December 28th</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card-short-info csi2">
+                    <table>
+                        <tr>
+                            <td>Affiliation:</td>
+                            <td>Demon Slayer Corps (Informally)</td>
+                        </tr>
+                        <tr>
+                            <td>Occupation:</td>
+                            <td>Demon Slayer (informally)</td>
+                        </tr>
+                        <tr>
+                            <td>Combat Style:</td>
+                            <td>Blood Demon Arts</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card-long-info">
+                    <p><b>Nezuko Kamado</b> (竈門かまど禰ね豆ず子こ [<i>Kamado Nezuko</i>]) is the younger sister of <a href="https://kimetsu-no-yaiba.fandom.com/wiki/Tanjiro_Kamado" title="kny wiki | tanjiro kamado">Tanjiro Kamado</a> and one of the two remaining members of the Kamado family. Formerly human, she was attacked and turned into a <a href="https://kimetsu-no-yaiba.fandom.com/wiki/Demon" title="kny wiki | demon">Demon</a> by <a href="https://kimetsu-no-yaiba.fandom.com/wiki/Muzan_Kibutsuji" title="kny wiki | muzan kibutsuji">Muzan Kibutsuji</a>. She is one of the main protagonists of <a href="https://kimetsu-no-yaiba.fandom.com/wiki/Kimetsu_no_Yaiba_(Manga)" title="kny wiki | manga">Demon Slayer: Kimetsu no Yaiba</a>.</p>
+                </div>
+            </div>
+            <!-- // end card 3 -->
+            
+            <!-- FOURTH CARD -->
+            <div class="card">
+                <div class="card-title">Zenitsu Agatsuma</div>
+                <div class="card-image">
+                    <img src="https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/6/66/Zenitsu_anime.png" alt="image"/>
+                </div>
+                <div class="card-short-info csi1">
+                    <table>
+                        <tr>
+                            <td>Name:</td>
+                            <td>Zenitsu Agatsuma</td>
+                        </tr>
+                        <tr>
+                            <td>Race:</td>
+                            <td>Human</td>
+                        </tr>
+                        <tr>
+                            <td>Gender:</td>
+                            <td>Male</td>
+                        </tr>
+                        <tr>
+                            <td>Birthday:</td>
+                            <td>September 3rd</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card-short-info csi2">
+                    <table>
+                        <tr>
+                            <td>Affiliation:</td>
+                            <td>Demon Slayer Corps</td>
+                        </tr>
+                        <tr>
+                            <td>Occupation:</td>
+                            <td>Demon Slayer</td>
+                        </tr>
+                        <tr>
+                            <td>Combat Style:</td>
+                            <td>Thunder Breathing</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="card-long-info">
+                    <p><b>Zenitsu Agatsuma</b> (我あが妻つま善ぜん逸いつ [<i>Agatsuma Zen'itsu</i>]) is a <a href="https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Corps" title="kny wiki | demon slayer">Demon Slayer</a> and member of the <a href="https://kimetsu-no-yaiba.fandom.com/wiki/Demon_Slayer_Corps" title="kny wiki | demon slayer corps">Demon Slayer Corps</a>. He is a traveling companion of <a href="https://kimetsu-no-yaiba.fandom.com/wiki/Tanjiro_Kamado" title="kny wiki | tanjiro kamado">Tanjiro Kamado</a> and one of the main protagonists of <a href="https://kimetsu-no-yaiba.fandom.com/wiki/Kimetsu_no_Yaiba_(Manga)" title="kny wiki | manga">Demon Slayer: Kimetsu no Yaiba</a>.</p>
+                </div>
+            </div>
+            <!-- // end card 4 -->
+        </div>
+        <!-- // end character container -->
+        
+        <!-- MOBILE FOOTER -->
+        <div id="mobile-footer">
+            <!-- Dashboard Link -->
+            <div class="mf">
+                <a href="https://www.tumblr.com/dashboard" title="tumblr dashboard" class="mf-link">
+                    <span class="ri-tumblr-line"></span>
+                </a>
+            </div>
+            
+            <!-- Follow User -->
+            <div class="mf">
+                <a href="https://www.tumblr.com/follow/{Name}" title="follow {Name}" class="mf-link">
+                    <span class="ri-add-line"></span>
+                </a>
+            </div>
+            
+            <!-- Home Link | Back to Blog -->
+            <div class="mf">
+                <a href="/" title="return home" class="mf-link">
+                    <span class="ri-home-line"></span>
+                </a>
+            </div>
+            
+            <!-- Archive Link -->
+            <div class="mf">
+                <a href="/archive" title="browse archive" class="mf-link">
+                    <span class="ri-archive-line"></span>
+                </a>
+            </div>
+            
+            <!-- Page Credit -->
+            <!-- Delete this and die. -->
+            <div class="mf">
+                <a href="https://silbrigthemes.tumblr.com/" title="page by silbrigthemes" class="mf-link">
+                    <span class="ri-code-line"></span>
+                </a>
+            </div>
+        </div>
+        <!-- // end mobile footer -->
+        
+        <!-- PAGE CREDIT -->
+        <!-- Delete this and die. -->
+        <a href="https://silbrigthemes.tumblr.com/" class="conlink">
+            <div class="cont" id="credit" title="page by silbrigthemes">
+                <span class="ri-code-line"></span>
+            </div>
+        </a>
+        <!-- // end page credit -->
+        
+        <!-- CUSTOM TUMBLR CONTROLS -->
+        <div id="custom-controls">
+            <!-- Dashboard Link -->
+            <a href="https://www.tumblr.com/dashboard" class="conlink">
+                <div class="cont" title="tumblr dashboard">
+                    <span class="ri-tumblr-line"></span>
+                </div>
+            </a>
+            
+            <!-- Direct Message -->
+            <a href="https://www.tumblr.com/message/{Name}" class="conlink">
+                <div class="cont" title="send a message to {Name}">
+                    <span class="ri-chat-3-line"></span>
+                </div>
+            </a>
+            
+            <!-- Page Customization -->
+            <a href="https://www.tumblr.com/customize/{Name}?redirect_to=https%3A%2F%2F{Name}.tumblr.com" class="conlink">
+                <div class="cont" title="customize page">
+                    <span class="ri-palette-line"></span>
+                </div>
+            </a>
+            
+            <!-- Follow -->
+            <a href="https://www.tumblr.com/follow/{Name}" class="conlink">
+                <div class="cont" title="follow {Name}">
+                    <span class="ri-add-line"></span>
+                </div>
+            </a>
+        </div>
+        <!-- // end custom tumblr controls -->
+        
+        <!-- HOME LINK -->
+        <a href="/" class="conlink">
+            <div class="cont" id="home" title="return to blog">
+                <span class="ri-home-line"></span>
+            </div>
+        </a>
+        <!-- // end home link -->
+        
+        <!-- TOOLTIPS -->
+        <!-- Tippy.js tooltips, by atomiks. -->
+        <script src="https://unpkg.com/popper.js@1"></script>
+        <script src="https://unpkg.com/tippy.js@5/dist/tippy-bundle.iife.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/svg-arrow.css" />
+
+        <script>
+            tippy('a[title], .cont', {
+              theme: 'charakterstudie',
+              zIndex: 9999999999,
+              arrow: tippy.roundArrow,
+              maxWidth: 300,
+              placement: 'auto',
+
+              content(reference) {
+                const title = reference.getAttribute('title');
+                reference.removeAttribute('title');
+                return title;
+              },
+            });
+        </script>
+        
+    </body>
+</html>
