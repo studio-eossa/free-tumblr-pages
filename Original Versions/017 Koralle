@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html>
+
+<!--
+
+KORALLE
+Theme #17 by silbrigthemes
+
+A responsive about page, inspired by Pantone®'s color of the year 2019, Living Coral.
+
+Rules:
+
+    1) Do not steal (parts of) the code.
+    2) Do not redistribute on other websites.
+    3) Do not claim as your own.
+    4) Do not edit beyond recognition.
+    5) Do not alter or delete the credit.
+
+Useful comments to this code have been made.
+
+If you need any help for a problem that is not listed in the customization guide or where you cannot find a solution, feel free to send me a message via silbrigthemes.tumblr.com/ask or send a message to my official support blog, silbrigsupport.tumblr.com.
+
+Last Update: 26th March 2022
+
+-->
+
+    <head>
+
+    <meta charset="utf-16">
+    <!-- Change the title here! -->
+    <title>{Title} | About</title>
+    <link rel="shortcut icon" href="{Favicon}"/>
+    <link rel="alternate" type="application/rss+xml" href="{RSS}"/>
+    <link rel="apple-touch-icon-precomposed" href="{PortraitURL-128}">
+
+    <!-- Necessary for the theme to be responsive. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Icon font, by Remix Icon. -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+    <!-- SVG tooltip arrow. -->
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/svg-arrow.css"/>
+
+    <!-- Changes the toolbar color on mobile. -->
+    <meta name="theme-color" content="#ff6f61"/>
+
+    <!-- Custom title font. -->
+    <!-- Josefin Sans -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,700&amp;subset=latin-ext,vietnamese" rel="stylesheet">
+
+    <!-- Custom font. -->
+    <!-- Open Sans -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+
+        <style>
+
+            body{
+                margin:0;
+                top:0;
+                left:0;
+                text-align:justify; /* alt.: left, right, center */
+                font-size:1em; /* 1em = 16px */
+                color:#333; /* text color */
+                background-color:#ff6f61;
+                font-family:"Open Sans", Verdana;
+                /* custom font, fallback */
+                overflow-x:hidden; /* hides horizontal scroll */
+            }
+
+            /* Custom Scrollbar */
+            ::-webkit-scrollbar{
+                width:10px; /* scrollbar width */
+                background-color:#ff6f61; /* scrollbar background */
+                border:4px solid white; /* scrollbar border */
+                /* width line-type color */
+            }
+
+            ::-webkit-scrollbar-thumb{
+                width:10px; /* scrollbar thumb width */
+                background-color:white; /* scrollbar thumb background */
+                border:4px solid #ff6f61; /* scrollbar thumb border */
+                /* width line-type color */
+            }
+
+            /* Custom Text Selection */
+            ::selection{
+                background-color:#ff6f61; /* background color */
+                color:white; /* text color */
+                text-shadow:none; /* no text shadows */
+            }
+
+            ::-moz-selection{
+                background-color:#ff6f61;
+                color:white;
+                text-shadow:none;
+            }
+
+            ::-o-selection{
+                background-color:#ff6f61;
+                color:white;
+                text-shadow:none;
+            }
+
+            ::-webkit-selection{
+                background-color:#ff6f61;
+                color:white;
+                text-shadow:none;
+            }
+
+            /* Tooltips */
+            .tippy-box[data-theme~='koralle'] {
+                background-color: #333;
+                color: #fff;
+                text-align: center;
+                text-transform: lowercase;
+                font-size: calc(1em - 4px);
+            }
+
+            /* »» tooltip arrow */
+            .tippy-box[data-theme~='koralle'] > .tippy-svg-arrow {
+                fill: #333; /* background color */
+            }
+
+/* ––– START TEXT STYLES ––– */
+
+            /* Text Line */
+            hr{
+                width:80%;
+                height:4px;
+                border:none; /* no border */
+                background-color:#ff6f61; /* hr background color */
+            }
+
+            /* Underlined Text */
+            u{
+                text-decoration:none; /* no text-decoration */
+                border-bottom:2px solid #333; /* replaces text-decoration */
+                /* width line-type color */
+            }
+
+            /* Empty Paragraphs */
+            p:empty{
+                display:none; /* hidden */
+            }
+
+            /* Small Text */
+            small{
+                font-size:14px; /* 2px smaller than global font-size */
+            }
+
+            /* Bold Text */
+            b, strong{
+                font-weight:bold;
+                color:#555; /* text color */
+            }
+
+            /* Italic Text */
+            i, em{
+                font-weight:300; /* thin text, alt.: 400 (normal) */
+                font-style:italic;
+                color:#111; /* text color */
+            }
+
+            /* Marked Text */
+            #long mark{
+                background-color:#ff6f61; /* background color */
+                color:white; /* text color */
+                padding:2px 4px; /* top/bottom and left/right padding */
+            }
+
+            /* Blockquote */
+            blockquote{
+                border-left:2px solid #ff6f61;
+                border-top:2px solid #ff6f61;
+                /* width line-type color */
+                padding:2px 4px; /* top/bottom and left/right padding */
+            }
+
+            /* Preformatted Text */
+            pre{
+                font-size:14px; /* font-size */
+                font-family:"Roboto Mono", "Courier New", Courier;
+                /* custom font, fallback, fallback */
+                padding-left:0.25em;
+                padding-top:0.125em;
+                padding-right:0.25em;
+                padding-bottom:0.125em;
+                color:#ff6f61; /* text color */
+                word-wrap:break-all;
+                white-space:pre-wrap;
+                /* important; breaks text instead of displaying it in a
+                   single line */
+            }
+
+            /* LINKS */
+            /* Link */
+            a{
+                color:#ff6f61; /* text color */
+                border-bottom:2px solid #ff6f61;
+                /* width line-type color */
+                text-decoration:none; /* no text-decoration*/
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* Link on Hover */
+            a:hover{
+                color:#ff2713; /* text color */
+                border-bottom:2px solid #ff2713;
+                /* width line-type color */
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* LISTS */
+            /* Ordered Lists */
+            #long ol{
+                list-style-type:decimal;
+                /* alt.: upper-roman, lower-alpha, etc. pp. */
+            }
+
+            /* Unordered Lists */
+            #long ul{
+                list-style-type:none; /* no list-style-type */
+                /* if you want to change this to standard styles
+                   (e.g.: disc, square, circle), you can delete the CSS for                    #long ul li:before */
+            }
+
+            #long ul li:before{
+                content:"\ec79"; /* icon unicode */
+                font-family:"honeybee"; /* icon font, by @suiomi */
+                font-weight:300; /* thin, alt.: 400 (normal), 700 (bold) */
+                color:#ff6f61; /* text color */
+                position:relative;
+                font-size:1em; /* same as global font-size */
+                z-index:10!important;
+                margin-right:0.25em;
+                margin-left:-1.5em;
+                /* margins are necessary for the correct placement */
+            }
+
+            /* HEADINGS */
+            /* First Heading */
+            h1{
+                font-size:1.5em; /* 1.5em = 24px */
+                color:#ff6f61; /* text color */
+                text-align:center; /* alt.: left, right, justify */
+            }
+
+            /* Second Heading */
+            h2{
+                font-size:1.25em; /* 1.25em = 20px */
+                border-bottom:4px solid #ff6f61;
+                /* width line-type color */
+                color:#333; /* text color */
+            }
+
+            /* Third Heading */
+            h3{
+                font-size:1em; /* same as global font-size */
+                font-weight:400; /* alt.: 300 (thin), 700 (bold) */
+                border-bottom:2px solid #ff6f61;
+                /* width line-type color */
+                color:#333; /* text color */
+            }
+
+            /* COLORED TEXT */
+            /* Red Text */
+            .npf_color_joey {
+                color:#ff6f61; /* red text color */
+            }
+
+            /* Orange Text */
+            .npf_color_monica {
+                color:#fdaf65; /* orange text color */
+            }
+
+            /* Yellow Text */
+            .npf_color_phoebe {
+                color:#fcd419; /* yellow text color */
+            }
+
+            /* Green Text */
+            .npf_color_ross {
+                color:#03c350; /* green text color */
+            }
+
+            /* Blue Text */
+            .npf_color_rachel {
+                color:#6580fd; /* blue text color */
+            }
+
+            /* Purple Text */
+            .npf_color_chandler {
+                color:#bc65fd; /* purple text color */
+            }
+
+            /* Pink Text */
+            .npf_color_niles {
+                color:#fd65cc; /* pink text color */
+            }
+
+/* ––– END OF TEXT STYLES | START LAYOUT ––– */
+
+            /** CONTAINER **/
+            /* Container */
+            #about{
+                width:60vw; /* vw = viewport width */
+                height:80vh; /* vh = viewport height */
+                margin-left:20vw; /* 20vw from left side */
+                margin-top:10vh; /* 10vw from top */
+                background-color:white; /* background color */
+                border-radius:1em; /* rounded borders */
+            }
+
+            /* Container Title */
+            #a-title{
+                font-size:2.5em; /* 2.5em = 40px */
+                font-family:"Josefin Sans", Georgia;
+                /* custom font, fallback */
+                padding:16px 8px; /* top/bottom and left/right padding */
+                text-align:center; /* alt.: left, right, justify */
+                color:#ff6f61; /* text color */
+                border-bottom:4px solid #ff6f61;
+                /* width line-type color */
+            }
+
+            /* Section 1 (Quick Info + Long Text) */
+            #section-1{
+                display:flex;
+            }
+
+            /* QUICK INFORMATION */
+            /* Container */
+            #quick-info{
+                width:calc(20vw - 1em);
+                padding:8px;
+                height:calc(70vh - 5.75em);
+                text-align: left;
+            }
+
+            /* Unordered List */
+            #quick-info ul{
+                list-style-type:none;
+            }
+
+            /* List Elements */
+            #quick-info li{
+                margin-left:-2.25em;
+                line-height:1.5em;
+            }
+
+            /* Marked Text */
+            #quick-info mark{
+                background-color:#ff6f61; /* background color */
+                color:white; /* text color */
+                font-weight:bold; /* alt.: 300 (thin), normal */
+            }
+
+            /* Icon */
+            #icon img{
+                width:64px;
+                height:64px;
+                border-radius:50%; /* circle */
+                border:4px solid #ff6f61;
+                /* width line-type color */
+                margin-left:calc(10vw - 36px);
+            }
+
+            /* LONG TEXT */
+            #long{
+                width:calc(40vw - 1em);
+                padding:8px;
+                max-height:calc(70vh - 5.75em);
+                height:calc(70vh - 5.75em);
+                overflow-y:scroll; /* scrolls if text gets too long */
+                border-left:4px solid #ff6f61;
+                /* width line-type color */
+            }
+
+            /* NAVIGATION */
+            /* Navigation Container */
+            #navigation{
+                height:10vh;
+                border-top:4px solid #ff6f61;
+                /* width line-type color */
+                display:flex;
+                align-items:center;
+                justify-content:space-evenly;
+                flex-wrap:wrap;
+            }
+
+            /* Navigation Links */
+            a.navlink{
+                text-decoration:none; /* no text-decoration */
+                border-bottom:none; /* no border */
+            }
+
+            /* Navigation Bubble */
+            .nav{
+                width:36px;
+                height:36px;
+                background-color:white; /* background color */
+                border:4px solid #ff6f61;
+                /* width line-type color */
+                border-radius:50%; /* circle */
+                font-size:20px;
+                margin:2px;
+                color:#ff6f61; /* text color */
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+                /* ensures smooth transition */
+            }
+
+            /* Navigation Bubble on Hover */
+            .nav:hover{
+                background-color:#ff6f61; /* background color */
+                color:white; /* text color */
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+/* ––– END OF LAYOUT | START CUSTOM CONTROLS ––– */
+
+            /** CUSTOM TUMBLR CONTROLS **/
+            /* Hides standard tumblr controls */
+            body > iframe:first-child {
+                display: none !important;
+            }
+
+            /* Container for controls */
+            #big-box{
+                width:240px;
+                height:40px;
+                top:1em; /* margin from top */
+                right:1em; /* margin from right side */
+                position:fixed; /* does not change position */
+                z-index:999999!important;
+                display:flex;
+                align-items:center;
+                justify-content:space-evenly;
+            }
+
+            /* Control links */
+            a.boxlink{
+                text-decoration:none; /* no text-decoration */
+                border-bottom:none; /* no border */
+                box-shadow:none; /* no box-shadow */
+            }
+
+            /* Control Bubble */
+            .box{
+                width:36px;
+                height:36px;
+                border-radius:50%; /* circle */
+                border:2px solid white;
+                /* width line-type color */
+                color:white; /* text color */
+                background-color:#ff6f61; /* background color */
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* Control Bubble on Hover */
+            .box:hover{
+                background-color:white; /* background color */
+                color:#ff6f61; /* text color */
+                transition:0.5s;
+                -moz-transition:0.5s;
+                -o-transition:0.5s;
+                -webkit-transition:0.5s;
+            }
+
+            /* Hides the tumblr app button, by @yeoli-thm */
+            .tmblr-iframe--app-cta-button {
+                display: none!important;
+            }
+
+/* ––– END OF CUSTOM CONTROLS | START RESPONSIVE CODES ––– */
+
+            /* LARGE SCREENS */
+            @media only screen and (min-width:900px){
+                .m-box{
+                    display:none; /* hidden */
+                }
+
+                a.m-boxlink{
+                    display:none; /* hidden */
+                }
+
+                /* These lines hide the custom controls for tablets and
+                   phones on large screens. */
+            }
+
+            /* RESPONSIVE LAYOUT FOR TABLETS */
+            @media only screen and (max-width:900px){
+                /* Container */
+                #about{
+                    width:100vw;
+                    height:100vh;
+                    margin:0;
+                    border-radius:0;
+                }
+
+                /* Quick Info Container */
+                #quick-info{
+                    width:25%;
+                    height:auto;
+                }
+
+                /* Long Text Container */
+                #long{
+                    width:75%;
+                    height:75vh;
+                    max-height:75vh;
+                }
+
+                /* Custom Tumblr Controls */
+                #big-box{
+                    display:none; /* hidden */
+                }
+
+                /* MOBILE CONTROLS */
+                /* Mobile Controls Bubble */
+                .m-box{
+                    width:36px;
+                    height:36px;
+                    background-color:white; /* background color */
+                    border:4px solid #ff6f61;
+                    /* width line-type color */
+                    border-radius:50%; /* circle */
+                    font-size:20px;
+                    margin:2px;
+                    color:#ff6f61; /* text color */
+                    display:flex;
+                    align-items:center;
+                    justify-content:center;
+                    transition:0.5s;
+                    -moz-transition:0.5s;
+                    -o-transition:0.5s;
+                    -webkit-transition:0.5s;
+                }
+
+                /* Mobile Controls Bubble on Hover */
+                .m-box:hover{
+                    background-color:#ff6f61; /* background color */
+                    color:white; /* text color */
+                    transition:0.5s;
+                    -moz-transition:0.5s;
+                    -o-transition:0.5s;
+                    -webkit-transition:0.5s;
+                }
+
+                /* Mobile Controls Link */
+                a.m-boxlink{
+                    border-bottom:none; /* no border */
+                    text-decoration:none; /* no text decoration */
+                }
+            }
+
+            /* RESPONSIVE LAYOUT FOR (SMART)PHONES */
+            @media only screen and (max-width:650px){
+                /* Container */
+                #about{
+                    min-height:100vh;
+                    height:auto;
+                }
+
+                /* Section (Quick Info + Long Text) */
+                #section-1{
+                    flex-direction:column;
+                }
+
+                /* Quick Info Container */
+                #quick-info{
+                    width:100%;
+                }
+
+                /* Long Text Container */
+                #long{
+                    border-left:none; /* no border */
+                    border-top:4px solid #ff6f61;
+                    /* width line-type color */
+                    width:100%;
+                    height:auto;
+                    overflow-y:hidden;
+                }
+
+                /* Navigation Container */
+                #navigation{
+                    height:auto;
+                }
+
+                /* Icon */
+                #icon img{
+                    margin-left:calc(50vw - 36px);
+                }
+            }
+
+        </style>
+    </head>
+
+    <body>
+
+        <!-- CONTAINER -->
+        <div id="about">
+
+            <!-- CONTAINER TITLE -->
+            <div id="a-title">About Me!</div>
+            <!-- SECTION 1 -->
+
+            <div id="section-1">
+
+                <!-- QUICK INFO CONTAINER -->
+                <div id="quick-info">
+                    <!-- Icon -->
+                    <div id="icon">
+                        <!-- Change icon image here! -->
+                        <img src="https://66.media.tumblr.com/a19829918f8a1b80b927b14a777b21da/tumblr_pe2p4mneUx1wsskx3o2_r1_1280.jpg" alt="user icon">
+                    </div>
+                    <!-- Title -->
+                    <h1>Quick Info</h1> <!-- change title here -->
+                    <ul>
+                        <li><mark>Name:</mark> <!-- your name here | not your full name! --> </li>
+                        <li><mark>Age:</mark> <!-- your age here --> </li>
+                        <li><mark>Birthday:</mark> <!-- your birthdate here --> </li>
+                        <li><mark>Location:</mark> <!-- your location here | keep it vague! --> </li>
+                        <li><mark>Languages:</mark> <!-- languages you speak here --> </li>
+                        <li><mark>Likes:</mark> <!-- your likes here --> </li>
+                        <li><mark>Dislikes:</mark> <!-- your dislikes here --> </li>
+                        <!-- add other info or delete some, it's your choice! -->
+                    </ul>
+                </div> <!-- / end quick info container -->
+
+                <!-- LONG TEXT CONTAINER -->
+                <div id="long">
+                    <h1><!-- put a title here --></h1>
+                    <p>
+                        <!-- go wild! write whatever you want here! -->
+                    </p>
+                </div> <!-- / end long text container -->
+            </div> <!-- / end section 1 container -->
+
+            <!-- NAVIGATION CONTAINER -->
+            <div id="navigation">
+                <!-- Index Link -->
+                <a href="/" title="return to index" class="navlink">
+                    <div class="nav">
+                        <span class="ri-home-line"></span>
+                    </div>
+                </a>
+
+                <!-- Ask Link -->
+                <!-- Only visible if ask is enabled. -->
+                {block:AskEnabled}
+                <a href="/ask" title="{AskLabel}" class="navlink">
+                    <div class="nav">
+                        <span class="ri-mail-line"></span>
+                    </div>
+                </a>
+                {/block:AskEnabled}
+
+                <!-- Submissions Link -->
+                <!-- Only visible if submissions are enabled. -->
+                {block:SubmissionsEnabled}
+                <a href="/submit" title="{SubmitLabel}" class="navlink">
+                    <div class="nav">
+                        <span class="ri-send-plane-line"></span>
+                    </div>
+                </a>
+                {/block:SubmissionsEnabled}
+
+                <!-- Archive Link -->
+                <a href="/archive" title="browse archive" class="navlink">
+                    <div class="nav">
+                        <span class="ri-archive-line"></span>
+                    </div>
+                </a>
+
+                <!-- First Custom Link -->
+                <!-- change link and title here -->
+                <a href="/" title="custom link 1" class="navlink">
+                    <div class="nav">
+                        <!-- change icon here -->
+                        <span class="ri-link"></span>
+                    </div>
+                </a>
+
+                <!-- Second Custom Link -->
+                <!-- change link and title here -->
+                <a href="/" title="custom link 2" class="navlink">
+                    <div class="nav">
+                        <!-- change icon here -->
+                        <span class="ri-link"></span>
+                    </div>
+                </a>
+
+                <!-- Third Custom Link -->
+                <!-- change link and title here -->
+                <a href="/" title="custom link 3" class="navlink">
+                    <div class="nav">
+                        <!-- change icon here -->
+                        <span class="ri-link"></span>
+                    </div>
+                </a>
+
+                <!-- Credit -->
+                <!-- If you delete this, you will be blocked and
+                     reported. -->
+                <a href="https://silbrigthemes.tumblr.com/" title="page by silbrigthemes" class="navlink">
+                    <div class="nav">
+                        <span class="ri-code-line"></span>
+                    </div>
+                </a>
+
+                <!--  MOBILE CONTROLS -->
+                <!-- Link takes visitors back to dashboard. -->
+                <a href="https://www.tumblr.com/dashboard" title="go to dashboard" class="m-boxlink">
+                    <div class="m-box">
+                        <span class="ri-tumblr-line"></span>
+                    </div>
+                </a>
+
+                <!-- Link takes visitors to dashboard to send you a
+                     message. -->
+                <a href="https://www.tumblr.com/message/{Name}" title="send a message to {Name}" class="m-boxlink">
+                    <div class="m-box">
+                        <span class="ri-chat-3-line"></span>
+                    </div>
+                </a>
+
+                <!-- Link takes you to the customization panel. -->
+                <a href="https://www.tumblr.com/customize/{Name}?redirect_to=https%3A%2F%2F{Name}.tumblr.com" title="customize page" class="m-boxlink">
+                    <div class="m-box">
+                        <span class="ri-palette-line"></span>
+                    </div>
+                </a>
+
+                <!-- Link takes you to your blog's settings. -->
+                <a href="https://www.tumblr.com/settings/blog/{Name}" title="change settings" class="m-boxlink">
+                    <div class="m-box">
+                        <span class="ri-settings-3-line"></span>
+                    </div>
+                </a>
+
+                <!-- Link takes visitors to a page where they can follow
+                     your blog. -->
+                <a href="https://www.tumblr.com/follow/{Name}" title="follow {Name}" class="m-boxlink">
+                    <div class="m-box">
+                        <span class="ri-add-line"></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- CUSTOM TUMBLR CONTROLS -->
+        <!-- Same links as the ones in the mobile controls. -->
+        <div id="big-box">
+            <a href="https://www.tumblr.com/dashboard" title="go to dashboard" class="boxlink">
+                <div class="box">
+                    <span class="ri-tumblr-line"></span>
+                </div>
+            </a>
+
+            <a href="https://www.tumblr.com/message/{Name}" title="send a message to {Name}" class="boxlink">
+                <div class="box">
+                    <span class="ri-chat-3-line"></span>
+                </div>
+            </a>
+
+            <a href="https://www.tumblr.com/customize/{Name}?redirect_to=https%3A%2F%2F{Name}.tumblr.com" title="customize page" class="boxlink">
+                <div class="box">
+                    <span class="ri-palette-line"></span>
+                </div>
+            </a>
+
+            <a href="https://www.tumblr.com/settings/blog/{Name}" title="change settings" class="boxlink">
+                <div class="box">
+                    <span class="ri-settings-3-line"></span>
+                </div>
+            </a>
+
+            <a href="https://www.tumblr.com/follow/{Name}" title="follow {Name}" class="boxlink">
+                <div class="box">
+                    <span class="ri-add-line"></span>
+                </div>
+            </a>
+        </div>
+
+        <!-- TOOLTIPS -->
+        <!-- Tippy.js tooltips, by atomiks. -->
+        <!-- Development -->
+        <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+        <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+
+        <!-- Production -->
+        <script src="https://unpkg.com/@popperjs/core@2"></script>
+        <script src="https://unpkg.com/tippy.js@6"></script>
+
+        <script>
+
+            tippy('a[title], button[title]', {
+
+            theme: 'koralle',
+            zIndex: 9999999999,
+            arrow: tippy.roundArrow,
+            maxWidth: 300,
+            placement: 'auto',
+
+              content(reference) {
+                const title = reference.getAttribute('title');
+                reference.removeAttribute('title');
+                return title;
+              },
+            });
+        </script>
+
+    </body>
+</html>
